@@ -1,0 +1,37 @@
+{
+    "name":"delta-green-alt",
+    "title":"Delta Green Alternative",
+    "author":"wush3",
+    "version":"0.01",
+    "minimumCoreVersion": "0.8.6",
+    "compatibleCoreVersion": "9",
+    "scripts": [],
+    "esmodules": [
+        "module/deltagreen.js"
+    ],
+    "styles": [
+        "css/deltagreen.css"       
+      ],
+      "languages": [
+        {
+          "lang": "en",
+          "name": "English",
+          "path": "lang/en.json"
+        },       
+        {
+          "lang": "hun",
+          "name": "Magyar",
+          "path": "lang/hun.json"
+        }        
+      ],
+      "packs": [],
+      "system": [],
+      "dependencies": [],      
+      "gridDistance": 1.5,
+      "gridUnits": "m",
+      "primaryTokenAttribute": "health",
+      "secondaryTokenAttribute": "wp"
+  
+  
+
+}
