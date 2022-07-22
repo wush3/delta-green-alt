@@ -1,0 +1,103 @@
+{
+    "Actor":{
+        "types":[
+            "Agent",
+            "NPC",
+            "Creature"
+        ]
+    },
+    
+    "Item":{
+        "types":
+        [
+            "Skill",            
+            
+            "Ability",
+
+            "Ritual",            
+            "Gear",
+
+            "Profession",
+            "Bond",
+            "Mental"           
+        ],
+        "Skill":
+        {
+            "name":"",
+            "description":"",
+            "base":0,
+            "value":0,
+            "failcheck":false
+        },
+        "Ability":
+        {
+            "name":"",
+            "description":""
+        },
+        "Ritual":
+        {
+            "name":"",
+            "complexity":"",
+            "studytime":"",
+            "activation":"",
+            "wpcost":"",
+            "sancost":"",
+            "description":""
+        },
+        "Gear":
+        {
+            "name":"",
+            "geartype":"",
+            "description":"",
+            "container":"",
+
+            "expense":"",
+            "isrestricted":false,
+
+            "islethal":false,            
+            "isranged":false,
+            "usesammo":false,
+            "skill":"",
+            "concealment":0,
+            "lethality":0,
+            "damage":"",
+            "ap":0,
+            "ammomax":0,
+            "ammocurrent":0,
+            "killradius":"",
+
+            "armor":0,
+
+            "hitpoints":0,
+            "speed":"",
+            "vehicletype":""
+
+           
+            
+        },
+        "Profession":
+        {
+            "name":""
+        },
+        "Bond":
+        {
+            "name":"",
+            "description":"",
+            "relationship":"",
+            "value":0
+
+        },
+        "Mental":
+        {           
+            "mentaltype":0,
+            "motivation":"",
+            "disorder":"",
+            "trigger":"",
+            "description":"",
+            "isCured":false
+        }
+        
+        
+        
+    }
+}
