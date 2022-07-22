@@ -41,7 +41,9 @@
             "description":"",
             "base":0,
             "value":0,
+            "canimprove":true,
             "failcheck":false
+            
         },
         "Ability":
         {
