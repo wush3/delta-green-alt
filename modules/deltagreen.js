@@ -1,1 +1,0 @@
-import DGGearSheet from ".modules/sheets/dg-gear-sheet.js";

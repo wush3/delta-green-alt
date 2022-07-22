@@ -30,8 +30,7 @@
       "gridDistance": 1.5,
       "gridUnits": "m",
       "primaryTokenAttribute": "health",
-      "secondaryTokenAttribute": "wp",
-      "initiative": "@DEX"
+      "secondaryTokenAttribute": "wp"
   
   
 
