@@ -1,1 +1,19 @@
-{}
+{
+    "Name":"Name",
+
+    "dgalt":{
+        "attackskills":
+        {
+            "none":"",
+            "unarmedcombat":"Unarmed Combat",
+            "meleeweapons":"Melee Weapons",
+            "dextimesfive":"DEX x 5",
+            "athletics":"Athletics",
+            "firearms":"Firearms",
+            "heavyweapons":"Heavy Weapons",
+            "demolitions": "Demolitions",
+            "artillery":"Artillery"
+
+        }   
+    }
+}
