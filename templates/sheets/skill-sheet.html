@@ -4,6 +4,7 @@
         <h1><input name="name" type="text" value="{{item.name}}" placeholder="{{ localize 'Name' }}"/></h1>
     </header>
     <br>
+    <div class="sheet-content">
     <fieldset>                
 
         <div>
@@ -21,10 +22,11 @@
         </div>
 
         <div>
-            <label>Description</label>
+            <label>{{localize 'dgalt.skills.description'}}</label>
             
-            <div>{{editor content=data.data.description target="data.description" button=false owner=owner editable=editable}}</div>            
+            <div><br>{{editor content=data.data.description target="data.description" button=true owner=owner editable=editable}}<br></div>            
             
         </div>
     </fieldset>
+</div>
 </form>

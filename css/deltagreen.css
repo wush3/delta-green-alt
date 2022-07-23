@@ -1,12 +1,12 @@
-nav ul {
-  margin: 0;
-  padding: 6px;
-  list-style: none;
+.sheet .form {
+  display: flex;
+  flex-direction: column;
 }
-nav li {
-  display: inline-block;
+.sheet .sheet-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
-nav a {
-  display: block;
-  padding: 6px 12px;
+.sheet .sheet-content .editor {
+  height: 100%;
 }
