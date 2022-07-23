@@ -22,6 +22,39 @@
             "failcheck":"Check Failed",
             "base":"Base",
             "value":"Value"           
+        },
+        "labels":
+        {
+            "personaldata":{
+                "header":"PERSONAL DATA",
+                "realname":"1. LAST NAME, FIRST NAME, MIDDLE INITIAL",
+                "profession":"2. PROFESSION (RANK IF APPLICABLE)",
+                "employer":"3. EMPLOYER",
+                "nationality":"4. NATIONALITY",
+                "sex":"5. SEX",
+                "age":"6. AGE AND D.O.B",
+                "education":"7. EDUCATION AND OCCUPATIONAL HISTORY",
+                "codename":"CODENAME:"
+            },
+            "statdata":{
+                "header":"STATISTICAL DATA",
+                "statlabel":"8. STATISTICS",
+                "scorelabel":"SCORE",                
+                "featurelabel":"FEATURE",
+                "strtxt":"Strength (STR)",
+                "contxt":"Constitution (CON)",
+                "dextxt":"Dexterity (DEX)",
+                "inttxt":"Intelligence (INT)",
+                "powtxt":"Power (POW)",
+                "chatxt":"Charisma (CHA)",
+                "derivedlabel":"9. DERIVED ATTRIBUTES",
+                "maxlabel":"MAX",
+                "currentlabel":"CURR.",
+                "hplabel":"Hit Points (HP)",
+                "wplabel":"Willpower Points(WP)",
+                "sanlabel":"Sanity Points (SAN)",
+                "breaklabel":"Breaking Point (BP)"
+            }
         }
 
     }

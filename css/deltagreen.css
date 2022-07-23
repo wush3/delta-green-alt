@@ -1,3 +1,9 @@
+:root {
+  --backColor: #282828;
+  --foreColor: #909090;
+  --borderColor: #454545;
+  --labelColor: #ffffff;
+}
 .dgalt.sheet.item .form {
   display: flex;
   flex-direction: column;
@@ -17,4 +23,454 @@
   display: flex;
   flex-direction: row;
   margin-bottom: 15px;
+}
+.dgalt.sheet.agent .form {
+  display: flex;
+  flex-direction: row;
+}
+.dgalt.sheet.agent .vertical-header {
+  writing-mode: vertical-rl;
+  font-size: 12px;
+  padding-top: 10px;
+}
+.dgalt.sheet.agent .form-label {
+  font-size: 10px;
+  color: var(--labelColor);
+}
+.dgalt.sheet.agent .form-label-centered {
+  font-size: 10px;
+  text-align: center;
+  vertical-align: middle;
+  color: var(--labelColor);
+}
+.dgalt.sheet.agent .form-inputbox {
+  color: var(--foreColor);
+  height: 22px;
+}
+.dgalt.sheet.agent .form-inputbox-centered {
+  color: var(--foreColor);
+  text-align: center;
+  height: 22px;
+}
+.dgalt.sheet.agent .codename {
+  margin-top: auto;
+  text-align: center;
+  vertical-align: middle;
+}
+.dgalt.sheet.agent .photo {
+  width: 100%;
+  height: auto;
+  max-height: 72px;
+  max-width: 72px;
+  align-self: center;
+}
+.dgalt.sheet.agent .flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: normal;
+}
+.dgalt.sheet.agent .flex-item {
+  display: block;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+}
+.dgalt.sheet.agent .personaldata {
+  display: grid;
+  grid-template-columns: min-content 1fr auto;
+  grid-template-rows: min-content;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas: "personal-header personal-block picture-block";
+}
+.dgalt.sheet.agent .personaldata .personal-header {
+  grid-area: personal-header;
+  background-color: var(--foreColor);
+  color: var(--backColor);
+  outline: 1px dashed var(--foreColor);
+  padding: 2px;
+  outline-color: var(--borderColor);
+}
+.dgalt.sheet.agent .personaldata .personal-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: min-content min-content min-content;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas: "realname-area realname-area profession-area profession-area" "employer-area employer-area nationality-area nationality-area" "sex-area age-area education-area education-area";
+  grid-area: personal-block;
+  background-color: var(--backColor);
+  color: var(--foreColor);
+  outline: 1px dashed;
+}
+.dgalt.sheet.agent .personaldata .personal-block .realname-area {
+  grid-area: realname-area;
+  background-color: var(--backColor);
+  color: var(--foreColor);
+  outline: 1px dashed;
+  padding: 2px;
+  outline-color: var(--borderColor);
+}
+.dgalt.sheet.agent .personaldata .personal-block .profession-area {
+  grid-area: profession-area;
+  background-color: var(--backColor);
+  color: var(--foreColor);
+  outline: 1px dashed;
+  padding: 2px;
+  outline-color: var(--borderColor);
+}
+.dgalt.sheet.agent .personaldata .personal-block .employer-area {
+  grid-area: employer-area;
+  background-color: var(--backColor);
+  color: var(--foreColor);
+  outline: 1px dashed;
+  padding: 2px;
+  outline-color: var(--borderColor);
+}
+.dgalt.sheet.agent .personaldata .personal-block .nationality-area {
+  grid-area: nationality-area;
+  background-color: var(--backColor);
+  color: var(--foreColor);
+  outline: 1px dashed;
+  padding: 2px;
+  outline-color: var(--borderColor);
+}
+.dgalt.sheet.agent .personaldata .personal-block .sex-area {
+  grid-area: sex-area;
+  background-color: var(--backColor);
+  color: var(--foreColor);
+  outline: 1px dashed;
+  padding: 2px;
+  outline-color: var(--borderColor);
+}
+.dgalt.sheet.agent .personaldata .personal-block .age-area {
+  grid-area: age-area;
+  background-color: var(--backColor);
+  color: var(--foreColor);
+  outline: 1px dashed;
+  padding: 2px;
+  outline-color: var(--borderColor);
+}
+.dgalt.sheet.agent .personaldata .personal-block .education-area {
+  grid-area: education-area;
+  background-color: var(--backColor);
+  color: var(--foreColor);
+  outline: 1px dashed;
+  padding: 2px;
+  outline-color: var(--borderColor);
+}
+.dgalt.sheet.agent .personaldata .picture-block {
+  grid-area: picture-block;
+  background-color: var(--backColor);
+  color: var(--foreColor);
+  outline: 1px dashed;
+  padding: 2px;
+  outline-color: var(--borderColor);
+  display: flex;
+  flex-direction: column;
+}
+.dgalt.sheet.agent .statdata {
+  display: grid;
+  margin-top: 10px;
+  grid-template-columns: min-content 1fr;
+  grid-template-rows: min-content min-content;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas: "stat-header stats-block" "stat-header derived-block";
+}
+.dgalt.sheet.agent .statdata .stat-header {
+  grid-area: stat-header;
+  background-color: var(--foreColor);
+  color: var(--backColor);
+  outline: 1px dashed var(--foreColor);
+  padding: 2px;
+  outline-color: var(--borderColor);
+}
+.dgalt.sheet.agent .statdata .stats-block {
+  display: grid;
+  grid-template-columns: 1fr 40px 40px 1fr;
+  grid-template-rows: min-content min-content min-content min-content min-content min-content min-content;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas: "stat-label score-label x5-label feature-label" "str-text str-score str-x5 str-feature" "con-text con-score con-x5 con-feature" "dex-text dex-score dex-x5 dex-feature" "int-text int-score int-x5 int-feature" "pow-text pow-score pow-x5 pow-feature" "cha-text cha-score cha-x5 cha-feature";
+  grid-area: stats-block;
+  background-color: var(--backColor);
+  color: var(--foreColor);
+  outline: 1px dashed;
+  outline-color: var(--borderColor);
+}
+.dgalt.sheet.agent .statdata .stats-block .stat-label {
+  grid-area: stat-label;
+  outline: 1px dashed;
+  padding: 2px;
+  justify-content: center;
+  align-content: center;
+  outline-color: var(--borderColor);
+}
+.dgalt.sheet.agent .statdata .stats-block .score-label {
+  grid-area: score-label;
+  outline: 1px dashed;
+  padding: 2px;
+  outline-color: var(--borderColor);
+}
+.dgalt.sheet.agent .statdata .stats-block .x5-label {
+  grid-area: x5-label;
+  outline: 1px dashed;
+  padding: 2px;
+  outline-color: var(--borderColor);
+}
+.dgalt.sheet.agent .statdata .stats-block .feature-label {
+  grid-area: feature-label;
+  outline: 1px dashed;
+  padding: 2px;
+  outline-color: var(--borderColor);
+}
+.dgalt.sheet.agent .statdata .stats-block .str-text {
+  grid-area: str-text;
+  outline: 1px dashed;
+  padding: 2px;
+  outline-color: var(--borderColor);
+}
+.dgalt.sheet.agent .statdata .stats-block .str-score {
+  grid-area: str-score;
+  outline: 1px dashed;
+  padding: 2px;
+  outline-color: var(--borderColor);
+}
+.dgalt.sheet.agent .statdata .stats-block .str-x5 {
+  grid-area: str-x5;
+  outline: 1px dashed;
+  padding: 2px;
+  outline-color: var(--borderColor);
+}
+.dgalt.sheet.agent .statdata .stats-block .str-feature {
+  grid-area: str-feature;
+  outline: 1px dashed;
+  padding: 2px;
+  outline-color: var(--borderColor);
+}
+.dgalt.sheet.agent .statdata .stats-block .con-text {
+  grid-area: con-text;
+  outline: 1px dashed;
+  padding: 2px;
+  outline-color: var(--borderColor);
+}
+.dgalt.sheet.agent .statdata .stats-block .con-score {
+  grid-area: con-score;
+  outline: 1px dashed;
+  padding: 2px;
+  outline-color: var(--borderColor);
+}
+.dgalt.sheet.agent .statdata .stats-block .con-x5 {
+  grid-area: con-x5;
+  outline: 1px dashed;
+  padding: 2px;
+  outline-color: var(--borderColor);
+}
+.dgalt.sheet.agent .statdata .stats-block .con-feature {
+  grid-area: con-feature;
+  outline: 1px dashed;
+  padding: 2px;
+  outline-color: var(--borderColor);
+}
+.dgalt.sheet.agent .statdata .stats-block .dex-text {
+  grid-area: dex-text;
+  outline: 1px dashed;
+  padding: 2px;
+  outline-color: var(--borderColor);
+}
+.dgalt.sheet.agent .statdata .stats-block .dex-score {
+  grid-area: dex-score;
+  outline: 1px dashed;
+  padding: 2px;
+  outline-color: var(--borderColor);
+}
+.dgalt.sheet.agent .statdata .stats-block .dex-x5 {
+  grid-area: dex-x5;
+  outline-color: var(--borderColor);
+}
+.dgalt.sheet.agent .statdata .stats-block .dex-feature {
+  grid-area: dex-feature;
+  outline: 1px dashed;
+  padding: 2px;
+  outline-color: var(--borderColor);
+}
+.dgalt.sheet.agent .statdata .stats-block .int-text {
+  grid-area: int-text;
+  outline: 1px dashed;
+  padding: 2px;
+  outline-color: var(--borderColor);
+}
+.dgalt.sheet.agent .statdata .stats-block .int-score {
+  grid-area: int-score;
+  outline: 1px dashed;
+  padding: 2px;
+  outline-color: var(--borderColor);
+}
+.dgalt.sheet.agent .statdata .stats-block .int-x5 {
+  grid-area: int-x5;
+  outline: 1px dashed;
+  padding: 2px;
+  outline-color: var(--borderColor);
+}
+.dgalt.sheet.agent .statdata .stats-block .int-feature {
+  grid-area: int-feature;
+  outline: 1px dashed;
+  padding: 2px;
+  outline-color: var(--borderColor);
+}
+.dgalt.sheet.agent .statdata .stats-block .pow-text {
+  grid-area: pow-text;
+  outline: 1px dashed;
+  padding: 2px;
+  outline-color: var(--borderColor);
+}
+.dgalt.sheet.agent .statdata .stats-block .pow-score {
+  grid-area: pow-score;
+  outline: 1px dashed;
+  padding: 2px;
+  outline-color: var(--borderColor);
+}
+.dgalt.sheet.agent .statdata .stats-block .pow-x5 {
+  grid-area: pow-x5;
+  outline: 1px dashed;
+  padding: 2px;
+  outline-color: var(--borderColor);
+}
+.dgalt.sheet.agent .statdata .stats-block .pow-feature {
+  grid-area: pow-feature;
+  outline: 1px dashed;
+  padding: 2px;
+  outline-color: var(--borderColor);
+}
+.dgalt.sheet.agent .statdata .stats-block .cha-text {
+  grid-area: cha-text;
+  outline: 1px dashed;
+  padding: 2px;
+  outline-color: var(--borderColor);
+}
+.dgalt.sheet.agent .statdata .stats-block .cha-score {
+  grid-area: cha-score;
+  outline: 1px dashed;
+  padding: 2px;
+  outline-color: var(--borderColor);
+}
+.dgalt.sheet.agent .statdata .stats-block .cha-x5 {
+  grid-area: cha-x5;
+  outline: 1px dashed;
+  padding: 2px;
+  outline-color: var(--borderColor);
+}
+.dgalt.sheet.agent .statdata .stats-block .cha-feature {
+  grid-area: cha-feature;
+  outline: 1px dashed;
+  padding: 2px;
+  outline-color: var(--borderColor);
+}
+.dgalt.sheet.agent .statdata .derived-block {
+  display: grid;
+  grid-template-columns: 1fr 40px 40px;
+  grid-template-rows: min-content min-content min-content min-content min-content;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas: "derived-label max-label current-label" "hp-text hp-max hp-current" "wp-text wp-max wp-current" "break-text break-reset break-current" "san-text san-max san-current";
+  grid-area: derived-block;
+  background-color: var(--backColor);
+  color: var(--foreColor);
+  outline: 1px dashed;
+  outline-color: var(--borderColor);
+}
+.dgalt.sheet.agent .statdata .derived-block .derived-label {
+  grid-area: derived-label;
+  outline: 1px dashed;
+  padding: 2px;
+  outline-color: var(--borderColor);
+}
+.dgalt.sheet.agent .statdata .derived-block .max-label {
+  grid-area: max-label;
+  outline: 1px dashed;
+  padding: 2px;
+  outline-color: var(--borderColor);
+}
+.dgalt.sheet.agent .statdata .derived-block .current-label {
+  grid-area: current-label;
+  outline: 1px dashed;
+  padding: 2px;
+  outline-color: var(--borderColor);
+}
+.dgalt.sheet.agent .statdata .derived-block .hp-text {
+  grid-area: hp-text;
+  outline: 1px dashed;
+  padding: 2px;
+  outline-color: var(--borderColor);
+}
+.dgalt.sheet.agent .statdata .derived-block .hp-max {
+  grid-area: hp-max;
+  outline: 1px dashed;
+  padding: 2px;
+  outline-color: var(--borderColor);
+}
+.dgalt.sheet.agent .statdata .derived-block .hp-current {
+  grid-area: hp-current;
+  outline: 1px dashed;
+  padding: 2px;
+  outline-color: var(--borderColor);
+}
+.dgalt.sheet.agent .statdata .derived-block .wp-text {
+  grid-area: wp-text;
+  outline: 1px dashed;
+  padding: 2px;
+  outline-color: var(--borderColor);
+}
+.dgalt.sheet.agent .statdata .derived-block .wp-max {
+  grid-area: wp-max;
+  outline: 1px dashed;
+  padding: 2px;
+  outline-color: var(--borderColor);
+}
+.dgalt.sheet.agent .statdata .derived-block .wp-current {
+  grid-area: wp-current;
+  outline: 1px dashed;
+  padding: 2px;
+  outline-color: var(--borderColor);
+}
+.dgalt.sheet.agent .statdata .derived-block .break-text {
+  grid-area: break-text;
+  outline: 1px dashed;
+  padding: 2px;
+  outline-color: var(--borderColor);
+}
+.dgalt.sheet.agent .statdata .derived-block .break-reset {
+  grid-area: break-reset;
+  outline: 1px dashed;
+  padding: 2px;
+  outline-color: var(--borderColor);
+}
+.dgalt.sheet.agent .statdata .derived-block .break-current {
+  grid-area: break-current;
+  outline: 1px dashed;
+  padding: 2px;
+  outline-color: var(--borderColor);
+}
+.dgalt.sheet.agent .statdata .derived-block .san-text {
+  grid-area: san-text;
+  outline: 1px dashed;
+  padding: 2px;
+  outline-color: var(--borderColor);
+}
+.dgalt.sheet.agent .statdata .derived-block .san-max {
+  grid-area: san-max;
+  outline: 1px dashed;
+  padding: 2px;
+  outline-color: var(--borderColor);
+}
+.dgalt.sheet.agent .statdata .derived-block .san-current {
+  grid-area: san-current;
+  outline: 1px dashed;
+  padding: 2px;
+  outline-color: var(--borderColor);
 }

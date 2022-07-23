@@ -10,12 +10,13 @@
         {
             "name":"",
             "personal":{
+                "realname":"",
                 "profession":"",
                 "employer":"",
                 "nationality":"",
                 "sex":"",
                 "age":"",
-                "education"
+                "education":""
             },
             "statistics":
             {

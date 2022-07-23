@@ -5,7 +5,7 @@ export default class DgAgentSheet extends ActorSheet {
         return mergeObject(super.defaultOptions,
             {      
                 template:"systems/delta-green-alt/templates/sheets/agent-sheet.hbs",          
-                classes:["dgalt","sheet",,"agent"]
+                classes:["dgalt","sheet","agent"]
             });
     }    
 
@@ -13,6 +13,7 @@ export default class DgAgentSheet extends ActorSheet {
     {
         const data = super.getData();
         data.config=CONFIG.dgalt;
+        data.skills=data.items.filter(function (item) { return item.type=="Skill"});
         return data;
     }
 

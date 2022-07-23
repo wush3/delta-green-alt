@@ -1,0 +1,249 @@
+.dgalt.sheet.agent
+{
+    .form{
+        display: flex;
+        flex-direction: row;
+        
+        
+    }
+    
+    .vertical-header
+    {
+        writing-mode:vertical-rl;                
+        font-size:12px;   
+        padding-top: 10px;
+                         
+    }
+
+    .form-label
+    {        
+        font-size:10px;     
+        color: var(--labelColor);
+    }
+    .form-label-centered
+    {        
+        font-size:10px;
+        text-align: center;
+        vertical-align:middle;   
+        color: var(--labelColor);     
+    }
+
+    .form-inputbox
+    {
+        color: var(--foreColor); 
+        height: 22px;
+            
+    }
+
+    .form-inputbox-centered
+    {
+        color: var(--foreColor);
+        text-align: center;
+        height: 22px;                
+    }
+
+    .codename
+    {
+        margin-top: auto;
+        text-align: center;
+        vertical-align: middle;
+    }
+    .photo
+    {
+        width: 100%;
+        height: auto;
+        
+        max-height: 72px;
+        max-width: 72px;
+        align-self: center;
+    }
+
+   
+           
+            
+       
+    .flex-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-items: stretch;
+        align-content: normal;
+      }
+      
+      .flex-item {
+        display: block;
+        flex-grow: 0;
+        flex-shrink: 1;
+        flex-basis: auto;
+        align-self: auto;       
+      }
+      
+      
+
+
+
+    .personaldata {  display: grid;
+        grid-template-columns: min-content 1fr auto;
+        grid-template-rows: min-content;
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        
+
+        grid-template-areas:
+          "personal-header personal-block picture-block";
+
+          .personal-header { grid-area: personal-header; background-color: var(--foreColor); color: var(--backColor); outline: 1px dashed var(--foreColor); padding: 2px; outline-color: var(--borderColor);}
+      
+          .personal-block {  display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: min-content min-content min-content;
+            gap: 0px 0px;
+            grid-auto-flow: row;
+            grid-template-areas:
+              "realname-area realname-area profession-area profession-area"
+              "employer-area employer-area nationality-area nationality-area"
+              "sex-area age-area education-area education-area";
+            grid-area: personal-block;
+            background-color: var(--backColor); 
+            color: var(--foreColor); 
+            outline: 1px dashed; 
+
+            .realname-area { grid-area: realname-area;background-color: var(--backColor); color: var(--foreColor); outline: 1px dashed; padding: 2px; outline-color: var(--borderColor);}          
+            .profession-area { grid-area: profession-area;background-color: var(--backColor); color: var(--foreColor); outline: 1px dashed; padding: 2px; outline-color: var(--borderColor);}            
+            .employer-area { grid-area: employer-area;background-color: var(--backColor); color: var(--foreColor); outline: 1px dashed; padding: 2px; outline-color: var(--borderColor);}            
+            .nationality-area { grid-area: nationality-area;background-color: var(--backColor); color: var(--foreColor); outline: 1px dashed; padding: 2px; outline-color: var(--borderColor);}            
+            .sex-area { grid-area: sex-area;background-color: var(--backColor); color: var(--foreColor); outline: 1px dashed; padding: 2px; outline-color: var(--borderColor);}            
+            .age-area { grid-area: age-area;background-color: var(--backColor); color: var(--foreColor); outline: 1px dashed; padding: 2px; outline-color: var(--borderColor);}            
+            .education-area { grid-area: education-area;background-color: var(--backColor); color: var(--foreColor); outline: 1px dashed; padding: 2px; outline-color: var(--borderColor);}
+          }
+                    
+        .picture-block { grid-area: picture-block; background-color: var(--backColor); color: var(--foreColor); outline: 1px dashed; padding: 2px; outline-color: var(--borderColor);             
+            display: flex;
+            flex-direction: column;                       
+        }
+      }
+      
+
+      
+
+
+
+
+    .statdata {  display: grid;
+        margin-top: 10px;    
+        grid-template-columns: min-content 1fr;
+        grid-template-rows: min-content min-content;
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+          "stat-header stats-block"
+          "stat-header derived-block";
+      
+      
+      .stat-header { grid-area: stat-header; background-color: var(--foreColor); color: var(--backColor); outline: 1px dashed var(--foreColor); padding: 2px; outline-color: var(--borderColor);}
+      
+      .stats-block {  display: grid;        
+        grid-template-columns: 1fr 40px 40px 1fr;
+        grid-template-rows: min-content min-content min-content min-content min-content min-content min-content;
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+          "stat-label score-label x5-label feature-label"
+          "str-text str-score str-x5 str-feature"
+          "con-text con-score con-x5 con-feature"
+          "dex-text dex-score dex-x5 dex-feature"
+          "int-text int-score int-x5 int-feature"
+          "pow-text pow-score pow-x5 pow-feature"
+          "cha-text cha-score cha-x5 cha-feature";
+        grid-area: stats-block;
+        background-color: var(--backColor); 
+        color: var(--foreColor); 
+        outline: 1px dashed; 
+        outline-color: var(--borderColor);
+        
+        
+        
+
+        .stat-label { grid-area: stat-label;  outline: 1px dashed; padding: 2px; justify-content: center; align-content: center; outline-color: var(--borderColor);}      
+        .score-label { grid-area: score-label; outline: 1px dashed; padding: 2px;  outline-color: var(--borderColor);}        
+        .x5-label { grid-area: x5-label; outline: 1px dashed; padding: 2px; outline-color: var(--borderColor);}        
+        .feature-label { grid-area: feature-label; outline: 1px dashed; padding: 2px; outline-color: var(--borderColor);}
+        
+        .str-text { grid-area: str-text; outline: 1px dashed; padding: 2px; outline-color: var(--borderColor);}        
+        .str-score { grid-area: str-score; outline: 1px dashed; padding: 2px;  outline-color: var(--borderColor);}        
+        .str-x5 { grid-area: str-x5; outline: 1px dashed; padding: 2px; outline-color: var(--borderColor);}        
+        .str-feature { grid-area: str-feature; outline: 1px dashed; padding: 2px; outline-color: var(--borderColor);}
+        
+        .con-text { grid-area: con-text; outline: 1px dashed; padding: 2px; outline-color: var(--borderColor);}        
+        .con-score { grid-area: con-score; outline: 1px dashed; padding: 2px; outline-color: var(--borderColor);}        
+        .con-x5 { grid-area: con-x5; outline: 1px dashed; padding: 2px; outline-color: var(--borderColor);}        
+        .con-feature { grid-area: con-feature; outline: 1px dashed; padding: 2px; outline-color: var(--borderColor);}
+        
+        .dex-text { grid-area: dex-text; outline: 1px dashed; padding: 2px; outline-color: var(--borderColor);}        
+        .dex-score { grid-area: dex-score; outline: 1px dashed; padding: 2px; outline-color: var(--borderColor);}        
+        .dex-x5 { grid-area: dex-x5; outline-color: var(--borderColor); }        
+        .dex-feature { grid-area: dex-feature;outline: 1px dashed; padding: 2px; outline-color: var(--borderColor);}        
+        
+        .int-text { grid-area: int-text; outline: 1px dashed; padding: 2px; outline-color: var(--borderColor);}        
+        .int-score { grid-area: int-score; outline: 1px dashed; padding: 2px; outline-color: var(--borderColor);}        
+        .int-x5 { grid-area: int-x5; outline: 1px dashed; padding: 2px; outline-color: var(--borderColor);}        
+        .int-feature { grid-area: int-feature;outline: 1px dashed; padding: 2px;  outline-color: var(--borderColor);}
+        
+        .pow-text { grid-area: pow-text;outline: 1px dashed; padding: 2px;  outline-color: var(--borderColor);}        
+        .pow-score { grid-area: pow-score;outline: 1px dashed; padding: 2px; outline-color: var(--borderColor); }        
+        .pow-x5 { grid-area: pow-x5;outline: 1px dashed; padding: 2px; outline-color: var(--borderColor); }        
+        .pow-feature { grid-area: pow-feature;outline: 1px dashed; padding: 2px; outline-color: var(--borderColor); }
+        
+        .cha-text { grid-area: cha-text; outline: 1px dashed; padding: 2px;  outline-color: var(--borderColor);}        
+        .cha-score { grid-area: cha-score;outline: 1px dashed; padding: 2px;   outline-color: var(--borderColor);}        
+        .cha-x5 { grid-area: cha-x5;outline: 1px dashed; padding: 2px;  outline-color: var(--borderColor); }        
+        .cha-feature { grid-area: cha-feature;outline: 1px dashed; padding: 2px;  outline-color: var(--borderColor); }
+      }
+      
+
+      
+      .derived-block {  display: grid;
+        grid-template-columns: 1fr 40px 40px;
+        grid-template-rows: min-content min-content min-content min-content min-content;
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+          "derived-label max-label current-label"
+          "hp-text hp-max hp-current"
+          "wp-text wp-max wp-current"          
+          "break-text break-reset break-current"
+          "san-text san-max san-current";
+        grid-area: derived-block;
+        background-color: var(--backColor); 
+        color: var(--foreColor); 
+        outline: 1px dashed; 
+        outline-color: var(--borderColor);
+
+        .derived-label { grid-area: derived-label; outline: 1px dashed; padding: 2px;   outline-color: var(--borderColor);}      
+        .max-label { grid-area: max-label;outline: 1px dashed; padding: 2px;    outline-color: var(--borderColor);}      
+        .current-label { grid-area: current-label;outline: 1px dashed; padding: 2px;   outline-color: var(--borderColor); }
+        
+        .hp-text { grid-area: hp-text;outline: 1px dashed; padding: 2px;   outline-color: var(--borderColor); }      
+        .hp-max { grid-area: hp-max;outline: 1px dashed; padding: 2px;    outline-color: var(--borderColor);}      
+        .hp-current { grid-area: hp-current;outline: 1px dashed; padding: 2px;   outline-color: var(--borderColor); }
+        
+        .wp-text { grid-area: wp-text;outline: 1px dashed; padding: 2px;   outline-color: var(--borderColor); }      
+        .wp-max { grid-area: wp-max;outline: 1px dashed; padding: 2px;   outline-color: var(--borderColor); }      
+        .wp-current { grid-area: wp-current;outline: 1px dashed; padding: 2px;   outline-color: var(--borderColor); }               
+        
+        .break-text { grid-area: break-text;outline: 1px dashed; padding: 2px;   outline-color: var(--borderColor); }      
+        .break-reset { grid-area: break-reset;outline: 1px dashed; padding: 2px;   outline-color: var(--borderColor); }      
+        .break-current { grid-area: break-current;outline: 1px dashed; padding: 2px;   outline-color: var(--borderColor); }
+
+        .san-text { grid-area: san-text;outline: 1px dashed; padding: 2px;  outline-color: var(--borderColor);  }      
+        .san-max { grid-area: san-max;outline: 1px dashed; padding: 2px;    outline-color: var(--borderColor);}      
+        .san-current { grid-area: san-current;outline: 1px dashed; padding: 2px;   outline-color: var(--borderColor); }
+      }
+      
+      
+      
+    }
+        
+        
+}
