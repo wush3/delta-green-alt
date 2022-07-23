@@ -4,9 +4,9 @@ var less = require('gulp-less');
 
 gulp.task('less', function(cb) {
   gulp
-    .src('less/dgalt.less')
+    .src('less/deltagreen.less')
     .pipe(less())
-    .pipe(gulp.dest("./"));
+    .pipe(gulp.dest("./css"));
   cb();
 });
 
