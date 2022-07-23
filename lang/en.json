@@ -14,6 +14,15 @@
             "demolitions": "Demolitions",
             "artillery":"Artillery"
 
-        }   
+        },
+        "skills":
+        {
+            "description":"Description",
+            "canimprove":"Can Improve",
+            "failcheck":"Check Failed",
+            "base":"Base",
+            "value":"Value"
+        }
+
     }
 }
