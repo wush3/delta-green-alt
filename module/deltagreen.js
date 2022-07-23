@@ -1,5 +1,6 @@
 import {dgalt} from "./config.js";
 import DgItemSheet from "./sheets/dgitemsheet.js";
+import DgAgentSheet from "./sheets/dgagentsheet.js";
 
 Hooks.once("init", async function()
     {
@@ -9,5 +10,9 @@ Hooks.once("init", async function()
 
         Items.unregisterSheet("core", ItemSheet); 
         Items.registerSheet("delta-green-alt", DgItemSheet);
+
+        Actors.unregisterSheet("core",ActorSheet);
+        Actors.registerSheet("delta-green-alt",DgAgentSheet);
+
     }
 );

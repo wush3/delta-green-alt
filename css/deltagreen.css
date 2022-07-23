@@ -1,12 +1,20 @@
-.sheet .form {
+.dgalt.sheet.item .form {
   display: flex;
   flex-direction: column;
 }
-.sheet .sheet-content {
+.dgalt.sheet.item .sheet-content {
   height: 100%;
   display: flex;
   flex-direction: column;
 }
-.sheet .sheet-content .editor {
+.dgalt.sheet.item .sheet-content .editor {
   height: 100%;
+  border: 1px solid;
+  border-radius: 1%;
+  margin: 0 0 10px 0px;
+}
+.dgalt.sheet.item .sheet-content .horizontal-input {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 15px;
 }
