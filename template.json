@@ -1,59 +1,57 @@
 {
-    "Actor":{
-        "types":[
+    "Actor": {
+        "types": [
             "Agent",
             "Npc",
             "Creature"
         ],
-        "templates":[],
-        "Agent":
-        {
-            "name":"",
-            "personal":{
-                "realname":"",
-                "profession":"",
-                "employer":"",
-                "nationality":"",
-                "sex":"",
-                "age":"",
-                "education":""
+        "templates": [],
+        "Agent": {
+            "name": "",
+            "personal": {
+                "realname": "",
+                "profession": "",
+                "employer": "",
+                "nationality": "",
+                "sex": "",
+                "age": "",
+                "education": ""
             },
-            "statistics":
-            {
-                "strength":{
-                    "value":10,
-                    "feature":""
+            "statistics": {
+                "strength": {
+                    "value": 10,
+                    "feature": ""
                 },
-                "constitution":{
-                    "value":10,
-                    "feature":""
+                "constitution": {
+                    "value": 10,
+                    "feature": ""
                 },
-                "dexterity":{
-                    "value":10,
-                    "feature":""
+                "dexterity": {
+                    "value": 10,
+                    "feature": ""
                 },
-                "intelligence":{
-                    "value":10,
-                    "feature":""
+                "intelligence": {
+                    "value": 10,
+                    "feature": ""
                 },
-                "power":{
-                    "value":10,
-                    "feature":""
+                "power": {
+                    "value": 10,
+                    "feature": ""
                 },
-                "charisma":{
-                    "value":10,
-                    "feature":""
+                "charisma": {
+                    "value": 10,
+                    "feature": ""
                 }
             },
-            "health":{
-                "value":0,
-                "min":0,
-                "max":10
+            "health": {
+                "value": 0,
+                "min": 0,
+                "max": 10
             },
-            "wp":{
-                "value":0,
-                "min":0,
-                "max":10
+            "wp": {
+                "value": 0,
+                "min": 0,
+                "max": 10
             },
             "sanity": {
                 "value": 100,
@@ -71,114 +69,88 @@
                     }
                 }
             },
-            "skills":{},
-            "specialtraining":{}
+            "skills": {},
+            "specialtraining": {}
         },
-        "Npc":
-        {
-            "name":""
+        "Npc": {
+            "name": ""
         },
-        "Creature":
-        {
-            "name":""
+        "Creature": {
+            "name": ""
         }
     },
-    
-    "Item":{
-        "types":
-        [
-            "Skill",            
-            
+    "Item": {
+        "types": [
+            "Skill",
             "Ability",
-
-            "Ritual",            
+            "Ritual",
             "Gear",
-
             "Profession",
             "Bond",
-            "Mental"           
+            "Mental"
         ],
-        "templates":[],
-        "Skill":
-        {
-            "name":"",
-            "description":"",
-            "base":0,
-            "value":0,
-            "canimprove":true,
-            "failcheck":false
-            
+        "templates": [],
+        "Skill": {
+            "name": "",
+            "description": "",
+            "base": 0,
+            "value": 0,
+            "canimprove": true,
+            "failcheck": false
         },
-        "Ability":
-        {
-            "name":"",
-            "description":""
+        "Ability": {
+            "name": "",
+            "description": ""
         },
-        "Ritual":
-        {
-            "name":"",
-            "complexity":"",
-            "studytime":"",
-            "activation":"",
-            "wpcost":"",
-            "sancost":"",
-            "description":""
+        "Ritual": {
+            "name": "",
+            "complexity": "",
+            "studytime": "",
+            "activation": "",
+            "wpcost": "",
+            "sancost": "",
+            "description": ""
         },
-        "Gear":
-        {
-            "name":"",
-            "geartype":"",
-            "description":"",
-            "container":"",
-
-            "expense":"",
-            "isrestricted":false,
-
-            "islethal":false,            
-            "isranged":false,
-            "usesammo":false,
-            "skill":"",
-            "concealment":0,
-            "lethality":0,
-            "damage":"",
-            "ap":0,
-            "ammomax":0,
-            "ammocurrent":0,
-            "killradius":"",
-
-            "armor":0,
-
-            "hitpoints":0,
-            "speed":"",
-            "vehicletype":""
-
-           
-            
+        "Gear": {
+            "name": "",
+            "geartype": "",
+            "description": "",
+            "container": "",
+            "expense": "",
+            "isrestricted": false,
+            "islethal": false,
+            "isranged": false,
+            "usesammo": false,
+            "skill": "",
+            "concealment": 0,
+            "lethality": 0,
+            "damage": "",
+            "ap": 0,
+            "ammomax": 0,
+            "ammocurrent": 0,
+            "killradius": "",
+            "armor": 0,
+            "hitpoints": 0,
+            "speed": "",
+            "vehicletype": ""
         },
-        "Profession":
-        {
-            "name":""
+        "Profession": {
+            "name": ""
         },
-        "Bond":
-        {
-            "name":"",
-            "description":"",
-            "relationship":"",
-            "value":0
-
+        "Bond": {
+            "name": "",
+            "description": "",
+            "relationship": "",
+            "value": 0
         },
-        "Mental":
-        {     
-            "name":"",      
-            "mentaltype":0,
-            "motivation":"",
-            "disorder":"",
-            "trigger":"",
-            "description":"",
-            "isCured":false
+        "Mental": {
+            "name": "",
+            "mentaltype": 0,
+            "motivation": "",
+            "disorder": "",
+            "trigger": "",
+            "description": "",
+            "isCured": false
         }
-        
-        
-        
     }
 }

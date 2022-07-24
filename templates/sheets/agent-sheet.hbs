@@ -148,18 +148,32 @@
                     <div class="wp-text">
                         {{localize 'dgalt.labels.statdata.wplabel'}}
                     </div>
-                    <div class="wp-max"></div>
-                    <div class="wp-current"></div>                    
+                    <div class="wp-max">
+                        <input class="form-inputbox-centered" name="data.wp.max"
+                            type="text" value="{{actor.data.data.wp.max}}" disabled />
+                    </div>
+                    <div class="wp-current">
+                        <input class="form-inputbox-centered" name="data.wp.value"
+                            type="text" value="{{actor.data.data.wp.value}}" />
+                    </div>                    
                     <div class="break-text">
                         {{localize 'dgalt.labels.statdata.breaklabel'}}
                     </div>
-                    <div class="break-reset"></div>
-                    <div class="break-current"></div>
+                    <div class="break-reset">
+                        <input type="button" value="set"/>
+                    </div>
+                    <div class="break-current">
+                        <input class="form-inputbox-centered" name="data.sanity.currentBreakingPoint"
+                            type="text" value="{{actor.data.data.sanity.currentBreakingPoint}}" />
+                    </div>
                     <div class="san-text">
                         {{localize 'dgalt.labels.statdata.sanlabel'}}
                     </div>
                     <div class="san-max"></div>
-                    <div class="san-current"></div>
+                    <div class="san-current">
+                        <input class="form-inputbox-centered" name="data.sanity.value"
+                            type="text" value="{{actor.data.data.sanity.value}}" />
+                    </div>
                 </div>
             </div>
 

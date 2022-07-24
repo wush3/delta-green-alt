@@ -96,7 +96,7 @@
   grid-area: personal-header;
   background-color: var(--foreColor);
   color: var(--backColor);
-  outline: var(--borderColor) dashed 1px;
+  outline: var(--borderColor) solid 1px;
   padding: 2px;
 }
 .dgalt.sheet.agent .personaldata .personal-block {
@@ -185,12 +185,12 @@
   grid-area: stat-header;
   background-color: var(--foreColor);
   color: var(--backColor);
-  outline: var(--borderColor) dashed 1px;
+  outline: var(--borderColor) solid 1px;
   padding: 2px;
 }
 .dgalt.sheet.agent .statdata .stats-block {
   display: grid;
-  grid-template-columns: 1fr 40px 40px 1fr;
+  grid-template-columns: 0.7fr 38px 38px 1fr;
   grid-template-rows: min-content min-content min-content min-content min-content min-content min-content;
   gap: 1px 1px;
   grid-auto-flow: row;
@@ -344,7 +344,7 @@
 }
 .dgalt.sheet.agent .statdata .derived-block {
   display: grid;
-  grid-template-columns: 1fr 40px 40px;
+  grid-template-columns: 1fr 38px 38px;
   grid-template-rows: min-content min-content min-content min-content min-content;
   gap: 1px 1px;
   grid-auto-flow: row;
