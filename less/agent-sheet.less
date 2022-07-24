@@ -2,16 +2,13 @@
   .form {
     display: flex;
     flex-direction: row;
-
-
   }
 
   .vertical-header {
     writing-mode: vertical-rl;
     font-size: 12px;
     padding-top: 10px;
-    text-align: center;
-    vertical-align: middle;
+    
 
   }
 
@@ -39,6 +36,38 @@
     height: 18px;
   }
 
+
+.form-button {
+  align-items: center;
+  background-color: initial;
+  background-image: linear-gradient(var(--borderColor), var(--backColor));
+  border-radius: 2px;
+  border-width: 0;  
+  box-sizing: border-box;
+  color: var(--labelColor);  
+  display: inline-flex;
+  flex-direction: column;
+  font-size: 10px;
+  height: 16px;
+  width: 35px;
+  justify-content: center;  
+  margin: 0;
+  outline: none;  
+  padding: 0 2px;
+  text-align: center;    
+  transition: all 150ms;
+  vertical-align: baseline;
+ 
+}
+.form-button:hover {
+  color: var(--hoverColor);  
+}
+.form-button:active {  
+  background-image:radial-gradient(var(--backColor), var(--hoverColor));
+}
+
+
+
   .codename {
     margin-top: auto;
     text-align: center;
@@ -49,8 +78,8 @@
     width: 100%;
     height: auto;
 
-    max-height: 72px;
-    max-width: 72px;
+    max-height: 64px;
+    max-width: 64px;
     align-self: center;
   }
 
@@ -88,6 +117,9 @@
     background-color: var(--backColor);
     color: var(--foreColor);
     outline: 1px solid var(--labelColor);
+
+    align-items: stretch;
+    justify-items: stretch;
 
 
     grid-template-areas: "personal-header personal-block picture-block";
@@ -202,6 +234,9 @@
     background-color: var(--backColor);
     color: var(--foreColor);
     outline: 1px solid var(--labelColor);
+    
+    align-items: stretch;
+    justify-items: stretch;
 
 
     .stat-header {

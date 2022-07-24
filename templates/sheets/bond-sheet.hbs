@@ -1,0 +1,22 @@
+<form class="{{cssClass}}" autocomplete="off">
+   
+        
+        <div class="bond-block">
+            <div class="relationship-area">
+                <div class="form-label">{{localize 'dgalt.labels.psychdata.relationship'}}</div>
+                <input class="form-inputbox" type="text" name="data.relationship" {{checked data.data.relationship}} /> 
+            </div>
+            <div class="value-area">
+                <div class="form-label-centered">{{localize 'dgalt.labels.psychdata.value'}}</div>
+                <input class="form-inputbox-centered" name="data.value" type="number" data-dtype="number" value="{{data.data.value}}" />
+            </div>
+            <div class="description-area">
+                <img src="{{item.img}}" data-edit="img" title="{{item.name}}" height="64" width="64" />
+        <h1><input name="name" type="text" value="{{item.name}}" placeholder="{{ localize 'Name' }}" /></h1>
+                {{editor content=data.data.description target="data.description" button=true owner=owner editable=editable}}
+            </div>
+        </div>
+
+
+       
+</form>

@@ -25,6 +25,16 @@
         },
         "labels":
         {
+            "psychdata":{                
+                "bondheader":"BOND",
+                "bondslabel":"11. BONDS",
+                "relationship":"RELATIONSHIP",
+                "value":"SCORE",
+                "description":"DESCRIPTION",
+                "psychheader":"PSYCHOLOGICAL DATA",
+                "mentallabel":"12. MOTIVATIONS AND DISORDERS",
+                "adaptedlabel":"13. INCIDENTS OF SAN LOSS WITHOUT GOING INSANE"
+            },
             "personaldata":{
                 "header":"PERSONAL DATA",
                 "realname":"1. LAST NAME, FIRST NAME, MIDDLE INITIAL",

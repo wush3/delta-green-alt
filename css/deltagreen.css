@@ -3,13 +3,76 @@
   --foreColor: #909090;
   --borderColor: #454545;
   --labelColor: #ffffff;
+  --hoverColor: red;
+  /*
+    --backColor:white;
+    --foreColor:black;
+    --borderColor:#454545;
+    --labelColor:#808080;
+    --hoverColor:red;*/
 }
 .dgalt.sheet.item .form {
   display: flex;
   flex-direction: column;
 }
-.dgalt.sheet.item .sheet-content {
+.dgalt.sheet.item .form .editor {
   height: 100%;
+  flex: auto;
+  color: var(--foreColor);
+}
+.dgalt.sheet.item .vertical-header {
+  writing-mode: vertical-rl;
+  font-size: 12px;
+  padding-top: 10px;
+}
+.dgalt.sheet.item .form-label {
+  font-size: 10px;
+  color: var(--labelColor);
+}
+.dgalt.sheet.item .form-label-centered {
+  font-size: 10px;
+  text-align: center;
+  vertical-align: middle;
+  color: var(--labelColor);
+}
+.dgalt.sheet.item .form-inputbox {
+  color: var(--foreColor);
+  height: 18px;
+}
+.dgalt.sheet.item .form-inputbox-centered {
+  color: var(--foreColor);
+  text-align: center;
+  height: 18px;
+}
+.dgalt.sheet.item .form-button {
+  align-items: center;
+  background-color: initial;
+  background-image: linear-gradient(var(--borderColor), var(--backColor));
+  border-radius: 2px;
+  border-width: 0;
+  box-sizing: border-box;
+  color: var(--labelColor);
+  display: inline-flex;
+  flex-direction: column;
+  font-size: 10px;
+  height: 16px;
+  width: 35px;
+  justify-content: center;
+  margin: 0;
+  outline: none;
+  padding: 0 2px;
+  text-align: center;
+  transition: all 150ms;
+  vertical-align: baseline;
+}
+.dgalt.sheet.item .form-button:hover {
+  color: var(--hoverColor);
+}
+.dgalt.sheet.item .form-button:active {
+  background-image: radial-gradient(var(--backColor), var(--hoverColor));
+}
+.dgalt.sheet.item .sheet-content {
+  height: auto;
   display: flex;
   flex-direction: column;
 }
@@ -19,10 +82,42 @@
   border-radius: 1%;
   margin: 0 0 10px 0px;
 }
-.dgalt.sheet.item .sheet-content .horizontal-input {
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 15px;
+.dgalt.sheet.item .bond-block {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 38px;
+  grid-template-rows: min-content auto;
+  gap: 1px 1px;
+  grid-auto-flow: row;
+  background-color: var(--backColor);
+  color: var(--foreColor);
+  outline: 1px solid var(--labelColor);
+  height: 100%;
+  grid-template-areas: "relationship-area value-area" "description-area description-area";
+}
+.dgalt.sheet.item .relationship-area {
+  grid-area: relationship-area;
+  background-color: var(--backColor);
+  color: var(--foreColor);
+  outline: var(--borderColor) dashed 1px;
+  padding: 2px;
+}
+.dgalt.sheet.item .value-area {
+  grid-area: value-area;
+  background-color: var(--backColor);
+  color: var(--foreColor);
+  outline: var(--borderColor) dashed 1px;
+  padding: 2px;
+}
+.dgalt.sheet.item .description-area {
+  grid-area: description-area;
+  background-color: var(--backColor);
+  color: var(--foreColor);
+  outline: var(--borderColor) dashed 1px;
+  padding: 2px;
+}
+.dgalt.sheet.item .description-area .editor {
+  caret-color: azure;
 }
 .dgalt.sheet.agent .form {
   display: flex;
@@ -32,8 +127,6 @@
   writing-mode: vertical-rl;
   font-size: 12px;
   padding-top: 10px;
-  text-align: center;
-  vertical-align: middle;
 }
 .dgalt.sheet.agent .form-label {
   font-size: 10px;
@@ -54,6 +147,33 @@
   text-align: center;
   height: 18px;
 }
+.dgalt.sheet.agent .form-button {
+  align-items: center;
+  background-color: initial;
+  background-image: linear-gradient(var(--borderColor), var(--backColor));
+  border-radius: 2px;
+  border-width: 0;
+  box-sizing: border-box;
+  color: var(--labelColor);
+  display: inline-flex;
+  flex-direction: column;
+  font-size: 10px;
+  height: 16px;
+  width: 35px;
+  justify-content: center;
+  margin: 0;
+  outline: none;
+  padding: 0 2px;
+  text-align: center;
+  transition: all 150ms;
+  vertical-align: baseline;
+}
+.dgalt.sheet.agent .form-button:hover {
+  color: var(--hoverColor);
+}
+.dgalt.sheet.agent .form-button:active {
+  background-image: radial-gradient(var(--backColor), var(--hoverColor));
+}
 .dgalt.sheet.agent .codename {
   margin-top: auto;
   text-align: center;
@@ -62,8 +182,8 @@
 .dgalt.sheet.agent .photo {
   width: 100%;
   height: auto;
-  max-height: 72px;
-  max-width: 72px;
+  max-height: 64px;
+  max-width: 64px;
   align-self: center;
 }
 .dgalt.sheet.agent .flex-container {
@@ -90,6 +210,8 @@
   background-color: var(--backColor);
   color: var(--foreColor);
   outline: 1px solid var(--labelColor);
+  align-items: stretch;
+  justify-items: stretch;
   grid-template-areas: "personal-header personal-block picture-block";
 }
 .dgalt.sheet.agent .personaldata .personal-header {
@@ -180,6 +302,8 @@
   background-color: var(--backColor);
   color: var(--foreColor);
   outline: 1px solid var(--labelColor);
+  align-items: stretch;
+  justify-items: stretch;
 }
 .dgalt.sheet.agent .statdata .stat-header {
   grid-area: stat-header;
@@ -428,4 +552,10 @@
   grid-area: san-current;
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
+}
+.window-app {
+  height: auto;
+}
+section.window-content {
+  background: url("../assets/img/transparent.png") !important;
 }

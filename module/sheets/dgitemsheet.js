@@ -5,7 +5,7 @@ export default class DgItemSheet extends ItemSheet {
         return mergeObject(super.defaultOptions,
             {
                 width:340,
-                height:400,
+                height:200,
                 classes:["dgalt","sheet","item"]
             });
     }
