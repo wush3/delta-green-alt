@@ -1,0 +1,40 @@
+.bond-card {
+    display: grid;
+    grid-template-columns: 1fr 38px 38px;
+    grid-template-rows: min-content;
+    gap: 1px 1px;
+    grid-auto-flow: row;
+
+    align-items: stretch;
+    justify-items: stretch;
+
+    grid-template-areas:
+        "bond-name bond-score bond-edit";
+
+    background-color: var(--backColor);
+    color: var(--foreColor);
+    outline: 1px dashed var(--borderColor);
+
+    .bond-name {
+        grid-area: bond-name;
+        outline: var(--borderColor) dashed 1px;
+        padding: 2px;
+    }
+    
+    .bond-score {
+        grid-area: bond-score;
+        color: var(--foreColor);
+        text-align: center;
+        height: 18px;
+        padding: 2px;
+    }
+    
+    .bond-edit {
+        grid-area: bond-edit;
+        outline: var(--borderColor) dashed 1px;
+        padding: 2px;
+    }
+
+  
+}
+

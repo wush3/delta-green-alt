@@ -6,6 +6,11 @@ async function preloadHandlebarsTemplates()
 {
     const templatePaths=[
         "systems/delta-green-alt/templates/partials/agent-personal-data-block.hbs",
+        "systems/delta-green-alt/templates/partials/agent-statistics-data-block.hbs",
+        "systems/delta-green-alt/templates/partials/agent-skills-data-block.hbs",
+
+        "systems/delta-green-alt/templates/partials/agent-bond-card.hbs",
+        "systems/delta-green-alt/templates/partials/skill-card.hbs",
     ];
 
     return loadTemplates(templatePaths);
@@ -24,6 +29,16 @@ Hooks.once("init", async function()
         Actors.registerSheet("delta-green-alt",DgAgentSheet);
 
         preloadHandlebarsTemplates();
+
+        Handlebars.registerHelper("times", function(n, content)
+        {
+            let resut="";
+            for(let i=0;i<n;i++)
+            {
+                result+=content.fn(i);
+            }
+            return resut;
+        });
 
     }
 );

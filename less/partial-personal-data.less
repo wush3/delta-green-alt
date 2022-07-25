@@ -1,0 +1,122 @@
+.codename {
+    margin-top: auto;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.photo {
+    width: 100%;
+    height: auto;
+
+    max-height: 64px;
+    max-width: 64px;
+    align-self: center;
+
+}
+
+.personaldata {
+    display: grid;
+    grid-template-columns: min-content 1fr auto;
+    grid-template-rows: min-content;
+    gap: 1px 1px;
+    grid-auto-flow: row;
+    background-color: var(--backColor);
+    color: var(--foreColor);
+    outline: 1px solid var(--labelColor);
+
+    align-items: stretch;
+    justify-items: stretch;
+
+
+    grid-template-areas: "personal-header personal-block picture-block";
+
+    .personal-header {
+        grid-area: personal-header;
+        background-color: var(--foreColor);
+        color: var(--backColor);
+        outline: var(--borderColor) solid 1px;
+        padding: 2px;
+    }
+
+    .personal-block {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: min-content min-content min-content;
+        gap: 1px 1px;
+        grid-auto-flow: row;
+        grid-template-areas:
+            "realname-area realname-area profession-area profession-area"
+            "employer-area employer-area nationality-area nationality-area"
+            "sex-area age-area education-area education-area";
+        grid-area: personal-block;
+        background-color: var(--backColor);
+        color: var(--foreColor);
+        outline: var(--borderColor) dashed 1px;
+
+        .realname-area {
+            grid-area: realname-area;
+            background-color: var(--backColor);
+            color: var(--foreColor);
+            outline: var(--borderColor) dashed 1px;
+            padding: 2px;
+        }
+
+        .profession-area {
+            grid-area: profession-area;
+            background-color: var(--backColor);
+            color: var(--foreColor);
+            outline: var(--borderColor) dashed 1px;
+            padding: 2px;
+        }
+
+        .employer-area {
+            grid-area: employer-area;
+            background-color: var(--backColor);
+            color: var(--foreColor);
+            outline: var(--borderColor) dashed 1px;
+            padding: 2px;
+        }
+
+        .nationality-area {
+            grid-area: nationality-area;
+            background-color: var(--backColor);
+            color: var(--foreColor);
+            outline: var(--borderColor) dashed 1px;
+            padding: 2px;
+        }
+
+        .sex-area {
+            grid-area: sex-area;
+            background-color: var(--backColor);
+            color: var(--foreColor);
+            outline: var(--borderColor) dashed 1px;
+            padding: 2px;
+        }
+
+        .age-area {
+            grid-area: age-area;
+            background-color: var(--backColor);
+            color: var(--foreColor);
+            outline: var(--borderColor) dashed 1px;
+            padding: 2px;
+        }
+
+        .education-area {
+            grid-area: education-area;
+            background-color: var(--backColor);
+            color: var(--foreColor);
+            outline: var(--borderColor) dashed 1px;
+            padding: 2px;
+        }
+    }
+
+    .picture-block {
+        grid-area: picture-block;
+        background-color: var(--backColor);
+        color: var(--foreColor);
+        outline: var(--borderColor) dashed 1px;
+        padding: 2px;
+        display: flex;
+        flex-direction: column;
+    }
+}

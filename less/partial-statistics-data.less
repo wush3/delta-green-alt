@@ -1,0 +1,331 @@
+.statdata {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    grid-template-rows: min-content min-content;
+    gap: 1px 1px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "stat-header stats-block"
+      "stat-header derived-block";
+    background-color: var(--backColor);
+    color: var(--foreColor);
+    outline: 1px solid var(--labelColor);
+
+    align-items: stretch;
+    justify-items: stretch;
+
+
+    .stat-header {
+      grid-area: stat-header;
+      background-color: var(--foreColor);
+      color: var(--backColor);
+      outline: var(--borderColor) solid 1px;
+      padding: 2px;
+    }
+
+    .stats-block {
+      display: grid;
+      grid-template-columns: 0.7fr 38px 38px 1fr;
+      grid-template-rows: min-content min-content min-content min-content min-content min-content min-content;
+      gap: 1px 1px;
+      grid-auto-flow: row;
+      grid-template-areas:
+        "stat-label score-label x5-label feature-label"
+        "str-text str-score str-x5 str-feature"
+        "con-text con-score con-x5 con-feature"
+        "dex-text dex-score dex-x5 dex-feature"
+        "int-text int-score int-x5 int-feature"
+        "pow-text pow-score pow-x5 pow-feature"
+        "cha-text cha-score cha-x5 cha-feature";
+      grid-area: stats-block;
+      background-color: var(--backColor);
+      color: var(--foreColor);
+      outline: var(--borderColor) dashed 1px;
+
+
+
+
+      .stat-label {
+        grid-area: stat-label;
+        outline: var(--borderColor) dashed 1px;
+        padding: 2px;
+        justify-content: center;
+        align-content: center;
+      }
+
+      .score-label {
+        grid-area: score-label;
+        outline: var(--borderColor) dashed 1px;
+        padding: 2px;
+      }
+
+      .x5-label {
+        grid-area: x5-label;
+        outline: var(--borderColor) dashed 1px;
+        padding: 2px;
+      }
+
+      .feature-label {
+        grid-area: feature-label;
+        outline: var(--borderColor) dashed 1px;
+        padding: 2px;
+      }
+
+      .str-text {
+        grid-area: str-text;
+        outline: var(--borderColor) dashed 1px;
+        padding: 2px;
+      }
+
+      .str-score {
+        grid-area: str-score;
+        outline: var(--borderColor) dashed 1px;
+        padding: 2px;
+      }
+
+      .str-x5 {
+        grid-area: str-x5;
+        outline: var(--borderColor) dashed 1px;
+        padding: 2px;
+      }
+
+      .str-feature {
+        grid-area: str-feature;
+        outline: var(--borderColor) dashed 1px;
+        padding: 2px;
+      }
+
+      .con-text {
+        grid-area: con-text;
+        outline: var(--borderColor) dashed 1px;
+        padding: 2px;
+      }
+
+      .con-score {
+        grid-area: con-score;
+        outline: var(--borderColor) dashed 1px;
+        padding: 2px;
+      }
+
+      .con-x5 {
+        grid-area: con-x5;
+        outline: var(--borderColor) dashed 1px;
+        padding: 2px;
+      }
+
+      .con-feature {
+        grid-area: con-feature;
+        outline: var(--borderColor) dashed 1px;
+        padding: 2px;
+      }
+
+      .dex-text {
+        grid-area: dex-text;
+        outline: var(--borderColor) dashed 1px;
+        padding: 2px;
+      }
+
+      .dex-score {
+        grid-area: dex-score;
+        outline: var(--borderColor) dashed 1px;
+        padding: 2px;
+      }
+
+      .dex-x5 {
+        grid-area: dex-x5;
+        outline: var(--borderColor) dashed 1px;
+        padding: 2px;
+      }
+
+      .dex-feature {
+        grid-area: dex-feature;
+        outline: var(--borderColor) dashed 1px;
+        padding: 2px;
+      }
+
+      .int-text {
+        grid-area: int-text;
+        outline: var(--borderColor) dashed 1px;
+        padding: 2px;
+      }
+
+      .int-score {
+        grid-area: int-score;
+        outline: var(--borderColor) dashed 1px;
+        padding: 2px;
+      }
+
+      .int-x5 {
+        grid-area: int-x5;
+        outline: var(--borderColor) dashed 1px;
+        padding: 2px;
+      }
+
+      .int-feature {
+        grid-area: int-feature;
+        outline: var(--borderColor) dashed 1px;
+        padding: 2px;
+      }
+
+      .pow-text {
+        grid-area: pow-text;
+        outline: var(--borderColor) dashed 1px;
+        padding: 2px;
+      }
+
+      .pow-score {
+        grid-area: pow-score;
+        outline: var(--borderColor) dashed 1px;
+        padding: 2px;
+      }
+
+      .pow-x5 {
+        grid-area: pow-x5;
+        outline: var(--borderColor) dashed 1px;
+        padding: 2px;
+      }
+
+      .pow-feature {
+        grid-area: pow-feature;
+        outline: var(--borderColor) dashed 1px;
+        padding: 2px;
+      }
+
+      .cha-text {
+        grid-area: cha-text;
+        outline: var(--borderColor) dashed 1px;
+        padding: 2px;
+      }
+
+      .cha-score {
+        grid-area: cha-score;
+        outline: var(--borderColor) dashed 1px;
+        padding: 2px;
+      }
+
+      .cha-x5 {
+        grid-area: cha-x5;
+        outline: var(--borderColor) dashed 1px;
+        padding: 2px;
+      }
+
+      .cha-feature {
+        grid-area: cha-feature;
+        outline: var(--borderColor) dashed 1px;
+        padding: 2px;
+      }
+    }
+
+
+
+    .derived-block {
+      display: grid;
+      grid-template-columns: 1fr 38px 38px;
+      grid-template-rows: min-content min-content min-content min-content min-content;
+      gap: 1px 1px;
+      grid-auto-flow: row;
+      grid-template-areas:
+        "derived-label max-label current-label"
+        "hp-text hp-max hp-current"
+        "wp-text wp-max wp-current"
+        "break-text break-reset break-current"
+        "san-text san-max san-current";
+      grid-area: derived-block;
+      background-color: var(--backColor);
+      color: var(--foreColor);
+      outline: var(--borderColor) dashed 1px;
+
+      .derived-label {
+        grid-area: derived-label;
+        outline: var(--borderColor) dashed 1px;
+        padding: 2px;
+      }
+
+      .max-label {
+        grid-area: max-label;
+        outline: var(--borderColor) dashed 1px;
+        padding: 2px;
+      }
+
+      .current-label {
+        grid-area: current-label;
+        outline: var(--borderColor) dashed 1px;
+        padding: 2px;
+      }
+
+      .hp-text {
+        grid-area: hp-text;
+        outline: var(--borderColor) dashed 1px;
+        padding: 2px;
+      }
+
+      .hp-max {
+        grid-area: hp-max;
+        outline: var(--borderColor) dashed 1px;
+        padding: 2px;
+      }
+
+      .hp-current {
+        grid-area: hp-current;
+        outline: var(--borderColor) dashed 1px;
+        padding: 2px;
+      }
+
+      .wp-text {
+        grid-area: wp-text;
+        outline: var(--borderColor) dashed 1px;
+        padding: 2px;
+      }
+
+      .wp-max {
+        grid-area: wp-max;
+        outline: var(--borderColor) dashed 1px;
+        padding: 2px;
+      }
+
+      .wp-current {
+        grid-area: wp-current;
+        outline: var(--borderColor) dashed 1px;
+        padding: 2px;
+      }
+
+      .break-text {
+        grid-area: break-text;
+        outline: var(--borderColor) dashed 1px;
+        padding: 2px;
+      }
+
+      .break-reset {
+        grid-area: break-reset;
+        outline: var(--borderColor) dashed 1px;
+        padding: 2px;
+      }
+
+      .break-current {
+        grid-area: break-current;
+        outline: var(--borderColor) dashed 1px;
+        padding: 2px;
+      }
+
+      .san-text {
+        grid-area: san-text;
+        outline: var(--borderColor) dashed 1px;
+        padding: 2px;
+      }
+
+      .san-max {
+        grid-area: san-max;
+        outline: var(--borderColor) dashed 1px;
+        padding: 2px;
+      }
+
+      .san-current {
+        grid-area: san-current;
+        outline: var(--borderColor) dashed 1px;
+        padding: 2px;
+      }
+    }
+
+
+
+  }

@@ -1,0 +1,122 @@
+.skilldata {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    grid-template-rows: 1fr;
+    gap: 1px 1px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "skills-header skills-block";
+
+    background-color: var(--backColor);
+    color: var(--foreColor);
+    outline: 1px solid var(--labelColor);
+
+    height: 100%;
+
+
+
+
+    .skills-header {
+        grid-area: skills-header;
+        background-color: var(--foreColor);
+        color: var(--backColor);
+        outline: var(--borderColor) solid 1px;
+        padding: 2px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .skills-block {
+        grid-area: skills-block;
+        background-color: var(--backColor);
+        color: var(--foreColor);
+        outline: var(--borderColor) dashed 1px;
+        
+    }
+
+}
+
+
+
+.item-list {    
+    display: flex !important;
+    flex-direction: column !important;
+    flex-wrap: wrap !important;
+    width: auto;
+
+    height: 300px;
+    margin: 0px;
+    padding: 0px;
+    justify-content:start;
+    align-content:flex-start;
+
+    
+}
+
+.itemV2 {
+    border: 1px dashed var(--borderColor);
+    display: grid;
+    font-size: .75rem;
+    grid-template-columns: 1rem auto 2rem 1.5rem;
+    margin-right: .2rem;
+    max-height: 1.25rem;
+    width: 200px;
+
+    .item-image {
+        background-size: contain;
+        height: .875rem;
+        margin: 1px 0 0;
+    }
+
+    .item-name {
+        color: var(--foreColor);
+        line-height: 1rem;
+        overflow: hidden;
+        padding: 2px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        input {
+            background-color:var(--borderColor);
+            color: var(--labelColor);
+            height: 1rem;
+            overflow: visible;
+            padding: 0;
+        }
+    }
+
+    .item-score {
+        color: var(--foreColor);
+        line-height: 1rem;
+        margin: 2px;
+        text-align: center;
+
+        input {
+            background-color: rgba(0, 0, 0, .1);
+            color: var(--foreColor);
+            height: 1rem;                  
+            text-align: center;
+        }
+    }
+
+    .item-controls {
+        margin: 2px 2px 2px 2px;
+        display: block;
+        flex: 0 0 1.25rem;
+        font-size: .625rem;
+        line-height: 1rem;
+        text-align: end;
+        width: max-content;
+
+        a {
+            &:hover {
+                color: red;
+                text-shadow: none;
+            }
+        }
+
+        .item-control.active {
+            color: #daa520;
+        }
+    }
+}

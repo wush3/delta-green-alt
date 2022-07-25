@@ -174,34 +174,70 @@
 .dgalt.sheet.agent .form-button:active {
   background-image: radial-gradient(var(--backColor), var(--hoverColor));
 }
-.dgalt.sheet.agent .codename {
+.dgalt.sheet.agent .form-text {
+  outline: var(--borderColor) dashed 1px;
+  padding: 2px;
+}
+.dgalt.sheet.agent .bond-list {
+  background-color: var(--backColor);
+  color: var(--foreColor);
+  outline: 1px solid var(--labelColor);
+  height: 100%;
+}
+.dgalt.sheet.agent .skill-list2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-items: center;
+  width: 100%;
+  height: 300px;
+  overflow: auto;
+  flex-direction: column;
+}
+.dgalt.sheet.agent .skill-item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+  width: 33%;
+  height: min-content;
+  overflow: auto;
+  flex-direction: column;
+}
+.dgalt.sheet.agent .container {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: min-content min-content 1fr;
+  gap: 5px 5px;
+  grid-auto-flow: row;
+  grid-template-areas: "personal-data-area personal-data-area" "statistics-data-area mental-data-area" "skill-data-area skill-data-area";
+}
+.dgalt.sheet.agent .personal-data-area {
+  grid-area: personal-data-area;
+}
+.dgalt.sheet.agent .statistics-data-area {
+  grid-area: statistics-data-area;
+}
+.dgalt.sheet.agent .mental-data-area {
+  grid-area: mental-data-area;
+}
+.dgalt.sheet.agent .skill-data-area {
+  grid-area: skill-data-area;
+}
+.codename {
   margin-top: auto;
   text-align: center;
   vertical-align: middle;
 }
-.dgalt.sheet.agent .photo {
+.photo {
   width: 100%;
   height: auto;
   max-height: 64px;
   max-width: 64px;
   align-self: center;
 }
-.dgalt.sheet.agent .flex-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
-  align-items: stretch;
-  align-content: normal;
-}
-.dgalt.sheet.agent .flex-item {
-  display: block;
-  flex-grow: 0;
-  flex-shrink: 1;
-  flex-basis: auto;
-  align-self: auto;
-}
-.dgalt.sheet.agent .personaldata {
+.personaldata {
   display: grid;
   grid-template-columns: min-content 1fr auto;
   grid-template-rows: min-content;
@@ -214,14 +250,14 @@
   justify-items: stretch;
   grid-template-areas: "personal-header personal-block picture-block";
 }
-.dgalt.sheet.agent .personaldata .personal-header {
+.personaldata .personal-header {
   grid-area: personal-header;
   background-color: var(--foreColor);
   color: var(--backColor);
   outline: var(--borderColor) solid 1px;
   padding: 2px;
 }
-.dgalt.sheet.agent .personaldata .personal-block {
+.personaldata .personal-block {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: min-content min-content min-content;
@@ -233,56 +269,56 @@
   color: var(--foreColor);
   outline: var(--borderColor) dashed 1px;
 }
-.dgalt.sheet.agent .personaldata .personal-block .realname-area {
+.personaldata .personal-block .realname-area {
   grid-area: realname-area;
   background-color: var(--backColor);
   color: var(--foreColor);
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }
-.dgalt.sheet.agent .personaldata .personal-block .profession-area {
+.personaldata .personal-block .profession-area {
   grid-area: profession-area;
   background-color: var(--backColor);
   color: var(--foreColor);
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }
-.dgalt.sheet.agent .personaldata .personal-block .employer-area {
+.personaldata .personal-block .employer-area {
   grid-area: employer-area;
   background-color: var(--backColor);
   color: var(--foreColor);
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }
-.dgalt.sheet.agent .personaldata .personal-block .nationality-area {
+.personaldata .personal-block .nationality-area {
   grid-area: nationality-area;
   background-color: var(--backColor);
   color: var(--foreColor);
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }
-.dgalt.sheet.agent .personaldata .personal-block .sex-area {
+.personaldata .personal-block .sex-area {
   grid-area: sex-area;
   background-color: var(--backColor);
   color: var(--foreColor);
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }
-.dgalt.sheet.agent .personaldata .personal-block .age-area {
+.personaldata .personal-block .age-area {
   grid-area: age-area;
   background-color: var(--backColor);
   color: var(--foreColor);
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }
-.dgalt.sheet.agent .personaldata .personal-block .education-area {
+.personaldata .personal-block .education-area {
   grid-area: education-area;
   background-color: var(--backColor);
   color: var(--foreColor);
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }
-.dgalt.sheet.agent .personaldata .picture-block {
+.personaldata .picture-block {
   grid-area: picture-block;
   background-color: var(--backColor);
   color: var(--foreColor);
@@ -291,8 +327,7 @@
   display: flex;
   flex-direction: column;
 }
-.dgalt.sheet.agent .statdata {
-  margin-top: 5px;
+.statdata {
   display: grid;
   grid-template-columns: min-content 1fr;
   grid-template-rows: min-content min-content;
@@ -305,14 +340,14 @@
   align-items: stretch;
   justify-items: stretch;
 }
-.dgalt.sheet.agent .statdata .stat-header {
+.statdata .stat-header {
   grid-area: stat-header;
   background-color: var(--foreColor);
   color: var(--backColor);
   outline: var(--borderColor) solid 1px;
   padding: 2px;
 }
-.dgalt.sheet.agent .statdata .stats-block {
+.statdata .stats-block {
   display: grid;
   grid-template-columns: 0.7fr 38px 38px 1fr;
   grid-template-rows: min-content min-content min-content min-content min-content min-content min-content;
@@ -324,149 +359,149 @@
   color: var(--foreColor);
   outline: var(--borderColor) dashed 1px;
 }
-.dgalt.sheet.agent .statdata .stats-block .stat-label {
+.statdata .stats-block .stat-label {
   grid-area: stat-label;
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
   justify-content: center;
   align-content: center;
 }
-.dgalt.sheet.agent .statdata .stats-block .score-label {
+.statdata .stats-block .score-label {
   grid-area: score-label;
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }
-.dgalt.sheet.agent .statdata .stats-block .x5-label {
+.statdata .stats-block .x5-label {
   grid-area: x5-label;
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }
-.dgalt.sheet.agent .statdata .stats-block .feature-label {
+.statdata .stats-block .feature-label {
   grid-area: feature-label;
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }
-.dgalt.sheet.agent .statdata .stats-block .str-text {
+.statdata .stats-block .str-text {
   grid-area: str-text;
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }
-.dgalt.sheet.agent .statdata .stats-block .str-score {
+.statdata .stats-block .str-score {
   grid-area: str-score;
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }
-.dgalt.sheet.agent .statdata .stats-block .str-x5 {
+.statdata .stats-block .str-x5 {
   grid-area: str-x5;
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }
-.dgalt.sheet.agent .statdata .stats-block .str-feature {
+.statdata .stats-block .str-feature {
   grid-area: str-feature;
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }
-.dgalt.sheet.agent .statdata .stats-block .con-text {
+.statdata .stats-block .con-text {
   grid-area: con-text;
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }
-.dgalt.sheet.agent .statdata .stats-block .con-score {
+.statdata .stats-block .con-score {
   grid-area: con-score;
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }
-.dgalt.sheet.agent .statdata .stats-block .con-x5 {
+.statdata .stats-block .con-x5 {
   grid-area: con-x5;
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }
-.dgalt.sheet.agent .statdata .stats-block .con-feature {
+.statdata .stats-block .con-feature {
   grid-area: con-feature;
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }
-.dgalt.sheet.agent .statdata .stats-block .dex-text {
+.statdata .stats-block .dex-text {
   grid-area: dex-text;
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }
-.dgalt.sheet.agent .statdata .stats-block .dex-score {
+.statdata .stats-block .dex-score {
   grid-area: dex-score;
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }
-.dgalt.sheet.agent .statdata .stats-block .dex-x5 {
+.statdata .stats-block .dex-x5 {
   grid-area: dex-x5;
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }
-.dgalt.sheet.agent .statdata .stats-block .dex-feature {
+.statdata .stats-block .dex-feature {
   grid-area: dex-feature;
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }
-.dgalt.sheet.agent .statdata .stats-block .int-text {
+.statdata .stats-block .int-text {
   grid-area: int-text;
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }
-.dgalt.sheet.agent .statdata .stats-block .int-score {
+.statdata .stats-block .int-score {
   grid-area: int-score;
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }
-.dgalt.sheet.agent .statdata .stats-block .int-x5 {
+.statdata .stats-block .int-x5 {
   grid-area: int-x5;
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }
-.dgalt.sheet.agent .statdata .stats-block .int-feature {
+.statdata .stats-block .int-feature {
   grid-area: int-feature;
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }
-.dgalt.sheet.agent .statdata .stats-block .pow-text {
+.statdata .stats-block .pow-text {
   grid-area: pow-text;
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }
-.dgalt.sheet.agent .statdata .stats-block .pow-score {
+.statdata .stats-block .pow-score {
   grid-area: pow-score;
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }
-.dgalt.sheet.agent .statdata .stats-block .pow-x5 {
+.statdata .stats-block .pow-x5 {
   grid-area: pow-x5;
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }
-.dgalt.sheet.agent .statdata .stats-block .pow-feature {
+.statdata .stats-block .pow-feature {
   grid-area: pow-feature;
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }
-.dgalt.sheet.agent .statdata .stats-block .cha-text {
+.statdata .stats-block .cha-text {
   grid-area: cha-text;
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }
-.dgalt.sheet.agent .statdata .stats-block .cha-score {
+.statdata .stats-block .cha-score {
   grid-area: cha-score;
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }
-.dgalt.sheet.agent .statdata .stats-block .cha-x5 {
+.statdata .stats-block .cha-x5 {
   grid-area: cha-x5;
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }
-.dgalt.sheet.agent .statdata .stats-block .cha-feature {
+.statdata .stats-block .cha-feature {
   grid-area: cha-feature;
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }
-.dgalt.sheet.agent .statdata .derived-block {
+.statdata .derived-block {
   display: grid;
   grid-template-columns: 1fr 38px 38px;
   grid-template-rows: min-content min-content min-content min-content min-content;
@@ -478,78 +513,233 @@
   color: var(--foreColor);
   outline: var(--borderColor) dashed 1px;
 }
-.dgalt.sheet.agent .statdata .derived-block .derived-label {
+.statdata .derived-block .derived-label {
   grid-area: derived-label;
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }
-.dgalt.sheet.agent .statdata .derived-block .max-label {
+.statdata .derived-block .max-label {
   grid-area: max-label;
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }
-.dgalt.sheet.agent .statdata .derived-block .current-label {
+.statdata .derived-block .current-label {
   grid-area: current-label;
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }
-.dgalt.sheet.agent .statdata .derived-block .hp-text {
+.statdata .derived-block .hp-text {
   grid-area: hp-text;
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }
-.dgalt.sheet.agent .statdata .derived-block .hp-max {
+.statdata .derived-block .hp-max {
   grid-area: hp-max;
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }
-.dgalt.sheet.agent .statdata .derived-block .hp-current {
+.statdata .derived-block .hp-current {
   grid-area: hp-current;
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }
-.dgalt.sheet.agent .statdata .derived-block .wp-text {
+.statdata .derived-block .wp-text {
   grid-area: wp-text;
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }
-.dgalt.sheet.agent .statdata .derived-block .wp-max {
+.statdata .derived-block .wp-max {
   grid-area: wp-max;
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }
-.dgalt.sheet.agent .statdata .derived-block .wp-current {
+.statdata .derived-block .wp-current {
   grid-area: wp-current;
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }
-.dgalt.sheet.agent .statdata .derived-block .break-text {
+.statdata .derived-block .break-text {
   grid-area: break-text;
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }
-.dgalt.sheet.agent .statdata .derived-block .break-reset {
+.statdata .derived-block .break-reset {
   grid-area: break-reset;
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }
-.dgalt.sheet.agent .statdata .derived-block .break-current {
+.statdata .derived-block .break-current {
   grid-area: break-current;
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }
-.dgalt.sheet.agent .statdata .derived-block .san-text {
+.statdata .derived-block .san-text {
   grid-area: san-text;
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }
-.dgalt.sheet.agent .statdata .derived-block .san-max {
+.statdata .derived-block .san-max {
   grid-area: san-max;
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }
-.dgalt.sheet.agent .statdata .derived-block .san-current {
+.statdata .derived-block .san-current {
   grid-area: san-current;
+  outline: var(--borderColor) dashed 1px;
+  padding: 2px;
+}
+.skilldata {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-template-rows: 1fr;
+  gap: 1px 1px;
+  grid-auto-flow: row;
+  grid-template-areas: "skills-header skills-block";
+  background-color: var(--backColor);
+  color: var(--foreColor);
+  outline: 1px solid var(--labelColor);
+  height: 100%;
+}
+.skilldata .skills-header {
+  grid-area: skills-header;
+  background-color: var(--foreColor);
+  color: var(--backColor);
+  outline: var(--borderColor) solid 1px;
+  padding: 2px;
+  display: flex;
+  flex-direction: column;
+}
+.skilldata .skills-block {
+  grid-area: skills-block;
+  background-color: var(--backColor);
+  color: var(--foreColor);
+  outline: var(--borderColor) dashed 1px;
+}
+.item-list {
+  display: flex !important;
+  flex-direction: column !important;
+  flex-wrap: wrap !important;
+  width: auto;
+  height: 300px;
+  margin: 0px;
+  padding: 0px;
+  justify-content: start;
+  align-content: flex-start;
+}
+.itemV2 {
+  border: 1px dashed var(--borderColor);
+  display: grid;
+  font-size: 0.75rem;
+  grid-template-columns: 1rem auto 2rem 1.5rem;
+  margin-right: 0.2rem;
+  max-height: 1.25rem;
+  width: 200px;
+}
+.itemV2 .item-image {
+  background-size: contain;
+  height: 0.875rem;
+  margin: 1px 0 0;
+}
+.itemV2 .item-name {
+  color: var(--foreColor);
+  line-height: 1rem;
+  overflow: hidden;
+  padding: 2px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.itemV2 .item-name input {
+  background-color: var(--borderColor);
+  color: var(--labelColor);
+  height: 1rem;
+  overflow: visible;
+  padding: 0;
+}
+.itemV2 .item-score {
+  color: var(--foreColor);
+  line-height: 1rem;
+  margin: 2px;
+  text-align: center;
+}
+.itemV2 .item-score input {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: var(--foreColor);
+  height: 1rem;
+  text-align: center;
+}
+.itemV2 .item-controls {
+  margin: 2px 2px 2px 2px;
+  display: block;
+  flex: 0 0 1.25rem;
+  font-size: 0.625rem;
+  line-height: 1rem;
+  text-align: end;
+  width: max-content;
+}
+.itemV2 .item-controls a:hover {
+  color: red;
+  text-shadow: none;
+}
+.itemV2 .item-controls .item-control.active {
+  color: #daa520;
+}
+.bond-card {
+  display: grid;
+  grid-template-columns: 1fr 38px 38px;
+  grid-template-rows: min-content;
+  gap: 1px 1px;
+  grid-auto-flow: row;
+  align-items: stretch;
+  justify-items: stretch;
+  grid-template-areas: "bond-name bond-score bond-edit";
+  background-color: var(--backColor);
+  color: var(--foreColor);
+  outline: 1px dashed var(--borderColor);
+}
+.bond-card .bond-name {
+  grid-area: bond-name;
+  outline: var(--borderColor) dashed 1px;
+  padding: 2px;
+}
+.bond-card .bond-score {
+  grid-area: bond-score;
+  color: var(--foreColor);
+  text-align: center;
+  height: 18px;
+  padding: 2px;
+}
+.bond-card .bond-edit {
+  grid-area: bond-edit;
+  outline: var(--borderColor) dashed 1px;
+  padding: 2px;
+}
+.skill-card {
+  display: grid;
+  grid-template-columns: 1fr 38px 38px;
+  grid-template-rows: min-content;
+  gap: 1px 1px;
+  grid-auto-flow: row;
+  align-items: stretch;
+  justify-items: stretch;
+  grid-template-areas: "skill-name skill-score skill-edit";
+  background-color: var(--backColor);
+  color: var(--foreColor);
+  outline: 1px dashed var(--borderColor);
+}
+.skill-card .skill-name {
+  grid-area: skill-name;
+  outline: var(--borderColor) dashed 1px;
+  padding: 2px;
+}
+.skill-card .skill-score {
+  grid-area: skill-score;
+  color: var(--foreColor);
+  text-align: center;
+  height: 18px;
+  padding: 2px;
+}
+.skill-card .skill-edit {
+  grid-area: skill-edit;
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }

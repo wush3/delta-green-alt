@@ -1,3 +1,55 @@
 <section>
-    
+    <div class="personaldata">
+            <div class="personal-header">
+
+                <div class="vertical-header">
+                    {{localize 'dgalt.labels.personaldata.header'}}
+                </div>
+
+            </div>
+            <div class="personal-block">
+                <div class="realname-area">
+                    <div class="form-label">{{localize 'dgalt.labels.personaldata.realname'}}</div>
+                    <input class="form-inputbox" name="data.personal.realname" type="text"
+                        value="{{actor.data.data.personal.realname}}" />
+                </div>
+                <div class="profession-area">
+                    <div class="form-label">{{localize 'dgalt.labels.personaldata.profession'}}</div>
+                    <input class="form-inputbox" name="data.personal.profession" type="text"
+                        value="{{actor.data.data.personal.profession}}" />
+                </div>
+                <div class="employer-area">
+                    <div class="form-label">{{localize 'dgalt.labels.personaldata.employer'}}</div>
+                    <input class="form-inputbox" name="data.personal.employer" type="text"
+                        value="{{actor.data.data.personal.employer}}" />
+                </div>
+                <div class="nationality-area">
+                    <div class="form-label">{{localize 'dgalt.labels.personaldata.nationality'}}</div>
+                    <input class="form-inputbox" name="data.personal.nationality" type="text"
+                        value="{{actor.data.data.personal.nationality}}" />
+                </div>
+                <div class="sex-area">
+                    <div class="form-label">{{localize 'dgalt.labels.personaldata.sex'}}</div>
+                    <input class="form-inputbox" name="data.personal.sex" type="text"
+                        value="{{actor.data.data.personal.sex}}" />
+                </div>
+                <div class="age-area">
+                    <div class="form-label">{{localize 'dgalt.labels.personaldata.age'}}</div>
+                    <input class="form-inputbox" name="data.personal.age" type="text"
+                        value="{{actor.data.data.personal.age}}" />
+                </div>
+                <div class="education-area">
+                    <div class="form-label">{{localize 'dgalt.labels.personaldata.education'}}</div>
+                    <input class="form-inputbox" name="data.personal.education" type="text"
+                        value="{{actor.data.data.personal.education}}" />
+                </div>
+            </div>
+            <div class="picture-block">
+                <img class="photo" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" />
+                <div class="codename">
+                    <div class="form-label" for="codename">{{localize 'dgalt.labels.personaldata.codename'}}</div>
+                    <input class="form-inputbox" id="codename" name="name" type="text" value="{{actor.name}}" />
+                </div>
+            </div>
+        </div>    
 </section>

@@ -2,6 +2,10 @@
     "Name":"Name",
 
     "dgalt":{
+        "sheet":
+        {
+            "newItem":"New Item"
+        },
         "attackskills":
         {
             "none":"",
@@ -64,6 +68,9 @@
                 "wplabel":"Willpower Points(WP)",
                 "sanlabel":"Sanity Points (SAN)",
                 "breaklabel":"Breaking Point (BP)"
+            },
+            "skilldata":{
+                "header":"APPLICABLE SKILL SETS"
             }
         }
 
