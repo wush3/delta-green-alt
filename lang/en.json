@@ -1,78 +1,81 @@
 {
-    "Name":"Name",
-
-    "dgalt":{
-        "sheet":
-        {
-            "newItem":"New Item"
+    "Name": "Name",
+    "dgalt": {
+        "sheet": {
+            "newItem": "*New Item*"
         },
-        "attackskills":
-        {
-            "none":"",
-            "unarmedcombat":"Unarmed Combat",
-            "meleeweapons":"Melee Weapons",
-            "dextimesfive":"DEX x 5",
-            "athletics":"Athletics",
-            "firearms":"Firearms",
-            "heavyweapons":"Heavy Weapons",
+        "attackskills": {
+            "none": "",
+            "unarmedcombat": "Unarmed Combat",
+            "meleeweapons": "Melee Weapons",
+            "dextimesfive": "DEX x 5",
+            "athletics": "Athletics",
+            "firearms": "Firearms",
+            "heavyweapons": "Heavy Weapons",
             "demolitions": "Demolitions",
-            "artillery":"Artillery"
-
+            "artillery": "Artillery"
         },
-        "skills":
-        {
-            "description":"Description",
-            "canimprove":"Can Improve",
-            "failcheck":"Check Failed",
-            "base":"Base",
-            "value":"Value"           
-        },
-        "labels":
-        {
-            "psychdata":{                
-                "bondheader":"BOND",
-                "bondslabel":"11. BONDS",
-                "relationship":"RELATIONSHIP",
-                "value":"SCORE",
-                "description":"DESCRIPTION",
-                "psychheader":"PSYCHOLOGICAL DATA",
-                "mentallabel":"12. MOTIVATIONS AND DISORDERS",
-                "adaptedlabel":"13. INCIDENTS OF SAN LOSS WITHOUT GOING INSANE"
+        "labels": {
+            "psychdata": {
+                "bondheader": "BOND",
+                "bondslabel": "11. BONDS",
+                "relationship": "RELATIONSHIP",
+                "value": "SCORE",
+                "description": "DESCRIPTION",
+                "psychheader": "PSYCHOLOGICAL DATA",
+                "mentallabel": "12. MOTIVATIONS AND DISORDERS",
+                "adaptedlabel": "13. INCIDENTS OF SAN LOSS WITHOUT GOING INSANE"
             },
-            "personaldata":{
-                "header":"PERSONAL DATA",
-                "realname":"1. LAST NAME, FIRST NAME, MIDDLE INITIAL",
-                "profession":"2. PROFESSION (RANK IF APPLICABLE)",
-                "employer":"3. EMPLOYER",
-                "nationality":"4. NATIONALITY",
-                "sex":"5. SEX",
-                "age":"6. AGE AND D.O.B",
-                "education":"7. EDUCATION AND OCCUPATIONAL HISTORY",
-                "codename":"CODENAME:"
+            "personaldata": {
+                "header": "PERSONAL DATA",
+                "realname": "1. LAST NAME, FIRST NAME, MIDDLE INITIAL",
+                "profession": "2. PROFESSION (RANK IF APPLICABLE)",
+                "employer": "3. EMPLOYER",
+                "nationality": "4. NATIONALITY",
+                "sex": "5. SEX",
+                "age": "6. AGE AND D.O.B",
+                "education": "7. EDUCATION AND OCCUPATIONAL HISTORY",
+                "codename": "CODENAME:"
             },
-            "statdata":{
-                "header":"STATISTICAL DATA",
-                "statlabel":"8. STATISTICS",
-                "scorelabel":"SCORE",                
-                "featurelabel":"FEATURE",
-                "strtxt":"(STR)ength",
-                "contxt":"(CON)stitution",
-                "dextxt":"(DEX)terity",
-                "inttxt":"(INT)elligence",
-                "powtxt":"(POW)er",
-                "chatxt":"(CHA)risma",
-                "derivedlabel":"9. DERIVED ATTRIBUTES",
-                "maxlabel":"MAX",
-                "currentlabel":"CURR.",
-                "hplabel":"Hit Points (HP)",
-                "wplabel":"Willpower Points(WP)",
-                "sanlabel":"Sanity Points (SAN)",
-                "breaklabel":"Breaking Point (BP)"
+            "statdata": {
+                "header": "STATISTICAL DATA",
+                "statlabel": "8. STATISTICS",
+                "scorelabel": "SCORE",
+                "featurelabel": "FEATURE",
+                "strtxt": "[STR]ength",
+                "contxt": "[CON]stitution",
+                "dextxt": "[DEX]terity",
+                "inttxt": "[INT]elligence",
+                "powtxt": "[POW]er",
+                "chatxt": "[CHA]risma",
+                "derivedlabel": "9. DERIVED ATTRIBUTES",
+                "maxlabel": "MAX",
+                "currentlabel": "CURR.",
+                "hplabel": "Hit Points [HP]",
+                "wplabel": "Willpower Points [WP]",
+                "sanlabel": "Sanity Points [SAN]",
+                "breaklabel": "Breaking Point [BP]"
             },
-            "skilldata":{
-                "header":"APPLICABLE SKILL SETS"
+            "skilldata": {
+                "header": "APPLICABLE SKILL SETS"
+            },
+            "skillsheet": {
+                "header":"SKILL",
+                "description": "Description",
+                "canimprove": "Can Improve",
+                "failcheck": "Check Failed",
+                "base": "Base",
+                "value": "Value"
+            },
+            "bondsheet":{
+                "header":"BOND"
+            },
+            "contextmenu":{
+                "edit":"EDIT",
+                "delete":"DELETE"
             }
-        }
 
+
+        }
     }
 }

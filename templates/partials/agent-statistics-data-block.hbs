@@ -72,7 +72,10 @@
                         <div class="form-label-centered">{{localize 'dgalt.labels.statdata.currentlabel'}}</div>
                     </div>
                     <div class="hp-text">
-                        {{localize 'dgalt.labels.statdata.hplabel'}}
+                        <div>{{localize 'dgalt.labels.statdata.hplabel'}}</div>                       
+                        <div><i class="fas fa-shield-alt"></i>
+                        <input class="form-inputbox-number" name="data.armor" type="number" value="{{actor.data.data.armor}}" data-dtype="Number" />
+                        </div>
                     </div>
                     <div class="hp-max">
                         <input class="form-inputbox-centered" name="data.health.max"

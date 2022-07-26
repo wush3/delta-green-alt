@@ -3,11 +3,7 @@
         display: flex;
         flex-direction: column;
 
-        .editor {                                    
-            height: 100%;    
-            flex: auto;
-            color: var(--foreColor);
-        }   
+
     }
 
     .vertical-header {
@@ -42,6 +38,13 @@
         height: 18px;
     }
 
+    .form-inputbox-number {
+        color: var(--foreColor);
+        text-align: center;
+        height: 18px;
+        width: 32px;
+    }
+
 
     .form-button {
         align-items: center;
@@ -74,73 +77,127 @@
         background-image: radial-gradient(var(--backColor), var(--hoverColor));
     }
 
+    .form-text {
+        outline: var(--borderColor) dashed 1px;
+        padding: 2px;
+    }
 
-    .sheet-content {
-        height: auto;
-        display: flex;
-        flex-direction: column;
-
-        .editor {
-            height: 100%;
-            border: 1px solid;
-            border-radius: 1%;
-            margin: 0 0 10px 0px;
-        }        
+    .group-grow-horizontal{
+        width: auto;
+        flex: 1;
     }
 
 
-
-    .bond-block {      
-        position: relative;  
-
+    .container {
         display: grid;
-        grid-template-columns: 1fr 38px;
-        grid-template-rows: min-content auto;
+        grid-template-columns: min-content 1fr;
+        grid-template-rows: min-content min-content 1fr;
         gap: 1px 1px;
         grid-auto-flow: row;
+        grid-template-areas:
+            "item-header item-top"
+            "item-header item-top"
+            "item-header item-description";
         background-color: var(--backColor);
         color: var(--foreColor);
-        outline: 1px solid var(--labelColor);        
-        
+        outline: 1px solid var(--labelColor);
         height: 100%;
 
-        grid-template-areas:
-            "relationship-area value-area"
-            "description-area description-area";
+        .item-header {
+            grid-area: item-header;
+            background-color: var(--foreColor);
+            color: var(--backColor);
+            outline: var(--borderColor) solid 1px;            
+            display: flex;
+            flex-direction: row;
+        }
 
-        
-            
+        .item-description {
+            grid-area: item-description;
+            background-color: var(--backColor);
+            color: var(--foreColor);
+            outline: var(--borderColor) dashed 1px;
+            padding: 4px;
+
+            .editor {
+                height: 90%;
+                border: 1px solid;
+                border-radius: 1%;
+                margin: 0 0 10px 0px;
+                padding: 10px;
+            }
+        }
+
+        .item-top {
+            display: grid;
+            grid-template-columns: min-content 1fr;
+            grid-template-rows: 1fr;
+            gap: 1px 1px;
+            grid-auto-flow: row;
+            grid-template-areas:
+                "item-icon item-main";
+            grid-area: item-top;
+
+            grid-area: item-top;
+            background-color: var(--backColor);
+            color: var(--foreColor);
+            outline: var(--borderColor) dashed 1px;            
+        }
+
+        .item-icon {
+            grid-area: item-icon;      
+            padding: 4px;     
+        }
+
+        .item-main {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: min-content 1fr;
+            gap: 1px 1px;
+            grid-auto-flow: row;
+            grid-template-areas:
+                "item-title"
+                "item-data";
+            grid-area: item-main;
+        }
+
+        .item-title {
+            grid-area: item-title;
+            background-color: var(--backColor);
+            color: var(--foreColor);
+            outline: var(--borderColor) dashed 1px;
+            padding: 4px;
+        }
+
+        .item-data {
+            grid-area: item-data;
+            grid-area: item-data;
+            background-color: var(--backColor);
+            color: var(--foreColor);
+            outline: var(--borderColor) dashed 1px;
+            padding: 4px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
     }
 
-    .relationship-area {
-        grid-area: relationship-area;
-        background-color: var(--backColor);
-        color: var(--foreColor);
-        outline: var(--borderColor) dashed 1px;
-        padding: 2px;
+    .item-icon{
+        min-width: 64px;
+        min-height: 64px;
+        width: auto;
+        height: fit-content;
     }
 
-    .value-area {
-        grid-area: value-area;
-        background-color: var(--backColor);
-        color: var(--foreColor);
-        outline: var(--borderColor) dashed 1px;
-        padding: 2px;
-    }
 
-    .description-area {
-        grid-area: description-area;
-        background-color: var(--backColor);
-        color: var(--foreColor);
-        outline: var(--borderColor) dashed 1px;
-        padding: 2px;
 
-       
+    
 
-        .editor {                                   
-            caret-color: azure;
-        }   
-    }
+
+
+
+
+   
 
 
 

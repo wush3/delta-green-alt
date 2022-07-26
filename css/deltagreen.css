@@ -15,11 +15,6 @@
   display: flex;
   flex-direction: column;
 }
-.dgalt.sheet.item .form .editor {
-  height: 100%;
-  flex: auto;
-  color: var(--foreColor);
-}
 .dgalt.sheet.item .vertical-header {
   writing-mode: vertical-rl;
   font-size: 12px;
@@ -43,6 +38,12 @@
   color: var(--foreColor);
   text-align: center;
   height: 18px;
+}
+.dgalt.sheet.item .form-inputbox-number {
+  color: var(--foreColor);
+  text-align: center;
+  height: 18px;
+  width: 32px;
 }
 .dgalt.sheet.item .form-button {
   align-items: center;
@@ -71,55 +72,98 @@
 .dgalt.sheet.item .form-button:active {
   background-image: radial-gradient(var(--backColor), var(--hoverColor));
 }
-.dgalt.sheet.item .sheet-content {
-  height: auto;
-  display: flex;
-  flex-direction: column;
+.dgalt.sheet.item .form-text {
+  outline: var(--borderColor) dashed 1px;
+  padding: 2px;
 }
-.dgalt.sheet.item .sheet-content .editor {
-  height: 100%;
-  border: 1px solid;
-  border-radius: 1%;
-  margin: 0 0 10px 0px;
+.dgalt.sheet.item .group-grow-horizontal {
+  width: auto;
+  flex: 1;
 }
-.dgalt.sheet.item .bond-block {
-  position: relative;
+.dgalt.sheet.item .container {
   display: grid;
-  grid-template-columns: 1fr 38px;
-  grid-template-rows: min-content auto;
+  grid-template-columns: min-content 1fr;
+  grid-template-rows: min-content min-content 1fr;
   gap: 1px 1px;
   grid-auto-flow: row;
+  grid-template-areas: "item-header item-top" "item-header item-top" "item-header item-description";
   background-color: var(--backColor);
   color: var(--foreColor);
   outline: 1px solid var(--labelColor);
   height: 100%;
-  grid-template-areas: "relationship-area value-area" "description-area description-area";
 }
-.dgalt.sheet.item .relationship-area {
-  grid-area: relationship-area;
+.dgalt.sheet.item .container .item-header {
+  grid-area: item-header;
+  background-color: var(--foreColor);
+  color: var(--backColor);
+  outline: var(--borderColor) solid 1px;
+  display: flex;
+  flex-direction: row;
+}
+.dgalt.sheet.item .container .item-description {
+  grid-area: item-description;
   background-color: var(--backColor);
   color: var(--foreColor);
   outline: var(--borderColor) dashed 1px;
-  padding: 2px;
+  padding: 4px;
 }
-.dgalt.sheet.item .value-area {
-  grid-area: value-area;
+.dgalt.sheet.item .container .item-description .editor {
+  height: 90%;
+  border: 1px solid;
+  border-radius: 1%;
+  margin: 0 0 10px 0px;
+  padding: 10px;
+}
+.dgalt.sheet.item .container .item-top {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-template-rows: 1fr;
+  gap: 1px 1px;
+  grid-auto-flow: row;
+  grid-template-areas: "item-icon item-main";
+  grid-area: item-top;
   background-color: var(--backColor);
   color: var(--foreColor);
   outline: var(--borderColor) dashed 1px;
-  padding: 2px;
 }
-.dgalt.sheet.item .description-area {
-  grid-area: description-area;
+.dgalt.sheet.item .container .item-icon {
+  grid-area: item-icon;
+  padding: 4px;
+}
+.dgalt.sheet.item .container .item-main {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: min-content 1fr;
+  gap: 1px 1px;
+  grid-auto-flow: row;
+  grid-template-areas: "item-title" "item-data";
+  grid-area: item-main;
+}
+.dgalt.sheet.item .container .item-title {
+  grid-area: item-title;
   background-color: var(--backColor);
   color: var(--foreColor);
   outline: var(--borderColor) dashed 1px;
-  padding: 2px;
+  padding: 4px;
 }
-.dgalt.sheet.item .description-area .editor {
-  caret-color: azure;
+.dgalt.sheet.item .container .item-data {
+  grid-area: item-data;
+  background-color: var(--backColor);
+  color: var(--foreColor);
+  outline: var(--borderColor) dashed 1px;
+  padding: 4px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.dgalt.sheet.item .item-icon {
+  min-width: 64px;
+  min-height: 64px;
+  width: auto;
+  height: fit-content;
 }
 .dgalt.sheet.agent .form {
+  height: 100%;
   display: flex;
   flex-direction: row;
 }
@@ -146,6 +190,12 @@
   color: var(--foreColor);
   text-align: center;
   height: 18px;
+}
+.dgalt.sheet.agent .form-inputbox-number {
+  color: var(--foreColor);
+  text-align: center;
+  height: 18px;
+  width: 32px;
 }
 .dgalt.sheet.agent .form-button {
   align-items: center;
@@ -178,32 +228,6 @@
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }
-.dgalt.sheet.agent .bond-list {
-  background-color: var(--backColor);
-  color: var(--foreColor);
-  outline: 1px solid var(--labelColor);
-  height: 100%;
-}
-.dgalt.sheet.agent .skill-list2 {
-  display: flex;
-  flex-wrap: wrap;
-  justify-items: center;
-  width: 100%;
-  height: 300px;
-  overflow: auto;
-  flex-direction: column;
-}
-.dgalt.sheet.agent .skill-item {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: center;
-  align-content: flex-start;
-  width: 33%;
-  height: min-content;
-  overflow: auto;
-  flex-direction: column;
-}
 .dgalt.sheet.agent .container {
   height: 100%;
   display: grid;
@@ -213,17 +237,65 @@
   grid-auto-flow: row;
   grid-template-areas: "personal-data-area personal-data-area" "statistics-data-area mental-data-area" "skill-data-area skill-data-area";
 }
-.dgalt.sheet.agent .personal-data-area {
+.dgalt.sheet.agent .container .personal-data-area {
   grid-area: personal-data-area;
 }
-.dgalt.sheet.agent .statistics-data-area {
+.dgalt.sheet.agent .container .statistics-data-area {
   grid-area: statistics-data-area;
 }
-.dgalt.sheet.agent .mental-data-area {
+.dgalt.sheet.agent .container .mental-data-area {
   grid-area: mental-data-area;
 }
-.dgalt.sheet.agent .skill-data-area {
+.dgalt.sheet.agent .container .skill-data-area {
   grid-area: skill-data-area;
+  height: 100%;
+}
+.dgalt.sheet.agent .item-controls {
+  margin: 2px 2px 2px 2px;
+  display: block;
+  flex: 0 0 1.25rem;
+  font-size: 0.625rem;
+  line-height: 1rem;
+  text-align: end;
+  width: max-content;
+}
+.dgalt.sheet.agent .item-controls a:hover {
+  color: red;
+  text-shadow: none;
+}
+.dgalt.sheet.agent .item-controls .item-control.active {
+  color: #daa520;
+}
+.dgalt.sheet.agent .item-controls-vertical {
+  margin: 2px 2px 2px 2px;
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 1.25rem;
+  font-size: 0.625rem;
+  line-height: 1rem;
+  text-align: end;
+  width: max-content;
+}
+.dgalt.sheet.agent .item-controls-vertical a:hover {
+  color: red;
+  text-shadow: none;
+}
+.dgalt.sheet.agent .item-controls-vertical .item-control.active {
+  color: #daa520;
+}
+.dgalt.sheet.agent .item-list {
+  display: flex !important;
+  flex-direction: column !important;
+  flex-wrap: wrap !important;
+  width: auto;
+  gap: 1px 1px;
+  overflow: hidden;
+  overflow-y: auto;
+  height: 320px;
+  margin: 0px;
+  padding: 0px;
+  justify-content: start;
+  align-content: flex-start;
 }
 .codename {
   margin-top: auto;
@@ -532,6 +604,8 @@
   grid-area: hp-text;
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
+  display: flex;
+  gap: 15px;
 }
 .statdata .derived-block .hp-max {
   grid-area: hp-max;
@@ -589,6 +663,7 @@
   padding: 2px;
 }
 .skilldata {
+  height: 100%;
   display: grid;
   grid-template-columns: min-content 1fr;
   grid-template-rows: 1fr;
@@ -598,7 +673,6 @@
   background-color: var(--backColor);
   color: var(--foreColor);
   outline: 1px solid var(--labelColor);
-  height: 100%;
 }
 .skilldata .skills-header {
   grid-area: skills-header;
@@ -610,37 +684,28 @@
   flex-direction: column;
 }
 .skilldata .skills-block {
+  height: 100%;
   grid-area: skills-block;
   background-color: var(--backColor);
   color: var(--foreColor);
   outline: var(--borderColor) dashed 1px;
 }
-.item-list {
-  display: flex !important;
-  flex-direction: column !important;
-  flex-wrap: wrap !important;
-  width: auto;
-  height: 300px;
-  margin: 0px;
-  padding: 0px;
-  justify-content: start;
-  align-content: flex-start;
-}
-.itemV2 {
-  border: 1px dashed var(--borderColor);
+.skilldata .skill-card {
+  outline: 1px dashed var(--borderColor);
   display: grid;
   font-size: 0.75rem;
-  grid-template-columns: 1rem auto 2rem 1.5rem;
-  margin-right: 0.2rem;
+  grid-template-columns: 1rem auto 2rem min-content;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
   max-height: 1.25rem;
-  width: 200px;
+  width: 180px;
 }
-.itemV2 .item-image {
+.skilldata .skill-card .skill-check {
   background-size: contain;
   height: 0.875rem;
   margin: 1px 0 0;
 }
-.itemV2 .item-name {
+.skilldata .skill-card .skill-name {
   color: var(--foreColor);
   line-height: 1rem;
   overflow: hidden;
@@ -648,100 +713,24 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.itemV2 .item-name input {
+.skilldata .skill-card .skill-name input {
   background-color: var(--borderColor);
   color: var(--labelColor);
   height: 1rem;
   overflow: visible;
   padding: 0;
 }
-.itemV2 .item-score {
+.skilldata .skill-card .skill-score {
   color: var(--foreColor);
   line-height: 1rem;
   margin: 2px;
   text-align: center;
 }
-.itemV2 .item-score input {
+.skilldata .skill-card .skill-score input {
   background-color: rgba(0, 0, 0, 0.1);
   color: var(--foreColor);
   height: 1rem;
   text-align: center;
-}
-.itemV2 .item-controls {
-  margin: 2px 2px 2px 2px;
-  display: block;
-  flex: 0 0 1.25rem;
-  font-size: 0.625rem;
-  line-height: 1rem;
-  text-align: end;
-  width: max-content;
-}
-.itemV2 .item-controls a:hover {
-  color: red;
-  text-shadow: none;
-}
-.itemV2 .item-controls .item-control.active {
-  color: #daa520;
-}
-.bond-card {
-  display: grid;
-  grid-template-columns: 1fr 38px 38px;
-  grid-template-rows: min-content;
-  gap: 1px 1px;
-  grid-auto-flow: row;
-  align-items: stretch;
-  justify-items: stretch;
-  grid-template-areas: "bond-name bond-score bond-edit";
-  background-color: var(--backColor);
-  color: var(--foreColor);
-  outline: 1px dashed var(--borderColor);
-}
-.bond-card .bond-name {
-  grid-area: bond-name;
-  outline: var(--borderColor) dashed 1px;
-  padding: 2px;
-}
-.bond-card .bond-score {
-  grid-area: bond-score;
-  color: var(--foreColor);
-  text-align: center;
-  height: 18px;
-  padding: 2px;
-}
-.bond-card .bond-edit {
-  grid-area: bond-edit;
-  outline: var(--borderColor) dashed 1px;
-  padding: 2px;
-}
-.skill-card {
-  display: grid;
-  grid-template-columns: 1fr 38px 38px;
-  grid-template-rows: min-content;
-  gap: 1px 1px;
-  grid-auto-flow: row;
-  align-items: stretch;
-  justify-items: stretch;
-  grid-template-areas: "skill-name skill-score skill-edit";
-  background-color: var(--backColor);
-  color: var(--foreColor);
-  outline: 1px dashed var(--borderColor);
-}
-.skill-card .skill-name {
-  grid-area: skill-name;
-  outline: var(--borderColor) dashed 1px;
-  padding: 2px;
-}
-.skill-card .skill-score {
-  grid-area: skill-score;
-  color: var(--foreColor);
-  text-align: center;
-  height: 18px;
-  padding: 2px;
-}
-.skill-card .skill-edit {
-  grid-area: skill-edit;
-  outline: var(--borderColor) dashed 1px;
-  padding: 2px;
 }
 .window-app {
   height: auto;

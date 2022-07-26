@@ -1,4 +1,5 @@
 .skilldata {
+    height: 100%;
     display: grid;
     grid-template-columns: min-content 1fr;
     grid-template-rows: 1fr;
@@ -11,8 +12,7 @@
     color: var(--foreColor);
     outline: 1px solid var(--labelColor);
 
-    height: 100%;
-
+    
 
 
 
@@ -27,6 +27,7 @@
     }
 
     .skills-block {
+        height: 100%;
         grid-area: skills-block;
         background-color: var(--backColor);
         color: var(--foreColor);
@@ -34,89 +35,57 @@
         
     }
 
-}
-
-
-
-.item-list {    
-    display: flex !important;
-    flex-direction: column !important;
-    flex-wrap: wrap !important;
-    width: auto;
-
-    height: 300px;
-    margin: 0px;
-    padding: 0px;
-    justify-content:start;
-    align-content:flex-start;
-
+    .skill-card {
+        outline: 1px dashed var(--borderColor);
+        display: grid;
+        font-size: .75rem;
+        grid-template-columns: 1rem auto 2rem min-content;//1.5rem;
+        //margin-right: .2rem;
+        padding-left: .2rem;
+        padding-right: .2rem;
+        max-height: 1.25rem;
+        width: 180px;
     
-}
-
-.itemV2 {
-    border: 1px dashed var(--borderColor);
-    display: grid;
-    font-size: .75rem;
-    grid-template-columns: 1rem auto 2rem 1.5rem;
-    margin-right: .2rem;
-    max-height: 1.25rem;
-    width: 200px;
-
-    .item-image {
-        background-size: contain;
-        height: .875rem;
-        margin: 1px 0 0;
-    }
-
-    .item-name {
-        color: var(--foreColor);
-        line-height: 1rem;
-        overflow: hidden;
-        padding: 2px;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-
-        input {
-            background-color:var(--borderColor);
+        .skill-check {
+          background-size: contain;
+          height: .875rem;
+          margin: 1px 0 0;
+        }
+    
+        .skill-name {
+          color: var(--foreColor);
+          line-height: 1rem;
+          overflow: hidden;
+          padding: 2px;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+    
+          input {
+            background-color: var(--borderColor);
             color: var(--labelColor);
             height: 1rem;
             overflow: visible;
             padding: 0;
+          }
         }
-    }
-
-    .item-score {
-        color: var(--foreColor);
-        line-height: 1rem;
-        margin: 2px;
-        text-align: center;
-
-        input {
+    
+        .skill-score {
+          color: var(--foreColor);
+          line-height: 1rem;
+          margin: 2px;
+          text-align: center;
+    
+          input {
             background-color: rgba(0, 0, 0, .1);
             color: var(--foreColor);
-            height: 1rem;                  
+            height: 1rem;
             text-align: center;
+          }
         }
     }
 
-    .item-controls {
-        margin: 2px 2px 2px 2px;
-        display: block;
-        flex: 0 0 1.25rem;
-        font-size: .625rem;
-        line-height: 1rem;
-        text-align: end;
-        width: max-content;
-
-        a {
-            &:hover {
-                color: red;
-                text-shadow: none;
-            }
-        }
-
-        .item-control.active {
-            color: #daa520;
-        }
-    }
 }
+
+
+
+

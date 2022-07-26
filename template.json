@@ -46,8 +46,9 @@
             "health": {
                 "value": 0,
                 "min": 0,
-                "max": 10
+                "max": 10                
             },
+            "armor":0,
             "wp": {
                 "value": 0,
                 "min": 0,
@@ -69,7 +70,7 @@
                     }
                 }
             },
-            "skills": {},
+            "skills": {},           
             "specialtraining": {}
         },
         "Npc": {

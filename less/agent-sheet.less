@@ -1,8 +1,11 @@
 .dgalt.sheet.agent {
   .form {
+    height: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: row;        
   }
+
+  
 
   .vertical-header {
     writing-mode: vertical-rl;
@@ -34,6 +37,13 @@
     color: var(--foreColor);
     text-align: center;
     height: 18px;
+  }
+
+  .form-inputbox-number {
+    color: var(--foreColor);
+    text-align: center;
+    height: 18px;
+    width: 32px;
   }
 
 
@@ -73,34 +83,8 @@
     padding: 2px;
   }
 
-  .bond-list {
-    background-color: var(--backColor);
-    color: var(--foreColor);
-    outline: 1px solid var(--labelColor);
-    height: 100%;
-  }
+  
 
-  .skill-list2 {
-    display: flex;
-    flex-wrap: wrap;
-    justify-items: center;
-    width: 100%;
-    height: 300px;
-    overflow: auto;
-    flex-direction: column;
-  }
-
-  .skill-item {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
-    align-content: flex-start;
-    width: 33%;
-    height: min-content;
-    overflow: auto;
-    flex-direction: column;
-  }
 
 
   .container {
@@ -114,28 +98,88 @@
       "personal-data-area personal-data-area"
       "statistics-data-area mental-data-area"
       "skill-data-area skill-data-area";
+
+    .personal-data-area {
+      grid-area: personal-data-area;
+    }
+
+    .statistics-data-area {
+      grid-area: statistics-data-area;
+    }
+
+    .mental-data-area {
+      grid-area: mental-data-area;
+    }
+
+    .skill-data-area {
+      grid-area: skill-data-area;
+      height: 100%;
+
+    }
   }
 
-  .personal-data-area {
-    grid-area: personal-data-area;
+  .item-controls {
+    margin: 2px 2px 2px 2px;
+    display: block;
+    flex: 0 0 1.25rem;
+    font-size: .625rem;
+    line-height: 1rem;
+    text-align: end;
+    width: max-content;
+    a {
+      &:hover {
+        color: red;
+        text-shadow: none;
+      }
+    }
+    .item-control.active {
+      color: #daa520;
+    }
   }
 
-  .statistics-data-area {
-    grid-area: statistics-data-area;
+  .item-controls-vertical {
+    margin: 2px 2px 2px 2px;    
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 1.25rem;
+    font-size: .625rem;
+    line-height: 1rem;
+    text-align: end;
+    width: max-content;
+    a {
+      &:hover {
+        color: red;
+        text-shadow: none;
+      }
+    }
+    .item-control.active {
+      color: #daa520;
+    }
   }
 
-  .mental-data-area {
-    grid-area: mental-data-area;
+  .item-list {
+    display: flex !important;
+    flex-direction: column !important;
+    flex-wrap: wrap !important;
+    width: auto;
+    gap: 1px 1px;
+    overflow: hidden;
+    overflow-y: auto;
+
+    height: 320px;
+    margin: 0px;
+    padding: 0px;
+    justify-content: start;
+    align-content: flex-start;
+
+
   }
 
-  .skill-data-area {
-    grid-area: skill-data-area;
-
-  }
-
- 
+  
+  
 
 
+  
 
 
 

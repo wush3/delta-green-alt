@@ -1,39 +1,56 @@
 <form class="{{cssClass}}" autocomplete="off">
-    <header class="sheet-header">
-        <img src="{{item.img}}" data-edit="img" title="{{item.name}}" height="64" width="64"/>
-        <h1><input name="name" type="text" value="{{item.name}}" placeholder="{{ localize 'Name' }}"/></h1>
-    </header>
-    <br>
-    <div class="sheet-content">          
-        
-        <div class="horizontal-input">
-            <div>
-                <label for="canimprove">{{localize 'dgalt.skills.canimprove'}}</label>
-                <input id="canimprove" type="checkbox" name="data.canimprove" {{checked data.data.canimprove}} data-dtype="boolean" title="{{localize 'dgalt.skills.canimprove'}}"/> 
-            </div>
-            <div>
-                <label for="failcheck">{{localize 'dgalt.skills.failcheck'}}</label>
-                <input id="failcheck" type="checkbox" name="data.failcheck" {{checked data.data.failcheck}} data-dtype="boolean" title="{{localize 'dgalt.skills.failcheck'}}"/> 
-            </div>
-        </div> 
-      
-        
-        <div class="horizontal-input">
-            <div>
-                <label for="data.base">{{localize 'dgalt.skills.base'}}</label>   
-                <input type="number" name="data.base" value="{{data.data.base}}" data-dtype="number"/>
-            </div>
-            <div>
-                <label>{{localize 'dgalt.skills.value'}}</label>
-                <input type="number" name="data.value" value="{{data.data.value}}" data-dtype="number"/>
+
+    <div class="container">
+        <div class="item-header">
+            <div class="vertical-header">
+                {{localize 'dgalt.labels.skillsheet.header'}}
             </div>
         </div>
-      
-            <label>{{localize 'dgalt.skills.description'}}</label>
-            
-            {{editor content=data.data.description target="data.description" button=true owner=owner editable=editable}}            
-            
-        
+        <div class="item-top">
+            <div class="item-icon">
+                <img class="item-icon" src="{{item.img}}" data-edit="img" title="{{item.name}}" height="64"
+                    width="64" />
+            </div>
+            <div class="item-main">
+                <div class="item-title">
+                    <input class="form-inputbox" name="name" type="text" value="{{item.name}}"
+                        placeholder="{{ localize 'Name' }}" />
+                </div>
+                <div class="item-data">
+                    <div>
+                        <div class="form-label">{{localize
+                            'dgalt.labels.skillsheet.canimprove'}}</div>
+                        <a class="item-control item-checkmark" title="CHECK" data-field="data.canimprove"><i
+                                class="fas {{#if data.data.canimprove}}fa-plus-square{{else}}fa-square{{/if}}"></i></a>
+
+                    </div>
+                    <div>
+                        <div class="form-label">{{localize
+                            'dgalt.labels.skillsheet.failcheck'}}</div>
+                        <a class="item-control item-checkmark" title="CHECK" data-field="data.failcheck"><i
+                                class="fas {{#if data.data.failcheck}}fa-plus-square{{else}}fa-square{{/if}}"></i></a>
+
+                    </div>
+
+                    <div>
+                        <div class="form-label">{{localize 'dgalt.labels.skillsheet.base'}}</div>
+                        <input class="form-inputbox-number" type="number" name="data.base" value="{{data.data.base}}"
+                            data-dtype="number" />
+                    </div>
+                    <div>
+                        <div class="form-label">{{localize 'dgalt.labels.skillsheet.value'}}</div>
+                        <input class="form-inputbox-number" type="number" name="data.value" value="{{data.data.value}}"
+                            data-dtype="number" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="item-description">
+            <div class="form-label">{{localize 'dgalt.labels.skillsheet.description'}}</div>
+
+            {{editor content=data.data.description target="data.description" button=true owner=owner editable=editable}}
+        </div>
     </div>
-    <footer></footer>
+
+
 </form>
