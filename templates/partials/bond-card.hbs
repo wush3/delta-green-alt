@@ -1,0 +1,12 @@
+<div class="item bond-card" data-bond-id="{{_id}}" data-item-id="{{_id}}">
+    <div class="bond-name {{#unless data.value }}strike{{/unless}}" >
+        {{name}} - {{data.relationship}}        
+    </div>
+    <div class="bond-score">
+        <input class="inline-edit"  type="number" data-dtype="number" value="{{data.value}}" data-field="data.value"/>
+    </div>
+    <div class="item-controls">
+        <a class="item-control item-edit" title="EDIT"><i class="fas fa-edit"></i></a>
+        <a class="item-control item-delete" title="DELETE"><i class="fas fa-trash"></i></a>
+    </div>
+</div>

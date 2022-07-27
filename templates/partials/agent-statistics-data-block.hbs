@@ -1,120 +1,116 @@
-<section>
-    <div class="statdata">
-                <div class="stat-header">
-                    <div class="vertical-header">
-                        {{localize 'dgalt.labels.statdata.header'}}
-                    </div>
-                </div>
-                <div class="stats-block">
-                    <div class="stat-label">
-                        <div class="form-label">{{localize 'dgalt.labels.statdata.statlabel'}}</div>
-                    </div>
-                    <div class="score-label">
-                        <div class="form-label-centered">{{localize 'dgalt.labels.statdata.scorelabel'}}</div>
-                    </div>
-                    <div class="x5-label">
-                        <div class="form-label-centered">x5</div>
-                    </div>
-                    <div class="feature-label">
-                        <div class="form-label">{{localize 'dgalt.labels.statdata.featurelabel'}}</div>
-                    </div>
-                    <div class="str-text">{{localize 'dgalt.labels.statdata.strtxt'}}</div>
-                    <div class="str-score"><input class="form-inputbox-centered" name="data.statistics.strength.value"
-                            type="number" data-dtype="number" value="{{actor.data.data.statistics.strength.value}}" />
-                    </div>
-                    <div class="str-x5"></div>
-                    <div class="str-feature"><input class="form-inputbox" name="data.statistics.strength.feature"
-                            type="text" value="{{actor.data.data.statistics.strength.feature}}" /></div>
-                    <div class="con-text">{{localize 'dgalt.labels.statdata.contxt'}}</div>
-                    <div class="con-score"><input class="form-inputbox-centered"
-                            name="data.statistics.constitution.value" type="number" data-dtype="number"
-                            value="{{actor.data.data.statistics.constitution.value}}" /></div>
-                    <div class="con-x5"></div>
-                    <div class="con-feature"><input class="form-inputbox" name="data.statistics.constitution.feature"
-                            type="text" value="{{actor.data.data.statistics.constitution.feature}}" /></div>
-                    <div class="dex-text">{{localize 'dgalt.labels.statdata.dextxt'}}</div>
-                    <div class="dex-score"><input class="form-inputbox-centered" name="data.statistics.dexterity.value"
-                            type="number" data-dtype="number" value="{{actor.data.data.statistics.dexterity.value}}" />
-                    </div>
-                    <div class="dex-x5"></div>
-                    <div class="dex-feature"><input class="form-inputbox" name="data.statistics.dexterity.feature"
-                            type="text" value="{{actor.data.data.statistics.dexterity.feature}}" /></div>
-                    <div class="int-text">{{localize 'dgalt.labels.statdata.inttxt'}}</div>
-                    <div class="int-score"><input class="form-inputbox-centered"
-                            name="data.statistics.intelligence.value" type="number" data-dtype="number"
-                            value="{{actor.data.data.statistics.intelligence.value}}" /></div>
-                    <div class="int-x5"></div>
-                    <div class="int-feature"><input class="form-inputbox" name="data.statistics.intelligence.feature"
-                            type="text" value="{{actor.data.data.statistics.intelligence.feature}}" /></div>
-                    <div class="pow-text">{{localize 'dgalt.labels.statdata.powtxt'}}</div>
-                    <div class="pow-score"><input class="form-inputbox-centered" name="data.statistics.power.value"
-                            type="number" data-dtype="number" value="{{actor.data.data.statistics.power.value}}" />
-                    </div>
-                    <div class="pow-x5"></div>
-                    <div class="pow-feature"><input class="form-inputbox" name="data.statistics.power.feature"
-                            type="text" value="{{actor.data.data.statistics.power.feature}}" /></div>
-                    <div class="cha-text">{{localize 'dgalt.labels.statdata.chatxt'}}</div>
-                    <div class="cha-score"><input class="form-inputbox-centered" name="data.statistics.charisma.value"
-                            type="number" data-dtype="number" value="{{actor.data.data.statistics.charisma.value}}" />
-                    </div>
-                    <div class="cha-x5"></div>
-                    <div class="cha-feature"><input class="form-inputbox" name="data.statistics.charisma.feature"
-                            type="text" value="{{actor.data.data.statistics.charisma.feature}}" /></div>
-                </div>
-                <div class="derived-block">
-                    <div class="derived-label">
-                        <div class="form-label">{{localize 'dgalt.labels.statdata.derivedlabel'}}</div>
-                    </div>
-                    <div class="max-label">
-                        <div class="form-label-centered">{{localize 'dgalt.labels.statdata.maxlabel'}}</div>
-                    </div>
-                    <div class="current-label">
-                        <div class="form-label-centered">{{localize 'dgalt.labels.statdata.currentlabel'}}</div>
-                    </div>
-                    <div class="hp-text">
-                        <div>{{localize 'dgalt.labels.statdata.hplabel'}}</div>                       
-                        <div><i class="fas fa-shield-alt"></i>
-                        <input class="form-inputbox-number" name="data.armor" type="number" value="{{actor.data.data.armor}}" data-dtype="Number" />
-                        </div>
-                    </div>
-                    <div class="hp-max">
-                        <input class="form-inputbox-centered" name="data.health.max"
-                            type="text" value="{{actor.data.data.health.max}}" disabled/>
-                    </div>
-                    <div class="hp-current">
-                        <input class="form-inputbox-centered" name="data.health.value"
-                            type="text" value="{{actor.data.data.health.value}}" />
-                    </div>
-                    <div class="wp-text">
-                        {{localize 'dgalt.labels.statdata.wplabel'}}
-                    </div>
-                    <div class="wp-max">
-                        <input class="form-inputbox-centered" name="data.wp.max"
-                            type="text" value="{{actor.data.data.wp.max}}" disabled />
-                    </div>
-                    <div class="wp-current">
-                        <input class="form-inputbox-centered" name="data.wp.value"
-                            type="text" value="{{actor.data.data.wp.value}}" />
-                    </div>                    
-                    <div class="break-text">
-                        {{localize 'dgalt.labels.statdata.breaklabel'}}
-                    </div>
-                    <div class="break-reset">
-                        <input class="form-button" type="button" value="SET"/>
-                    </div>
-                    <div class="break-current">
-                        <input class="form-inputbox-centered" name="data.sanity.currentBreakingPoint"
-                            type="text" value="{{actor.data.data.sanity.currentBreakingPoint}}" />
-                    </div>
-                    <div class="san-text">
-                        {{localize 'dgalt.labels.statdata.sanlabel'}}
-                    </div>
-                    <div class="san-max"></div>
-                    <div class="san-current">
-                        <input class="form-inputbox-centered" name="data.sanity.value"
-                            type="text" value="{{actor.data.data.sanity.value}}" />
-                    </div>
-                </div>
+<div class="statdata">
+    <div class="stat-header">
+        <div class="vertical-header">
+            {{localize 'dgalt.labels.statdata.header'}}
+        </div>
+    </div>
+    <div class="stats-block">
+        <div class="stat-label">
+            <div class="form-label">{{localize 'dgalt.labels.statdata.statlabel'}}</div>
+        </div>
+        <div class="score-label">
+            <div class="form-label-centered">{{localize 'dgalt.labels.statdata.scorelabel'}}</div>
+        </div>
+        <div class="x5-label">
+            <div class="form-label-centered">x5</div>
+        </div>
+        <div class="feature-label">
+            <div class="form-label">{{localize 'dgalt.labels.statdata.featurelabel'}}</div>
+        </div>
+        <div class="str-text">{{localize 'dgalt.labels.statdata.strtxt'}}</div>
+        <div class="str-score"><input class="form-inputbox-centered" name="data.statistics.strength.value" type="number"
+                data-dtype="number" value="{{actor.data.data.statistics.strength.value}}" />
+        </div>
+        <div class="str-x5"></div>
+        <div class="str-feature"><input class="form-inputbox" name="data.statistics.strength.feature" type="text"
+                value="{{actor.data.data.statistics.strength.feature}}" /></div>
+        <div class="con-text">{{localize 'dgalt.labels.statdata.contxt'}}</div>
+        <div class="con-score"><input class="form-inputbox-centered" name="data.statistics.constitution.value"
+                type="number" data-dtype="number" value="{{actor.data.data.statistics.constitution.value}}" /></div>
+        <div class="con-x5"></div>
+        <div class="con-feature"><input class="form-inputbox" name="data.statistics.constitution.feature" type="text"
+                value="{{actor.data.data.statistics.constitution.feature}}" /></div>
+        <div class="dex-text">{{localize 'dgalt.labels.statdata.dextxt'}}</div>
+        <div class="dex-score"><input class="form-inputbox-centered" name="data.statistics.dexterity.value"
+                type="number" data-dtype="number" value="{{actor.data.data.statistics.dexterity.value}}" />
+        </div>
+        <div class="dex-x5"></div>
+        <div class="dex-feature"><input class="form-inputbox" name="data.statistics.dexterity.feature" type="text"
+                value="{{actor.data.data.statistics.dexterity.feature}}" /></div>
+        <div class="int-text">{{localize 'dgalt.labels.statdata.inttxt'}}</div>
+        <div class="int-score"><input class="form-inputbox-centered" name="data.statistics.intelligence.value"
+                type="number" data-dtype="number" value="{{actor.data.data.statistics.intelligence.value}}" /></div>
+        <div class="int-x5"></div>
+        <div class="int-feature"><input class="form-inputbox" name="data.statistics.intelligence.feature" type="text"
+                value="{{actor.data.data.statistics.intelligence.feature}}" /></div>
+        <div class="pow-text">{{localize 'dgalt.labels.statdata.powtxt'}}</div>
+        <div class="pow-score"><input class="form-inputbox-centered" name="data.statistics.power.value" type="number"
+                data-dtype="number" value="{{actor.data.data.statistics.power.value}}" />
+        </div>
+        <div class="pow-x5"></div>
+        <div class="pow-feature"><input class="form-inputbox" name="data.statistics.power.feature" type="text"
+                value="{{actor.data.data.statistics.power.feature}}" /></div>
+        <div class="cha-text">{{localize 'dgalt.labels.statdata.chatxt'}}</div>
+        <div class="cha-score"><input class="form-inputbox-centered" name="data.statistics.charisma.value" type="number"
+                data-dtype="number" value="{{actor.data.data.statistics.charisma.value}}" />
+        </div>
+        <div class="cha-x5"></div>
+        <div class="cha-feature"><input class="form-inputbox" name="data.statistics.charisma.feature" type="text"
+                value="{{actor.data.data.statistics.charisma.feature}}" /></div>
+    </div>
+    <div class="derived-block">
+        <div class="derived-label">
+            <div class="form-label">{{localize 'dgalt.labels.statdata.derivedlabel'}}</div>
+        </div>
+        <div class="max-label">
+            <div class="form-label-centered">{{localize 'dgalt.labels.statdata.maxlabel'}}</div>
+        </div>
+        <div class="current-label">
+            <div class="form-label-centered">{{localize 'dgalt.labels.statdata.currentlabel'}}</div>
+        </div>
+        <div class="hp-text">
+            <div>{{localize 'dgalt.labels.statdata.hplabel'}}</div>
+            <div><i class="fas fa-shield-alt"></i>
+                <input class="form-inputbox-number" name="data.armor" type="number" value="{{actor.data.data.armor}}"
+                    data-dtype="Number" />
             </div>
-
-</section>
+        </div>
+        <div class="hp-max">
+            <input class="form-inputbox-centered" name="data.health.max" type="text"
+                value="{{actor.data.data.health.max}}" disabled />
+        </div>
+        <div class="hp-current">
+            <input class="form-inputbox-centered" name="data.health.value" type="text"
+                value="{{actor.data.data.health.value}}" />
+        </div>
+        <div class="wp-text">
+            {{localize 'dgalt.labels.statdata.wplabel'}}
+        </div>
+        <div class="wp-max">
+            <input class="form-inputbox-centered" name="data.wp.max" type="text" value="{{actor.data.data.wp.max}}"
+                disabled />
+        </div>
+        <div class="wp-current">
+            <input class="form-inputbox-centered" name="data.wp.value" type="text"
+                value="{{actor.data.data.wp.value}}" />
+        </div>
+        <div class="break-text">
+            {{localize 'dgalt.labels.statdata.breaklabel'}}
+        </div>
+        <div class="break-reset">
+            <input class="form-button" type="button" value="SET" />
+        </div>
+        <div class="break-current">
+            <input class="form-inputbox-centered" name="data.sanity.currentBreakingPoint" type="text"
+                value="{{actor.data.data.sanity.currentBreakingPoint}}" />
+        </div>
+        <div class="san-text">
+            {{localize 'dgalt.labels.statdata.sanlabel'}}
+        </div>
+        <div class="san-max"></div>
+        <div class="san-current">
+            <input class="form-inputbox-centered" name="data.sanity.value" type="text"
+                value="{{actor.data.data.sanity.value}}" />
+        </div>
+    </div>
+</div>

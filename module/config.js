@@ -9,5 +9,5 @@ dgalt.attackskills={
     firearms:"dgalt.attackskills.firearms",
     heavyweapons:"dgalt.attackskills.heavyweapons",
     demolitions: "dgalt.attackskills.demolitions",
-    artillery:"Adgalt.attackskills.artillery"
+    artillery:"dgalt.attackskills.artillery"
 };

@@ -17,9 +17,9 @@
     <div class="skills-block">
 
 
-        <ol class="item-list">
+        <ol class="skill-list">
             {{#each skills as |skill id|}}
-            {{> "systems/delta-green-alt/templates/partials/skill-card.hbs" }}
+            {{> "systems/delta-green-alt/templates/partials/skill-card.hbs" skill}}
             {{/each}}
         </ol>
     </div>

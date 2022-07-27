@@ -1,0 +1,13 @@
+<div class="item mental-card" data-mental-id="{{_id}}" data-item-id="{{_id}}">
+    <div class="bond-name {{#if data.iscured }}strike{{/if}}" >
+    {{#if data.isdisorder}}
+        {{data.alternative}}
+    {{else}}
+        {{name}}
+    {{/if}}
+    </div>    
+    <div class="item-controls">
+        <a class="item-control item-edit" title="EDIT"><i class="fas fa-edit"></i></a>
+        <a class="item-control item-delete" title="DELETE"><i class="fas fa-trash"></i></a>
+    </div>
+</div>

@@ -7,7 +7,7 @@
         ],
         "templates": [],
         "Agent": {
-            "name": "",
+            
             "personal": {
                 "realname": "",
                 "profession": "",
@@ -141,17 +141,17 @@
         "Bond": {
             "name": "",
             "description": "",
-            "relationship": "",
+            "relationship": "none",
             "value": 0
         },
         "Mental": {
             "name": "",
-            "mentaltype": 0,
-            "motivation": "",
-            "disorder": "",
+            "isdisorder": false,
+            "alternative": "",            
             "trigger": "",
             "description": "",
-            "isCured": false
+            "descriptiondisorder":"",
+            "iscured": false
         }
     }
 }

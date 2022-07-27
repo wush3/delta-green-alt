@@ -1,8 +1,9 @@
 .dgalt.sheet.agent {
-  .form {
-    height: 100%;
+  .form {    
     display: flex;
     flex-direction: row;        
+
+    height: 100%
   }
 
   
@@ -83,12 +84,15 @@
     padding: 2px;
   }
 
+ 
   
 
 
 
   .container {
+
     height: 100%;
+
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: min-content min-content 1fr;
@@ -96,7 +100,7 @@
     grid-auto-flow: row;
     grid-template-areas:
       "personal-data-area personal-data-area"
-      "statistics-data-area mental-data-area"
+      "statistics-data-area psych-data-area"
       "skill-data-area skill-data-area";
 
     .personal-data-area {
@@ -107,14 +111,14 @@
       grid-area: statistics-data-area;
     }
 
-    .mental-data-area {
-      grid-area: mental-data-area;
+    .psych-data-area {
+      grid-area: psych-data-area;
     }
 
     .skill-data-area {
-      grid-area: skill-data-area;
-      height: 100%;
-
+      grid-area: skill-data-area;   
+      
+      height: calc(100%-1px);
     }
   }
 
@@ -164,9 +168,9 @@
     width: auto;
     gap: 1px 1px;
     overflow: hidden;
-    overflow-y: auto;
+    
 
-    height: 320px;
+    height: 298px;
     margin: 0px;
     padding: 0px;
     justify-content: start;

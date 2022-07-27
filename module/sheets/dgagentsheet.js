@@ -27,9 +27,23 @@ export default class DgAgentSheet extends ActorSheet {
         });
 
         data.bonds = data.items.filter(function (item) { return item.type == "Bond" });
-        data.bonds.sort();
+    
 
         data.bonds.sort(function (a, b) {
+            let nameA = a.name.toUpperCase();
+            let nameB = b.name.toUpperCase();
+            if (nameA < nameB) {
+                return -1;
+            }
+            if (nameA > nameB) {
+                return 1;
+            }
+            return 0;
+        });
+
+        data.mentalitems = data.items.filter(function (item) { return item.type == "Mental" });
+        
+        data.mentalitems.sort(function (a, b) {
             let nameA = a.name.toUpperCase();
             let nameB = b.name.toUpperCase();
             if (nameA < nameB) {
@@ -134,12 +148,16 @@ export default class DgAgentSheet extends ActorSheet {
 
 
     async _onInlineChanged(event) {
-        event.preventDefault();
-        const element = event.currentTarget;
+        event.preventDefault();        
+        const element = event.currentTarget;        
         const itemId = element.closest(".item").dataset.itemId;
-        const item = this.actor.items.get(itemId);
-        const field = element.dataset.field;
-        return item.update({ [field]: element.value });
+        const item = this.actor.items.get(itemId);        
+        const field = element.dataset.field;        
+        //return item.update({ [field]: element.value });
+
+        return item.update({ [`${field}`]: element.value });
+
+        
     }
 
     async _onImproveClick(event) {

@@ -1,0 +1,205 @@
+.psychdata {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 1px 1px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "psych-header bonds-block"
+    "psych-header mental-block"
+    "psych-header adapted-block";
+  background-color: var(--backColor);
+  color: var(--foreColor);
+  outline: 1px solid var(--labelColor);
+  height: 100%;
+
+  .psych-header {
+    grid-area: psych-header;
+    background-color: var(--foreColor);
+    color: var(--backColor);
+    outline: var(--borderColor) solid 1px;
+    padding: 2px;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+
+
+.bonds-block {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: min-content 1fr;
+  gap: 1px 1px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "bonds-label"
+    "bonds-data";
+  grid-area: bonds-block;
+  background-color: var(--backColor);
+  color: var(--foreColor);
+  outline: var(--borderColor) dashed 1px;
+}
+
+.bonds-label {
+  grid-area: bonds-label;
+  background-color: var(--backColor);
+  color: var(--foreColor);
+  outline: var(--borderColor) dashed 1px;
+}
+
+.bonds-data {
+  grid-area: bonds-data;
+  background-color: var(--backColor);
+  color: var(--foreColor);
+  outline: var(--borderColor) dashed 1px;
+}
+
+.mental-block {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: min-content 1fr;
+  gap: 1px 1px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "mental-label"
+    "mental-data";
+  grid-area: mental-block;
+  background-color: var(--backColor);
+  color: var(--foreColor);
+  outline: var(--borderColor) dashed 1px;
+}
+
+.mental-label {
+  grid-area: mental-label;
+  background-color: var(--backColor);
+  color: var(--foreColor);
+  outline: var(--borderColor) dashed 1px;
+}
+
+.mental-data {
+  grid-area: mental-data;
+  background-color: var(--backColor);
+  color: var(--foreColor);
+  outline: var(--borderColor) dashed 1px;
+}
+
+.adapted-block {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: min-content 1fr;
+  gap: 1px 1px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "adapted-label"
+    "adapted-data";
+  grid-area: adapted-block;
+  background-color: var(--backColor);
+  color: var(--foreColor);
+  outline: var(--borderColor) dashed 1px;
+}
+
+.adapted-label {
+  grid-area: adapted-label;
+  background-color: var(--backColor);
+  color: var(--foreColor);
+  outline: var(--borderColor) dashed 1px;
+}
+
+.adapted-data {
+  grid-area: adapted-data;
+  background-color: var(--backColor);
+  color: var(--foreColor);
+  outline: var(--borderColor) dashed 1px;
+}
+
+
+.bond-list {
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 6.6rem;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  gap: 1px 1px;
+  justify-content: start;
+  align-content: flex-start;
+  overflow-y: auto;
+}
+
+
+.bond-card {
+  outline: 1px dashed var(--borderColor);
+  display: grid;
+  font-size: .75rem;
+  grid-template-columns: auto 2rem min-content; //1.5rem;
+  //margin-right: .2rem;
+  padding-left: .2rem;
+  padding-right: .2rem;
+  height: 1.25rem;
+  max-height: 1.25rem;
+  width: 100%;
+
+
+
+}
+
+.mental-card {
+  outline: 1px dashed var(--borderColor);
+  display: grid;
+  font-size: .75rem;
+  grid-template-columns: auto min-content;
+  padding-left: .2rem;
+  padding-right: .2rem;
+  height: 1.25rem;
+  max-height: 1.25rem;
+  width: 100%;
+
+}
+
+.bond-name {
+  color: var(--foreColor);
+  line-height: 1rem;
+  overflow: hidden;
+  padding: 2px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  input {
+    background-color: var(--borderColor);
+    color: var(--labelColor);
+    height: 1rem;
+    overflow: visible;
+    padding: 0;
+  }
+}
+
+.bond-score {
+  color: var(--foreColor);
+  line-height: 1rem;
+  margin: 2px;
+  text-align: center;
+
+  input {
+    background-color: rgba(0, 0, 0, .1);
+    color: var(--foreColor);
+    height: 1rem;
+    text-align: center;
+  }
+}
+
+
+
+
+
+.strike {
+  color: var(--borderColor);
+  text-decoration: line-through var(--foreColor) solid 2px;
+}
+
+
+
+
+

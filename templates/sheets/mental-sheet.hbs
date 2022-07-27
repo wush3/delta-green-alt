@@ -1,0 +1,102 @@
+<form class="{{cssClass}}" autocomplete="off">
+
+    <div class="container">
+        <div class="item-header">
+            <div class="vertical-header">
+                {{#if data.data.isdisorder}}
+                {{localize 'dgalt.labels.mentalsheet.headerdisorder'}}
+                {{else}}
+                {{localize 'dgalt.labels.mentalsheet.headermotivation'}}
+                {{/if}}
+            </div>
+        </div>
+        <div class="item-top">
+            <div class="item-icon">
+                <img class="item-icon" src="{{item.img}}" data-edit="img" title="{{item.name}}" height="64"
+                    width="64" />
+
+
+
+
+            </div>
+
+            <div class="item-main">
+
+                <div class="item-title">
+
+                     <div class="group-flex-horizontal">
+
+                     
+                    {{#if data.data.isdisorder}}
+                    <div>
+                        <div class="form-label">{{localize 'dgalt.labels.mentalsheet.alternative'}}</div>
+                        <input class="form-inputbox" name="data.alternative" type="text"
+                            value="{{data.data.alternative}}" />
+                    </div>
+                    {{else}}
+                    <div>
+                        <div class="form-label">{{localize 'name'}}</div>
+                        <input class="form-inputbox" name="name" type="text" value="{{item.name}}"
+                            placeholder="{{ localize 'Name' }}" />
+                    </div>
+                    {{/if}}
+
+                        
+                        
+                        <a class="item-control item-checkmark"
+                            title="{{localize 'dgalt.labels.mentalsheet.toggledisorder'}}" data-field="data.isdisorder">
+                            <i class="{{#if data.data.isdisorder}}fas fa-plus-square{{else}}fas fa-square{{/if}}"></i>
+                        </a>
+                        <div class="form-label-centered">{{localize
+                            'dgalt.labels.mentalsheet.toggledisorder'}}</div>
+                        
+                    </div>
+
+                </div>
+
+                <div class="item-data">
+
+                    {{#if data.data.isdisorder}}
+
+                    <div>
+                        <div class="form-label">{{localize 'dgalt.labels.mentalsheet.trigger'}}</div>
+                        <input class="form-inputbox" name="data.trigger" type="text" value="{{data.data.trigger}}" />
+                    </div>
+                    <div>
+                        <div class="form-label">{{localize
+                            'dgalt.labels.mentalsheet.cured'}}</div>
+                        <a class="item-control item-checkmark" title="{{localize 'dgalt.labels.mentalsheet.iscured'}}"
+                            data-field="data.iscured">
+                            <i class="{{#if data.data.iscured}}fas fa-plus-square{{else}}fas fa-square{{/if}}"></i>
+                        </a>
+                    </div>
+                    {{/if}}
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="item-description">
+            <label class="form-label">{{localize 'dgalt.labels.skillsheet.description'}}</label>
+
+            {{#if data.data.isdisorder}}
+            {{editor content=data.data.description target="data.descriptiondisorder" button=true owner=owner editable=editable}}
+            {{else}}
+            {{editor content=data.data.description target="data.description" button=true owner=owner editable=editable}}
+            {{/if}}
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+</form>

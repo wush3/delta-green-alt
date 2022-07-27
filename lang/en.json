@@ -1,8 +1,13 @@
 {
-    "Name": "Name",
+    "name": "Name",
     "dgalt": {
         "sheet": {
             "newItem": "*New Item*"
+        },
+        "contextmenu": {
+            "create": "CREATE",
+            "edit": "EDIT",
+            "delete": "DELETE"
         },
         "attackskills": {
             "none": "",
@@ -22,7 +27,7 @@
                 "relationship": "RELATIONSHIP",
                 "value": "SCORE",
                 "description": "DESCRIPTION",
-                "psychheader": "PSYCHOLOGICAL DATA",
+                "header": "PSYCHOLOGICAL DATA",
                 "mentallabel": "12. MOTIVATIONS AND DISORDERS",
                 "adaptedlabel": "13. INCIDENTS OF SAN LOSS WITHOUT GOING INSANE"
             },
@@ -60,22 +65,26 @@
                 "header": "APPLICABLE SKILL SETS"
             },
             "skillsheet": {
-                "header":"SKILL",
+                "header": "SKILL",
                 "description": "Description",
                 "canimprove": "Can Improve",
                 "failcheck": "Check Failed",
                 "base": "Base",
                 "value": "Value"
             },
-            "bondsheet":{
-                "header":"BOND"
+            "bondsheet": {
+                "header": "BOND"
             },
-            "contextmenu":{
-                "edit":"EDIT",
-                "delete":"DELETE"
+            "mentalsheet":
+            {
+                "headerdisorder": "DISORDER",
+                "headermotivation": "MOTIVATION",
+                "alternative": "Alternative",
+                "trigger": "Trigger",
+                "description": "Description",
+                "cured": "Cured",
+                "toggledisorder": "Toggle Disorder"
             }
-
-
         }
     }
 }

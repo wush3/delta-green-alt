@@ -7,10 +7,12 @@ async function preloadHandlebarsTemplates()
     const templatePaths=[
         "systems/delta-green-alt/templates/partials/agent-personal-data-block.hbs",
         "systems/delta-green-alt/templates/partials/agent-statistics-data-block.hbs",
+        "systems/delta-green-alt/templates/partials/agent-psychological-data.hbs",
         "systems/delta-green-alt/templates/partials/agent-skills-data-block.hbs",
 
-        "systems/delta-green-alt/templates/partials/agent-bond-card.hbs",
+        "systems/delta-green-alt/templates/partials/bond-card.hbs",
         "systems/delta-green-alt/templates/partials/skill-card.hbs",
+        "systems/delta-green-alt/templates/partials/mental-card.hbs",
     ];
 
     return loadTemplates(templatePaths);

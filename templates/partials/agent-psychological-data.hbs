@@ -1,0 +1,43 @@
+<div class="psychdata">
+
+    <div class="psych-header">
+        <div class="vertical-header">
+            {{localize 'dgalt.labels.psychdata.header'}}
+        </div>
+    </div>
+
+    <div class="bonds-block">
+        <div class="bonds-label">
+            <div class="form-label">{{localize 'dgalt.labels.psychdata.bondslabel'}}</div>
+        </div>
+        <div class="bonds-data">
+            <ol class="bond-list">
+                {{#each bonds as |bond id|}}
+                {{> "systems/delta-green-alt/templates/partials/bond-card.hbs" bond}}
+                {{/each}}
+            </ol>
+        </div>
+    </div>
+
+
+    <div class="mental-block">
+        <div class="mental-label">
+            <div class="form-label">{{localize 'dgalt.labels.psychdata.mentallabel'}}</div>
+        </div>
+        <div class="mental-data">
+            <ol class="bond-list">
+                {{#each mentalitems as |mental id|}}
+                {{> "systems/delta-green-alt/templates/partials/mental-card.hbs" mental}}
+                {{/each}}
+            </ol>
+        </div>
+    </div>
+
+    <div class="adapted-block">
+        <div class="adapted-label">
+            <div class="form-label">{{localize 'dgalt.labels.psychdata.adaptedlabel'}}</div>
+        </div>
+        <div class="adapted-data"></div>
+    </div>
+
+</div>
