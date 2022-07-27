@@ -1,5 +1,5 @@
 <div class="item bond-card" data-bond-id="{{_id}}" data-item-id="{{_id}}">
-    <div class="bond-name {{#unless data.value }}strike{{/unless}}" >
+    <div class="bond-name {{#if (eq data.value 0)}}strike{{/if}}" >
         {{name}} - {{data.relationship}}        
     </div>
     <div class="bond-score">

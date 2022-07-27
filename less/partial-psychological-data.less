@@ -1,7 +1,7 @@
 .psychdata {
   display: grid;
   grid-template-columns: min-content 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr min-content;
   gap: 1px 1px;
   grid-auto-flow: row;
   grid-template-areas:
@@ -29,7 +29,7 @@
 .bonds-block {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: min-content 1fr;
+  grid-template-rows: min-content min-content;
   gap: 1px 1px;
   grid-auto-flow: row;
   grid-template-areas:
@@ -87,7 +87,7 @@
 .adapted-block {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: min-content 1fr;
+  grid-template-rows: min-content min-content;
   gap: 1px 1px;
   grid-auto-flow: row;
   grid-template-areas:
@@ -111,6 +111,10 @@
   background-color: var(--backColor);
   color: var(--foreColor);
   outline: var(--borderColor) dashed 1px;
+  display: flex;
+  gap:10px;
+  justify-content: center;
+  align-content: center;
 }
 
 
@@ -119,7 +123,7 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  height: 6.6rem;
+  max-height: 100px;
   margin: 0;
   padding: 0;
   width: auto;
@@ -194,10 +198,7 @@
 
 
 
-.strike {
-  color: var(--borderColor);
-  text-decoration: line-through var(--foreColor) solid 2px;
-}
+
 
 
 

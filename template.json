@@ -58,21 +58,8 @@
                 "value": 100,
                 "currentbreakingpoint": 101,
                 "violencelevel":0,
-                "helplessnesslevel":0,
-                "adaptation": {
-                    "violence": {
-                        "level":0,
-                        "incident1": false,
-                        "incident2": false,
-                        "incident3": false
-                    },
-                    "helplessness": {
-                        "level":0,
-                        "incident1": false,
-                        "incident2": false,
-                        "incident3": false
-                    }
-                }
+                "helplessnesslevel":0
+                
             },
             "skills": {},           
             "specialtraining": {}

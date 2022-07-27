@@ -84,11 +84,48 @@
     padding: 2px;
   }
 
+  .form-text-small{
+    color: var(--foreColor);
+    font-size: .75rem;
+    line-height: 1rem;
+    overflow: hidden;
+    padding: 2px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+
+       
+  }
+
+  .custom-check {
+    font-size: .75rem;
+   
+    margin: 1px;
+    margin-top: 3px;
+    
+  }
+
+  
+
   .group-flex-horizontal{
     display: flex;
     flex-direction: row;
     justify-items: center;
     gap: 10px;
+}
+
+.group-grow-horizontal{
+  width: auto;
+  flex: 1;       
+}
+
+.invisible{
+  visibility: hidden;
+}
+
+.strike {
+  color: var(--borderColor);
+  text-decoration: line-through var(--foreColor) solid 2px;
 }
 
  
@@ -152,11 +189,7 @@
     margin: 2px 2px 2px 2px;    
     display: flex;
     flex-direction: column;
-    flex: 0 0 1.25rem;
     font-size: .625rem;
-    line-height: 1rem;
-    text-align: end;
-    width: max-content;
     a {
       &:hover {
         color: red;

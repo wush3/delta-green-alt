@@ -27,7 +27,7 @@ export default class DgAgentSheet extends ActorSheet {
         });
 
         data.bonds = data.items.filter(function (item) { return item.type == "Bond" });
-    
+
 
         data.bonds.sort(function (a, b) {
             let nameA = a.name.toUpperCase();
@@ -42,7 +42,7 @@ export default class DgAgentSheet extends ActorSheet {
         });
 
         data.mentalitems = data.items.filter(function (item) { return item.type == "Mental" });
-        
+
         data.mentalitems.sort(function (a, b) {
             let nameA = a.name.toUpperCase();
             let nameB = b.name.toUpperCase();
@@ -60,7 +60,7 @@ export default class DgAgentSheet extends ActorSheet {
 
     skillContextMenu = [
         {
-            name: game.i18n.localize("dgalt.labels.contextmenu.edit"),
+            name: game.i18n.localize("dgalt.contextmenu.edit"),
             icon: '<i class="fas fa-edit"/>',
             callback: element => {
                 console.log(this.actor.name);
@@ -71,7 +71,7 @@ export default class DgAgentSheet extends ActorSheet {
 
         },
         {
-            name: game.i18n.localize("dgalt.labels.contextmenu.delete"),
+            name: game.i18n.localize("dgalt.contextmenu.delete"),
             icon: '<i class="fas fa-trash"/>',
             callback: element => {
                 console.log(this.actor.name);
@@ -95,7 +95,7 @@ export default class DgAgentSheet extends ActorSheet {
         html.find(".item-edit").click(this._onItemEdit.bind(this));
         html.find(".item-checkmark").click(this._onCheckboxClick.bind(this));
         html.find(".skill-improvement").click(this._onImproveClick.bind(this));
-        html.find(".violence-checkmark").click(this._onViolenceClick.bind(this));
+        html.find(".adaptation-checkmark").click(this._onAdaptationClick.bind(this));
 
         html.find(".inline-edit").change(this._onInlineChanged.bind(this));
 
@@ -149,50 +149,67 @@ export default class DgAgentSheet extends ActorSheet {
 
 
     async _onInlineChanged(event) {
-        event.preventDefault();        
-        const element = event.currentTarget;        
+        event.preventDefault();
+        const element = event.currentTarget;
         const itemId = element.closest(".item").dataset.itemId;
-        const item = this.actor.items.get(itemId);        
-        const field = element.dataset.field;        
-        //return item.update({ [field]: element.value });
-        const result=item.update({ [`${field}`]: element.value })
-        this.actor.update();
+        const item = this.actor.items.get(itemId);
+        const field = element.dataset.field;      
+        const dtype = element.dataset.dtype;
+        
+        let newValue=element.value;
+        if(dtype=="number")
+            newValue=Number(newValue);
+        
+        const result = item.update({ [`${field}`]: newValue })
+        
         return result;
 
-        
+
     }
 
     async _onImproveClick(event) {
 
-        
+
         this.actor.items.forEach(item => {
-           
-            if(item.type=="Skill")            
-                if(item.data.data.failcheck)
-                {
+
+            if (item.type == "Skill")
+                if (item.data.data.failcheck) {
                     //send a basic chatmessage later
 
-                    item.update({["data.value"]: getProperty(item.data,"data.value") + Math.floor(Math.random() * 4)+1})
+                    item.update({ ["data.value"]: getProperty(item.data, "data.value") + Math.floor(Math.random() * 4) + 1 })
 
-                    item.update({["data.failcheck"]:false});
-                   
-                   
+                    item.update({ ["data.failcheck"]: false });
+
+
                 }
         });
 
         return;
     }
 
-    async _onViolenceClick(event){
+    async _onAdaptationClick(event) {
         event.preventDefault();
         const element = event.currentTarget;
-        const violencelevel=this.actor.data.data.sanity.violencelevel;
-        const number=element.dataset.number;
-        if(violencelevel!=number)
-            this.actor.update({["data.sanity.violencelevel"]:number});
-        else
-            this.actor.update({["data.sanity.violencelevel"]:number-1});
-               
+        const number = element.dataset.number;
+        let adaptlevel = 0;
+
+        if (element.dataset.adapt == "violence") {
+            adaptlevel = this.actor.data.data.sanity.violencelevel;
+            if (adaptlevel != number)
+                this.actor.update({ ["data.sanity.violencelevel"]: number });
+            else
+                this.actor.update({ ["data.sanity.violencelevel"]: number - 1 });
+        }
+        if (element.dataset.adapt == "helplessness") {
+            adaptlevel = this.actor.data.data.sanity.helplessnesslevel;
+            if (adaptlevel != number)
+                this.actor.update({ ["data.sanity.helplessnesslevel"]: number });
+            else
+                this.actor.update({ ["data.sanity.helplessnesslevel"]: number - 1 });
+        }
+
+
+
     }
 
 }

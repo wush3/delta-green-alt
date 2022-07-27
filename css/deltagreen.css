@@ -234,11 +234,36 @@
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }
+.dgalt.sheet.agent .form-text-small {
+  color: var(--foreColor);
+  font-size: 0.75rem;
+  line-height: 1rem;
+  overflow: hidden;
+  padding: 2px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.dgalt.sheet.agent .custom-check {
+  font-size: 0.75rem;
+  margin: 1px;
+  margin-top: 3px;
+}
 .dgalt.sheet.agent .group-flex-horizontal {
   display: flex;
   flex-direction: row;
   justify-items: center;
   gap: 10px;
+}
+.dgalt.sheet.agent .group-grow-horizontal {
+  width: auto;
+  flex: 1;
+}
+.dgalt.sheet.agent .invisible {
+  visibility: hidden;
+}
+.dgalt.sheet.agent .strike {
+  color: var(--borderColor);
+  text-decoration: line-through var(--foreColor) solid 2px;
 }
 .dgalt.sheet.agent .container {
   height: 100%;
@@ -282,11 +307,7 @@
   margin: 2px 2px 2px 2px;
   display: flex;
   flex-direction: column;
-  flex: 0 0 1.25rem;
   font-size: 0.625rem;
-  line-height: 1rem;
-  text-align: end;
-  width: max-content;
 }
 .dgalt.sheet.agent .item-controls-vertical a:hover {
   color: red;
@@ -674,7 +695,7 @@
 .psychdata {
   display: grid;
   grid-template-columns: min-content 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr min-content;
   gap: 1px 1px;
   grid-auto-flow: row;
   grid-template-areas: "psych-header bonds-block" "psych-header mental-block" "psych-header adapted-block";
@@ -695,7 +716,7 @@
 .bonds-block {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: min-content 1fr;
+  grid-template-rows: min-content min-content;
   gap: 1px 1px;
   grid-auto-flow: row;
   grid-template-areas: "bonds-label" "bonds-data";
@@ -743,7 +764,7 @@
 .adapted-block {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: min-content 1fr;
+  grid-template-rows: min-content min-content;
   gap: 1px 1px;
   grid-auto-flow: row;
   grid-template-areas: "adapted-label" "adapted-data";
@@ -763,12 +784,16 @@
   background-color: var(--backColor);
   color: var(--foreColor);
   outline: var(--borderColor) dashed 1px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-content: center;
 }
 .bond-list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  height: 6.6rem;
+  max-height: 100px;
   margin: 0;
   padding: 0;
   width: auto;
@@ -825,10 +850,6 @@
   color: var(--foreColor);
   height: 1rem;
   text-align: center;
-}
-.strike {
-  color: var(--borderColor);
-  text-decoration: line-through var(--foreColor) solid 2px;
 }
 .skilldata {
   display: grid;

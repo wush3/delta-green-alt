@@ -23,13 +23,13 @@
         "labels": {
             "psychdata": {
                 "bondheader": "BOND",
-                "bondslabel": "11. BONDS",
+                "bondslabel": "10. BONDS",
                 "relationship": "RELATIONSHIP",
                 "value": "SCORE",
                 "description": "DESCRIPTION",
                 "header": "PSYCHOLOGICAL DATA",
-                "mentallabel": "12. MOTIVATIONS AND DISORDERS",
-                "adaptedlabel": "13. INCIDENTS OF SAN LOSS WITHOUT GOING INSANE",
+                "mentallabel": "11. MOTIVATIONS AND DISORDERS",
+                "adaptedlabel": "12. INCIDENTS OF SAN LOSS WITHOUT GOING INSANE",
                 "violence":"Violence",
                 "helplessness":"Helplessness",
                 "adapted":"adapted"
