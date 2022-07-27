@@ -29,7 +29,10 @@
                 "description": "DESCRIPTION",
                 "header": "PSYCHOLOGICAL DATA",
                 "mentallabel": "12. MOTIVATIONS AND DISORDERS",
-                "adaptedlabel": "13. INCIDENTS OF SAN LOSS WITHOUT GOING INSANE"
+                "adaptedlabel": "13. INCIDENTS OF SAN LOSS WITHOUT GOING INSANE",
+                "violence":"Violence",
+                "helplessness":"Helplessness",
+                "adapted":"adapted"
             },
             "personaldata": {
                 "header": "PERSONAL DATA",

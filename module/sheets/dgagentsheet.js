@@ -95,6 +95,7 @@ export default class DgAgentSheet extends ActorSheet {
         html.find(".item-edit").click(this._onItemEdit.bind(this));
         html.find(".item-checkmark").click(this._onCheckboxClick.bind(this));
         html.find(".skill-improvement").click(this._onImproveClick.bind(this));
+        html.find(".violence-checkmark").click(this._onViolenceClick.bind(this));
 
         html.find(".inline-edit").change(this._onInlineChanged.bind(this));
 
@@ -154,8 +155,9 @@ export default class DgAgentSheet extends ActorSheet {
         const item = this.actor.items.get(itemId);        
         const field = element.dataset.field;        
         //return item.update({ [field]: element.value });
-
-        return item.update({ [`${field}`]: element.value });
+        const result=item.update({ [`${field}`]: element.value })
+        this.actor.update();
+        return result;
 
         
     }
@@ -179,6 +181,18 @@ export default class DgAgentSheet extends ActorSheet {
         });
 
         return;
+    }
+
+    async _onViolenceClick(event){
+        event.preventDefault();
+        const element = event.currentTarget;
+        const violencelevel=this.actor.data.data.sanity.violencelevel;
+        const number=element.dataset.number;
+        if(violencelevel!=number)
+            this.actor.update({["data.sanity.violencelevel"]:number});
+        else
+            this.actor.update({["data.sanity.violencelevel"]:number-1});
+               
     }
 
 }

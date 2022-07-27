@@ -37,7 +37,22 @@
         <div class="adapted-label">
             <div class="form-label">{{localize 'dgalt.labels.psychdata.adaptedlabel'}}</div>
         </div>
-        <div class="adapted-data"></div>
+        <div class="adapted-data">
+            
+                <div class="form-text">{{localize 'dgalt.labels.psychdata.violence'}}</div>
+                <div class="item-controls">
+                    <a class="item-control violence-checkmark" data-number="1"><i
+                            class="fas {{#if (gte data.data.sanity.violencelevel 1)}}fa-plus-square{{else}}fa-square{{/if}}"></i></a>
+                    <a class="item-control violence-checkmark" data-number="2"><i
+                            class="fas {{#if (gte data.data.sanity.violencelevel 2)}}fa-plus-square{{else}}fa-square{{/if}}"></i></a>
+                    <a class="item-control violence-checkmark" data-number="3"><i
+                            class="fas {{#if (gte data.data.sanity.violencelevel 3)}}fa-plus-square{{else}}fa-square{{/if}}"></i></a>
+                </div>
+                {{#if (gte data.data.sanity.violencelevel 3)}}
+                    <div class="form-label">{{localize 'dgalt.labels.psychdata.adapted'}}</div>
+                    {{/if}}
+            
+        </div>
     </div>
 
 </div>

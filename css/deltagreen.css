@@ -234,6 +234,12 @@
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }
+.dgalt.sheet.agent .group-flex-horizontal {
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  gap: 10px;
+}
 .dgalt.sheet.agent .container {
   height: 100%;
   display: grid;
