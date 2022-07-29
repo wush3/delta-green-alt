@@ -24,7 +24,26 @@
           "path": "lang/hun.json"
         }        
     ],
-      "packs": [],
+      "packs": [
+        {
+          "name":"basic-skills",
+          "label":"Basic Skills",
+          "system":"delta-green-alt",
+          "module":"delta-green-alt",
+          "path":"./packs/basic-skills.db",
+          "entity":"Item",
+          "private":"false"
+        },
+        {
+          "name":"typed-skills",
+          "label":"Typed Skills",
+          "system":"delta-green-alt",
+          "module":"delta-green-alt",
+          "path":"./packs/typed-skills.db",
+          "entity":"Item",
+          "private":"false"
+        }
+      ],
       "system": [],
       "dependencies": [],      
       "gridDistance": 1.5,
