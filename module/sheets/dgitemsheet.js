@@ -29,6 +29,7 @@ export default class DgItemSheet extends ItemSheet {
         
         html.find(".item-checkmark").click(this._onCheckboxClick.bind(this));
         html.find(".inline-edit").change(this._onInlineChanged.bind(this));
+
                 
         super.activateListeners(html);
     }
@@ -51,5 +52,7 @@ export default class DgItemSheet extends ItemSheet {
         const field=element.dataset.field;
         return item.update({[field]: element.value});
     }
+
+   
 
 }

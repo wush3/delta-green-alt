@@ -56,7 +56,8 @@
             },
             "sanity": {
                 "value": 100,
-                "currentbreakingpoint": 101,
+                "max":100,
+                "currentbreakingpoint": 100,
                 "violencelevel":0,
                 "helplessnesslevel":0
                 

@@ -1,0 +1,31 @@
+<form class="item roll-card" data-skill-id="{{_id}}" data-item-id="{{_id}}">
+
+    <div class="container">
+        <div class="item-header">
+            <div class="vertical-header">
+                {{localize 'dgalt.labels.skillsheet.header'}}
+            </div>
+        </div>
+        <div class="item-top">
+            <div class="item-icon">
+                <img class="item-icon" src="{{img}}" data-edit="img" title="{{name}}" height="64"
+                    width="64"/>
+            </div>
+            <div class="item-main">
+                <div class="item-title">
+                    <div>{{name}}</div>                        
+                </div>
+                <div class="item-data">
+      
+                </div>
+            </div>
+        </div>
+        <div class="item-description">
+            <div class="form-label">{{localize 'dgalt.labels.skillsheet.description'}}</div>
+            
+            {{data.description}}
+        </div>
+    </div>
+
+
+</form>

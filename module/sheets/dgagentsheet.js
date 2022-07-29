@@ -4,7 +4,18 @@ export default class DgAgentSheet extends ActorSheet {
         return mergeObject(super.defaultOptions,
             {
                 template: "systems/delta-green-alt/templates/sheets/agent-sheet.hbs",
-                classes: ["dgalt", "sheet", "agent"]
+                classes: ["dgalt", "sheet", "agent"],
+                width: 700,
+                height: 720,                
+                resizable: true,
+                scrollY: ['.skills-block .bonds-block .mental-block .tab'],
+                //tabs: [
+                //    {
+                //        navSelector: '.sheet-nav',
+                //        contentSelector: '.sheet-body',
+                //        initial: 'skills'
+                //    }
+                //]
             });
     }
 
@@ -96,8 +107,13 @@ export default class DgAgentSheet extends ActorSheet {
         html.find(".item-checkmark").click(this._onCheckboxClick.bind(this));
         html.find(".skill-improvement").click(this._onImproveClick.bind(this));
         html.find(".adaptation-checkmark").click(this._onAdaptationClick.bind(this));
+        html.find(".breakpoint-click").click(this._onBreakpointClick.bind(this));
 
         html.find(".inline-edit").change(this._onInlineChanged.bind(this));
+
+        //if (this.actor.owner) {
+        html.find(".item-roll").click(this._onItemRollClick.bind(this));
+        //}
 
 
         new ContextMenu(html, ".skill-card", this.skillContextMenu);
@@ -153,15 +169,15 @@ export default class DgAgentSheet extends ActorSheet {
         const element = event.currentTarget;
         const itemId = element.closest(".item").dataset.itemId;
         const item = this.actor.items.get(itemId);
-        const field = element.dataset.field;      
+        const field = element.dataset.field;
         const dtype = element.dataset.dtype;
-        
-        let newValue=element.value;
-        if(dtype=="number")
-            newValue=Number(newValue);
-        
+
+        let newValue = element.value;
+        if (dtype == "number")
+            newValue = Number(newValue);
+
         const result = item.update({ [`${field}`]: newValue })
-        
+
         return result;
 
 
@@ -207,9 +223,20 @@ export default class DgAgentSheet extends ActorSheet {
             else
                 this.actor.update({ ["data.sanity.helplessnesslevel"]: number - 1 });
         }
+    }
 
+    async _onItemRollClick(event) {
+        event.preventDefault();
+        const element = event.currentTarget;
+        const itemId = element.closest(".item").dataset.itemId;
+        const item = this.actor.items.get(itemId);
 
+        item.roll();
+    }
 
+    async _onBreakpointClick(event) {
+        event.preventDefault();
+        this.actor._setBreakPoint();
     }
 
 }

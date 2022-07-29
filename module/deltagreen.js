@@ -1,4 +1,6 @@
 import {dgalt} from "./config.js";
+import DgItem from "./dgitem.js";
+import DgActor from "./dgactor.js";
 import DgItemSheet from "./sheets/dgitemsheet.js";
 import DgAgentSheet from "./sheets/dgagentsheet.js";
 
@@ -13,6 +15,8 @@ async function preloadHandlebarsTemplates()
         "systems/delta-green-alt/templates/partials/bond-card.hbs",
         "systems/delta-green-alt/templates/partials/skill-card.hbs",
         "systems/delta-green-alt/templates/partials/mental-card.hbs",
+
+        "systems/delta-green-alt/templates/partials/roll-skill.hbs",
     ];
 
     return loadTemplates(templatePaths);
@@ -23,6 +27,9 @@ Hooks.once("init", async function()
         console.log('delta-green-alt | Alternative Delta Green system initializing....');
 
         CONFIG.dgalt=dgalt;
+
+        CONFIG.Item.documentClass = DgItem;
+        CONFIG.Actor.documentClass = DgActor;
 
         Items.unregisterSheet("core", ItemSheet); 
         Items.registerSheet("delta-green-alt", DgItemSheet);
