@@ -1,230 +1,154 @@
-.dgalt.sheet.agent {
-  .form {    
-    display: flex;
-    flex-direction: row;        
+.dgalt.sheet {
 
-    height: 100%
-  }
+    //min-width: 688px;
+    //min-height: 640px;
 
-  
+    .sheet-body {
+        border: 1px solid var(--borderColor);
+        margin: 0 1rem 0.5rem 1rem;
+        overflow: hidden;
+        
+        
 
-  .vertical-header {
-    writing-mode: vertical-rl;
-    font-size: 12px;
-    padding-top: 10px;
+        ul,
+        ol {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
 
+        .restore-list-styles ul,
+        .restore-list-styles ol {
+            margin: 0.5em 0;
+            padding: 0 0 0 1.5em;
+        }
 
-  }
+        .restore-list-styles ul {
+            list-style-type: disc;
+        }
 
-  .form-label {
-    font-size: 10px;
-    color: var(--labelColor);
-  }
+        .restore-list-styles ol {
+            list-style-type: decimal;
+        }
 
-  .form-label-centered {
-    font-size: 10px;
-    text-align: center;
-    vertical-align: middle;
-    color: var(--labelColor);
-  }
+        .item-list {
+            display:flex;
+            width: auto;
+            height: 100%;
+            
+            flex-direction: column;
+            flex-wrap: wrap;
 
-  .form-inputbox {
-    color: var(--foreColor);
-    height: 18px;
+            
+            margin: 0 0 10px;
+            
+        }
 
-  }
+        .itemV2 {
+            max-height: 1.25rem;
+            
+            margin-right: 0.5rem;
+            display: grid;
+            font-size: 0.75rem;
+            grid-template-columns: 1rem auto 1.5rem 1.5rem;
+            border-bottom: 1px solid;
+            width: 33%;
 
-  .form-inputbox-centered {
-    color: var(--foreColor);
-    text-align: center;
-    height: 18px;
-  }
+            
 
-  .form-inputbox-number {
-    color: var(--foreColor);
-    text-align: center;
-    height: 18px;
-    width: 32px;
-  }
+            .item-image {
+                height: 1rem;
+                padding: 2px;
+            }
 
+            .item-name {
+                // .cursive();
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                padding-left: 3px;
+                line-height: 1rem;
 
-  .form-button {
-    align-items: center;
-    background-color: initial;
-    background-image: linear-gradient(var(--borderColor), var(--backColor));
-    border-radius: 2px;
-    border-width: 0;
-    box-sizing: border-box;
-    color: var(--labelColor);
-    display: inline-flex;
-    flex-direction: column;
-    font-size: 10px;
-    height: 16px;
-    width: 35px;
-    justify-content: center;
-    margin: 0;
-    outline: none;
-    padding: 0 2px;
-    text-align: center;
-    transition: all 150ms;
-    vertical-align: baseline;
+                input {
+                    height: 1rem;
+                    padding: 0;
+                    overflow: visible;
+                    background-color: var(--backColor);
+                    color: var(--foreColor);
+                }
+            }
 
-  }
+            .item-score {
+                // .cursive();
+                color: var(--foreColor);
+                text-align: end;
+                margin-right: 2px;
+                line-height: 1rem;
 
-  .form-button:hover {
-    color: var(--hoverColor);
-  }
+                input {
+                    height: 1rem;
+                    padding: 0;
+                    margin-right: 2px;
+                    background-color: var(--backColor);
+                    color: var(--foreColor);
+                    text-align: end;
+                }
+            }
 
-  .form-button:active {
-    background-image: radial-gradient(var(--backColor), var(--hoverColor));
-  }
+            .item-controls {
+                // font-family: system-ui;
+                font-size: 0.625rem;
+                line-height: 1rem;
+                flex: 0 0 1.25rem;
+                display: block;
+                text-align: end;
+                width: max-content;
 
-  .form-text {
-    outline: var(--borderColor) dashed 1px;
-    padding: 2px;
-  }
+                a:hover {
+                    text-shadow: none;
+                    color: var(--foreColor);
+                }
 
-  .form-text-small{
-    color: var(--foreColor);
-    font-size: .75rem;
-    line-height: 1rem;
-    overflow: hidden;
-    padding: 2px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-
-
-       
-  }
-
-  .custom-check {
-    font-size: .75rem;
-   
-    margin: 1px;
-    margin-top: 3px;
-    
-  }
-
-  
-
-  .group-flex-horizontal{
-    display: flex;
-    flex-direction: row;
-    justify-items: center;
-    gap: 10px;
-}
-
-.group-grow-horizontal{
-  width: auto;
-  flex: 1;       
-}
-
-.invisible{
-  visibility: hidden;
-}
-
-.strike {
-  color: var(--borderColor);
-  text-decoration: line-through var(--foreColor) solid 2px;
-}
-
- 
-  
+                .item-control {
+                    &.active {
+                        color: goldenrod;
+                    }
+                }
+            }
+        }
 
 
 
-  .container {
+        
+        .tab {
+            height: 100%;
+        }
 
-    height: 100%;
+        .two-panes-content {
+            display: flex;
+            flex-direction: row;
+            height: 100%;
 
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: min-content min-content 1fr;
-    gap: 5px 5px;
-    grid-auto-flow: row;
-    grid-template-areas:
-      "personal-data-area personal-data-area"
-      "statistics-data-area psych-data-area"
-      "skill-data-area skill-data-area";
+            .left-panel {
+                flex: 0 0 8.125rem;
+                height: auto;
+                margin: 0.5rem 0;
+                padding: 0;
+                border-right: 1px solid;
+                text-align: center;
 
-    .personal-data-area {
-      grid-area: personal-data-area;
+                a:hover {
+                    text-shadow: 0 0 10px var(--hoverColor);
+                }
+            }
+
+            .right-panel {
+                flex: 1;
+                height: calc(100%-40px);
+                padding: 0.25rem;
+                overflow-y: hidden;
+                overflow-x: auto;
+            }
+        }
     }
-
-    .statistics-data-area {
-      grid-area: statistics-data-area;
-    }
-
-    .psych-data-area {
-      grid-area: psych-data-area;
-    }
-
-    .skill-data-area {
-      grid-area: skill-data-area;   
-      
-      height: calc(100%-1px);
-    }
-  }
-
-  .item-controls {
-    margin: 2px 2px 2px 2px;
-    display: block;
-    flex: 0 0 1.25rem;
-    font-size: .625rem;
-    line-height: 1rem;
-    text-align: end;
-    width: max-content;
-    a {
-      &:hover {
-        color: red;
-        text-shadow: none;
-      }
-    }
-    .item-control.active {
-      color: #daa520;
-    }
-  }
-
-  .item-controls-vertical {
-    margin: 2px 2px 2px 2px;    
-    display: flex;
-    flex-direction: column;
-    font-size: .625rem;
-    a {
-      &:hover {
-        color: red;
-        text-shadow: none;
-      }
-    }
-    .item-control.active {
-      color: #daa520;
-    }
-  }
-
-  .item-list {
-    display: flex !important;
-    flex-direction: column !important;
-    flex-wrap: wrap !important;
-    width: auto;
-    gap: 1px 1px;
-    overflow: hidden;
-    
-
-    height: 298px;
-    margin: 0px;
-    padding: 0px;
-    justify-content: start;
-    align-content: flex-start;
-
-
-  }
-
-  
-  
-
-
-  
-
-
-
 }

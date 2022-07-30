@@ -9,13 +9,13 @@ export default class DgAgentSheet extends ActorSheet {
                 height: 720,                
                 resizable: true,
                 scrollY: ['.skills-block .bonds-block .mental-block .tab'],
-                //tabs: [
-                //    {
-                //        navSelector: '.sheet-nav',
-                //        contentSelector: '.sheet-body',
-                //        initial: 'skills'
-                //    }
-                //]
+                tabs: [
+                    {
+                        navSelector: '.sheet-nav',
+                        contentSelector: '.sheet-body',
+                        initial: 'skills'
+                    }
+                ]
             });
     }
 
