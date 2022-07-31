@@ -60,6 +60,11 @@ export default class DgItem extends Item {
 
 
         chatData.content = await renderTemplate(this.chatTemplate[this.type], cardData);
+        chatData.content+="<p>Roll Total:"+roll.total+"</p>";
+        if(roll.total<=this.data.data.value)
+        chatData.content+="<p>PASS</p>"; else
+        chatData.content+="<p>FAIL</p>";
+        if(!(roll.total % 11)||roll.total==100) chatData.content+="<p>CRITICAL</p>";
 
         return ChatMessage.create(chatData);
     }
