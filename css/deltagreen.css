@@ -17,6 +17,13 @@
     --labelColor:#808080;
     --hoverColor:red;*/
 }
+.item-icon-small {
+  height: 3rem;
+  width: 3rem;
+  padding: 2px;
+  background-color: var(--backColor);
+  border: 1px solid var(--labelColor);
+}
 .dgalt.sheet.item .form {
   display: flex;
   flex-direction: column;
@@ -322,6 +329,7 @@
   flex-wrap: nowrap;
   align-content: stretch;
   height: 100%;
+  width: 100%;
   gap: 5px;
 }
 .dgalt.sheet .container .sheet-nav .tab-title {
@@ -337,6 +345,27 @@
 }
 .dgalt.sheet .container .sheet-nav .tab-title.active {
   background-color: var(--foreColor);
+}
+.dgalt.sheet .container .button-bar-vertical {
+  font-size: 0.625rem;
+  line-height: 1rem;
+  flex: 0 0 1.25rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 2px 0px;
+  gap: 2px;
+}
+.dgalt.sheet .container .button-bar-vertical .item-control {
+  border: 1px solid var(--borderColor);
+  border-radius: 5px;
+}
+.dgalt.sheet .container .button-bar-vertical a:hover {
+  text-shadow: none;
+  color: var(--hoverColor);
+}
+.dgalt.sheet .container .button-bar-vertical .item-control.active {
+  color: goldenrod;
 }
 .dgalt.sheet .container .sheet-body {
   overflow: hidden;

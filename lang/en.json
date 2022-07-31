@@ -65,7 +65,12 @@
                 "breaklabel": "Breaking Point [BP]"
             },
             "skilldata": {
-                "header": "APPLICABLE SKILL SETS"
+                "header": "APPLICABLE SKILL SETS",
+                "rollimprove":"Roll for skill improvement",
+                "markimprove":"Mark for improvement",
+                "addnew":"Add new skill",
+                "colortoggle":"Toggle color highlighting"
+                
             },
             "skillsheet": {
                 "header": "SKILL",

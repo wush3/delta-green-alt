@@ -17,6 +17,8 @@ async function preloadHandlebarsTemplates()
         "systems/delta-green-alt/templates/partials/mental-card.hbs",
 
         "systems/delta-green-alt/templates/partials/roll-skill.hbs",
+        "systems/delta-green-alt/templates/partials/roll-skill-improve.hbs",
+        
     ];
 
     return loadTemplates(templatePaths);
@@ -51,7 +53,6 @@ Hooks.once("init", async function()
 
         Handlebars.registerHelper("pickcolor", function(content)
         {
-            console.log(content);
             let result="eighty";
             if (content<80) result="sixty";
             if (content<60) result="forty";

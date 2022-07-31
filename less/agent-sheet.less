@@ -1,6 +1,6 @@
 .dgalt.sheet {
 
-   
+
 
     .window-content {
         height: 100%;
@@ -206,6 +206,7 @@
             align-content: stretch;
             //background-color: var(--backColor);
             height: 100%;
+            width: 100%;
             //padding-left: 15px;
             //padding-right: 15px;
             gap: 5px;
@@ -226,11 +227,43 @@
 
                 &.active {
                     background-color: var(--foreColor);
+                    //border-bottom: solid 1px var(--backColor);
                 }
             }
 
 
 
+        }
+
+        .button-bar-vertical {
+            font-size: 0.625rem;
+            line-height: 1rem;
+            flex: 0 0 1.25rem;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            //padding: 2px;
+            margin: 2px 0px;
+            gap: 2px;
+            //border: 1px solid var(--borderColor);
+            //border-radius: 3px;
+
+            .item-control {
+                border: 1px solid var(--borderColor);
+                border-radius: 5px;
+                //padding: 0px 3px;
+            }
+
+            a:hover {
+                text-shadow: none;
+                color: var(--hoverColor);
+            }
+
+            .item-control {
+                &.active {
+                    color: goldenrod;
+                }
+            }
         }
 
         .sheet-body {

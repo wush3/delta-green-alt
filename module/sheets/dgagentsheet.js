@@ -66,6 +66,8 @@ export default class DgAgentSheet extends ActorSheet {
             return 0;
         });
 
+        
+
         return data;
     }
 
@@ -107,6 +109,7 @@ export default class DgAgentSheet extends ActorSheet {
         html.find(".item-checkmark").click(this._onCheckboxClick.bind(this));
         html.find(".skill-improvement").click(this._onImproveClick.bind(this));
         html.find(".adaptation-checkmark").click(this._onAdaptationClick.bind(this));
+        html.find(".color-toggle").click(this._onColorToggleClick.bind(this));
         html.find(".breakpoint-click").click(this._onBreakpointClick.bind(this));
 
         html.find(".inline-edit").change(this._onInlineChanged.bind(this));
@@ -190,13 +193,12 @@ export default class DgAgentSheet extends ActorSheet {
 
             if (item.type == "Skill")
                 if (item.data.data.failcheck) {
-                    //send a basic chatmessage later
+                    
+                    
+                    item.rollImprovement();
+                    
 
-                    item.update({ ["data.value"]: getProperty(item.data, "data.value") + Math.floor(Math.random() * 4) + 1 })
-
-                    item.update({ ["data.failcheck"]: false });
-
-
+                    
                 }
         });
 
@@ -223,6 +225,15 @@ export default class DgAgentSheet extends ActorSheet {
             else
                 this.actor.update({ ["data.sanity.helplessnesslevel"]: number - 1 });
         }
+    }
+
+    async _onColorToggleClick(event)
+    {
+        //console.log(this.actor.data.data.options.colorhighlight);
+        //console.log(getProperty(this.actor, "data.options.colorhighlight"));
+        //console.log(getProperty(this.actor, "data.data.options.colorhighlight"));
+        this.actor.update({["data.options.colorhighlight"]:!this.actor.data.data.options.colorhighlight});
+
     }
 
     async _onItemRollClick(event) {

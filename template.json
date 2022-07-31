@@ -63,7 +63,12 @@
                 
             },
             "skills": {},           
-            "specialtraining": {}
+            "specialtraining": {},
+            
+            "options":{
+                "colorhighlight":true
+            }
+
         },
         "Npc": {
             "name": ""
