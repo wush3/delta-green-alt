@@ -13,7 +13,8 @@
 
   display: flex;
   flex-direction: row;
-  
+  height: 100%;
+
 
 
 
@@ -34,11 +35,11 @@
     grid-area: skills-block;
     background-color: var(--backColor);
     color: var(--foreColor);
-    outline: var(--borderColor) dashed 1px;
+    //outline: var(--borderColor) dashed 1px;
 
     flex: 1;
-    
-    
+
+
     overflow-x: auto;
     overflow-y: auto;
 
@@ -47,9 +48,9 @@
       display: flex;
       flex-direction: column;
       flex-wrap: wrap;
-      max-height: 300px;
       margin: 0;
       padding: 0;
+      height: 100%;
       width: auto;
       gap: 1px 1px;
       justify-content: start;
@@ -62,7 +63,7 @@
     outline: 1px dashed var(--borderColor);
     display: grid;
     font-size: 1rem; //.75rem
-    grid-template-columns: 1rem auto 2rem min-content; //1.5rem;
+    grid-template-columns: 1rem 1.5rem auto 2rem; //1.5rem;
     //margin-right: .2rem;
     padding-left: .2rem;
     padding-right: .2rem;
@@ -70,9 +71,15 @@
     max-height: 1.25rem;
     width: 33%;
 
+    .item-image {
+      height: 1.25rem;
+      width: 1.25rem;
+      padding: 2px;
+    }
+
     .skill-check {
-      background-size: contain;
-      height: .875rem;
+      //background-size: contain;
+      height: .75rem;
       margin: 1px 0 0;
     }
 
@@ -83,17 +90,48 @@
       padding: 2px;
       text-overflow: ellipsis;
       white-space: nowrap;
+      font-weight: light;
+
       &:hover {
         color: red;
-        text-shadow:1px;
+        text-shadow: 1px;
       }
-     
+
       input {
         background-color: var(--borderColor);
         color: var(--labelColor);
         height: 1rem;
         overflow: visible;
         padding: 0;
+      }
+
+      .zero {
+        color: var(--zeroSkill);
+        font-weight: bold;
+        //text-shadow: 1px 1px antiquewhite;
+      }
+
+      .belowtwenty {
+        color: var(--belowtwentySkill);
+        font-weight: bold;
+        //text-shadow: 1px 1px antiquewhite;
+      }
+
+      .twenty {
+        color: var(--twentySkill);
+        //text-shadow: 1px 1px black;
+      }
+
+      .forty {
+        color: var(--fortySkill);
+      }
+
+      .sixty {
+        color: var(--sixtySkill);
+      }
+
+      .eighty {
+        color: var(--eightySkill);
       }
     }
 
@@ -110,6 +148,8 @@
         text-align: center;
       }
     }
+
+
   }
 
 }

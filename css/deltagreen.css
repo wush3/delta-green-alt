@@ -4,6 +4,12 @@
   --borderColor: #454545;
   --labelColor: #ffffff;
   --hoverColor: red;
+  --zeroSkill: #000000;
+  --belowtwentySkill: #454545;
+  --twentySkill: #808080;
+  --fortySkill: #ffffff;
+  --sixtySkill: darkorange;
+  --eightySkill: red;
   /*
     --backColor:white;
     --foreColor:black;
@@ -114,7 +120,7 @@
   padding: 4px;
 }
 .dgalt.sheet.item .container .item-description .editor {
-  height: 90%;
+  height: calc(100%-40px);
   border: 1px solid;
   border-radius: 1%;
   margin: 0 0 10px 0px;
@@ -168,78 +174,103 @@
   width: auto;
   height: fit-content;
 }
-.dgalt.sheet .sheet-body {
-  border: 1px solid var(--borderColor);
-  margin: 0 1rem 0.5rem 1rem;
-  overflow: hidden;
-}
-.dgalt.sheet .sheet-body ul,
-.dgalt.sheet .sheet-body ol {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-.dgalt.sheet .sheet-body .restore-list-styles ul,
-.dgalt.sheet .sheet-body .restore-list-styles ol {
-  margin: 0.5em 0;
-  padding: 0 0 0 1.5em;
-}
-.dgalt.sheet .sheet-body .restore-list-styles ul {
-  list-style-type: disc;
-}
-.dgalt.sheet .sheet-body .restore-list-styles ol {
-  list-style-type: decimal;
-}
-.dgalt.sheet .sheet-body .item-list {
-  display: flex;
-  width: auto;
+.dgalt.sheet .window-content {
   height: 100%;
-  flex-direction: column;
-  flex-wrap: wrap;
-  margin: 0 0 10px;
 }
-.dgalt.sheet .sheet-body .itemV2 {
-  max-height: 1.25rem;
-  margin-right: 0.5rem;
-  display: grid;
+.dgalt.sheet .window-content .flexcol {
+  height: 100%;
+}
+.dgalt.sheet .vertical-header {
+  text-align: center;
+  vertical-align: middle;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
   font-size: 0.75rem;
-  grid-template-columns: 1rem auto 1.5rem 1.5rem;
-  border-bottom: 1px solid;
-  width: 33%;
+  font-weight: bold;
 }
-.dgalt.sheet .sheet-body .itemV2 .item-image {
-  height: 1rem;
+.dgalt.sheet .group-flex-horizontal {
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  gap: 10px;
+}
+.dgalt.sheet .invisible {
+  visibility: hidden;
+}
+.dgalt.sheet .strike {
+  color: var(--borderColor);
+  text-decoration: line-through var(--foreColor) solid 2px;
+}
+.dgalt.sheet .form-label {
+  font-size: 0.6rem;
+  color: var(--labelColor);
+}
+.dgalt.sheet .form-label-centered {
+  font-size: 0.6rem;
+  text-align: center;
+  vertical-align: middle;
+  color: var(--labelColor);
+}
+.dgalt.sheet .form-inputbox {
+  color: var(--foreColor);
+  height: 18px;
+}
+.dgalt.sheet .form-inputbox-centered {
+  color: var(--foreColor);
+  text-align: center;
+  height: 18px;
+}
+.dgalt.sheet .form-inputbox-number {
+  color: var(--foreColor);
+  text-align: center;
+  height: 18px;
+  width: 32px;
+}
+.dgalt.sheet .form-button {
+  align-items: center;
+  background-color: initial;
+  background-image: linear-gradient(var(--borderColor), var(--backColor));
+  border-radius: 2px;
+  border-width: 0;
+  box-sizing: border-box;
+  color: var(--labelColor);
+  display: inline-flex;
+  flex-direction: column;
+  font-size: 10px;
+  height: 16px;
+  width: 35px;
+  justify-content: center;
+  margin: 0;
+  outline: none;
+  padding: 0 2px;
+  text-align: center;
+  transition: all 150ms;
+  vertical-align: baseline;
+}
+.dgalt.sheet .form-button:hover {
+  color: var(--hoverColor);
+}
+.dgalt.sheet .form-button:active {
+  background-image: radial-gradient(var(--backColor), var(--hoverColor));
+}
+.dgalt.sheet .form-text {
+  outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }
-.dgalt.sheet .sheet-body .itemV2 .item-name {
-  white-space: nowrap;
+.dgalt.sheet .form-text-small {
+  color: var(--foreColor);
+  font-size: 0.75rem;
+  line-height: 1rem;
   overflow: hidden;
+  padding: 2px;
   text-overflow: ellipsis;
-  padding-left: 3px;
-  line-height: 1rem;
+  white-space: nowrap;
 }
-.dgalt.sheet .sheet-body .itemV2 .item-name input {
-  height: 1rem;
-  padding: 0;
-  overflow: visible;
-  background-color: var(--backColor);
-  color: var(--foreColor);
+.dgalt.sheet .item-checkmark {
+  font-size: 0.625rem;
+  margin: 1px;
 }
-.dgalt.sheet .sheet-body .itemV2 .item-score {
-  color: var(--foreColor);
-  text-align: end;
-  margin-right: 2px;
-  line-height: 1rem;
-}
-.dgalt.sheet .sheet-body .itemV2 .item-score input {
-  height: 1rem;
-  padding: 0;
-  margin-right: 2px;
-  background-color: var(--backColor);
-  color: var(--foreColor);
-  text-align: end;
-}
-.dgalt.sheet .sheet-body .itemV2 .item-controls {
+.dgalt.sheet .item-controls {
   font-size: 0.625rem;
   line-height: 1rem;
   flex: 0 0 1.25rem;
@@ -247,38 +278,143 @@
   text-align: end;
   width: max-content;
 }
-.dgalt.sheet .sheet-body .itemV2 .item-controls a:hover {
+.dgalt.sheet .item-controls a:hover {
   text-shadow: none;
-  color: var(--foreColor);
+  color: var(--hoverColor);
 }
-.dgalt.sheet .sheet-body .itemV2 .item-controls .item-control.active {
+.dgalt.sheet .item-controls .item-control.active {
   color: goldenrod;
 }
-.dgalt.sheet .sheet-body .tab {
+.dgalt.sheet .container {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: min-content min-content auto;
+  width: 100%;
   height: 100%;
 }
-.dgalt.sheet .sheet-body .two-panes-content {
+.dgalt.sheet .container .sheet-header {
+  width: 100%;
+  height: min-content;
+  border: 0;
   display: flex;
-  flex-direction: row;
-  height: 100%;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 5px;
 }
-.dgalt.sheet .sheet-body .two-panes-content .left-panel {
-  flex: 0 0 8.125rem;
-  height: auto;
-  margin: 0.5rem 0;
-  padding: 0;
-  border-right: 1px solid;
+.dgalt.sheet .container .sheet-header .sheet-portrait {
+  width: 8.75rem;
+  height: 100%;
+  padding: 0 0.5rem;
+}
+.dgalt.sheet .container .sheet-header .sheet-portrait .photo {
+  object-fit: contain;
+  border: 0;
+  height: 100%;
+  width: 100%;
+}
+.dgalt.sheet .container .sheet-nav {
+  font-weight: bold;
+  font-size: 1rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: stretch;
+  height: 100%;
+  gap: 5px;
+}
+.dgalt.sheet .container .sheet-nav .tab-title {
+  background: var(--borderColor);
+  border: solid 1px var(--labelColor);
+  flex: 1 1 0px;
+  padding: 0px 10px 0px 10px;
+  margin-bottom: -1px;
   text-align: center;
 }
-.dgalt.sheet .sheet-body .two-panes-content .left-panel a:hover {
-  text-shadow: 0 0 10px var(--hoverColor);
+.dgalt.sheet .container .sheet-nav .tab-title:hover {
+  background-color: var(--hoverColor);
 }
-.dgalt.sheet .sheet-body .two-panes-content .right-panel {
-  flex: 1;
-  height: calc(100%-40px);
-  padding: 0.25rem;
-  overflow-y: hidden;
-  overflow-x: auto;
+.dgalt.sheet .container .sheet-nav .tab-title.active {
+  background-color: var(--foreColor);
+}
+.dgalt.sheet .container .sheet-body {
+  overflow: hidden;
+}
+.dgalt.sheet .container .sheet-body ul,
+.dgalt.sheet .container .sheet-body ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  align-content: flex-start;
+  justify-content: stretch;
+}
+.dgalt.sheet .container .sheet-body .restore-list-styles ul,
+.dgalt.sheet .container .sheet-body .restore-list-styles ol {
+  margin: 0.5em 0;
+  padding: 0 0 0 1.5em;
+}
+.dgalt.sheet .container .sheet-body .restore-list-styles ul {
+  list-style-type: disc;
+}
+.dgalt.sheet .container .sheet-body .restore-list-styles ol {
+  list-style-type: decimal;
+}
+.dgalt.sheet .container .sheet-body .tab {
+  height: 100%;
+  border: 1px solid var(--labelColor);
+  color: var(--foreColor);
+  background-color: var(--backColor);
+  margin-bottom: 1rem;
+}
+.dgalt.sheet .container .sheet-body .skills-data-area {
+  height: 100%;
+}
+.dgalt.sheet .container .item-list {
+  display: flex;
+  width: auto;
+  height: auto;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 0 0 10px;
+  gap: 1px 1px;
+  outline: var(--labelColor) solid 1px;
+}
+.dgalt.sheet .container .itemV2 {
+  max-height: 1.25rem;
+  padding-right: 0.25rem;
+  padding-left: 0.25rem;
+  display: grid;
+  font-size: 0.75rem;
+  grid-template-columns: 1rem 1rem auto 2rem 1.5rem;
+  outline: 1px dashed var(--borderColor);
+  width: 33%;
+}
+.dgalt.sheet .container .itemV2 .item-image {
+  height: 1rem;
+  padding: 2px;
+}
+.dgalt.sheet .container .itemV2 .item-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-left: 3px;
+  line-height: 1rem;
+}
+.dgalt.sheet .container .itemV2 .item-name input {
+  height: 1rem;
+  padding: 0;
+  overflow: visible;
+  background-color: var(--backColor);
+  color: var(--foreColor);
+}
+.dgalt.sheet .container .itemV2 .item-score {
+  color: var(--foreColor);
+  text-align: end;
+  line-height: 1rem;
+  text-align: center;
+  height: 15px;
 }
 .codename {
   margin-top: auto;
@@ -814,6 +950,7 @@
   outline: 1px solid var(--labelColor);
   display: flex;
   flex-direction: row;
+  height: 100%;
 }
 .skilldata .skills-header {
   grid-area: skills-header;
@@ -828,7 +965,6 @@
   grid-area: skills-block;
   background-color: var(--backColor);
   color: var(--foreColor);
-  outline: var(--borderColor) dashed 1px;
   flex: 1;
   overflow-x: auto;
   overflow-y: auto;
@@ -837,9 +973,9 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  max-height: 300px;
   margin: 0;
   padding: 0;
+  height: 100%;
   width: auto;
   gap: 1px 1px;
   justify-content: start;
@@ -849,16 +985,20 @@
   outline: 1px dashed var(--borderColor);
   display: grid;
   font-size: 1rem;
-  grid-template-columns: 1rem auto 2rem min-content;
+  grid-template-columns: 1rem 1.5rem auto 2rem;
   padding-left: 0.2rem;
   padding-right: 0.2rem;
   height: 1.25rem;
   max-height: 1.25rem;
   width: 33%;
 }
+.skilldata .skill-card .item-image {
+  height: 1.25rem;
+  width: 1.25rem;
+  padding: 2px;
+}
 .skilldata .skill-card .skill-check {
-  background-size: contain;
-  height: 0.875rem;
+  height: 0.75rem;
   margin: 1px 0 0;
 }
 .skilldata .skill-card .skill-name {
@@ -868,6 +1008,7 @@
   padding: 2px;
   text-overflow: ellipsis;
   white-space: nowrap;
+  font-weight: light;
 }
 .skilldata .skill-card .skill-name:hover {
   color: red;
@@ -879,6 +1020,26 @@
   height: 1rem;
   overflow: visible;
   padding: 0;
+}
+.skilldata .skill-card .skill-name .zero {
+  color: var(--zeroSkill);
+  font-weight: bold;
+}
+.skilldata .skill-card .skill-name .belowtwenty {
+  color: var(--belowtwentySkill);
+  font-weight: bold;
+}
+.skilldata .skill-card .skill-name .twenty {
+  color: var(--twentySkill);
+}
+.skilldata .skill-card .skill-name .forty {
+  color: var(--fortySkill);
+}
+.skilldata .skill-card .skill-name .sixty {
+  color: var(--sixtySkill);
+}
+.skilldata .skill-card .skill-name .eighty {
+  color: var(--eightySkill);
 }
 .skilldata .skill-card .skill-score {
   color: var(--foreColor);

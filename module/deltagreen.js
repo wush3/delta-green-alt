@@ -49,5 +49,18 @@ Hooks.once("init", async function()
             return resut;
         });
 
+        Handlebars.registerHelper("pickcolor", function(content)
+        {
+            console.log(content);
+            let result="eighty";
+            if (content<80) result="sixty";
+            if (content<60) result="forty";
+            if (content<40) result="twenty";
+            if (content<20) result="belowtwenty";
+            if (content<1) result="zero";
+            
+            return result;
+        });
+
     }
 );

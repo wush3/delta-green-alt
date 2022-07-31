@@ -1,59 +1,87 @@
-<form class="{{cssClass}} flexcol" data-actor-id="{{actor.id}}" {{#if tokenId}}data-token-id="{{tokenId}}" {{/if}}
-    autocomplete="off">
+<form class="actor-sheet {{cssClass}} flexcol" data-actor-id="{{actor.id}}" {{#if tokenId}}data-token-id="{{tokenId}}"
+    {{/if}} autocomplete="off">
 
     <div class="container">
 
+
+
         <section class="sheet-header">
-            <div class="sheet-portrait">
-                <img class="photo" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" />
+
+
+            <div class="personal-data-area">
+                {{> "systems/delta-green-alt/templates/partials/agent-personal-data-block.hbs"}}
             </div>
-            <div>
-                <div class="form-label" for="codename">{{localize 'dgalt.labels.personaldata.codename'}}</div>
-                <input class="form-inputbox" id="codename" name="name" type="text" value="{{actor.name}}" />
+
+            <div class="flexrow">
+                <div class="statistics-data-area">
+                    {{> "systems/delta-green-alt/templates/partials/agent-statistics-data-block.hbs"}}
+                </div>
+                <div class="psych-data-area">
+                    {{> "systems/delta-green-alt/templates/partials/agent-psychological-data.hbs"}}
+                </div>
             </div>
+
+
         </section>
 
         <nav class="sheet-nav tabs" data-group="primary">
-            <a class="item" data-tab="skills">Skills</a>
-            <a class="item" data-tab="gear">Gear</a>
-            <a class="item" data-tab="unnatural">Unnatural</a>
+            <a class="tab-title" data-tab="skills">Skills</a>
+            <a class="tab-title" data-tab="gear">Gear</a>
+            <a class="tab-title" data-tab="unnatural">Unnatural</a>
         </nav>
+
 
         <section class="sheet-body">
 
-            <div class="left-panel"></div>
 
-            <div class="right-panel">
 
-                <div class="tab skills" data-group="primary" data-tab="skills">
-                    <ol class="item-list">
-                        {{#each skills as |skill|}}
-                        <li class="item itemV2" data-skill-id="{{skill._id}}" data-item-id="{{skill._id}}">
-                            <div class="item-image" style="background-image: url('{{skill.img}}')"></div>
-                            <div class="item-name skill-name rollable" title="{{skill.name}}">{{skill.name}}</div>
-                            <div class="item-score">{{skill.data.value}}</div>
-                            <div class="item-controls">
-                                <a class="item-control item-edit"><i class="fas fa-edit"></i></a>
-                                <a class="item-control item-delete"><i class="fas fa-trash"></i></a>
-                            </div>
-                        </li>
-                        {{/each}}
-                    </ol>
+
+
+            <div class="tab skills" data-group="primary" data-tab="skills">
+                <ol class="item-list">
+                    {{#each skills as |skill|}}
+                    <li class="item itemV2" data-skill-id="{{skill._id}}" data-item-id="{{skill._id}}">
+                        <div>
+                            {{#if data.canimprove}}<a class="item-control item-checkmark" title="CHECK"
+                                data-field="data.failcheck"><i
+                                    class="fas {{#if data.failcheck}}fa-plus-square{{else}}fa-square{{/if}}"></i></a>{{/if}}
+                        </div>
+                        <div class="item-image" style="background-image: url('{{skill.img}}')"></div>
+                        <div class="item-name skill-name rollable" title="{{skill.name}}">{{skill.name}}</div>
+                        <input type="number" data-type="number" data-field="data.value" class="item-score inline-edit" value={{skill.data.value}} />
+                        <div class="item-controls">
+                            <a class="item-control item-edit"><i class="fas fa-edit"></i></a>
+                            <a class="item-control item-delete"><i class="fas fa-trash"></i></a>
+                        </div>
+                    </li>
+                    {{/each}}
+                </ol>
+            </div>
+
+
+
+
+            <div class="tab gear" data-group="primary" data-tab="gear">
+
+
+
+                <div class="skills-data-area">
+                    {{> "systems/delta-green-alt/templates/partials/agent-skills-data-block.hbs"}}
                 </div>
 
 
-
-                <div class="tab gear" data-group="primary" data-tab="gear">
-                    GEAR TAB
-                </div>
-
-                <div class="tab unnatural" data-group="primary" data-tab="unnatural">
-                    UNNATURAL TAB
-                </div>
 
             </div>
 
-        </section>
+            <div class="tab unnatural" data-group="primary" data-tab="unnatural">
+                UNNATURAL TAB
+            </div>
+
+
+    </div>
+
+
+    </section>
 
     </div>
 

@@ -6,9 +6,9 @@ export default class DgAgentSheet extends ActorSheet {
                 template: "systems/delta-green-alt/templates/sheets/agent-sheet.hbs",
                 classes: ["dgalt", "sheet", "agent"],
                 width: 700,
-                height: 720,                
+                height: 760,                
                 resizable: true,
-                scrollY: ['.skills-block .bonds-block .mental-block .tab'],
+                scrollY: ['.skills-block .bonds-block .mental-block .tab .right-panel'],                
                 tabs: [
                     {
                         navSelector: '.sheet-nav',
