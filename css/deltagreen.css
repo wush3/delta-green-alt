@@ -17,169 +17,109 @@
     --labelColor:#808080;
     --hoverColor:red;*/
 }
-.item-icon-small {
+.dgalt.sheet .item-icon-small {
   height: 3rem;
   width: 3rem;
   padding: 2px;
   background-color: var(--backColor);
   border: 1px solid var(--labelColor);
 }
-.dgalt.sheet.item .form {
-  display: flex;
-  flex-direction: column;
-}
-.dgalt.sheet.item .vertical-header {
-  writing-mode: vertical-rl;
-  font-size: 12px;
-  padding-top: 10px;
-}
-.dgalt.sheet.item .form-label {
-  font-size: 10px;
-  color: var(--labelColor);
-}
-.dgalt.sheet.item .form-label-centered {
-  font-size: 10px;
-  text-align: center;
-  vertical-align: middle;
-  color: var(--labelColor);
-}
-.dgalt.sheet.item .form-inputbox {
-  color: var(--foreColor);
-  height: 18px;
-}
-.dgalt.sheet.item .form-inputbox-centered {
-  color: var(--foreColor);
-  text-align: center;
-  height: 18px;
-}
-.dgalt.sheet.item .form-inputbox-number {
-  color: var(--foreColor);
-  text-align: center;
-  height: 18px;
-  width: 32px;
-}
-.dgalt.sheet.item .form-button {
-  align-items: center;
-  background-color: initial;
-  background-image: linear-gradient(var(--borderColor), var(--backColor));
-  border-radius: 2px;
-  border-width: 0;
-  box-sizing: border-box;
-  color: var(--labelColor);
-  display: inline-flex;
-  flex-direction: column;
-  font-size: 10px;
-  height: 16px;
-  width: 35px;
-  justify-content: center;
-  margin: 0;
-  outline: none;
-  padding: 0 2px;
-  text-align: center;
-  transition: all 150ms;
-  vertical-align: baseline;
-}
-.dgalt.sheet.item .form-button:hover {
-  color: var(--hoverColor);
-}
-.dgalt.sheet.item .form-button:active {
-  background-image: radial-gradient(var(--backColor), var(--hoverColor));
-}
-.dgalt.sheet.item .form-text {
-  outline: var(--borderColor) dashed 1px;
-  padding: 2px;
-}
-.dgalt.sheet.item .group-grow-horizontal {
-  width: auto;
-  flex: 1;
-}
-.dgalt.sheet.item .group-flex-horizontal {
-  display: flex;
-  flex-direction: row;
-  justify-items: center;
-  gap: 10px;
-}
-.dgalt.sheet.item .container {
-  display: grid;
-  grid-template-columns: min-content 1fr;
-  grid-template-rows: min-content min-content 1fr;
-  gap: 1px 1px;
-  grid-auto-flow: row;
-  grid-template-areas: "item-header item-top" "item-header item-top" "item-header item-description";
-  background-color: var(--backColor);
-  color: var(--foreColor);
-  outline: 1px solid var(--labelColor);
-  height: 100%;
-}
-.dgalt.sheet.item .container .item-header {
-  grid-area: item-header;
-  background-color: var(--foreColor);
-  color: var(--backColor);
-  outline: var(--borderColor) solid 1px;
-  display: flex;
-  flex-direction: row;
-}
-.dgalt.sheet.item .container .item-description {
-  grid-area: item-description;
-  background-color: var(--backColor);
-  color: var(--foreColor);
-  outline: var(--borderColor) dashed 1px;
-  padding: 4px;
-}
-.dgalt.sheet.item .container .item-description .editor {
-  height: calc(100%-40px);
-  border: 1px solid;
-  border-radius: 1%;
-  margin: 0 0 10px 0px;
-  padding: 10px;
-}
-.dgalt.sheet.item .container .item-top {
+.dgalt.sheet .itemdata {
   display: grid;
   grid-template-columns: min-content 1fr;
   grid-template-rows: 1fr;
   gap: 1px 1px;
   grid-auto-flow: row;
-  grid-template-areas: "item-icon item-main";
-  grid-area: item-top;
+  grid-template-areas: "item-header item-block";
   background-color: var(--backColor);
   color: var(--foreColor);
-  outline: var(--borderColor) dashed 1px;
-}
-.dgalt.sheet.item .container .item-icon {
-  grid-area: item-icon;
-  padding: 4px;
-}
-.dgalt.sheet.item .container .item-main {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: min-content 1fr;
-  gap: 1px 1px;
-  grid-auto-flow: row;
-  grid-template-areas: "item-title" "item-data";
-  grid-area: item-main;
-}
-.dgalt.sheet.item .container .item-title {
-  grid-area: item-title;
-  background-color: var(--backColor);
-  color: var(--foreColor);
-  outline: var(--borderColor) dashed 1px;
-  padding: 4px;
-}
-.dgalt.sheet.item .container .item-data {
-  grid-area: item-data;
-  background-color: var(--backColor);
-  color: var(--foreColor);
-  outline: var(--borderColor) dashed 1px;
-  padding: 4px;
+  outline: 1px solid var(--labelColor);
   display: flex;
-  justify-content: center;
-  gap: 10px;
+  flex-direction: row;
+  height: 100%;
 }
-.dgalt.sheet.item .item-icon {
-  min-width: 64px;
-  min-height: 64px;
-  width: auto;
-  height: fit-content;
+.dgalt.sheet .itemdata .item-header {
+  grid-area: item-header;
+  background-color: var(--foreColor);
+  color: var(--backColor);
+  outline: var(--borderColor) solid 1px;
+  padding: 2px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-around;
+}
+.dgalt.sheet .itemdata .item-block {
+  grid-area: item-block;
+  background-color: var(--backColor);
+  color: var(--foreColor);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  flex: 1;
+  overflow-x: auto;
+  overflow-y: auto;
+  padding: 5px;
+}
+.dgalt.sheet .itemdata .item-block .item-icon {
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid var(--labelColor);
+}
+.dgalt.sheet .itemdata .item-block .item-titlebar {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+.dgalt.sheet .itemdata .item-block .item-titlebar .item-label {
+  flex: 1;
+  font-size: large;
+  font-weight: bold;
+  height: auto;
+}
+.dgalt.sheet .itemdata .item-block .item-titlebar .contract {
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 0;
+}
+.dgalt.sheet .itemdata .item-block .item-titlebar .expand {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.dgalt.sheet .itemdata .item-block .item-titlebar .center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.dgalt.sheet .itemdata .item-block .item-data {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 5px 0px;
+}
+.dgalt.sheet .itemdata .item-block .item-data .contract {
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 0;
+}
+.dgalt.sheet .itemdata .item-block .item-data .expand {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.dgalt.sheet .itemdata .item-block .item-data .center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.dgalt.sheet .itemdata .item-block .editor {
+  height: 100%;
+  border: 1px solid;
+  border-radius: 1%;
+  padding: 10px;
 }
 .dgalt.sheet .window-content {
   height: 100%;
@@ -466,8 +406,7 @@
   background-color: var(--backColor);
   color: var(--foreColor);
   outline: 1px solid var(--labelColor);
-  align-items: stretch;
-  justify-items: stretch;
+  height: 100%;
   grid-template-areas: "personal-header personal-block picture-block";
 }
 .personaldata .personal-header {
@@ -476,6 +415,9 @@
   color: var(--backColor);
   outline: var(--borderColor) solid 1px;
   padding: 2px;
+  display: flex;
+  align-content: center;
+  justify-content: space-around;
 }
 .personaldata .personal-block {
   display: grid;
@@ -557,6 +499,7 @@
   background-color: var(--backColor);
   color: var(--foreColor);
   outline: 1px solid var(--labelColor);
+  height: 100%;
 }
 .statdata .stat-header {
   grid-area: stat-header;
@@ -564,6 +507,9 @@
   color: var(--backColor);
   outline: var(--borderColor) solid 1px;
   padding: 2px;
+  display: flex;
+  align-content: center;
+  justify-content: space-around;
 }
 .statdata .stats-block {
   display: grid;
@@ -828,6 +774,8 @@
   padding: 2px;
   display: flex;
   flex-direction: column;
+  align-content: center;
+  justify-content: space-around;
 }
 .bonds-block {
   display: grid;
@@ -989,11 +937,16 @@
   padding: 2px;
   display: flex;
   flex-direction: column;
+  align-content: center;
+  justify-content: space-around;
 }
 .skilldata .skills-block {
   grid-area: skills-block;
   background-color: var(--backColor);
   color: var(--foreColor);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   flex: 1;
   overflow-x: auto;
   overflow-y: auto;

@@ -24,8 +24,7 @@
     color: var(--foreColor);
     outline: 1px solid var(--labelColor);
 
-    align-items: stretch;
-    justify-items: stretch;
+    height: 100%;
 
 
     grid-template-areas: "personal-header personal-block picture-block";
@@ -36,6 +35,9 @@
         color: var(--backColor);
         outline: var(--borderColor) solid 1px;
         padding: 2px;
+        display: flex;
+        align-content: center;
+        justify-content: space-around;
     }
 
     .personal-block {

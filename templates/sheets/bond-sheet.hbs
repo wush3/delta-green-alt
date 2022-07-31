@@ -1,40 +1,43 @@
 <form class="{{cssClass}}" autocomplete="off">
 
-    <div class="container">
+    <div class="itemdata">
         <div class="item-header">
             <div class="vertical-header">
                 {{localize 'dgalt.labels.bondsheet.header'}}
             </div>
         </div>
-        <div class="item-top">
-            <div class="item-icon">
-                <img class="item-icon" src="{{item.img}}" data-edit="img" title="{{item.name}}" height="64"
-                    width="64" />
-            </div>
-            <div class="item-main">
-                <div class="item-title">
-                    <input class="form-inputbox" name="name" type="text" value="{{item.name}}"
+        <div class="item-block">
+            <div class="item-titlebar">
+
+                <img class="item-icon" src="{{item.img}}" data-edit="img" title="{{item.name}}" />
+                <div class="expand">
+                    <div class="form-label">{{localize 'name'}}</div>
+                    <input class="form-inputbox item-label" name="name" type="text" value="{{item.name}}"
                         placeholder="{{ localize 'Name' }}" />
                 </div>
-                <div class="item-data">
-                    <div class="group-grow-horizontal">
-                        <div class="form-label">{{localize 'dgalt.labels.psychdata.relationship'}}</div>
-                        
-                        <input class="form-inputbox" name="data.relationship" type="text" value="{{data.data.relationship}}" />
 
-                    </div>
-                    <div>
-                        <div class="form-label-centered">{{localize 'dgalt.labels.psychdata.value'}}</div>
-                        <input class="form-inputbox-number" name="data.value" type="number" data-dtype="number"
-                            value="{{data.data.value}}" />
-                    </div>
+            </div>
+
+            <div class="item-data">
+                <div class="expand">
+                    <div class="form-label">{{localize 'dgalt.labels.bondsheet.relationship'}}</div>
+                    <input class="form-inputbox" name="data.relationship" type="text"
+                        value="{{data.data.relationship}}" />
+                </div>
+                <div>
+                    <div class="form-label-centered">{{localize 'dgalt.labels.bondsheet.score'}}</div>
+                    <input class="form-inputbox-number" name="data.value" type="number" data-dtype="number"
+                        value="{{data.data.value}}" />
                 </div>
             </div>
-        </div>
-        <div class="item-description">
-            <label class="form-label">{{localize 'dgalt.labels.skillsheet.description'}}</label>
+
+
+            <label class="form-label">{{localize 'dgalt.labels.bondsheet.description'}}</label>
             {{editor content=data.data.description target="data.description" button=true owner=owner editable=editable}}
         </div>
+
+
+
     </div>
 
 

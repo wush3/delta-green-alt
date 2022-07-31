@@ -81,7 +81,10 @@
                 "value": "Value"
             },
             "bondsheet": {
-                "header": "BOND"
+                "header": "BOND",                
+                "relationship":"Relationship",
+                "score":"Score",
+                "description": "Description"
             },
             "mentalsheet":
             {
