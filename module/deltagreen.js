@@ -17,6 +17,7 @@ async function preloadHandlebarsTemplates()
         "systems/delta-green-alt/templates/partials/mental-card.hbs",
 
         "systems/delta-green-alt/templates/partials/roll-skill.hbs",
+        "systems/delta-green-alt/templates/partials/skill-check.hbs",
         "systems/delta-green-alt/templates/partials/roll-skill-improve.hbs",
         
     ];

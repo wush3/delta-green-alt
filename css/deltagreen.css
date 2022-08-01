@@ -108,6 +108,12 @@
   justify-content: center;
   align-items: center;
 }
+.item .itemdata .item-block .green {
+  color: green;
+}
+.item .itemdata .item-block .red {
+  color: red;
+}
 .item .itemdata .item-block .editor {
   height: 100%;
   border: 1px solid;
