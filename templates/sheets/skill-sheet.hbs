@@ -17,6 +17,11 @@
                     <input class="form-inputbox item-label" name="name" type="text" value="{{item.name}}"
                         placeholder="{{ localize 'Name' }}" />
                 </div>
+                <div class="center">
+                    <div class="form-label">{{localize 'dgalt.labels.skillsheet.value'}}</div>
+                    <input class="form-inputbox-number-stretch" type="number" name="data.value" value="{{data.data.value}}"
+                        data-dtype="number" />
+                </div>
 
             </div>
 
@@ -41,11 +46,7 @@
                     <input class="form-inputbox-number" type="number" name="data.base" value="{{data.data.base}}"
                         data-dtype="number" />
                 </div>
-                <div class="center">
-                    <div class="form-label">{{localize 'dgalt.labels.skillsheet.value'}}</div>
-                    <input class="form-inputbox-number" type="number" name="data.value" value="{{data.data.value}}"
-                        data-dtype="number" />
-                </div>
+                
 
             </div>
 

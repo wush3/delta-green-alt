@@ -17,14 +17,7 @@
     --labelColor:#808080;
     --hoverColor:red;*/
 }
-.dgalt.sheet .item-icon-small {
-  height: 3rem;
-  width: 3rem;
-  padding: 2px;
-  background-color: var(--backColor);
-  border: 1px solid var(--labelColor);
-}
-.dgalt.sheet .itemdata {
+.item .itemdata {
   display: grid;
   grid-template-columns: min-content 1fr;
   grid-template-rows: 1fr;
@@ -34,11 +27,9 @@
   background-color: var(--backColor);
   color: var(--foreColor);
   outline: 1px solid var(--labelColor);
-  display: flex;
-  flex-direction: row;
   height: 100%;
 }
-.dgalt.sheet .itemdata .item-header {
+.item .itemdata .item-header {
   grid-area: item-header;
   background-color: var(--foreColor);
   color: var(--backColor);
@@ -49,7 +40,7 @@
   align-content: center;
   justify-content: space-around;
 }
-.dgalt.sheet .itemdata .item-block {
+.item .itemdata .item-block {
   grid-area: item-block;
   background-color: var(--backColor);
   color: var(--foreColor);
@@ -61,73 +52,78 @@
   overflow-y: auto;
   padding: 5px;
 }
-.dgalt.sheet .itemdata .item-block .item-icon {
+.item .itemdata .item-block .item-icon {
   width: 3rem;
   height: 3rem;
   border: 1px solid var(--labelColor);
 }
-.dgalt.sheet .itemdata .item-block .item-titlebar {
+.item .itemdata .item-block .item-titlebar {
   display: flex;
   flex-direction: row;
   gap: 5px;
 }
-.dgalt.sheet .itemdata .item-block .item-titlebar .item-label {
+.item .itemdata .item-block .item-titlebar .item-label {
   flex: 1;
   font-size: large;
   font-weight: bold;
   height: auto;
 }
-.dgalt.sheet .itemdata .item-block .item-titlebar .contract {
+.item .itemdata .item-block .item-titlebar .contract {
   display: flex;
   flex-direction: column;
   flex: 0 1 0;
 }
-.dgalt.sheet .itemdata .item-block .item-titlebar .expand {
+.item .itemdata .item-block .item-titlebar .expand {
   display: flex;
   flex-direction: column;
   flex: 1;
 }
-.dgalt.sheet .itemdata .item-block .item-titlebar .center {
+.item .itemdata .item-block .item-titlebar .center {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: stretch;
   align-items: center;
+  height: 100%;
 }
-.dgalt.sheet .itemdata .item-block .item-data {
+.item .itemdata .item-block .item-data {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  align-items: center;
   margin: 5px 0px;
 }
-.dgalt.sheet .itemdata .item-block .item-data .contract {
+.item .itemdata .item-block .item-data .contract {
   display: flex;
   flex-direction: column;
   flex: 0 1 0;
 }
-.dgalt.sheet .itemdata .item-block .item-data .expand {
+.item .itemdata .item-block .item-data .expand {
   display: flex;
   flex-direction: column;
   flex: 1;
 }
-.dgalt.sheet .itemdata .item-block .item-data .center {
+.item .itemdata .item-block .item-data .center {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.dgalt.sheet .itemdata .item-block .editor {
+.item .itemdata .item-block .editor {
   height: 100%;
   border: 1px solid;
   border-radius: 1%;
   padding: 10px;
 }
-.dgalt.sheet .window-content {
+.dgalt.sheet .window-content,
+.item .window-content {
   height: 100%;
 }
-.dgalt.sheet .window-content .flexcol {
+.dgalt.sheet .window-content .flexcol,
+.item .window-content .flexcol {
   height: 100%;
 }
-.dgalt.sheet .vertical-header {
+.dgalt.sheet .vertical-header,
+.item .vertical-header {
   text-align: center;
   vertical-align: middle;
   writing-mode: vertical-rl;
@@ -135,45 +131,61 @@
   font-size: 0.75rem;
   font-weight: bold;
 }
-.dgalt.sheet .group-flex-horizontal {
+.dgalt.sheet .group-flex-horizontal,
+.item .group-flex-horizontal {
   display: flex;
   flex-direction: row;
   justify-items: center;
   gap: 10px;
 }
-.dgalt.sheet .invisible {
+.dgalt.sheet .invisible,
+.item .invisible {
   visibility: hidden;
 }
-.dgalt.sheet .strike {
+.dgalt.sheet .strike,
+.item .strike {
   color: var(--borderColor);
   text-decoration: line-through var(--foreColor) solid 2px;
 }
-.dgalt.sheet .form-label {
+.dgalt.sheet .form-label,
+.item .form-label {
   font-size: 0.6rem;
   color: var(--labelColor);
 }
-.dgalt.sheet .form-label-centered {
+.dgalt.sheet .form-label-centered,
+.item .form-label-centered {
   font-size: 0.6rem;
   text-align: center;
   vertical-align: middle;
   color: var(--labelColor);
 }
-.dgalt.sheet .form-inputbox {
+.dgalt.sheet .form-inputbox,
+.item .form-inputbox {
   color: var(--foreColor);
   height: 18px;
 }
-.dgalt.sheet .form-inputbox-centered {
+.dgalt.sheet .form-inputbox-centered,
+.item .form-inputbox-centered {
   color: var(--foreColor);
   text-align: center;
   height: 18px;
 }
-.dgalt.sheet .form-inputbox-number {
+.dgalt.sheet .form-inputbox-number,
+.item .form-inputbox-number {
   color: var(--foreColor);
   text-align: center;
   height: 18px;
   width: 32px;
 }
-.dgalt.sheet .form-button {
+.dgalt.sheet .form-inputbox-number-stretch,
+.item .form-inputbox-number-stretch {
+  color: var(--foreColor);
+  text-align: center;
+  height: 100%;
+  width: 50px;
+}
+.dgalt.sheet .form-button,
+.item .form-button {
   align-items: center;
   background-color: initial;
   background-image: linear-gradient(var(--borderColor), var(--backColor));
@@ -194,17 +206,21 @@
   transition: all 150ms;
   vertical-align: baseline;
 }
-.dgalt.sheet .form-button:hover {
+.dgalt.sheet .form-button:hover,
+.item .form-button:hover {
   color: var(--hoverColor);
 }
-.dgalt.sheet .form-button:active {
+.dgalt.sheet .form-button:active,
+.item .form-button:active {
   background-image: radial-gradient(var(--backColor), var(--hoverColor));
 }
-.dgalt.sheet .form-text {
+.dgalt.sheet .form-text,
+.item .form-text {
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }
-.dgalt.sheet .form-text-small {
+.dgalt.sheet .form-text-small,
+.item .form-text-small {
   color: var(--foreColor);
   font-size: 0.75rem;
   line-height: 1rem;
@@ -213,11 +229,13 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.dgalt.sheet .item-checkmark {
+.dgalt.sheet .item-checkmark,
+.item .item-checkmark {
   font-size: 0.625rem;
   margin: 1px;
 }
-.dgalt.sheet .item-controls {
+.dgalt.sheet .item-controls,
+.item .item-controls {
   font-size: 0.625rem;
   line-height: 1rem;
   flex: 0 0 1.25rem;
@@ -225,21 +243,25 @@
   text-align: end;
   width: max-content;
 }
-.dgalt.sheet .item-controls a:hover {
+.dgalt.sheet .item-controls a:hover,
+.item .item-controls a:hover {
   text-shadow: none;
   color: var(--hoverColor);
 }
-.dgalt.sheet .item-controls .item-control.active {
+.dgalt.sheet .item-controls .item-control.active,
+.item .item-controls .item-control.active {
   color: goldenrod;
 }
-.dgalt.sheet .container {
+.dgalt.sheet .container,
+.item .container {
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: min-content min-content auto;
   width: 100%;
   height: 100%;
 }
-.dgalt.sheet .container .sheet-header {
+.dgalt.sheet .container .sheet-header,
+.item .container .sheet-header {
   width: 100%;
   height: min-content;
   border: 0;
@@ -248,18 +270,21 @@
   gap: 5px;
   margin-bottom: 5px;
 }
-.dgalt.sheet .container .sheet-header .sheet-portrait {
+.dgalt.sheet .container .sheet-header .sheet-portrait,
+.item .container .sheet-header .sheet-portrait {
   width: 8.75rem;
   height: 100%;
   padding: 0 0.5rem;
 }
-.dgalt.sheet .container .sheet-header .sheet-portrait .photo {
+.dgalt.sheet .container .sheet-header .sheet-portrait .photo,
+.item .container .sheet-header .sheet-portrait .photo {
   object-fit: contain;
   border: 0;
   height: 100%;
   width: 100%;
 }
-.dgalt.sheet .container .sheet-nav {
+.dgalt.sheet .container .sheet-nav,
+.item .container .sheet-nav {
   font-weight: bold;
   font-size: 1rem;
   display: flex;
@@ -272,7 +297,8 @@
   width: 100%;
   gap: 5px;
 }
-.dgalt.sheet .container .sheet-nav .tab-title {
+.dgalt.sheet .container .sheet-nav .tab-title,
+.item .container .sheet-nav .tab-title {
   background: var(--borderColor);
   border: solid 1px var(--labelColor);
   flex: 1 1 0px;
@@ -280,13 +306,16 @@
   margin-bottom: -1px;
   text-align: center;
 }
-.dgalt.sheet .container .sheet-nav .tab-title:hover {
+.dgalt.sheet .container .sheet-nav .tab-title:hover,
+.item .container .sheet-nav .tab-title:hover {
   background-color: var(--hoverColor);
 }
-.dgalt.sheet .container .sheet-nav .tab-title.active {
+.dgalt.sheet .container .sheet-nav .tab-title.active,
+.item .container .sheet-nav .tab-title.active {
   background-color: var(--foreColor);
 }
-.dgalt.sheet .container .button-bar-vertical {
+.dgalt.sheet .container .button-bar-vertical,
+.item .container .button-bar-vertical {
   font-size: 0.625rem;
   line-height: 1rem;
   flex: 0 0 1.25rem;
@@ -296,22 +325,28 @@
   margin: 2px 0px;
   gap: 2px;
 }
-.dgalt.sheet .container .button-bar-vertical .item-control {
+.dgalt.sheet .container .button-bar-vertical .item-control,
+.item .container .button-bar-vertical .item-control {
   border: 1px solid var(--borderColor);
   border-radius: 5px;
 }
-.dgalt.sheet .container .button-bar-vertical a:hover {
+.dgalt.sheet .container .button-bar-vertical a:hover,
+.item .container .button-bar-vertical a:hover {
   text-shadow: none;
   color: var(--hoverColor);
 }
-.dgalt.sheet .container .button-bar-vertical .item-control.active {
+.dgalt.sheet .container .button-bar-vertical .item-control.active,
+.item .container .button-bar-vertical .item-control.active {
   color: goldenrod;
 }
-.dgalt.sheet .container .sheet-body {
+.dgalt.sheet .container .sheet-body,
+.item .container .sheet-body {
   overflow: hidden;
 }
 .dgalt.sheet .container .sheet-body ul,
-.dgalt.sheet .container .sheet-body ol {
+.item .container .sheet-body ul,
+.dgalt.sheet .container .sheet-body ol,
+.item .container .sheet-body ol {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -320,27 +355,34 @@
   justify-content: stretch;
 }
 .dgalt.sheet .container .sheet-body .restore-list-styles ul,
-.dgalt.sheet .container .sheet-body .restore-list-styles ol {
+.item .container .sheet-body .restore-list-styles ul,
+.dgalt.sheet .container .sheet-body .restore-list-styles ol,
+.item .container .sheet-body .restore-list-styles ol {
   margin: 0.5em 0;
   padding: 0 0 0 1.5em;
 }
-.dgalt.sheet .container .sheet-body .restore-list-styles ul {
+.dgalt.sheet .container .sheet-body .restore-list-styles ul,
+.item .container .sheet-body .restore-list-styles ul {
   list-style-type: disc;
 }
-.dgalt.sheet .container .sheet-body .restore-list-styles ol {
+.dgalt.sheet .container .sheet-body .restore-list-styles ol,
+.item .container .sheet-body .restore-list-styles ol {
   list-style-type: decimal;
 }
-.dgalt.sheet .container .sheet-body .tab {
+.dgalt.sheet .container .sheet-body .tab,
+.item .container .sheet-body .tab {
   height: 100%;
   border: 1px solid var(--labelColor);
   color: var(--foreColor);
   background-color: var(--backColor);
   margin-bottom: 1rem;
 }
-.dgalt.sheet .container .sheet-body .skills-data-area {
+.dgalt.sheet .container .sheet-body .skills-data-area,
+.item .container .sheet-body .skills-data-area {
   height: 100%;
 }
-.dgalt.sheet .container .item-list {
+.dgalt.sheet .container .item-list,
+.item .container .item-list {
   display: flex;
   width: auto;
   height: auto;
@@ -350,7 +392,8 @@
   gap: 1px 1px;
   outline: var(--labelColor) solid 1px;
 }
-.dgalt.sheet .container .itemV2 {
+.dgalt.sheet .container .itemV2,
+.item .container .itemV2 {
   max-height: 1.25rem;
   padding-right: 0.25rem;
   padding-left: 0.25rem;
@@ -360,25 +403,29 @@
   outline: 1px dashed var(--borderColor);
   width: 33%;
 }
-.dgalt.sheet .container .itemV2 .item-image {
+.dgalt.sheet .container .itemV2 .item-image,
+.item .container .itemV2 .item-image {
   height: 1rem;
   padding: 2px;
 }
-.dgalt.sheet .container .itemV2 .item-name {
+.dgalt.sheet .container .itemV2 .item-name,
+.item .container .itemV2 .item-name {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   padding-left: 3px;
   line-height: 1rem;
 }
-.dgalt.sheet .container .itemV2 .item-name input {
+.dgalt.sheet .container .itemV2 .item-name input,
+.item .container .itemV2 .item-name input {
   height: 1rem;
   padding: 0;
   overflow: visible;
   background-color: var(--backColor);
   color: var(--foreColor);
 }
-.dgalt.sheet .container .itemV2 .item-score {
+.dgalt.sheet .container .itemV2 .item-score,
+.item .container .itemV2 .item-score {
   color: var(--foreColor);
   text-align: end;
   line-height: 1rem;

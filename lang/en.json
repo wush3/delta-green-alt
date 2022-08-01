@@ -78,7 +78,8 @@
                 "canimprove": "Can Improve",
                 "failcheck": "Check Failed",
                 "base": "Base",
-                "value": "Value"
+                "value": "Value",
+                "improve":"IMPROVE SKILL"
             },
             "bondsheet": {
                 "header": "BOND",                

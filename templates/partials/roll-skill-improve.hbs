@@ -1,21 +1,33 @@
 <form class="item roll-card" data-skill-id="{{_id}}" data-item-id="{{_id}}">
 
 
+    <div class="itemdata">
+        <div class="item-header">
+            <div class="vertical-header">
+                {{localize 'dgalt.labels.skillsheet.improve'}}
+            </div>
+        </div>
+
+        <div class="item-block">
+            <div class="item-titlebar">
+                <img class="item-icon" src="{{img}}" data-edit="img" title="{{name}}" />
+                <div class="expand">
+                    <div class="form-label">{{localize 'name'}}</div>
+                    <input class="form-inputbox item-label" name="name" type="text" value="{{name}}"
+                        placeholder="{{ localize 'Name' }}" readonly />
+                </div>
+            </div>
 
 
-    <img class="item-icon-small" src="{{img}}" data-edit="img" title="{{name}}" />
-    <h3>{{name}}</h3>
+            <div class="item-data">
+            </div>
 
-    <div class="dice-result">
-        <div class="dice-formula">{{rollresult.formula}}={{rollresult.total}}</div>
-    
-        <h4 class="dice-total">{{data.value}}+{{rollresult.total}}={{newskillvalue}}</h4>
+            <div class="dice-formula">{{rollresult.formula}}={{rollresult.total}}</div>
+
+            <h4 class="dice-total">{{data.value}}+{{rollresult.total}}={{newskillvalue}}</h4>
+
+
+        </div>
     </div>
-
-
-    
-
-
-
 
 </form>

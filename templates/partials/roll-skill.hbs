@@ -1,29 +1,35 @@
-<form class="item roll-card" data-skill-id="{{_id}}" data-item-id="{{_id}}">
+<form class="dgalt item roll-card" data-skill-id="{{_id}}" data-item-id="{{_id}}">
 
-    <div class="container">
+    <div class="itemdata">
         <div class="item-header">
             <div class="vertical-header">
                 {{localize 'dgalt.labels.skillsheet.header'}}
             </div>
         </div>
-        <div class="item-top">
-            <div class="item-icon">
-                <img class="item-icon" src="{{img}}" data-edit="img" title="{{name}}" height="64" width="64" />
-            </div>
-            <div class="item-main">
-                <div class="item-title">
-                    <div>{{name}}</div>
-                </div>
-                <div class="item-data">
 
+        <div class="item-block">
+
+            <div class="item-titlebar">
+                <img class="item-icon" src="{{img}}" data-edit="img" title="{{name}}" />
+                <div class="expand">
+                    <div class="form-label">{{localize 'name'}}</div>
+                    <input class="form-inputbox item-label" name="name" type="text" value="{{name}}"
+                        placeholder="{{ localize 'Name' }}" readonly/>
+                </div>
+                <div class="center">
+                    <div class="form-label">{{localize 'dgalt.labels.skillsheet.value'}}</div>
+                    <input class="form-inputbox-number-stretch" type="number" name="data.value" value="{{data.value}}"
+                        data-dtype="number" readonly/>
                 </div>
             </div>
-        </div>
-        <div class="item-description">
-            <div class="form-label">{{localize 'dgalt.labels.skillsheet.description'}}</div>           
+
+            <div class="item-data">
+            </div>
+
+            <div class="form-label">{{localize 'dgalt.labels.skillsheet.description'}}</div>
             {{{data.description}}}
+
         </div>
-        <div>Skill Value:{{data.value}}</div>
     </div>
 
 
