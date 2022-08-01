@@ -54,21 +54,21 @@
 
     .form-inputbox {
         color: var(--foreColor);
-        height: auto;
+        height: 18px;
                 
     }
 
     .form-inputbox-centered {
         color: var(--foreColor);
         text-align: center;
-        height: auto;
+        height: 18px;
         
     }
 
     .form-inputbox-number {
         color: var(--foreColor);
         text-align: center;
-        height: auto;
+        height: 18px;
         width: 32px;
         
     }
@@ -165,8 +165,8 @@
         //margin: -1px;
 
         display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: min-content 1fr;
+        grid-template-columns: auto;
+        grid-template-rows: min-content min-content auto;
         //gap: 5px 5px;
 
         width: 100%;
@@ -209,11 +209,9 @@
             //background-color: var(--backColor);
             height: 100%;
             width: 100%;
-            padding-left: 30px;
-            //padding-right: 30px;
+            //padding-left: 15px;
+            //padding-right: 15px;
             gap: 5px;
-            z-index: 0;
-            color: var(--foreColor);
 
             .tab-title {
                 background: var(--borderColor);
@@ -230,11 +228,8 @@
                 }
 
                 &.active {
-                    background-color: var(--backColor);
+                    background-color: var(--foreColor);
                     //border-bottom: solid 1px var(--backColor);
-                    border-bottom: var(--backColor);
-                    
-                    
                 }
             }
 
@@ -275,7 +270,6 @@
             //border: 1px solid var(--borderColor);
             //margin: 0 1rem 0.5rem 1rem;
             overflow: hidden;
-            height: 100%;
 
             ul,
             ol {
@@ -309,32 +303,68 @@
                 margin-bottom: 1rem;
             }
 
-            .sheet-page{
-                height: 100%;
-                display: grid;
-                
-            }
-
             .skills-data-area {
-                height: 100%;
-                flex: 1;
-                min-height: 0;
-            }
-
-            .tab-top{
-                height: min-content;
-                display: flex;
-                flex-direction: column;
-            }
-
-            .fillheight{
                 height: 100%;
             }
 
         }
 
 
-        
+        .item-list {
+            display: flex;
+            width: auto;
+            height: auto;
+            flex-direction: column;
+            flex-wrap: wrap;
+            margin: 0 0 10px;
+            gap: 1px 1px;
+            outline: var(--labelColor) solid 1px;
+
+        }
+
+        .itemV2 {
+            max-height: 1.25rem;
+
+            padding-right: 0.25rem;
+            padding-left: 0.25rem;
+            display: grid;
+            font-size: 0.75rem;
+            grid-template-columns: 1rem 1rem auto 2rem 1.5rem;
+            //border-bottom: 1px solid;
+            outline: 1px dashed var(--borderColor);
+            width: 33%;
+
+            .item-image {
+                height: 1rem;
+                padding: 2px;
+            }
+
+            .item-name {
+                // .cursive();
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                padding-left: 3px;
+                line-height: 1rem;
+
+                input {
+                    height: 1rem;
+                    padding: 0;
+                    overflow: visible;
+                    background-color: var(--backColor);
+                    color: var(--foreColor);
+                }
+            }
+
+            .item-score {
+                // .cursive();
+                color: var(--foreColor);
+                text-align: end;
+                line-height: 1rem;
+                text-align: center;
+                height: 15px;
+            }
+        }
 
 
 

@@ -3,27 +3,6 @@
 
     <div class="container">
 
-
-
-        <section class="sheet-header">
-
-
-            <div class="personal-data-area">
-                {{> "systems/delta-green-alt/templates/partials/agent-personal-data-block.hbs"}}
-            </div>
-
-            <div class="flexrow">
-                <div class="statistics-data-area">
-                    {{> "systems/delta-green-alt/templates/partials/agent-statistics-data-block.hbs"}}
-                </div>
-                <div class="psych-data-area">
-                    {{> "systems/delta-green-alt/templates/partials/agent-psychological-data.hbs"}}
-                </div>
-            </div>
-
-
-        </section>
-
         <nav class="sheet-nav tabs" data-group="primary">
             <!--<a class="tab-title" data-tab="skills1">Skills A</a>-->
             <a class="tab-title" data-tab="skills2">Skills</a>
@@ -35,42 +14,31 @@
 
 
 
+
+
+
+
         <section class="sheet-body">
 
 
 
 
-            <!--
-            <div class="tab skills1" data-group="primary" data-tab="skills1">
-
-                <ol class="item-list">
-                    {{#each skills as |skill|}}
-                    <li class="item itemV2" data-skill-id="{{skill._id}}" data-item-id="{{skill._id}}">
-                        <div>
-                            {{#if data.canimprove}}<a class="item-control item-checkmark" title="CHECK"
-                                data-field="data.failcheck"><i
-                                    class="fas {{#if data.failcheck}}fa-plus-square{{else}}fa-square{{/if}}"></i></a>{{/if}}
-                        </div>
-                        <div class="item-image" style="background-image: url('{{skill.img}}')"></div>
-                        <div class="item-name skill-name rollable" title="{{skill.name}}">{{skill.name}}</div>
-                        <input type="number" data-type="number" data-field="data.value" class="item-score inline-edit"
-                            value={{skill.data.value}} />
-                        <div class="item-controls">
-                            <a class="item-control item-edit"><i class="fas fa-edit"></i></a>
-                            <a class="item-control item-delete"><i class="fas fa-trash"></i></a>
-                        </div>
-                    </li>
-                    {{/each}}
-                </ol>
-            </div>-->
 
             <div class="tab skills2" data-group="primary" data-tab="skills2">
 
-                <div class="skills-data-area">
-                    {{> "systems/delta-green-alt/templates/partials/agent-skills-data-block.hbs"}}
-                </div>
+                <div class="sheet-page">
+                    <div class="tab-top">
+                        {{> "systems/delta-green-alt/templates/partials/agent-personal-data-block.hbs"}}
+                        <div class="flexrow fillheight">
+                            {{> "systems/delta-green-alt/templates/partials/agent-statistics-data-block.hbs"}}
+                            {{> "systems/delta-green-alt/templates/partials/agent-psychological-data.hbs"}}
+                        </div>
+                    </div>
 
-                
+                    <div class="skills-data-area">
+                        {{> "systems/delta-green-alt/templates/partials/agent-skills-data-block.hbs"}}
+                    </div>
+                </div>
             </div>
 
             <div class="tab gear" data-group="primary" data-tab="gear">
@@ -84,13 +52,12 @@
             <div class="tab unnatural" data-group="primary" data-tab="unnatural">
                 UNNATURAL TAB
             </div>
-
-
-    </div>
-
-
-    </section>
+        </section>
 
     </div>
+
+
+
+
 
 </form>

@@ -168,19 +168,19 @@
 .dgalt.sheet .form-inputbox,
 .item .form-inputbox {
   color: var(--foreColor);
-  height: 18px;
+  height: auto;
 }
 .dgalt.sheet .form-inputbox-centered,
 .item .form-inputbox-centered {
   color: var(--foreColor);
   text-align: center;
-  height: 18px;
+  height: auto;
 }
 .dgalt.sheet .form-inputbox-number,
 .item .form-inputbox-number {
   color: var(--foreColor);
   text-align: center;
-  height: 18px;
+  height: auto;
   width: 32px;
 }
 .dgalt.sheet .form-inputbox-number-stretch,
@@ -261,8 +261,8 @@
 .dgalt.sheet .container,
 .item .container {
   display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: min-content min-content auto;
+  grid-template-columns: 1fr;
+  grid-template-rows: min-content 1fr;
   width: 100%;
   height: 100%;
 }
@@ -301,7 +301,10 @@
   align-content: stretch;
   height: 100%;
   width: 100%;
+  padding-left: 30px;
   gap: 5px;
+  z-index: 0;
+  color: var(--foreColor);
 }
 .dgalt.sheet .container .sheet-nav .tab-title,
 .item .container .sheet-nav .tab-title {
@@ -318,7 +321,8 @@
 }
 .dgalt.sheet .container .sheet-nav .tab-title.active,
 .item .container .sheet-nav .tab-title.active {
-  background-color: var(--foreColor);
+  background-color: var(--backColor);
+  border-bottom: var(--backColor);
 }
 .dgalt.sheet .container .button-bar-vertical,
 .item .container .button-bar-vertical {
@@ -348,6 +352,7 @@
 .dgalt.sheet .container .sheet-body,
 .item .container .sheet-body {
   overflow: hidden;
+  height: 100%;
 }
 .dgalt.sheet .container .sheet-body ul,
 .item .container .sheet-body ul,
@@ -383,60 +388,26 @@
   background-color: var(--backColor);
   margin-bottom: 1rem;
 }
+.dgalt.sheet .container .sheet-body .sheet-page,
+.item .container .sheet-body .sheet-page {
+  height: 100%;
+  display: grid;
+}
 .dgalt.sheet .container .sheet-body .skills-data-area,
 .item .container .sheet-body .skills-data-area {
   height: 100%;
+  flex: 1;
+  min-height: 0;
 }
-.dgalt.sheet .container .item-list,
-.item .container .item-list {
+.dgalt.sheet .container .sheet-body .tab-top,
+.item .container .sheet-body .tab-top {
+  height: min-content;
   display: flex;
-  width: auto;
-  height: auto;
   flex-direction: column;
-  flex-wrap: wrap;
-  margin: 0 0 10px;
-  gap: 1px 1px;
-  outline: var(--labelColor) solid 1px;
 }
-.dgalt.sheet .container .itemV2,
-.item .container .itemV2 {
-  max-height: 1.25rem;
-  padding-right: 0.25rem;
-  padding-left: 0.25rem;
-  display: grid;
-  font-size: 0.75rem;
-  grid-template-columns: 1rem 1rem auto 2rem 1.5rem;
-  outline: 1px dashed var(--borderColor);
-  width: 33%;
-}
-.dgalt.sheet .container .itemV2 .item-image,
-.item .container .itemV2 .item-image {
-  height: 1rem;
-  padding: 2px;
-}
-.dgalt.sheet .container .itemV2 .item-name,
-.item .container .itemV2 .item-name {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  padding-left: 3px;
-  line-height: 1rem;
-}
-.dgalt.sheet .container .itemV2 .item-name input,
-.item .container .itemV2 .item-name input {
-  height: 1rem;
-  padding: 0;
-  overflow: visible;
-  background-color: var(--backColor);
-  color: var(--foreColor);
-}
-.dgalt.sheet .container .itemV2 .item-score,
-.item .container .itemV2 .item-score {
-  color: var(--foreColor);
-  text-align: end;
-  line-height: 1rem;
-  text-align: center;
-  height: 15px;
+.dgalt.sheet .container .sheet-body .fillheight,
+.item .container .sheet-body .fillheight {
+  height: 100%;
 }
 .codename {
   margin-top: auto;
@@ -552,7 +523,6 @@
   background-color: var(--backColor);
   color: var(--foreColor);
   outline: 1px solid var(--labelColor);
-  height: 100%;
 }
 .statdata .stat-header {
   grid-area: stat-header;
@@ -603,6 +573,10 @@
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }
+.statdata .stats-block .str-text:hover {
+  color: red;
+  text-shadow: 1px;
+}
 .statdata .stats-block .str-score {
   grid-area: str-score;
   outline: var(--borderColor) dashed 1px;
@@ -622,6 +596,10 @@
   grid-area: con-text;
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
+}
+.statdata .stats-block .con-text:hover {
+  color: red;
+  text-shadow: 1px;
 }
 .statdata .stats-block .con-score {
   grid-area: con-score;
@@ -643,6 +621,10 @@
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }
+.statdata .stats-block .dex-text:hover {
+  color: red;
+  text-shadow: 1px;
+}
 .statdata .stats-block .dex-score {
   grid-area: dex-score;
   outline: var(--borderColor) dashed 1px;
@@ -662,6 +644,10 @@
   grid-area: int-text;
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
+}
+.statdata .stats-block .int-text:hover {
+  color: red;
+  text-shadow: 1px;
 }
 .statdata .stats-block .int-score {
   grid-area: int-score;
@@ -683,6 +669,10 @@
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }
+.statdata .stats-block .pow-text:hover {
+  color: red;
+  text-shadow: 1px;
+}
 .statdata .stats-block .pow-score {
   grid-area: pow-score;
   outline: var(--borderColor) dashed 1px;
@@ -702,6 +692,10 @@
   grid-area: cha-text;
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
+}
+.statdata .stats-block .cha-text:hover {
+  color: red;
+  text-shadow: 1px;
 }
 .statdata .stats-block .cha-score {
   grid-area: cha-score;
@@ -797,6 +791,10 @@
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }
+.statdata .derived-block .san-text:hover {
+  color: red;
+  text-shadow: 1px;
+}
 .statdata .derived-block .san-max {
   grid-area: san-max;
   outline: var(--borderColor) dashed 1px;
@@ -817,7 +815,6 @@
   background-color: var(--backColor);
   color: var(--foreColor);
   outline: 1px solid var(--labelColor);
-  height: 100%;
 }
 .psychdata .psych-header {
   grid-area: psych-header;
