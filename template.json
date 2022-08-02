@@ -71,10 +71,8 @@
 
         },
         "Npc": {
-            "name": ""
         },
         "Creature": {
-            "name": ""
         }
     },
     "Item": {
@@ -83,13 +81,15 @@
             "Ability",
             "Ritual",
             "Gear",
+            "Weapon",
+            "Armor",
+            "Vehicle",
             "Profession",
             "Bond",
             "Mental"
         ],
         "templates": [],
         "Skill": {
-            "name": "",
             "description": "",
             "base": 0,
             "value": 0,
@@ -97,11 +97,9 @@
             "failcheck": false
         },
         "Ability": {
-            "name": "",
             "description": ""
         },
         "Ritual": {
-            "name": "",
             "complexity": "",
             "studytime": "",
             "activation": "",
@@ -110,41 +108,47 @@
             "description": ""
         },
         "Gear": {
-            "name": "",
-            "geartype": "",
+            
             "description": "",
             "container": "",
             "expense": "",
             "isrestricted": false,
+            
+            "concealment": 0,
+            
+            "armor": 0,
+            "hitpoints": 0,
+            "speed": "",
+            "vehicletype": ""
+        },
+        "Weapon":{
+            "isgear":true,
+            "description": "",
             "attackskill":"none",
             "mod":0,
             "islethal": false,
             "isranged": false,
             "usesammo": false,
-            "skill": "",
             "concealment": 0,
             "lethality": 0,
             "damage": "",
             "ap": 0,
             "ammomax": 0,
             "ammocurrent": 0,
-            "killradius": "",
-            "armor": 0,
-            "hitpoints": 0,
-            "speed": "",
-            "vehicletype": ""
+            "killradius": ""
+
         },
+        "Armor":{},
+        "Vehicle":{},
         "Profession": {
             "name": ""
         },
         "Bond": {
-            "name": "",
             "description": "",
             "relationship": "none",
             "value": 0
         },
         "Mental": {
-            "name": "",
             "isdisorder": false,
             "alternative": "",            
             "trigger": "",

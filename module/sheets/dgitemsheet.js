@@ -21,6 +21,7 @@ export default class DgItemSheet extends ItemSheet {
         const data = super.getData();
         data.config=CONFIG.dgalt;
         
+       
         
         return data;
     }

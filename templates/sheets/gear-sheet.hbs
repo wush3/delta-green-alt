@@ -1,10 +1,9 @@
 <form class="{{cssClass}}" autocomplete="off">
 
-    {{#if (eq data.data.geartype "weapon")}}
     <div class="itemdata">
         <div class="item-header">
             <div class="vertical-header">
-                {{ localize "dgalt.geartypes.weapon"}}
+                {{ localize "dgalt.geartypes.gear"}}
             </div>
         </div>
         <div class="item-block">
@@ -15,197 +14,17 @@
                     <input class="form-inputbox item-label" name="name" type="text" value="{{item.name}}"
                         placeholder="{{ localize 'Name' }}" />
                 </div>
-
-                <div class="center">
-                    <div class="form-label">{{localize 'type'}}</div>
-                    <select class="typeselector" name="data.geartype">
-                        {{selectOptions config.geartypes selected=data.data.geartype localize=true}}
-                    </select>
-                </div>
             </div>
             <div class="item-data">
-
-
-
-
-                <div class="form-hor-group">
-                    <div>
-                        <div class="form-label">{{localize 'dgalt.labels.weaponsheet.attackskill'}}</div>
-                        <select class="select" name="data.attackskill">
-                            {{selectOptions config.attackskills selected=data.data.attackskill localize=true}}
-                        </select>
-                    </div>
-                    <div class="center">
-                        <div class="form-label">{{localize 'dgalt.labels.weaponsheet.mod'}}</div>
-                        <input class="form-inputbox-number" type="number" name="data.mod"
-                            value="{{data.data.mod}}" data-dtype="number" />
-                    </div>
-                </div>
-
-
-
-                <div class="form-hor-group">
-                    <div class="center">
-                        <div class="form-label">{{localize
-                            'dgalt.labels.weaponsheet.islethal'}}</div>
-                        <a class="item-control item-checkmark" data-field="data.islethal"><i
-                                class="fas {{#if data.data.islethal}}fa-plus-square{{else}}fa-square{{/if}}"></i></a>
-                    </div>
-                    {{#if data.data.islethal}}
-                    <div class="center">
-                        <div class="form-label">{{localize 'dgalt.labels.weaponsheet.lethality'}}</div>
-                        <input class="form-inputbox-number shorttext" type="number" name="data.lethality"
-                            value="{{data.data.lethality}}" data-dtype="number" />
-                    </div>
-                    <div class="center">
-                        <div class="form-label">{{localize 'dgalt.labels.weaponsheet.killradius'}}</div>
-                        <input class="form-inputbox-number" type="number" name="data.killradius"
-                            value="{{data.data.killradius}}" data-dtype="number" />
-                    </div>
-                    {{else}}
-                    <div class="center">
-                        <div class="form-label">{{localize 'dgalt.labels.weaponsheet.damage'}}</div>
-                        <input class="form-inputbox-centered shorttext" type="text" name="data.damage"
-                            value="{{data.data.damage}}" data-dtype="string" />
-                    </div>
-                    {{/if}}
-                    <div class="center contract">
-                        <div class="form-label">{{localize 'dgalt.labels.weaponsheet.ap'}}</div>
-                        <input class="form-inputbox-number" type="number" name="data.ap" value="{{data.data.ap}}"
-                            data-dtype="number" />
-                    </div>
-                </div>
-
-                <div class="form-hor-group">
-                    <div class="center">
-                        <div class="form-label">{{localize
-                            'dgalt.labels.weaponsheet.isranged'}}</div>
-                        <a class="item-control item-checkmark" data-field="data.isranged"><i
-                                class="fas {{#if data.data.isranged}}fa-plus-square{{else}}fa-square{{/if}}"></i></a>
-                    </div>
-                    {{#if data.data.isranged}}
-                    <div class="center">
-                        <div class="form-label">{{localize 'dgalt.labels.weaponsheet.range'}}</div>
-                        <input class="form-inputbox-number" type="number" name="data.range" value="{{data.data.range}}"
-                            data-dtype="number" />
-                    </div>
-                    {{/if}}
-                </div>
-
-                <div class="form-hor-group">
-                    <div class="center">
-                        <div class="form-label">{{localize
-                            'dgalt.labels.weaponsheet.usesammo'}}</div>
-                        <a class="item-control item-checkmark" data-field="data.usesammo"><i
-                                class="fas {{#if data.data.usesammo}}fa-plus-square{{else}}fa-square{{/if}}"></i></a>
-                    </div>
-                    {{#if data.data.usesammo}}
-
-
-                    <input class="form-inputbox-number" type="number" name="data.ammocurrent"
-                        value="{{data.data.ammocurrent}}" data-dtype="number" />
-                    /
-                    <input class="form-inputbox-number" type="number" name="data.ammomax" value="{{data.data.ammomax}}"
-                        data-dtype="number" />
-
-                    {{/if}}
-                </div>
+                <select name="data.geartype">
+                    {{selectOptions config.geartypes selected=data.data.geartype localize=true}}
+                </select>
 
             </div>
+
             <div class="form-label">{{localize 'dgalt.labels.skillsheet.description'}}</div>
             {{editor content=data.data.description target="data.description" button=true owner=owner
             editable=editable}}
         </div>
     </div>
-    {{else}}
-    <!---------------------------------------------------------------------------------------------------------------->
-                        {{#if (eq data.data.geartype "armor")}}
-                        <div class="itemdata">
-                            <div class="item-header">
-                                <div class="vertical-header">
-                                    {{ localize "dgalt.geartypes.armor"}}
-                                </div>
-                            </div>
-                            <div class="item-block">
-                                <div class="item-titlebar">
-                                    <img class="item-icon" src="{{item.img}}" data-edit="img" title="{{item.name}}" />
-                                    <div class="expand">
-                                        <div class="form-label">{{localize 'name'}}</div>
-                                        <input class="form-inputbox item-label" name="name" type="text"
-                                            value="{{item.name}}" placeholder="{{ localize 'Name' }}" />
-                                    </div>
-                                </div>
-                                <div class="item-data">
-                                    <select name="data.geartype">
-                                        {{selectOptions config.geartypes selected=data.data.geartype localize=true}}
-                                    </select>
-
-                                </div>
-                                <div class="form-label">{{localize 'dgalt.labels.skillsheet.description'}}</div>
-                                {{editor content=data.data.description target="data.description" button=true owner=owner
-                                editable=editable}}
-                            </div>
-                        </div>
-                        {{else}}
-
-                        <!----------------------------------------------------------------------------------------------------->
-
-                        {{#if (eq data.data.geartype "vehicle")}}
-                        <div class="itemdata">
-                            <div class="item-header">
-                                <div class="vertical-header">
-                                    {{ localize "dgalt.geartypes.vehicle"}}
-                                </div>
-                            </div>
-                            <div class="item-block">
-                                <div class="item-titlebar">
-                                    <img class="item-icon" src="{{item.img}}" data-edit="img" title="{{item.name}}" />
-                                    <div class="expand">
-                                        <div class="form-label">{{localize 'name'}}</div>
-                                        <input class="form-inputbox item-label" name="name" type="text"
-                                            value="{{item.name}}" placeholder="{{ localize 'Name' }}" />
-                                    </div>
-                                </div>
-                                <div class="item-data">
-                                    <select name="data.geartype">
-                                        {{selectOptions config.geartypes selected=data.data.geartype localize=true}}
-                                    </select>
-
-                                </div>
-                                <div class="form-label">{{localize 'dgalt.labels.skillsheet.description'}}</div>
-                                {{editor content=data.data.description target="data.description" button=true owner=owner
-                                editable=editable}}
-                            </div>
-                        </div>
-                        {{else}}
-                        <!-------------------------------------------------------------------------------------------------------->
-                        <div class="itemdata">
-                            <div class="item-header">
-                                <div class="vertical-header">
-                                    {{ localize "dgalt.geartypes.gear"}}
-                                </div>
-                            </div>
-                            <div class="item-block">
-                                <div class="item-titlebar">
-                                    <img class="item-icon" src="{{item.img}}" data-edit="img" title="{{item.name}}" />
-                                    <div class="expand">
-                                        <div class="form-label">{{localize 'name'}}</div>
-                                        <input class="form-inputbox item-label" name="name" type="text"
-                                            value="{{item.name}}" placeholder="{{ localize 'Name' }}" />
-                                    </div>
-                                </div>
-                                <div class="item-data">
-                                    <select name="data.geartype">
-                                        {{selectOptions config.geartypes selected=data.data.geartype localize=true}}
-                                    </select>
-
-                                </div>
-                                <div class="form-label">{{localize 'dgalt.labels.skillsheet.description'}}</div>
-                                {{editor content=data.data.description target="data.description" button=true owner=owner
-                                editable=editable}}
-                            </div>
-                        </div>
-                        {{/if}}
-                        {{/if}}
-                        {{/if}}
 </form>
