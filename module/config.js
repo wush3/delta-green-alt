@@ -11,3 +11,10 @@ dgalt.attackskills={
     demolitions: "dgalt.attackskills.demolitions",
     artillery:"dgalt.attackskills.artillery"
 };
+
+dgalt.geartypes={
+    weapon : "dgalt.geartypes.weapon",
+    armor : "dgalt.geartypes.armor",
+    gear : "dgalt.geartypes.gear",
+    vehicle : "dgalt.geartypes.vehicle"
+}

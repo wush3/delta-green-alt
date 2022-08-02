@@ -85,12 +85,24 @@
   align-items: center;
   height: 100%;
 }
+.item .itemdata .item-block .item-titlebar .typeselector {
+  height: 100%;
+  color: var(--foreColor);
+}
 .item .itemdata .item-block .item-data {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
+  align-content: center;
+  align-items: stretch;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 5px;
   margin: 5px 0px;
+}
+.item .itemdata .item-block .item-data .select {
+  height: min-content;
+  background-color: var(--foreColor);
+  width: min-content;
 }
 .item .itemdata .item-block .item-data .contract {
   display: flex;
@@ -107,6 +119,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.item .itemdata .item-block .item-data .shorttext {
+  width: 50px;
 }
 .item .itemdata .item-block .green {
   color: green;
@@ -189,6 +204,15 @@
   text-align: center;
   height: 100%;
   width: 50px;
+}
+.dgalt.sheet .form-hor-group,
+.item .form-hor-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px 5px;
+  gap: 5px;
+  outline: 1px dashed var(--borderColor);
 }
 .dgalt.sheet .form-button,
 .item .form-button {

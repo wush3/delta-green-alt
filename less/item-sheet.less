@@ -87,15 +87,30 @@
                     align-items: center;
                     height: 100%;
                 }
+
+                .typeselector
+                {
+                    height: 100%;
+                    color: var(--foreColor);
+                }
             }
 
             .item-data
             {
                 display: flex;
                 flex-direction: row;
-                justify-content: space-around;
-                align-items: center;
+                align-content: center;
+                align-items: stretch;
+                justify-content: flex-start;
+                flex-wrap: wrap;
+                gap: 5px;
                 margin: 5px 0px;
+
+                .select{
+                    height: min-content;
+                    background-color: var(--foreColor);
+                    width: min-content;
+                }
                 
                 .contract{
                     display: flex;
@@ -114,6 +129,9 @@
                     flex-direction: column;
                     justify-content: center;
                     align-items: center;
+                }
+                .shorttext{
+                    width: 50px;
                 }
 
             }

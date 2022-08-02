@@ -116,6 +116,8 @@
             "container": "",
             "expense": "",
             "isrestricted": false,
+            "attackskill":"none",
+            "mod":0,
             "islethal": false,
             "isranged": false,
             "usesammo": false,
