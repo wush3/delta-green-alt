@@ -11,10 +11,14 @@ async function preloadHandlebarsTemplates()
         "systems/delta-green-alt/templates/partials/agent-statistics-data-block.hbs",
         "systems/delta-green-alt/templates/partials/agent-psychological-data.hbs",
         "systems/delta-green-alt/templates/partials/agent-skills-data-block.hbs",
+        "systems/delta-green-alt/templates/partials/agent-weapons-data-block.hbs",
+        "systems/delta-green-alt/templates/partials/agent-armor-data-block.hbs",
+        "systems/delta-green-alt/templates/partials/agent-gear-data-block.hbs",
 
         "systems/delta-green-alt/templates/partials/bond-card.hbs",
         "systems/delta-green-alt/templates/partials/skill-card.hbs",
         "systems/delta-green-alt/templates/partials/mental-card.hbs",
+        "systems/delta-green-alt/templates/partials/weapon-card.hbs",
 
         "systems/delta-green-alt/templates/partials/roll-skill.hbs",
         "systems/delta-green-alt/templates/partials/skill-check.hbs",
@@ -62,6 +66,12 @@ Hooks.once("init", async function()
             if (content<1) result="zero";
             
             return result;
+        });
+
+        Handlebars.registerHelper("add", function(param1, param2)
+        {
+            return Number(param1)+Number(param2);
+            
         });
 
         

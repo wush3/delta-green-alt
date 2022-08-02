@@ -9,6 +9,17 @@ export default class DgActor extends Actor {
         console.log('actor.js prepareData');
         console.log(this);
 
+
+    }
+
+    prepareDerivedData() {
+
+        super.prepareDerivedData();
+
+        const actorData = this.data;
+        const _data = actorData.data;
+        const _flags = actorData.flags;
+
         let pow = 0;
 
         for (let [key, statistic] of Object.entries(_data.statistics)) {
@@ -72,5 +83,31 @@ export default class DgActor extends Actor {
         }
 
         return super.create(data, options);
+    }
+
+
+    getSkillValueByName(skillname) {
+        let skillitem = this.data.items.find(
+            item => {
+                console.log(item.name == skillname);
+                return item.name == skillname
+
+            });
+        if (skillitem)
+            return skillitem.data.data.value;
+        return null;
+    }
+
+    getStatx5ValueByName(statname) {
+        let result = -1;
+
+        if (this.data && this.data.data.statistics[statname].x5)
+
+            result = Number(this.data.data.statistics[statname].x5);
+        console.log(">>>statx5 lookup:" + result);
+        console.log(">>rawrepeat:" + this.data.data.statistics[statname].x5)
+
+        return result;
+
     }
 }

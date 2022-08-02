@@ -66,10 +66,26 @@ export default class DgAgentSheet extends ActorSheet {
             return 0;
         });
 
+        data.weapons = data.items.filter(function (item) { return item.type == "Weapon" });
+
+        data.weapons.sort(function (a, b) {
+            let nameA = a.name.toUpperCase();
+            let nameB = b.name.toUpperCase();
+            if (nameA < nameB) {
+                return -1;
+            }
+            if (nameA > nameB) {
+                return 1;
+            }
+            return 0;
+        });
+
         
 
         return data;
     }
+
+   
 
     skillContextMenu = [
         {
@@ -110,6 +126,7 @@ export default class DgAgentSheet extends ActorSheet {
         html.find(".skill-improvement").click(this._onImproveClick.bind(this));
         html.find(".adaptation-checkmark").click(this._onAdaptationClick.bind(this));
         html.find(".color-toggle").click(this._onColorToggleClick.bind(this));
+        html.find(".editweapon-toggle").click(this._onEditWeaponToggleClick.bind(this));
         html.find(".breakpoint-click").click(this._onBreakpointClick.bind(this));
 
         html.find(".inline-edit").change(this._onInlineChanged.bind(this));
@@ -229,10 +246,15 @@ export default class DgAgentSheet extends ActorSheet {
 
     async _onColorToggleClick(event)
     {
-        //console.log(this.actor.data.data.options.colorhighlight);
-        //console.log(getProperty(this.actor, "data.options.colorhighlight"));
-        //console.log(getProperty(this.actor, "data.data.options.colorhighlight"));
+       
         this.actor.update({["data.options.colorhighlight"]:!this.actor.data.data.options.colorhighlight});
+
+    }
+
+    async _onEditWeaponToggleClick(event)
+    {
+       
+        this.actor.update({["data.options.editweapons"]:!this.actor.data.data.options.editweapons});
 
     }
 

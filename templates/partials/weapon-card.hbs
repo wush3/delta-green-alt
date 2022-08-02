@@ -1,0 +1,24 @@
+<li class="item weapon-card" data-skill-id="{{_id}}" data-item-id="{{_id}}">
+
+
+
+    <div class="item-image" style="background-image: url('{{img}}')"></div>
+
+    {{#if @root.data.data.options.editweapons}}
+    <div class="weapon-name inline-edit" data-dtype="String" contenteditable="true">{{name}}</div>
+    {{else}}
+    <div class="weapon-name item-roll" data-dtype="String" >{{name}}</div>
+    {{/if}}
+
+
+    <!--<div class="weapon-stat">
+        <input {{#unless @root.data.data.options.editweapons}}readonly{{/unless}} class="inline-edit" type="number"
+            value="{{data.attackvalue}}" data-dtype="Number" data-field="data.attackvalue">
+    </div>-->
+
+    <div class="weapon-stat">{{add data.attackvalue data.mod}}</div>
+    <div class="item-controls">
+        <a class="item-control item-edit" title="EDIT"><i class="fas fa-edit"></i></a>
+        <a class="item-control item-delete" title="DELETE"><i class="fas fa-trash"></i></a>
+    </div>
+</li>

@@ -66,7 +66,8 @@
             "specialtraining": {},
             
             "options":{
-                "colorhighlight":true
+                "colorhighlight":true,
+                "editweapons":false
             }
 
         },
@@ -108,7 +109,7 @@
             "description": ""
         },
         "Gear": {
-            
+            "isgear":true,
             "description": "",
             "container": "",
             "expense": "",
@@ -123,8 +124,10 @@
         },
         "Weapon":{
             "isgear":true,
+            "isequipped":false,
             "description": "",
             "attackskill":"none",
+            "attackvalue":0,
             "mod":0,
             "islethal": false,
             "isranged": false,
@@ -135,11 +138,19 @@
             "ap": 0,
             "ammomax": 0,
             "ammocurrent": 0,
+            "ammoperattack":1,
             "killradius": ""
 
         },
-        "Armor":{},
-        "Vehicle":{},
+        "Armor":{
+            "isgear":true,
+            "isequipped":false,
+            "description": ""
+        },
+        "Vehicle":{
+            "isgear":true,
+            "description": ""
+        },
         "Profession": {
             "name": ""
         },

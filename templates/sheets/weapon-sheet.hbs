@@ -25,9 +25,15 @@
                 <div class="form-hor-group">
                     <div>
                         <div class="form-label">{{localize 'dgalt.labels.weaponsheet.attackskill'}}</div>
-                        <select class="select" name="data.attackskill">
+                        <select class="select" name="data.attackskill" >
                             {{selectOptions config.attackskills selected=data.data.attackskill localize=true}}
                         </select>
+
+                    </div>
+                     <div class="center">
+                        <div class="form-label">%</div>
+                        <input class="form-inputbox-number" type="number" name="data.attackvalue" value="{{data.data.attackvalue}}"
+                            data-dtype="number" readonly {{#unless item.actor}}disabled{{/unless}}/>
                     </div>
                     <div class="center">
                         <div class="form-label">{{localize 'dgalt.labels.weaponsheet.mod'}}</div>
@@ -95,12 +101,24 @@
                     </div>
                     {{#if data.data.usesammo}}
 
-
+                     <div class="center">
+                    <div class="form-label">{{localize 'dgalt.labels.weaponsheet.currammo'}}</div>
                     <input class="form-inputbox-number" type="number" name="data.ammocurrent"
                         value="{{data.data.ammocurrent}}" data-dtype="number" />
+                        </div>
                     /
+                     <div class="center">
+                    <div class="form-label">{{localize 'dgalt.labels.weaponsheet.maxammo'}}</div>
                     <input class="form-inputbox-number" type="number" name="data.ammomax" value="{{data.data.ammomax}}"
                         data-dtype="number" />
+                        </div>
+
+                     <div class="center">
+                    <div class="form-label">{{localize 'dgalt.labels.weaponsheet.ammoperattack'}}</div>
+                        <input class="form-inputbox-number" type="number" name="data.ammoperattack" value="{{data.data.ammoperattack}}"
+                            data-dtype="number" />
+                            </div>
+                      
 
                     {{/if}}
                 </div>
