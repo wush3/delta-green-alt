@@ -364,6 +364,7 @@
   border-radius: 5px;
   flex: 0 0 2em;
   margin: 1px;
+  z-index: 1;
 }
 .dgalt.sheet .container .mod-selector-hidden .mod-button:hover,
 .item .container .mod-selector-hidden .mod-button:hover {
@@ -613,6 +614,12 @@
   color: var(--foreColor);
   outline: var(--borderColor) dashed 1px;
 }
+.statdata .stats-block .stat-name-wrapper:hover .mod-selector-hidden {
+  display: flex;
+}
+.statdata .stats-block .stat-name-wrapper:hover .stat-text {
+  display: none;
+}
 .statdata .stats-block .stat-label {
   grid-area: stat-label;
   outline: var(--borderColor) dashed 1px;
@@ -640,10 +647,6 @@
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }
-.statdata .stats-block .str-text:hover {
-  color: red;
-  text-shadow: 1px;
-}
 .statdata .stats-block .str-score {
   grid-area: str-score;
   outline: var(--borderColor) dashed 1px;
@@ -664,10 +667,6 @@
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }
-.statdata .stats-block .con-text:hover {
-  color: red;
-  text-shadow: 1px;
-}
 .statdata .stats-block .con-score {
   grid-area: con-score;
   outline: var(--borderColor) dashed 1px;
@@ -687,10 +686,6 @@
   grid-area: dex-text;
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
-}
-.statdata .stats-block .dex-text:hover {
-  color: red;
-  text-shadow: 1px;
 }
 .statdata .stats-block .dex-score {
   grid-area: dex-score;

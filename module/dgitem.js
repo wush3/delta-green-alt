@@ -89,6 +89,7 @@ export default class DgItem extends Item {
             let cardData = {
                 ...this.data,
                 owner: this.actor.id,
+                header : game.i18n.localize("dgalt.labels.rolls.skilltest"), 
                 target: target,
                 success: success,
                 critical: critical,

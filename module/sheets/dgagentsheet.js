@@ -263,12 +263,21 @@ export default class DgAgentSheet extends ActorSheet {
     async _onItemRollClick(event) {
         event.preventDefault();
         const element = event.currentTarget;
-        const itemId = element.closest(".item").dataset.itemId;
+        const rolltype = element.dataset.rolltype;
         const mod=element.dataset.mod;
         const targetfield=element.dataset.targetfield;
-        const item = this.actor.items.get(itemId);
 
-        item.roll(mod,targetfield);
+        if (rolltype=="item")
+        {
+            const itemId = element.closest(".item").dataset.itemId;            
+            const item = this.actor.items.get(itemId);
+            item.roll(mod,targetfield);
+        }
+
+        if (rolltype=="agent")
+        {
+            this.actor.roll(mod,targetfield)
+        }
     }
 
     async _onBreakpointClick(event) {

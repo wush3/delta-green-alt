@@ -47,7 +47,15 @@
       outline: var(--borderColor) dashed 1px;
 
 
-
+      .stat-name-wrapper:hover .mod-selector-hidden {
+        display: flex;
+      }
+  
+      .stat-name-wrapper:hover .stat-text {
+        display: none;
+      }
+  
+      
 
       .stat-label {
         grid-area: stat-label;
@@ -79,10 +87,8 @@
         grid-area: str-text;
         outline: var(--borderColor) dashed 1px;
         padding: 2px;
-        &:hover {
-          color: red;
-          text-shadow: 1px;
-        }
+       
+       
       }
 
       .str-score {
@@ -107,10 +113,7 @@
         grid-area: con-text;
         outline: var(--borderColor) dashed 1px;
         padding: 2px;
-        &:hover {
-          color: red;
-          text-shadow: 1px;
-        }
+       
       }
 
       .con-score {
@@ -135,10 +138,7 @@
         grid-area: dex-text;
         outline: var(--borderColor) dashed 1px;
         padding: 2px;
-        &:hover {
-          color: red;
-          text-shadow: 1px;
-        }
+      
       }
 
       .dex-score {
