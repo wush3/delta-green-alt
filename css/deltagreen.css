@@ -351,7 +351,7 @@
 }
 .dgalt.sheet .container .mod-selector,
 .item .container .mod-selector {
-  display: flex;
+  display: none;
   flex-direction: row;
   font-size: 0.625rem;
   line-height: 1rem;
@@ -1079,10 +1079,10 @@
   height: 0.75rem;
   margin: 1px 0 0;
 }
-.skilldata .skill-card .skill-name-wrapper .mod-selector:hover {
+.skilldata .skill-card .skill-name-wrapper :hover .mod-selector {
   display: flex;
 }
-.skilldata .skill-card .skill-name-wrapper .skill-name:hover {
+.skilldata .skill-card .skill-name-wrapper :hover .skill-name {
   display: none;
 }
 .skilldata .skill-card .skill-name {
