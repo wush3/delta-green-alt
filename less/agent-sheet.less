@@ -1,6 +1,5 @@
 .dgalt.sheet,
-.item 
-{
+.item {
 
 
 
@@ -19,7 +18,7 @@
         writing-mode: vertical-rl;
         transform: rotate(180deg);
         font-size: 0.75rem;
-        font-weight: bold;      
+        font-weight: bold;
     }
 
     .group-flex-horizontal {
@@ -38,7 +37,7 @@
         text-decoration: line-through var(--foreColor) solid 2px;
     }
 
-    
+
 
     .form-label {
         font-size: 0.6rem;
@@ -55,14 +54,14 @@
     .form-inputbox {
         color: var(--foreColor);
         height: auto;
-                
+
     }
 
     .form-inputbox-centered {
         color: var(--foreColor);
         text-align: center;
         height: auto;
-        
+
     }
 
     .form-inputbox-number {
@@ -70,7 +69,7 @@
         text-align: center;
         height: auto;
         width: 32px;
-        
+
     }
 
     .form-inputbox-number-stretch {
@@ -78,15 +77,15 @@
         text-align: center;
         height: 100%;
         width: 50px;
-        
+
     }
 
-    .form-hor-group{
+    .form-hor-group {
         display: flex;
         flex-direction: row;
         align-items: center;
         padding: 0px 5px;
-        gap:5px;
+        gap: 5px;
         outline: 1px dashed var(--borderColor);
         min-height: 33px;
     }
@@ -243,12 +242,40 @@
                     background-color: var(--backColor);
                     //border-bottom: solid 1px var(--backColor);
                     border-bottom: var(--backColor);
-                    
-                    
+
+
                 }
             }
 
         }
+
+        .mod-selector {
+            display: flex;
+            //display: none;
+            flex-direction: row;
+            font-size: 0.625rem;
+            line-height: 1rem;
+            
+            text-align: center;
+            
+            
+
+            .mod-button {
+                border: 1px solid var(--foreColor);
+                background-color: var(--borderColor);
+                border-radius: 5px;
+                flex: 0 0 2em;
+                margin: 1px;
+
+                &:hover {
+                    color: var(--hoverColor);
+                    background-color: var(--foreColor);
+                }
+            }
+        }
+
+
+
 
         .button-bar-vertical {
             font-size: 0.625rem;
@@ -319,10 +346,10 @@
                 margin-bottom: 1rem;
             }
 
-            .sheet-page{
+            .sheet-page {
                 height: 100%;
                 display: grid;
-                
+
             }
 
             .skills-data-area {
@@ -331,20 +358,20 @@
                 min-height: 0;
             }
 
-            .tab-top{
+            .tab-top {
                 height: min-content;
                 display: flex;
                 flex-direction: column;
             }
 
-            .fillheight{
+            .fillheight {
                 height: 100%;
             }
 
         }
 
 
-        
+
 
 
 

@@ -1,14 +1,25 @@
 <li class="item skill-card" data-skill-id="{{_id}}" data-item-id="{{_id}}">
-    
-    <div> <!--class="item-controls">-->
-    {{#if data.canimprove}}<a class="item-control item-checkmark" title="{{localize 'dgalt.labels.skilldata.markimprove'}}" data-field="data.failcheck"><i
-            class="fas {{#if data.failcheck}}fa-plus-square{{else}}fa-square{{/if}}"></i></a>{{/if}}
-    </div>    
+
+    <div>
+        <!--class="item-controls">-->
+        {{#if data.canimprove}}<a class="item-control item-checkmark"
+            title="{{localize 'dgalt.labels.skilldata.markimprove'}}" data-field="data.failcheck"><i
+                class="fas {{#if data.failcheck}}fa-plus-square{{else}}fa-square{{/if}}"></i></a>{{/if}}
+    </div>
     <div class="item-image" style="background-image: url('{{img}}')"></div>
     <div class="skill-name">
-        
-        <div class="skill-name {{#if @root.data.data.options.colorhighlight}}{{pickcolor data.value }}{{/if}} item-roll" data-dtype="String">{{name}}<!--&nbsp;({{data.base}})--></div>
 
+        <div class="skill-name {{#if @root.data.data.options.colorhighlight}}{{pickcolor data.value }}{{/if}} item-roll"
+            data-dtype="String">{{name}}
+            <!--&nbsp;({{data.base}})-->
+        </div>
+        <div class="mod-selector">
+            <div class="mod-button" data-mod="-40">-40</div>
+            <div class="mod-button" data-mod="-20">-20</div>
+            <div class="mod-button" data-mod="0">0</div>
+            <div class="mod-button" data-mod="20">+20</div>
+            <div class="mod-button" data-mod="40">+40</div>
+        </div>
     </div>
 
     <div class="skill-score">

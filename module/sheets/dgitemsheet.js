@@ -32,22 +32,22 @@ export default class DgItemSheet extends ItemSheet {
                     data.data.data.attackvalue = this.item.actor.getSkillValueByName(game.i18n.localize("dgalt.attackskills.unarmedcombat"));
                     break;
                 case "meleeweapons":
-                    data.data.data.attackvalue = this.item.actor.getSkillValueByName("Melee Weapons");
+                    data.data.data.attackvalue = this.item.actor.getSkillValueByName(game.i18n.localize("dgalt.attackskills.meleeweapons"));
                     break;
                 case "athletics":
-                    data.data.data.attackvalue = this.item.actor.getSkillValueByName("Athletics");
+                    data.data.data.attackvalue = this.item.actor.getSkillValueByName(game.i18n.localize("dgalt.attackskills.Athletics"));
                     break;
                 case "firearms":
-                    data.data.data.attackvalue = this.item.actor.getSkillValueByName("Firearms");
+                    data.data.data.attackvalue = this.item.actor.getSkillValueByName(game.i18n.localize("dgalt.attackskills.Firearms"));
                     break;
                 case "heavyweapons":
-                    data.data.data.attackvalue = this.item.actor.getSkillValueByName("Heavy Weapons");
+                    data.data.data.attackvalue = this.item.actor.getSkillValueByName(game.i18n.localize("dgalt.attackskills.heavyweapons"));
                     break;
                 case "demolitions":
-                    data.data.data.attackvalue = this.item.actor.getSkillValueByName("Demolitions");
+                    data.data.data.attackvalue = this.item.actor.getSkillValueByName(game.i18n.localize("dgalt.attackskills.demolitions"));
                     break;
                 case "artillery":
-                    data.data.data.attackvalue = this.item.actor.getSkillValueByName("Artillery");
+                    data.data.data.attackvalue = this.item.actor.getSkillValueByName(game.i18n.localize("dgalt.attackskills.artillery"));
                     break;
                 default:
                     data.data.data.attackvalue = this.item.actor.getStatx5ValueByName("dexterity");

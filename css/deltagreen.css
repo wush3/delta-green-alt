@@ -349,6 +349,27 @@
   background-color: var(--backColor);
   border-bottom: var(--backColor);
 }
+.dgalt.sheet .container .mod-selector,
+.item .container .mod-selector {
+  display: flex;
+  flex-direction: row;
+  font-size: 0.625rem;
+  line-height: 1rem;
+  text-align: center;
+}
+.dgalt.sheet .container .mod-selector .mod-button,
+.item .container .mod-selector .mod-button {
+  border: 1px solid var(--foreColor);
+  background-color: var(--borderColor);
+  border-radius: 5px;
+  flex: 0 0 2em;
+  margin: 1px;
+}
+.dgalt.sheet .container .mod-selector .mod-button:hover,
+.item .container .mod-selector .mod-button:hover {
+  color: var(--hoverColor);
+  background-color: var(--foreColor);
+}
 .dgalt.sheet .container .button-bar-vertical,
 .item .container .button-bar-vertical {
   font-size: 0.625rem;
@@ -1058,6 +1079,12 @@
   height: 0.75rem;
   margin: 1px 0 0;
 }
+.skilldata .skill-card .skill-name-wrapper .mod-selector:hover {
+  display: flex;
+}
+.skilldata .skill-card .skill-name-wrapper .skill-name:hover {
+  display: none;
+}
 .skilldata .skill-card .skill-name {
   color: var(--foreColor);
   line-height: 1rem;
@@ -1186,7 +1213,7 @@
   outline: 1px dashed var(--borderColor);
   display: grid;
   font-size: 1rem;
-  grid-template-columns: 1.5rem auto 2rem 1.5rem;
+  grid-template-columns: 1.5rem auto auto 2rem 1.5rem;
   padding-left: 0.2rem;
   padding-right: 0.2rem;
   height: 1.25rem;

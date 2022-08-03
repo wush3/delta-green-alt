@@ -7,9 +7,16 @@
     {{#if @root.data.data.options.editweapons}}
     <div class="weapon-name inline-edit" data-dtype="String" contenteditable="true">{{name}}</div>
     {{else}}
-    <div class="weapon-name item-roll" data-dtype="String" >{{name}}</div>
+    <div class="weapon-name item-roll" data-dtype="String">{{name}}</div>
     {{/if}}
 
+    <div class="mod-selector">
+        <div class="mod-button" data-mod="-40">-40</div>
+        <div class="mod-button" data-mod="-20">-20</div>
+        <div class="mod-button" data-mod="0">0</div>
+        <div class="mod-button" data-mod="20">+20</div>
+        <div class="mod-button" data-mod="40">+40</div>
+    </div>
 
     <!--<div class="weapon-stat">
         <input {{#unless @root.data.data.options.editweapons}}readonly{{/unless}} class="inline-edit" type="number"
