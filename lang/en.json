@@ -28,6 +28,10 @@
             "vehicle":"Vehicle"
         },
         "labels": {
+            "rolls":{
+                "target":"Target",
+                "modifier":"Modifier"
+            },
             "psychdata": {
                 "bondheader": "BOND",
                 "bondslabel": "10. BONDS",

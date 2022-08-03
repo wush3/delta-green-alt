@@ -249,14 +249,41 @@
 
         }
 
-        .mod-selector {
-            //display: flex;
+        .mod-selector-hidden {
+            
             display: none;
             flex-direction: row;
             font-size: 0.625rem;
             line-height: 1rem;
             
             text-align: center;
+            
+            
+            
+
+            .mod-button {
+                border: 1px solid var(--foreColor);
+                background-color: var(--borderColor);
+                border-radius: 5px;
+                flex: 0 0 2em;
+                margin: 1px;
+
+                &:hover {
+                    color: var(--hoverColor);
+                    background-color: var(--foreColor);
+                }
+            }
+        }
+
+        .mod-selector {
+            
+            display: flex;
+            flex-direction: row;
+            font-size: 0.625rem;
+            line-height: 1rem;
+            
+            text-align: center;
+            
             
             
 

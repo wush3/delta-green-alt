@@ -9,17 +9,20 @@
     <div class="item-image" style="background-image: url('{{img}}')"></div>
     <div class="skill-name-wrapper">
 
-        <div class="skill-name {{#if @root.data.data.options.colorhighlight}}{{pickcolor data.value }}{{/if}} item-roll"
+        <div class="skill-name {{#if @root.data.data.options.colorhighlight}}{{pickcolor data.value }}{{/if}}"
             data-dtype="String">{{name}}
             <!--&nbsp;({{data.base}})-->
         </div>
-        <div class="mod-selector">
-            <div class="mod-button" data-mod="-40">-40</div>
-            <div class="mod-button" data-mod="-20">-20</div>
-            <div class="mod-button" data-mod="0">0</div>
-            <div class="mod-button" data-mod="20">+20</div>
-            <div class="mod-button" data-mod="40">+40</div>
+
+        <div class="mod-selector-hidden">
+            <div class="mod-button item-roll" data-mod="-40" data-targetfield="value">-40</div>
+            <div class="mod-button item-roll" data-mod="-20" data-targetfield="value">-20</div>
+            <div class="mod-button item-roll" data-mod="0" data-targetfield="value">0</div>
+            <div class="mod-button item-roll" data-mod="20" data-targetfield="value">+20</div>
+            <div class="mod-button item-roll" data-mod="40" data-targetfield="value">+40</div>
+            <div class="mod-button item-roll" data-mod="comment" ><i class="fas fa-comment"></i></div>
         </div>
+
     </div>
 
     <div class="skill-score">

@@ -349,9 +349,30 @@
   background-color: var(--backColor);
   border-bottom: var(--backColor);
 }
+.dgalt.sheet .container .mod-selector-hidden,
+.item .container .mod-selector-hidden {
+  display: none;
+  flex-direction: row;
+  font-size: 0.625rem;
+  line-height: 1rem;
+  text-align: center;
+}
+.dgalt.sheet .container .mod-selector-hidden .mod-button,
+.item .container .mod-selector-hidden .mod-button {
+  border: 1px solid var(--foreColor);
+  background-color: var(--borderColor);
+  border-radius: 5px;
+  flex: 0 0 2em;
+  margin: 1px;
+}
+.dgalt.sheet .container .mod-selector-hidden .mod-button:hover,
+.item .container .mod-selector-hidden .mod-button:hover {
+  color: var(--hoverColor);
+  background-color: var(--foreColor);
+}
 .dgalt.sheet .container .mod-selector,
 .item .container .mod-selector {
-  display: none;
+  display: flex;
   flex-direction: row;
   font-size: 0.625rem;
   line-height: 1rem;
@@ -1079,10 +1100,54 @@
   height: 0.75rem;
   margin: 1px 0 0;
 }
-.skilldata .skill-card .skill-name-wrapper :hover .mod-selector {
+.skilldata .skill-card .skill-name-wrapper .zero {
+  color: var(--zeroSkill);
+  font-weight: bold;
+}
+.skilldata .skill-card .skill-name-wrapper .zero:hover {
+  color: var(--hoverColor);
+  text-shadow: 1px;
+}
+.skilldata .skill-card .skill-name-wrapper .belowtwenty {
+  color: var(--belowtwentySkill);
+  font-weight: bold;
+}
+.skilldata .skill-card .skill-name-wrapper .belowtwenty:hover {
+  color: var(--hoverColor);
+  text-shadow: 1px;
+}
+.skilldata .skill-card .skill-name-wrapper .twenty {
+  color: var(--twentySkill);
+}
+.skilldata .skill-card .skill-name-wrapper .twenty:hover {
+  color: var(--hoverColor);
+  text-shadow: 1px;
+}
+.skilldata .skill-card .skill-name-wrapper .forty {
+  color: var(--fortySkill);
+}
+.skilldata .skill-card .skill-name-wrapper .forty:hover {
+  color: var(--hoverColor);
+  text-shadow: 1px;
+}
+.skilldata .skill-card .skill-name-wrapper .sixty {
+  color: var(--sixtySkill);
+}
+.skilldata .skill-card .skill-name-wrapper .sixty:hover {
+  color: var(--hoverColor);
+  text-shadow: 1px;
+}
+.skilldata .skill-card .skill-name-wrapper .eighty {
+  color: var(--eightySkill);
+}
+.skilldata .skill-card .skill-name-wrapper .eighty:hover {
+  color: var(--labelColor);
+  text-shadow: 1px;
+}
+.skilldata .skill-card .skill-name-wrapper:hover .mod-selector-hidden {
   display: flex;
 }
-.skilldata .skill-card .skill-name-wrapper :hover .skill-name {
+.skilldata .skill-card .skill-name-wrapper:hover .skill-name {
   display: none;
 }
 .skilldata .skill-card .skill-name {
@@ -1092,7 +1157,6 @@
   padding: 2px;
   text-overflow: ellipsis;
   white-space: nowrap;
-  font-weight: light;
 }
 .skilldata .skill-card .skill-name:hover {
   color: red;
@@ -1104,50 +1168,6 @@
   height: 1rem;
   overflow: visible;
   padding: 0;
-}
-.skilldata .skill-card .skill-name .zero {
-  color: var(--zeroSkill);
-  font-weight: bold;
-}
-.skilldata .skill-card .skill-name .zero:hover {
-  color: var(--hoverColor);
-  text-shadow: 1px;
-}
-.skilldata .skill-card .skill-name .belowtwenty {
-  color: var(--belowtwentySkill);
-  font-weight: bold;
-}
-.skilldata .skill-card .skill-name .belowtwenty:hover {
-  color: var(--hoverColor);
-  text-shadow: 1px;
-}
-.skilldata .skill-card .skill-name .twenty {
-  color: var(--twentySkill);
-}
-.skilldata .skill-card .skill-name .twenty:hover {
-  color: var(--hoverColor);
-  text-shadow: 1px;
-}
-.skilldata .skill-card .skill-name .forty {
-  color: var(--fortySkill);
-}
-.skilldata .skill-card .skill-name .forty:hover {
-  color: var(--hoverColor);
-  text-shadow: 1px;
-}
-.skilldata .skill-card .skill-name .sixty {
-  color: var(--sixtySkill);
-}
-.skilldata .skill-card .skill-name .sixty:hover {
-  color: var(--hoverColor);
-  text-shadow: 1px;
-}
-.skilldata .skill-card .skill-name .eighty {
-  color: var(--eightySkill);
-}
-.skilldata .skill-card .skill-name .eighty:hover {
-  color: var(--labelColor);
-  text-shadow: 1px;
 }
 .skilldata .skill-card .skill-score {
   color: var(--foreColor);
@@ -1213,7 +1233,7 @@
   outline: 1px dashed var(--borderColor);
   display: grid;
   font-size: 1rem;
-  grid-template-columns: 1.5rem auto auto 2rem 1.5rem;
+  grid-template-columns: 1.5rem 1fr 1fr 1fr 1fr 1.5rem;
   padding-left: 0.2rem;
   padding-right: 0.2rem;
   height: 1.25rem;

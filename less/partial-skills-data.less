@@ -87,19 +87,77 @@
       margin: 1px 0 0;
     }
 
-    
 
-    .skill-name-wrapper
-    {
-      :hover .mod-selector{
-        display: flex;
+
+    .skill-name-wrapper {
+
+      .zero {
+        color: var(--zeroSkill);
+        font-weight: bold;
+  
+        &:hover {
+          color: var(--hoverColor);
+          text-shadow: 1px;
+        }
       }
-
-      :hover .skill-name{
-       display: none;
+  
+      .belowtwenty {
+        color: var(--belowtwentySkill);
+        font-weight: bold;
+  
+        &:hover {
+          color: var(--hoverColor);
+          text-shadow: 1px;
+        }
       }
-
+  
+      .twenty {
+        color: var(--twentySkill);
+  
+        &:hover {
+          color: var(--hoverColor);
+          text-shadow: 1px;
+        }
+      }
+  
+      .forty {
+        color: var(--fortySkill);
+  
+        &:hover {
+          color: var(--hoverColor);
+          text-shadow: 1px;
+        }
+      }
+  
+      .sixty {
+        color: var(--sixtySkill);
+  
+        &:hover {
+          color: var(--hoverColor);
+          text-shadow: 1px;
+        }
+      }
+  
+      .eighty {
+        color: var(--eightySkill);
+  
+        &:hover {
+          color: var(--labelColor);
+          text-shadow: 1px;
+        }
+      }
+     
     }
+
+    .skill-name-wrapper:hover .mod-selector-hidden {
+      display: flex;
+    }
+
+    .skill-name-wrapper:hover .skill-name {
+      display: none;
+    }
+
+
 
     .skill-name {
       color: var(--foreColor);
@@ -108,9 +166,9 @@
       padding: 2px;
       text-overflow: ellipsis;
       white-space: nowrap;
-      font-weight: light;
-
       
+
+
 
       &:hover {
         color: red;
@@ -125,60 +183,15 @@
         padding: 0;
       }
 
-      .zero {
-        color: var(--zeroSkill);
-        font-weight: bold;
-        &:hover {
-          color: var(--hoverColor);
-          text-shadow: 1px;
-        }
-      }
-
-      .belowtwenty {
-        color: var(--belowtwentySkill);
-        font-weight: bold;
-        &:hover {
-          color: var(--hoverColor);
-          text-shadow: 1px;
-        }
-      }
-
-      .twenty {
-        color: var(--twentySkill);
-        &:hover {
-          color: var(--hoverColor);
-          text-shadow: 1px;
-        }
-      }
-
-      .forty {
-        color: var(--fortySkill);
-        &:hover {
-          color: var(--hoverColor);
-          text-shadow: 1px;
-        }
-      }
-
-      .sixty {
-        color: var(--sixtySkill);
-        &:hover {
-          color: var(--hoverColor);
-          text-shadow: 1px;
-        }
-      }
-
-      .eighty {
-        color: var(--eightySkill);
-        &:hover {
-          color: var(--labelColor);
-          text-shadow: 1px;
-        }
-
-      
-      
     }
 
-  }
+
+
+
+
+
+
+
 
     .skill-score {
       color: var(--foreColor);

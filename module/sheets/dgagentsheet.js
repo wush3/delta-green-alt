@@ -23,6 +23,8 @@ export default class DgAgentSheet extends ActorSheet {
         const data = super.getData();
         data.config = CONFIG.dgalt;
 
+        
+
         data.skills = data.items.filter(function (item) { return item.type == "Skill" });
 
         data.skills.sort(function (a, b) {
@@ -262,9 +264,11 @@ export default class DgAgentSheet extends ActorSheet {
         event.preventDefault();
         const element = event.currentTarget;
         const itemId = element.closest(".item").dataset.itemId;
+        const mod=element.dataset.mod;
+        const targetfield=element.dataset.targetfield;
         const item = this.actor.items.get(itemId);
 
-        item.roll();
+        item.roll(mod,targetfield);
     }
 
     async _onBreakpointClick(event) {

@@ -35,10 +35,10 @@ export default class DgItemSheet extends ItemSheet {
                     data.data.data.attackvalue = this.item.actor.getSkillValueByName(game.i18n.localize("dgalt.attackskills.meleeweapons"));
                     break;
                 case "athletics":
-                    data.data.data.attackvalue = this.item.actor.getSkillValueByName(game.i18n.localize("dgalt.attackskills.Athletics"));
+                    data.data.data.attackvalue = this.item.actor.getSkillValueByName(game.i18n.localize("dgalt.attackskills.athletics"));
                     break;
                 case "firearms":
-                    data.data.data.attackvalue = this.item.actor.getSkillValueByName(game.i18n.localize("dgalt.attackskills.Firearms"));
+                    data.data.data.attackvalue = this.item.actor.getSkillValueByName(game.i18n.localize("dgalt.attackskills.firearms"));
                     break;
                 case "heavyweapons":
                     data.data.data.attackvalue = this.item.actor.getSkillValueByName(game.i18n.localize("dgalt.attackskills.heavyweapons"));
