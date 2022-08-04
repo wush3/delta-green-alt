@@ -9,16 +9,7 @@ export default class DgActor extends Actor {
         console.log('actor.js prepareData');
         console.log(this);
 
-
-    }
-
-    prepareDerivedData() {
-
-        super.prepareDerivedData();
-
-        const actorData = this.data;
-        const _data = actorData.data;
-        const _flags = actorData.flags;
+        
 
         let pow = 0;
 
@@ -53,7 +44,29 @@ export default class DgActor extends Actor {
             this.data.data.sanity.value = this.data.data.sanity.max;
 
         //if (_data.sanity.currentbreakingpoint > 99)
-        //    this._setBreakPoint();       
+        //    this._setBreakPoint();    
+
+        _data.attacks.none=0;
+        _data.attacks.unarmedcombat = this.getSkillValueByName(game.i18n.localize("dgalt.attackskills.unarmedcombat"));
+        _data.attacks.meleeweapons = this.getSkillValueByName(game.i18n.localize("dgalt.attackskills.meleeweapons"));
+        _data.attacks.dextimesfive = _data.statistics["dexterity"].x5;
+        _data.attacks.athletics = this.getSkillValueByName(game.i18n.localize("dgalt.attackskills.athletics"));
+        _data.attacks.firearms = this.getSkillValueByName(game.i18n.localize("dgalt.attackskills.firearms"));
+        _data.attacks.heavyweapons  = this.getSkillValueByName(game.i18n.localize("dgalt.attackskills.heavyweapons"));
+        _data.attacks.demolitions = this.getSkillValueByName(game.i18n.localize("dgalt.attackskills.demolitions"));
+        _data.attacks.artillery = this.getSkillValueByName(game.i18n.localize("dgalt.attackskills.artillery"));
+
+    }
+
+    prepareDerivedData() {
+
+        super.prepareDerivedData();
+
+        const actorData = this.data;
+        const _data = actorData.data;
+        const _flags = actorData.flags;
+
+
     }
 
     _setBreakPoint() {
@@ -104,8 +117,8 @@ export default class DgActor extends Actor {
         if (this.data && this.data.data.statistics[statname].x5)
 
             result = Number(this.data.data.statistics[statname].x5);
-        console.log(">>>statx5 lookup:" + result);
-        console.log(">>rawrepeat:" + this.data.data.statistics[statname].x5)
+        //console.log(">>>statx5 lookup:" + result);
+        //console.log(">>rawrepeat:" + this.data.data.statistics[statname].x5)
 
         return result;
 
@@ -117,7 +130,7 @@ export default class DgActor extends Actor {
         "Check": "systems/delta-green-alt/templates/partials/skill-check.hbs",
     }
 
-    byString = function(o, s) {
+    byString = function (o, s) {
         s = s.replace(/\[(\w+)\]/g, '.$1'); // convert indexes to properties
         s = s.replace(/^\./, '');           // strip a leading dot
         var a = s.split('.');
@@ -132,7 +145,7 @@ export default class DgActor extends Actor {
         return o;
     }
 
-    async roll(mod,targetfield) {
+    async roll(mod, targetfield) {
 
         let chatData = {
             user: game.userId,
@@ -150,12 +163,12 @@ export default class DgActor extends Actor {
             let roll = new Roll('1D100', this.data.data)
             await roll.evaluate({ async: true });
             let tooltip = await roll.getTooltip();
-            
-            chatData.roll=roll;
-            chatData.type=5;
+
+            chatData.roll = roll;
+            chatData.type = 5;
 
             let success = false;
-            let target = this.byString(this.data.data, targetfield)+mod//this.data.data[targetfield]+mod;
+            let target = this.byString(this.data.data, targetfield) + mod//this.data.data[targetfield]+mod;
             if (roll.total <= target) success = true;
             let critical = false;
             if (!(roll.total % 11) || roll.total == 100) critical = true;
@@ -164,7 +177,7 @@ export default class DgActor extends Actor {
             let cardData = {
                 ...this.data,
                 owner: this.id,
-                header : game.i18n.localize("dgalt.labels.rolls.stattest"),
+                header: game.i18n.localize("dgalt.labels.rolls.stattest"),
                 target: target,
                 success: success,
                 critical: critical,
@@ -174,23 +187,22 @@ export default class DgActor extends Actor {
                 tooltip: tooltip
             };
 
-            
+
             chatData.content = await renderTemplate(this.chatTemplate["Check"], cardData);
 
             return ChatMessage.create(chatData);
-        }else
-        {
+        } else {
 
             let cardData = {
                 ...this.data,
-                owner: this.id,                
+                owner: this.id,
             };
 
             chatData.content = await renderTemplate(this.chatTemplate["Post"], cardData);
             //AudioHelper.play({src: "sounds/drums.wav", volume: 0.8, loop: false}, true);
             //AudioHelper.play({src: "sounds/dice.wav", volume: 0.8, loop: false}, true);
             //AudioHelper.play({src: "sounds/lock.wav", volume: 0.8, loop: false}, true);
-            AudioHelper.play({src: "sounds/notify.wav", volume: 0.8, loop: false}, true);
+            AudioHelper.play({ src: "sounds/notify.wav", volume: 0.8, loop: false }, true);
 
             return ChatMessage.create(chatData);
 

@@ -32,8 +32,18 @@
                     </div>
                      <div class="center">
                         <div class="form-label">%</div>
-                        <input class="form-inputbox-number" type="number" name="data.attackvalue" value="{{data.data.attackvalue}}"
-                            data-dtype="number" readonly {{#unless item.actor}}disabled{{/unless}}/>
+                        
+                        <div class="form-inputbox">
+                            {{#if (eq data.data.attackskill "none")}} {{item.actor.data.data.attacks.none}} 
+                            {{#if (eq data.data.attackskill "unarmedcombat")}} {{item.actor.data.data.attacks.unarmedcombat}}
+                            {{#if (eq data.data.attackskill "meleeweapons")}} {{item.actor.data.data.attacks.meleeweapons}}
+                            {{#if (eq data.data.attackskill "dextimesfive")}} {{item.actor.data.data.attacks.dextimesfive}}
+                            {{#if (eq data.data.attackskill "athletics")}} {{item.actor.data.data.attacks.athletics}}
+                            {{#if (eq data.data.attackskill "firearms")}} {{item.actor.data.data.attacks.firearms}}
+                            {{#if (eq data.data.attackskill "demolitions")}} {{item.actor.data.data.attacks.demolitions}}
+                            {{#if (eq data.data.attackskill "artillery")}} {{item.actor.data.data.attacks.artillery}}
+                        </div>
+                        
                     </div>
                     <div class="center">
                         <div class="form-label">{{localize 'dgalt.labels.weaponsheet.mod'}}</div>
