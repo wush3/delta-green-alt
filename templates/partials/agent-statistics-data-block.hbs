@@ -73,28 +73,72 @@
             </div>
         </div>
 
-
-
         <div class="dex-score"><input class="form-inputbox-centered" name="data.statistics.dexterity.value"
                 type="number" data-dtype="number" value="{{actor.data.data.statistics.dexterity.value}}" />
         </div>
         <div class="dex-x5 form-inputbox-centered">{{actor.data.data.statistics.dexterity.x5}}</div>
         <div class="dex-feature"><input class="form-inputbox" name="data.statistics.dexterity.feature" type="text"
                 value="{{actor.data.data.statistics.dexterity.feature}}" /></div>
-        <div class="int-text stat-roll" data-stat="intelligence">{{localize 'dgalt.labels.statdata.inttxt'}}</div>
+
+
+        <div class="int-text stat-name-wrapper">
+        <div class="stat-text" >{{localize 'dgalt.labels.statdata.inttxt'}}</div>
+        <div class="mod-selector-hidden">
+                <div class="mod-button item-roll" data-rolltype="agent" data-mod="-40" data-targetfield="statistics.intelligence.x5">-40
+                </div>
+                <div class="mod-button item-roll" data-rolltype="agent" data-mod="-20" data-targetfield="statistics.intelligence.x5">-20
+                </div>
+                <div class="mod-button item-roll" data-rolltype="agent" data-mod="0" data-targetfield="statistics.intelligence.x5">0</div>
+                <div class="mod-button item-roll" data-rolltype="agent"data-mod="20" data-targetfield="statistics.intelligence.x5">+20</div>
+                <div class="mod-button item-roll" data-rolltype="agent" data-mod="40" data-targetfield="statistics.intelligence.x5">+40</div>                
+            </div>
+        </div>
+        
         <div class="int-score"><input class="form-inputbox-centered" name="data.statistics.intelligence.value"
                 type="number" data-dtype="number" value="{{actor.data.data.statistics.intelligence.value}}" /></div>
         <div class="int-x5 form-inputbox-centered">{{actor.data.data.statistics.intelligence.x5}}</div>
         <div class="int-feature"><input class="form-inputbox" name="data.statistics.intelligence.feature" type="text"
                 value="{{actor.data.data.statistics.intelligence.feature}}" /></div>
-        <div class="pow-text stat-roll" data-stat="power">{{localize 'dgalt.labels.statdata.powtxt'}}</div>
+        
+        
+        
+        
+        
+        <div class="pow-text stat-name-wrapper">
+        <div class="stat-text" >{{localize 'dgalt.labels.statdata.powtxt'}}</div>
+        <div class="mod-selector-hidden">
+                <div class="mod-button item-roll" data-rolltype="agent" data-mod="-40" data-targetfield="statistics.power.x5">-40
+                </div>
+                <div class="mod-button item-roll" data-rolltype="agent" data-mod="-20" data-targetfield="statistics.power.x5">-20
+                </div>
+                <div class="mod-button item-roll" data-rolltype="agent" data-mod="0" data-targetfield="statistics.power.x5">0</div>
+                <div class="mod-button item-roll" data-rolltype="agent"data-mod="20" data-targetfield="statistics.power.x5">+20</div>
+                <div class="mod-button item-roll" data-rolltype="agent" data-mod="40" data-targetfield="statistics.power.x5">+40</div>                
+            </div>
+        </div>
+
         <div class="pow-score"><input class="form-inputbox-centered" name="data.statistics.power.value" type="number"
                 data-dtype="number" value="{{actor.data.data.statistics.power.value}}" />
         </div>
         <div class="pow-x5 form-inputbox-centered">{{actor.data.data.statistics.power.x5}}</div>
         <div class="pow-feature"><input class="form-inputbox" name="data.statistics.power.feature" type="text"
                 value="{{actor.data.data.statistics.power.feature}}" /></div>
-        <div class="cha-text stat-roll" data-stat="charisma">{{localize 'dgalt.labels.statdata.chatxt'}}</div>
+        
+        
+        
+        
+        <div class="cha-text stat-name-wrapper">
+        <div class="stat-text" >{{localize 'dgalt.labels.statdata.chatxt'}}</div>
+        <div class="mod-selector-hidden">
+                <div class="mod-button item-roll" data-rolltype="agent" data-mod="-40" data-targetfield="statistics.charisma.x5">-40
+                </div>
+                <div class="mod-button item-roll" data-rolltype="agent" data-mod="-20" data-targetfield="statistics.charisma.x5">-20
+                </div>
+                <div class="mod-button item-roll" data-rolltype="agent" data-mod="0" data-targetfield="statistics.charisma.x5">0</div>
+                <div class="mod-button item-roll" data-rolltype="agent"data-mod="20" data-targetfield="statistics.charisma.x5">+20</div>
+                <div class="mod-button item-roll" data-rolltype="agent" data-mod="40" data-targetfield="statistics.charisma.x5">+40</div>                
+            </div>
+        </div>
         <div class="cha-score"><input class="form-inputbox-centered" name="data.statistics.charisma.value" type="number"
                 data-dtype="number" value="{{actor.data.data.statistics.charisma.value}}" />
         </div>
