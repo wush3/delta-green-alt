@@ -4,6 +4,8 @@ import DgActor from "./dgactor.js";
 import DgItemSheet from "./sheets/dgitemsheet.js";
 import DgAgentSheet from "./sheets/dgagentsheet.js";
 
+import * as Dice from "./dice.js";
+
 async function preloadHandlebarsTemplates()
 {
     const templatePaths=[
@@ -73,6 +75,20 @@ Hooks.once("init", async function()
             return Number(param1)+Number(param2);
             
         });
+
+        Handlebars.registerHelper("selectattack", function(attacks, key)
+        {
+            return Number(attacks[key]);
+            
+        });
+
+        Handlebars.registerHelper("selectattackmod", function(attacks, key, mod)
+        {
+            return Number(attacks[key])+Number(mod);
+            
+        });
+
+        
 
         
     }

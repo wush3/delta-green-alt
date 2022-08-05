@@ -11,37 +11,43 @@
 
 
 
-    <div class="mod-selector">
-        <div class="mod-button item-roll" data-rolltype="item" data-mod="-40" data-targetfield="attackvalue">-40</div>
-        <div class="mod-button item-roll" data-rolltype="item" data-mod="-20" data-targetfield="attackvalue">-20</div>
-        <div class="mod-button item-roll" data-rolltype="item" data-mod="0" data-targetfield="attackvalue">0</div>
-        <div class="mod-button item-roll" data-rolltype="item" data-mod="20" data-targetfield="attackvalue">+20</div>
-        <div class="mod-button item-roll" data-rolltype="item" data-mod="40" data-targetfield="attackvalue">+40</div>
+
+
+
+
+
+    <div class="weapon-stat">
+        {{selectattackmod @root.data.data.attacks data.attackskill data.mod}}%
     </div>
 
-    <!--<div class="weapon-stat">
-        <input {{#unless @root.data.data.options.editweapons}}readonly{{/unless}} class="inline-edit" type="number"
-            value="{{data.attackvalue}}" data-dtype="Number" data-field="data.attackvalue">
-    </div>-->
-
-    <div class="weapon-stat">{{add data.attackvalue data.mod}}%</div>
-    
+    <div class="mod-selector">
+        <div class="mod-button item-roll" data-rolltype="skill" data-mod="-40" data-icon="{{img}}" data-label="{{name}}"
+            data-basetarget="{{selectattackmod @root.data.data.attacks data.attackskill data.mod}}">-40</div>
+        <div class="mod-button item-roll" data-rolltype="skill" data-mod="-20" data-icon="{{img}}" data-label="{{name}}"
+            data-basetarget="{{selectattackmod @root.data.data.attacks data.attackskill data.mod}}">-20</div>
+        <div class="mod-button item-roll" data-rolltype="skill" data-mod="0" data-icon="{{img}}" data-label="{{name}}"
+            data-basetarget="{{selectattackmod @root.data.data.attacks data.attackskill data.mod}}">0</div>
+        <div class="mod-button item-roll" data-rolltype="skill" data-mod="20" data-icon="{{img}}" data-label="{{name}}"
+            data-basetarget="{{selectattackmod @root.data.data.attacks data.attackskill data.mod}}">+20</div>
+        <div class="mod-button item-roll" data-rolltype="skill" data-mod="40" data-icon="{{img}}" data-label="{{name}}"
+            data-basetarget="{{selectattackmod @root.data.data.attacks data.attackskill data.mod}}">+40</div>
+    </div>
 
     {{#if data.islethal}}
     <div>
-        <input class="form-inputbox-number shorttext" type="number" name="lethality"
-            value="{{data.lethality}}" data-dtype="number" readonly />
-    
-    
-       
+        <input class="form-inputbox-number shorttext" type="number" name="lethality" value="{{data.lethality}}"
+            data-dtype="number" readonly />
+
+
+
         <input class="form-inputbox-number" type="number" name="killradius" value="{{data.killradius}}"
-            data-dtype="number" readonly/>
+            data-dtype="number" readonly />
     </div>
     {{else}}
-    
-        <input class="form-inputbox-centered shorttext" type="text" name="damage" value="{{data.damage}}"
-            data-dtype="string" readonly />
-    
+
+    <input class="form-inputbox-centered shorttext" type="text" name="damage" value="{{data.damage}}"
+        data-dtype="string" readonly />
+
     {{/if}}
 
     <div class="item-controls">

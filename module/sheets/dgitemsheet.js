@@ -18,7 +18,7 @@ export default class DgItemSheet extends ItemSheet {
     getData() {
         const data = super.getData();
         data.config = CONFIG.dgalt;
-
+/* 
         if (this.item.actor && this.item.type == "Weapon") {
 
 
@@ -55,7 +55,7 @@ export default class DgItemSheet extends ItemSheet {
             }
            
 
-        }
+        }*/
         return data;
 
     }

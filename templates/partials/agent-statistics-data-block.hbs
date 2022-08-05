@@ -23,13 +23,28 @@
         <div class="str-text stat-name-wrapper">
             <div class="stat-text">{{localize 'dgalt.labels.statdata.strtxt'}}</div>
             <div class="mod-selector-hidden">
-                <div class="mod-button item-roll" data-rolltype="agent" data-mod="-40" data-targetfield="statistics.strength.x5">-40
+                <div class="mod-button item-roll" data-rolltype="agent" data-mod="-40"
+                    data-icon="systems/delta-green-alt/assets/icons/strength.svg"
+                    data-label="{{localize 'dgalt.labels.statdata.strtxt'}}"
+                    data-basetarget="{{actor.data.data.statistics.strength.x5}}">-40
                 </div>
-                <div class="mod-button item-roll" data-rolltype="agent" data-mod="-20" data-targetfield="statistics.strength.x5">-20
+                <div class="mod-button item-roll" data-rolltype="agent" data-mod="-20"
+                    data-icon="systems/delta-green-alt/assets/icons/strength.svg"
+                    data-label="{{localize 'dgalt.labels.statdata.strtxt'}}"
+                    data-basetarget="{{actor.data.data.statistics.strength.x5}}">-20
                 </div>
-                <div class="mod-button item-roll" data-rolltype="agent" data-mod="0" data-targetfield="statistics.strength.x5">0</div>
-                <div class="mod-button item-roll" data-rolltype="agent" data-mod="20" data-targetfield="statistics.strength.x5">+20</div>
-                <div class="mod-button item-roll" data-rolltype="agent" data-mod="40" data-targetfield="statistics.strength.x5">+40</div>                
+                <div class="mod-button item-roll" data-rolltype="agent" data-mod="0"
+                    data-icon="systems/delta-green-alt/assets/icons/strength.svg"
+                    data-label="{{localize 'dgalt.labels.statdata.strtxt'}}"
+                    data-basetarget="{{actor.data.data.statistics.strength.x5}}">0</div>
+                <div class="mod-button item-roll" data-rolltype="agent" data-mod="20"
+                    data-icon="systems/delta-green-alt/assets/icons/strength.svg"
+                    data-label="{{localize 'dgalt.labels.statdata.strtxt'}}"
+                    data-basetarget="{{actor.data.data.statistics.strength.x5}}">+20</div>
+                <div class="mod-button item-roll" data-rolltype="agent" data-mod="40"
+                    data-icon="systems/delta-green-alt/assets/icons/strength.svg"
+                    data-label="{{localize 'dgalt.labels.statdata.strtxt'}}"
+                    data-basetarget="{{actor.data.data.statistics.strength.x5}}">+40</div>
             </div>
         </div>
         <div class="str-score">
@@ -39,40 +54,69 @@
         <div class="str-x5 form-inputbox-centered">{{actor.data.data.statistics.strength.x5}}</div>
         <div class="str-feature"><input class="form-inputbox" name="data.statistics.strength.feature" type="text"
                 value="{{actor.data.data.statistics.strength.feature}}" /></div>
-        
-        
+
+
         <div class="con-text stat-name-wrapper">
-        <div class="stat-text">{{localize 'dgalt.labels.statdata.contxt'}}</div>
-         <div class="mod-selector-hidden">
-                <div class="mod-button item-roll" data-rolltype="agent" data-mod="-40" data-targetfield="statistics.constitution.x5">-40
+            <div class="stat-text">{{localize 'dgalt.labels.statdata.contxt'}}</div>
+            <div class="mod-selector-hidden">
+                <div class="mod-button item-roll" data-rolltype="agent" data-mod="-40"
+                    data-icon="systems/delta-green-alt/assets/icons/constitution.svg"
+                    data-label="{{localize 'dgalt.labels.statdata.contxt'}}"
+                    data-basetarget="{{actor.data.data.statistics.constitution.x5}}">-40
                 </div>
-                <div class="mod-button item-roll" data-rolltype="agent" data-mod="-20" data-targetfield="statistics.constitution.x5">-20
+                <div class="mod-button item-roll" data-rolltype="agent" data-mod="-20"
+                    data-icon="systems/delta-green-alt/assets/icons/constitution.svg"
+                    data-label="{{localize 'dgalt.labels.statdata.contxt'}}"
+                    data-basetarget="{{actor.data.data.statistics.constitution.x5}}">-20
                 </div>
-                <div class="mod-button item-roll" data-rolltype="agent" data-mod="0" data-targetfield="statistics.constitution.x5">0</div>
-                <div class="mod-button item-roll" data-rolltype="agent" data-mod="20" data-targetfield="statistics.constitution.x5">+20</div>
-                <div class="mod-button item-roll" data-rolltype="agent" data-mod="40" data-targetfield=".statistics.constitution.x5">+40</div>                
+                <div class="mod-button item-roll" data-rolltype="agent" data-mod="0"
+                    data-icon="systems/delta-green-alt/assets/icons/constitution.svg"
+                    data-label="{{localize 'dgalt.labels.statdata.contxt'}}"
+                    data-basetarget="{{actor.data.data.statistics.constitution.x5}}">0</div>
+                <div class="mod-button item-roll" data-rolltype="agent" data-mod="20"
+                    data-icon="systems/delta-green-alt/assets/icons/constitution.svg"
+                    data-label="{{localize 'dgalt.labels.statdata.contxt'}}"
+                    data-basetarget="{{actor.data.data.statistics.constitution.x5}}">+20</div>
+                <div class="mod-button item-roll" data-rolltype="agent" data-mod="40"
+                    data-icon="systems/delta-green-alt/assets/icons/constitution.svg"
+                    data-label="{{localize 'dgalt.labels.statdata.contxt'}}"
+                    data-basetarget="{{actor.data.data.statistics.constitution.x5}}">+40</div>
             </div>
-            </div>
+        </div>
         <div class="con-score"><input class="form-inputbox-centered" name="data.statistics.constitution.value"
                 type="number" data-dtype="number" value="{{actor.data.data.statistics.constitution.value}}" /></div>
         <div class="con-x5 form-inputbox-centered">{{actor.data.data.statistics.constitution.x5}}</div>
         <div class="con-feature"><input class="form-inputbox" name="data.statistics.constitution.feature" type="text"
                 value="{{actor.data.data.statistics.constitution.feature}}" /></div>
-        
-        
+
+
         <div class="dex-text stat-name-wrapper">
-        <div class="stat-text" >{{localize 'dgalt.labels.statdata.dextxt'}}</div>
-        <div class="mod-selector-hidden">
-                <div class="mod-button item-roll" data-rolltype="agent" data-mod="-40" data-targetfield="statistics.dexterity.x5">-40
+            <div class="stat-text">{{localize 'dgalt.labels.statdata.dextxt'}}</div>
+            <div class="mod-selector-hidden">
+                <div class="mod-button item-roll" data-rolltype="agent" data-mod="-40"
+                    data-icon="systems/delta-green-alt/assets/icons/dexterity.svg"
+                    data-label="{{localize 'dgalt.labels.statdata.dextxt'}}"
+                    data-basetarget="{{actor.data.data.statistics.dexterity.x5}}">-40
                 </div>
-                <div class="mod-button item-roll" data-rolltype="agent" data-mod="-20" data-targetfield="statistics.dexterity.x5">-20
+                <div class="mod-button item-roll" data-rolltype="agent" data-mod="-20"
+                    data-icon="systems/delta-green-alt/assets/icons/dexterity.svg"
+                    data-label="{{localize 'dgalt.labels.statdata.dextxt'}}"
+                    data-basetarget="{{actor.data.data.statistics.dexterity.x5}}">-20
                 </div>
-                <div class="mod-button item-roll" data-rolltype="agent" data-mod="0" data-targetfield="statistics.dexterity.x5">0</div>
-                <div class="mod-button item-roll" data-rolltype="agent"data-mod="20" data-targetfield="statistics.dexterity.x5">+20</div>
-                <div class="mod-button item-roll" data-rolltype="agent" data-mod="40" data-targetfield="statistics.dexterity.x5">+40</div>                
+                <div class="mod-button item-roll" data-rolltype="agent" data-mod="0"
+                    data-icon="systems/delta-green-alt/assets/icons/dexterity.svg"
+                    data-label="{{localize 'dgalt.labels.statdata.dextxt'}}"
+                    data-basetarget="{{actor.data.data.statistics.dexterity.x5}}">0</div>
+                <div class="mod-button item-roll" data-rolltype="agent" data-mod="20"
+                    data-icon="systems/delta-green-alt/assets/icons/dexterity.svg"
+                    data-label="{{localize 'dgalt.labels.statdata.dextxt'}}"
+                    data-basetarget="{{actor.data.data.statistics.dexterity.x5}}">+20</div>
+                <div class="mod-button item-roll" data-rolltype="agent" data-mod="40"
+                    data-icon="systems/delta-green-alt/assets/icons/dexterity.svg"
+                    data-label="{{localize 'dgalt.labels.statdata.dextxt'}}"
+                    data-basetarget="{{actor.data.data.statistics.dexterity.x5}}">+40</div>
             </div>
         </div>
-
         <div class="dex-score"><input class="form-inputbox-centered" name="data.statistics.dexterity.value"
                 type="number" data-dtype="number" value="{{actor.data.data.statistics.dexterity.value}}" />
         </div>
@@ -82,38 +126,68 @@
 
 
         <div class="int-text stat-name-wrapper">
-        <div class="stat-text" >{{localize 'dgalt.labels.statdata.inttxt'}}</div>
-        <div class="mod-selector-hidden">
-                <div class="mod-button item-roll" data-rolltype="agent" data-mod="-40" data-targetfield="statistics.intelligence.x5">-40
+            <div class="stat-text">{{localize 'dgalt.labels.statdata.inttxt'}}</div>
+            <div class="mod-selector-hidden">
+                <div class="mod-button item-roll" data-rolltype="agent" data-mod="-40"
+                    data-icon="systems/delta-green-alt/assets/icons/intelligence.svg"
+                    data-label="{{localize 'dgalt.labels.statdata.inttxt'}}"
+                    data-basetarget="{{actor.data.data.statistics.intelligence.x5}}">-40
                 </div>
-                <div class="mod-button item-roll" data-rolltype="agent" data-mod="-20" data-targetfield="statistics.intelligence.x5">-20
+                <div class="mod-button item-roll" data-rolltype="agent" data-mod="-20"
+                    data-icon="systems/delta-green-alt/assets/icons/intelligence.svg"
+                    data-label="{{localize 'dgalt.labels.statdata.inttxt'}}"
+                    data-basetarget="{{actor.data.data.statistics.intelligence.x5}}">-20
                 </div>
-                <div class="mod-button item-roll" data-rolltype="agent" data-mod="0" data-targetfield="statistics.intelligence.x5">0</div>
-                <div class="mod-button item-roll" data-rolltype="agent"data-mod="20" data-targetfield="statistics.intelligence.x5">+20</div>
-                <div class="mod-button item-roll" data-rolltype="agent" data-mod="40" data-targetfield="statistics.intelligence.x5">+40</div>                
+                <div class="mod-button item-roll" data-rolltype="agent" data-mod="0"
+                    data-icon="systems/delta-green-alt/assets/icons/intelligence.svg"
+                    data-label="{{localize 'dgalt.labels.statdata.inttxt'}}"
+                    data-basetarget="{{actor.data.data.statistics.intelligence.x5}}">0</div>
+                <div class="mod-button item-roll" data-rolltype="agent" data-mod="20"
+                    data-icon="systems/delta-green-alt/assets/icons/intelligence.svg"
+                    data-label="{{localize 'dgalt.labels.statdata.inttxt'}}"
+                    data-basetarget="{{actor.data.data.statistics.intelligence.x5}}">+20</div>
+                <div class="mod-button item-roll" data-rolltype="agent" data-mod="40"
+                    data-icon="systems/delta-green-alt/assets/icons/intelligence.svg"
+                    data-label="{{localize 'dgalt.labels.statdata.inttxt'}}"
+                    data-basetarget="{{actor.data.data.statistics.intelligence.x5}}">+40</div>
             </div>
         </div>
-        
+
         <div class="int-score"><input class="form-inputbox-centered" name="data.statistics.intelligence.value"
                 type="number" data-dtype="number" value="{{actor.data.data.statistics.intelligence.value}}" /></div>
         <div class="int-x5 form-inputbox-centered">{{actor.data.data.statistics.intelligence.x5}}</div>
         <div class="int-feature"><input class="form-inputbox" name="data.statistics.intelligence.feature" type="text"
                 value="{{actor.data.data.statistics.intelligence.feature}}" /></div>
-        
-        
-        
-        
-        
+
+
+
+
+
         <div class="pow-text stat-name-wrapper">
-        <div class="stat-text" >{{localize 'dgalt.labels.statdata.powtxt'}}</div>
-        <div class="mod-selector-hidden">
-                <div class="mod-button item-roll" data-rolltype="agent" data-mod="-40" data-targetfield="statistics.power.x5">-40
+            <div class="stat-text">{{localize 'dgalt.labels.statdata.powtxt'}}</div>
+            <div class="mod-selector-hidden">
+                <div class="mod-button item-roll" data-rolltype="agent" data-mod="-40"
+                    data-icon="systems/delta-green-alt/assets/icons/power.svg"
+                    data-label="{{localize 'dgalt.labels.statdata.powtxt'}}"
+                    data-basetarget="{{actor.data.data.statistics.power.x5}}">-40
                 </div>
-                <div class="mod-button item-roll" data-rolltype="agent" data-mod="-20" data-targetfield="statistics.power.x5">-20
+                <div class="mod-button item-roll" data-rolltype="agent" data-mod="-20"
+                    data-icon="systems/delta-green-alt/assets/icons/power.svg"
+                    data-label="{{localize 'dgalt.labels.statdata.powtxt'}}"
+                    data-basetarget="{{actor.data.data.statistics.power.x5}}">-20
                 </div>
-                <div class="mod-button item-roll" data-rolltype="agent" data-mod="0" data-targetfield="statistics.power.x5">0</div>
-                <div class="mod-button item-roll" data-rolltype="agent"data-mod="20" data-targetfield="statistics.power.x5">+20</div>
-                <div class="mod-button item-roll" data-rolltype="agent" data-mod="40" data-targetfield="statistics.power.x5">+40</div>                
+                <div class="mod-button item-roll" data-rolltype="agent" data-mod="0"
+                    data-icon="systems/delta-green-alt/assets/icons/power.svg"
+                    data-label="{{localize 'dgalt.labels.statdata.powtxt'}}"
+                    data-basetarget="{{actor.data.data.statistics.power.x5}}">0</div>
+                <div class="mod-button item-roll" data-rolltype="agent" data-mod="20"
+                    data-icon="systems/delta-green-alt/assets/icons/power.svg"
+                    data-label="{{localize 'dgalt.labels.statdata.powtxt'}}"
+                    data-basetarget="{{actor.data.data.statistics.power.x5}}">+20</div>
+                <div class="mod-button item-roll" data-rolltype="agent" data-mod="40"
+                    data-icon="systems/delta-green-alt/assets/icons/power.svg"
+                    data-label="{{localize 'dgalt.labels.statdata.powtxt'}}"
+                    data-basetarget="{{actor.data.data.statistics.power.x5}}">+40</div>
             </div>
         </div>
 
@@ -123,20 +197,35 @@
         <div class="pow-x5 form-inputbox-centered">{{actor.data.data.statistics.power.x5}}</div>
         <div class="pow-feature"><input class="form-inputbox" name="data.statistics.power.feature" type="text"
                 value="{{actor.data.data.statistics.power.feature}}" /></div>
-        
-        
-        
-        
+
+
+
+
         <div class="cha-text stat-name-wrapper">
-        <div class="stat-text" >{{localize 'dgalt.labels.statdata.chatxt'}}</div>
-        <div class="mod-selector-hidden">
-                <div class="mod-button item-roll" data-rolltype="agent" data-mod="-40" data-targetfield="statistics.charisma.x5">-40
+            <div class="stat-text">{{localize 'dgalt.labels.statdata.chatxt'}}</div>
+            <div class="mod-selector-hidden">
+                <div class="mod-button item-roll" data-rolltype="agent" data-mod="-40"
+                    data-icon="systems/delta-green-alt/assets/icons/charisma.svg"
+                    data-label="{{localize 'dgalt.labels.statdata.chatxt'}}"
+                    data-basetarget="{{actor.data.data.statistics.charisma.x5}}">-40
                 </div>
-                <div class="mod-button item-roll" data-rolltype="agent" data-mod="-20" data-targetfield="statistics.charisma.x5">-20
+                <div class="mod-button item-roll" data-rolltype="agent" data-mod="-20"
+                    data-icon="systems/delta-green-alt/assets/icons/charisma.svg"
+                    data-label="{{localize 'dgalt.labels.statdata.chatxt'}}"
+                    data-basetarget="{{actor.data.data.statistics.charisma.x5}}">-20
                 </div>
-                <div class="mod-button item-roll" data-rolltype="agent" data-mod="0" data-targetfield="statistics.charisma.x5">0</div>
-                <div class="mod-button item-roll" data-rolltype="agent"data-mod="20" data-targetfield="statistics.charisma.x5">+20</div>
-                <div class="mod-button item-roll" data-rolltype="agent" data-mod="40" data-targetfield="statistics.charisma.x5">+40</div>                
+                <div class="mod-button item-roll" data-rolltype="agent" data-mod="0"
+                    data-icon="systems/delta-green-alt/assets/icons/charisma.svg"
+                    data-label="{{localize 'dgalt.labels.statdata.chatxt'}}"
+                    data-basetarget="{{actor.data.data.statistics.charisma.x5}}">0</div>
+                <div class="mod-button item-roll" data-rolltype="agent" data-mod="20"
+                    data-icon="systems/delta-green-alt/assets/icons/charisma.svg"
+                    data-label="{{localize 'dgalt.labels.statdata.chatxt'}}"
+                    data-basetarget="{{actor.data.data.statistics.charisma.x5}}">+20</div>
+                <div class="mod-button item-roll" data-rolltype="agent" data-mod="40"
+                    data-icon="systems/delta-green-alt/assets/icons/charisma.svg"
+                    data-label="{{localize 'dgalt.labels.statdata.chatxt'}}"
+                    data-basetarget="{{actor.data.data.statistics.charisma.x5}}">+40</div>
             </div>
         </div>
         <div class="cha-score"><input class="form-inputbox-centered" name="data.statistics.charisma.value" type="number"

@@ -707,10 +707,6 @@
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }
-.statdata .stats-block .int-text:hover {
-  color: red;
-  text-shadow: 1px;
-}
 .statdata .stats-block .int-score {
   grid-area: int-score;
   outline: var(--borderColor) dashed 1px;
@@ -731,10 +727,6 @@
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
 }
-.statdata .stats-block .pow-text:hover {
-  color: red;
-  text-shadow: 1px;
-}
 .statdata .stats-block .pow-score {
   grid-area: pow-score;
   outline: var(--borderColor) dashed 1px;
@@ -754,10 +746,6 @@
   grid-area: cha-text;
   outline: var(--borderColor) dashed 1px;
   padding: 2px;
-}
-.statdata .stats-block .cha-text:hover {
-  color: red;
-  text-shadow: 1px;
 }
 .statdata .stats-block .cha-score {
   grid-area: cha-score;
@@ -1228,7 +1216,7 @@
   outline: 1px dashed var(--borderColor);
   display: grid;
   font-size: 1rem;
-  grid-template-columns: 1.5rem 1fr 1fr 1fr 1fr 1.5rem;
+  grid-template-columns: 1.5rem 1fr 1fr 1fr 1fr 1fr 1.5rem;
   padding-left: 0.2rem;
   padding-right: 0.2rem;
   height: 1.25rem;

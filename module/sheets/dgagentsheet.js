@@ -1,3 +1,5 @@
+import * as Dice from "../dice.js";
+
 export default class DgAgentSheet extends ActorSheet {
 
     static get defaultOptions() {
@@ -94,7 +96,7 @@ export default class DgAgentSheet extends ActorSheet {
             name: game.i18n.localize("dgalt.contextmenu.edit"),
             icon: '<i class="fas fa-edit"/>',
             callback: element => {
-                console.log(this.actor.name);
+                //console.log(this.actor.name);
                 const item = this.actor.items.get(element.data("item-id"));
                 item.sheet.render(true);
             }
@@ -105,7 +107,7 @@ export default class DgAgentSheet extends ActorSheet {
             name: game.i18n.localize("dgalt.contextmenu.delete"),
             icon: '<i class="fas fa-trash"/>',
             callback: element => {
-                console.log(this.actor.name);
+                //console.log(this.actor.name);
                 const item = this.actor.items.get(element.data("item-id"));
                 if (!item) return;
                 return item.delete();
@@ -264,19 +266,33 @@ export default class DgAgentSheet extends ActorSheet {
         event.preventDefault();
         const element = event.currentTarget;
         const rolltype = element.dataset.rolltype;
+        const icon = element.dataset.icon;
+        const label = element.dataset.label;
+        const description = element.dataset.description;
+        const basetarget = element.dataset.basetarget;
         const mod=element.dataset.mod;
         const targetfield=element.dataset.targetfield;
 
-        if (rolltype=="item")
+        if (rolltype=="skill")
         {
             const itemId = element.closest(".item").dataset.itemId;            
             const item = this.actor.items.get(itemId);
-            item.roll(mod,targetfield);
+            const header=game.i18n.localize("dgalt.labels.rolls.skilltest")
+            //item.roll(mod,targetfield);
+            Dice.skillTest(header, icon, label,basetarget,mod);
+        }
+
+        if (rolltype=="post")
+        {
+            Dice.postDescription(icon, label,basetarget,description);
         }
 
         if (rolltype=="agent")
         {
-            this.actor.roll(mod,targetfield)
+            //this.actor.roll(mod,targetfield)
+
+            const header=game.i18n.localize("dgalt.labels.rolls.stattest");
+            Dice.skillTest(header, icon, label,basetarget,mod);
         }
     }
 
