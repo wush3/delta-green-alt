@@ -55,7 +55,7 @@
 
 
    
-        <input class="form-inputbox-centered shorttext" type="text" name="damage" value="{{#if data.db}}{{@root.data.data.statistics.strength.db}}{{else}}{{data.damage}}{{/if}}"
+        <input class="form-inputbox-centered shorttext" type="text" name="damage" value="{{#if data.db}}{{data.damage}}{{@root.data.data.statistics.strength.bonus}}{{else}}{{data.damage}}{{/if}}"
             data-dtype="string" readonly />
 
         <input class="form-inputbox-number shorttext" type="number" name="lethality" value="{{data.lethality}}"

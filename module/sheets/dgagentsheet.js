@@ -287,7 +287,8 @@ export default class DgAgentSheet extends ActorSheet {
 
             const header = game.i18n.localize("dgalt.labels.rolls.attack")
             //item.roll(mod,targetfield);
-            let sucess = await Dice.skillTest(header, icon, label, "using " + skill.name, basetarget, mod);
+            let sucess=false;
+            if(skill) sucess = await Dice.skillTest(header, icon, label, "using " + skill.name, basetarget, mod);
             if (skill && !sucess) skill.update({ ["data.failcheck"]: true });
         }
 
