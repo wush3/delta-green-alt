@@ -18,3 +18,11 @@ dgalt.geartypes={
     gear : "dgalt.geartypes.gear",
     vehicle : "dgalt.geartypes.vehicle"
 }
+
+dgalt.expense={
+    incidental : "dgalt.expense.incidental",
+    standard:"dgalt.expense.standard",
+    unusual:"dgalt.expense.unusual",
+    major:"dgalt.expense.major",
+    extreme:"dgalt.expense.extreme"
+}

@@ -110,6 +110,17 @@ export default class DgActor extends Actor {
         return null;
     }
 
+    getSkillByName(skillname) {
+        let skillitem = this.data.items.find(
+            item => {
+                return item.name == skillname
+
+            });
+        if (skillitem)
+            return skillitem;
+        return null;
+    }
+
     getStatx5ValueByName(statname) {
         let result = -1;
 

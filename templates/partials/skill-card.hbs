@@ -8,12 +8,16 @@
     </div>
     <div class="item-image" style="background-image: url('{{img}}')"></div>
     <div class="skill-name-wrapper">
-
+        {{#if (eq data.value 0)}}
+        <div class="skill-name-nohide {{#if @root.data.data.options.colorhighlight}}{{pickcolor data.value }}{{/if}}">
+            {{name}}
+        </div>
+        {{else}}
         <div class="skill-name {{#if @root.data.data.options.colorhighlight}}{{pickcolor data.value }}{{/if}}"
             data-dtype="String">{{name}}
             <!--&nbsp;({{data.base}})-->
         </div>
-
+        
         <div class="mod-selector-hidden">
             <div class="mod-button item-roll" data-rolltype="skill" data-icon="{{img}}" data-label="{{name}}" data-mod="-40" data-basetarget="{{data.value}}">-40</div>
             <div class="mod-button item-roll" data-rolltype="skill" data-icon="{{img}}" data-label="{{name}}" data-mod="-20" data-basetarget="{{data.value}}">-20</div>
@@ -22,6 +26,7 @@
             <div class="mod-button item-roll" data-rolltype="skill" data-icon="{{img}}" data-label="{{name}}" data-mod="40" data-basetarget="{{data.value}}">+40</div>
             <div class="mod-button item-roll" data-rolltype="post" data-icon="{{img}}" data-label="{{name}}" data-basetarget="{{data.value}}" data-description="{{{data.description}}}"><i class="fas fa-comment"></i></div>
         </div>
+        {{/if}}
 
     </div>
 

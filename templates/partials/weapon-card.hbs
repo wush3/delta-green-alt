@@ -1,7 +1,6 @@
 <li class="item weapon-card" data-skill-id="{{_id}}" data-item-id="{{_id}}">
 
 
-
     <div class="item-image" style="background-image: url('{{img}}')"></div>
 
 
@@ -9,27 +8,28 @@
     </div>
 
 
-
-
-
-
-
-
-
     <div class="weapon-stat">
         {{selectattackmod @root.data.data.attacks data.attackskill data.mod}}%
     </div>
 
+    <div class="weapon-stat">
+        {{#if data.isranged}}
+        {{data.range}}m 
+        {{else}}
+        melee
+        {{/if}}
+    </div>
+
     <div class="mod-selector">
-        <div class="mod-button item-roll" data-rolltype="skill" data-mod="-40" data-icon="{{img}}" data-label="{{name}}"
+        <div class="mod-button item-roll" data-rolltype="weapon" data-mod="-40" data-icon="{{img}}" data-label="{{name}}"
             data-basetarget="{{selectattackmod @root.data.data.attacks data.attackskill data.mod}}">-40</div>
-        <div class="mod-button item-roll" data-rolltype="skill" data-mod="-20" data-icon="{{img}}" data-label="{{name}}"
+        <div class="mod-button item-roll" data-rolltype="weapon" data-mod="-20" data-icon="{{img}}" data-label="{{name}}"
             data-basetarget="{{selectattackmod @root.data.data.attacks data.attackskill data.mod}}">-20</div>
-        <div class="mod-button item-roll" data-rolltype="skill" data-mod="0" data-icon="{{img}}" data-label="{{name}}"
+        <div class="mod-button item-roll" data-rolltype="weapon" data-mod="0" data-icon="{{img}}" data-label="{{name}}"
             data-basetarget="{{selectattackmod @root.data.data.attacks data.attackskill data.mod}}">0</div>
-        <div class="mod-button item-roll" data-rolltype="skill" data-mod="20" data-icon="{{img}}" data-label="{{name}}"
+        <div class="mod-button item-roll" data-rolltype="weapon" data-mod="20" data-icon="{{img}}" data-label="{{name}}"
             data-basetarget="{{selectattackmod @root.data.data.attacks data.attackskill data.mod}}">+20</div>
-        <div class="mod-button item-roll" data-rolltype="skill" data-mod="40" data-icon="{{img}}" data-label="{{name}}"
+        <div class="mod-button item-roll" data-rolltype="weapon" data-mod="40" data-icon="{{img}}" data-label="{{name}}"
             data-basetarget="{{selectattackmod @root.data.data.attacks data.attackskill data.mod}}">+40</div>
     </div>
 

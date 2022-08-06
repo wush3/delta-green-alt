@@ -33,8 +33,8 @@
                     <div class="center">
                         <div class="form-label">%</div>
 
-                        <input class="form-inputbox-number" type="number" name="data.attackvalue" data-dtype="number" readonly
-                            value="{{selectattack item.actor.data.data.attacks data.data.attackskill}}" >
+                        <input class="form-inputbox-number" type="number" name="data.attackvalue" data-dtype="number"
+                            readonly value="{{selectattack item.actor.data.data.attacks data.data.attackskill}}">
 
                         <!-- {{#if (eq data.data.attackskill "none")}} value="{{item.actor.data.data.attacks.none}}" {{/if}}
                             {{#if (eq data.data.attackskill "unarmedcombat")}} value="{{item.actor.data.data.attacks.unarmedcombat}}" {{/if}}
@@ -135,6 +135,24 @@
 
 
                     {{/if}}
+                </div>
+                <hr>
+
+                <div class="form-hor-group">
+                    <div>
+                        <div class="form-label">{{localize
+                            'dgalt.labels.weaponsheet.expense'}}</div>
+                        <select class="select" name="data.expense">
+                            {{selectOptions config.expense selected=data.data.expense localize=true}}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-hor-group">
+                    <a class="item-control item-checkmark" data-field="data.isrestricted"><i
+                            class="fas {{#if data.data.isrestricted}}fa-plus-square{{else}}fa-square{{/if}}"></i></a>
+                    <div class="form-label">{{localize
+                        'dgalt.labels.weaponsheet.isrestricted'}}</div>
                 </div>
 
             </div>

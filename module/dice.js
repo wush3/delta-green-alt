@@ -4,7 +4,7 @@ const chatTemplate = {
     "Check": "systems/delta-green-alt/templates/partials/skill-check.hbs",
 }
 
-export async function skillTest(header, icon, label, basetarget, mod){
+export async function skillTest(header, icon, label, description, basetarget, mod, critstat){
 
     
 
@@ -25,15 +25,18 @@ export async function skillTest(header, icon, label, basetarget, mod){
 
     let success = false;
     let target = Number(basetarget)+Number(mod);
+    let criticalmin = 1;
+    if(critstat) criticalmin = critstat;
     target=Math.min(target,99);
     if (roll.total <= target) success = true;
     let critical = false;
-    if (!(roll.total % 11) || roll.total == 100) critical = true;
+    if (!(roll.total % 11) || roll.total == 100 || roll.total<=criticalmin) critical = true;
 
 
     let cardData = {
         img: icon,
         name: label,
+        description: description,
         header : header,
         base:basetarget,
         mod:mod, 
@@ -49,7 +52,8 @@ export async function skillTest(header, icon, label, basetarget, mod){
     
     chatData.content = await renderTemplate(chatTemplate["Check"], cardData);
 
-    return ChatMessage.create(chatData);
+    ChatMessage.create(chatData);
+    return success;
 
 }
 

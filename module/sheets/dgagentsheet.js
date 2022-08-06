@@ -7,10 +7,10 @@ export default class DgAgentSheet extends ActorSheet {
             {
                 template: "systems/delta-green-alt/templates/sheets/agent-sheet.hbs",
                 classes: ["dgalt", "sheet", "agent"],
-                width: 700,
-                height: 760,                
+                width: 720,
+                height: 760,
                 resizable: true,
-                scrollY: ['.skills-block .bonds-block .mental-block .tab .right-panel'],                
+                scrollY: ['.skills-block .bonds-block .mental-block .tab .right-panel'],
                 tabs: [
                     {
                         navSelector: '.sheet-nav',
@@ -25,7 +25,7 @@ export default class DgAgentSheet extends ActorSheet {
         const data = super.getData();
         data.config = CONFIG.dgalt;
 
-        
+
 
         data.skills = data.items.filter(function (item) { return item.type == "Skill" });
 
@@ -84,12 +84,12 @@ export default class DgAgentSheet extends ActorSheet {
             return 0;
         });
 
-        
+
 
         return data;
     }
 
-   
+
 
     skillContextMenu = [
         {
@@ -214,12 +214,12 @@ export default class DgAgentSheet extends ActorSheet {
 
             if (item.type == "Skill")
                 if (item.data.data.failcheck) {
-                    
-                    
-                    item.rollImprovement();
-                    
 
-                    
+
+                    item.rollImprovement();
+
+
+
                 }
         });
 
@@ -248,17 +248,15 @@ export default class DgAgentSheet extends ActorSheet {
         }
     }
 
-    async _onColorToggleClick(event)
-    {
-       
-        this.actor.update({["data.options.colorhighlight"]:!this.actor.data.data.options.colorhighlight});
+    async _onColorToggleClick(event) {
+
+        this.actor.update({ ["data.options.colorhighlight"]: !this.actor.data.data.options.colorhighlight });
 
     }
 
-    async _onEditWeaponToggleClick(event)
-    {
-       
-        this.actor.update({["data.options.editweapons"]:!this.actor.data.data.options.editweapons});
+    async _onEditWeaponToggleClick(event) {
+
+        this.actor.update({ ["data.options.editweapons"]: !this.actor.data.data.options.editweapons });
 
     }
 
@@ -270,29 +268,38 @@ export default class DgAgentSheet extends ActorSheet {
         const label = element.dataset.label;
         const description = element.dataset.description;
         const basetarget = element.dataset.basetarget;
-        const mod=element.dataset.mod;
-        const targetfield=element.dataset.targetfield;
+        const mod = element.dataset.mod;
+        const targetfield = element.dataset.targetfield;
 
-        if (rolltype=="skill")
-        {
-            const itemId = element.closest(".item").dataset.itemId;            
+        if (rolltype == "skill") {
+            const itemId = element.closest(".item").dataset.itemId;
             const item = this.actor.items.get(itemId);
-            const header=game.i18n.localize("dgalt.labels.rolls.skilltest")
+            const header = game.i18n.localize("dgalt.labels.rolls.skilltest")
             //item.roll(mod,targetfield);
-            Dice.skillTest(header, icon, label,basetarget,mod);
+            let sucess = await Dice.skillTest(header, icon, label, "", basetarget, mod);
+            if (!sucess) item.update({ ["data.failcheck"]: true });
         }
 
-        if (rolltype=="post")
-        {
-            Dice.postDescription(icon, label,basetarget,description);
+        if (rolltype == "weapon") {
+            const itemId = element.closest(".item").dataset.itemId;
+            const item = this.actor.items.get(itemId);
+            const skill = this.actor.getSkillByName(game.i18n.localize("dgalt.attackskills." + item.data.data.attackskill));
+
+            const header = game.i18n.localize("dgalt.labels.rolls.attack")
+            //item.roll(mod,targetfield);
+            let sucess = await Dice.skillTest(header, icon, label, "using " + skill.name, basetarget, mod);
+            if (skill && !sucess) skill.update({ ["data.failcheck"]: true });
         }
 
-        if (rolltype=="agent")
-        {
+        if (rolltype == "post") {
+            Dice.postDescription(icon, label, basetarget, description);
+        }
+
+        if (rolltype == "agent") {
             //this.actor.roll(mod,targetfield)
 
-            const header=game.i18n.localize("dgalt.labels.rolls.stattest");
-            Dice.skillTest(header, icon, label,basetarget,mod);
+            const header = game.i18n.localize("dgalt.labels.rolls.stattest");
+            Dice.skillTest(header, icon, label,"", basetarget, mod);
         }
     }
 

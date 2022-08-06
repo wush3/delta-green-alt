@@ -94,57 +94,35 @@
       .zero {
         color: var(--zeroSkill);
         font-weight: bold;
-  
-        &:hover {
-          color: var(--hoverColor);
-          text-shadow: 1px;
-        }
+
       }
   
       .belowtwenty {
         color: var(--belowtwentySkill);
         font-weight: bold;
   
-        &:hover {
-          color: var(--hoverColor);
-          text-shadow: 1px;
-        }
       }
   
       .twenty {
         color: var(--twentySkill);
   
-        &:hover {
-          color: var(--hoverColor);
-          text-shadow: 1px;
-        }
+
       }
   
       .forty {
         color: var(--fortySkill);
   
-        &:hover {
-          color: var(--hoverColor);
-          text-shadow: 1px;
-        }
+
       }
   
       .sixty {
         color: var(--sixtySkill);
-  
-        &:hover {
-          color: var(--hoverColor);
-          text-shadow: 1px;
-        }
+
       }
   
       .eighty {
         color: var(--eightySkill);
   
-        &:hover {
-          color: var(--labelColor);
-          text-shadow: 1px;
-        }
       }
      
     }
@@ -157,7 +135,14 @@
       display: none;
     }
 
-
+    .skill-name-nohide {
+      color: var(--foreColor);
+      line-height: 1rem;
+      overflow: hidden;
+      padding: 2px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
 
     .skill-name {
       color: var(--foreColor);
@@ -167,14 +152,6 @@
       text-overflow: ellipsis;
       white-space: nowrap;
       
-
-
-
-      &:hover {
-        color: red;
-        text-shadow: 1px;
-      }
-
       input {
         background-color: var(--borderColor);
         color: var(--labelColor);

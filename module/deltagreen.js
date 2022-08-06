@@ -78,12 +78,13 @@ Hooks.once("init", async function()
 
         Handlebars.registerHelper("selectattack", function(attacks, key)
         {
+            if(attacks)
             return Number(attacks[key]);
             
         });
 
         Handlebars.registerHelper("selectattackmod", function(attacks, key, mod)
-        {
+        {   if(attacks)
             return Number(attacks[key])+Number(mod);
             
         });

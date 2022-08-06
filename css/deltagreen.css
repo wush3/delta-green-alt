@@ -1087,51 +1087,35 @@
   color: var(--zeroSkill);
   font-weight: bold;
 }
-.skilldata .skill-card .skill-name-wrapper .zero:hover {
-  color: var(--hoverColor);
-  text-shadow: 1px;
-}
 .skilldata .skill-card .skill-name-wrapper .belowtwenty {
   color: var(--belowtwentySkill);
   font-weight: bold;
 }
-.skilldata .skill-card .skill-name-wrapper .belowtwenty:hover {
-  color: var(--hoverColor);
-  text-shadow: 1px;
-}
 .skilldata .skill-card .skill-name-wrapper .twenty {
   color: var(--twentySkill);
-}
-.skilldata .skill-card .skill-name-wrapper .twenty:hover {
-  color: var(--hoverColor);
-  text-shadow: 1px;
 }
 .skilldata .skill-card .skill-name-wrapper .forty {
   color: var(--fortySkill);
 }
-.skilldata .skill-card .skill-name-wrapper .forty:hover {
-  color: var(--hoverColor);
-  text-shadow: 1px;
-}
 .skilldata .skill-card .skill-name-wrapper .sixty {
   color: var(--sixtySkill);
 }
-.skilldata .skill-card .skill-name-wrapper .sixty:hover {
-  color: var(--hoverColor);
-  text-shadow: 1px;
-}
 .skilldata .skill-card .skill-name-wrapper .eighty {
   color: var(--eightySkill);
-}
-.skilldata .skill-card .skill-name-wrapper .eighty:hover {
-  color: var(--labelColor);
-  text-shadow: 1px;
 }
 .skilldata .skill-card .skill-name-wrapper:hover .mod-selector-hidden {
   display: flex;
 }
 .skilldata .skill-card .skill-name-wrapper:hover .skill-name {
   display: none;
+}
+.skilldata .skill-card .skill-name-nohide {
+  color: var(--foreColor);
+  line-height: 1rem;
+  overflow: hidden;
+  padding: 2px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .skilldata .skill-card .skill-name {
   color: var(--foreColor);
@@ -1140,10 +1124,6 @@
   padding: 2px;
   text-overflow: ellipsis;
   white-space: nowrap;
-}
-.skilldata .skill-card .skill-name:hover {
-  color: red;
-  text-shadow: 1px;
 }
 .skilldata .skill-card .skill-name input {
   background-color: var(--borderColor);
@@ -1216,7 +1196,7 @@
   outline: 1px dashed var(--borderColor);
   display: grid;
   font-size: 1rem;
-  grid-template-columns: 1.5rem 1fr 1fr 1fr 1fr 1fr 1.5rem;
+  grid-template-columns: 1.5rem 1fr 3rem 3rem 1fr 5rem 1.5rem;
   padding-left: 0.2rem;
   padding-right: 0.2rem;
   height: 1.25rem;

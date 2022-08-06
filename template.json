@@ -133,6 +133,7 @@
             "islethal": false,
             "isranged": false,
             "usesammo": false,
+            "range": 0,
             "concealment": 0,
             "lethality": 0,
             "damage": "",

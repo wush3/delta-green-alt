@@ -1,6 +1,6 @@
 {
     "name": "Name",
-    "type":"Type",
+    "type": "Type",
     "dgalt": {
         "sheet": {
             "newItem": "*New Item*"
@@ -21,19 +21,27 @@
             "demolitions": "Demolitions",
             "artillery": "Artillery"
         },
-        "geartypes":{
-            "weapon":"Weapon",
-            "armor":"Armor",
-            "gear":"Gear",
-            "vehicle":"Vehicle"
+        "geartypes": {
+            "weapon": "Weapon",
+            "armor": "Armor",
+            "gear": "Gear",
+            "vehicle": "Vehicle"
+        },
+        "expense": {
+            "incidental": "Incidental",
+            "standard": "Standard",
+            "unusual": "Unusual",
+            "major": "Major",
+            "extreme": "Extreme"
         },
         "labels": {
-            "rolls":{
-                "target":"Target",
-                "modifier":"Modifier",
-                "skilltest":"SKILL TEST",
-                "stattest":"STAT TEST",
-                "santest":"SAN TEST"
+            "rolls": {
+                "target": "Target",
+                "modifier": "Modifier",
+                "skilltest": "SKILL TEST",
+                "stattest": "STAT TEST",
+                "santest": "SAN TEST",
+                "attack": "ATTACK"
             },
             "psychdata": {
                 "bondheader": "BOND",
@@ -44,9 +52,9 @@
                 "header": "PSYCHOLOGICAL DATA",
                 "mentallabel": "11. MOTIVATIONS AND DISORDERS",
                 "adaptedlabel": "12. INCIDENTS OF SAN LOSS WITHOUT GOING INSANE",
-                "violence":"Violence",
-                "helplessness":"Helplessness",
-                "adapted":"adapted"
+                "violence": "Violence",
+                "helplessness": "Helplessness",
+                "adapted": "adapted"
             },
             "personaldata": {
                 "header": "PERSONAL DATA",
@@ -80,11 +88,10 @@
             },
             "skilldata": {
                 "header": "APPLICABLE SKILL SETS",
-                "rollimprove":"Roll for skill improvement",
-                "markimprove":"Mark for improvement",
-                "addnew":"Add new skill",
-                "colortoggle":"Toggle color highlighting"
-                
+                "rollimprove": "Roll for skill improvement",
+                "markimprove": "Mark for improvement",
+                "addnew": "Add new skill",
+                "colortoggle": "Toggle color highlighting"
             },
             "skillsheet": {
                 "header": "SKILL",
@@ -93,16 +100,15 @@
                 "failcheck": "Check Failed",
                 "base": "Base",
                 "value": "Value",
-                "improve":"IMPROVE SKILL"
+                "improve": "IMPROVE SKILL"
             },
             "bondsheet": {
-                "header": "BOND",                
-                "relationship":"Relationship",
-                "score":"Score",
+                "header": "BOND",
+                "relationship": "Relationship",
+                "score": "Score",
                 "description": "Description"
             },
-            "mentalsheet":
-            {
+            "mentalsheet": {
                 "headerdisorder": "DISORDER",
                 "headermotivation": "MOTIVATION",
                 "alternative": "Alternative",
@@ -111,33 +117,30 @@
                 "cured": "Cured",
                 "toggledisorder": "Toggle Disorder"
             },
-            "weaponsheet":
-            {
-                "header":"WEAPON",
-                "attackskill":"Attack Roll",
-                "mod":"Mod",
-                "damage":"DMG",
-                "ap":"AP",
-                "islethal":"Lethal",
-                "lethality":"Lethality",
-                "killradius":"KR",
-                "isranged":"Ranged",
-                "range":"Range",
+            "weaponsheet": {
+                "header": "WEAPON",
+                "attackskill": "Attack Roll",
+                "mod": "Mod",
+                "damage": "DMG",
+                "ap": "AP",
+                "islethal": "Lethal",
+                "lethality": "Lethality",
+                "killradius": "KR",
+                "isranged": "Ranged",
+                "range": "Range",
                 "usesammo": "Ammo",
-                "maxammo":"Max",
-                "currammo":"Curr.",
-                "ammoperattack":"#/Atk",
-                "isrestricted":"RESTRICTED",
-                "expense":"Expense",
+                "maxammo": "Max",
+                "currammo": "Curr.",
+                "ammoperattack": "#/Atk",
+                "isrestricted": "RESTRICTED",
+                "expense": "Expense",
                 "description": "Description"
             },
-            "weaponsdata":
-            {
-                "header":"WEAPONS",
-                "addnew":"Add new weapon",
-                "inlineedit":"Edit weapons"
+            "weaponsdata": {
+                "header": "WEAPONS",
+                "addnew": "Add new weapon",
+                "inlineedit": "Edit weapons"
             }
-            
         }
     }
 }
