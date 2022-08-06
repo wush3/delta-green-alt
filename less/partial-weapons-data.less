@@ -78,12 +78,12 @@
       outline: 1px dashed var(--borderColor);
       display: grid;
       font-size: 1rem; //.75rem
-      grid-template-columns:  1.5rem minmax(0,auto) 1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns:   1.5rem minmax(0,auto) 3rem 3rem 5rem 3rem 3rem 3rem 3rem 3rem 1.5rem;
       //margin-right: .2rem;
       padding-left: .2rem;
       padding-right: .2rem;
-      height: 1.25rem;
-      max-height: 1.25rem;
+      //height: 1.25rem;
+      //max-height: 1.25rem;
       width: 100%;
       
   
@@ -99,8 +99,7 @@
         overflow: hidden;
         padding: 2px;
         text-overflow: ellipsis;
-        white-space: nowrap;
-        font-weight: light;
+        white-space: nowrap;        
   
         &:hover {
           color: red;
@@ -124,30 +123,8 @@
         margin: 1px 0 0;
       }
   
-      .weapon-name {
-        color: var(--foreColor);
-        line-height: 1rem;
-        overflow: hidden;
-        padding: 2px;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        font-weight: light;
+      
   
-        &:hover {
-          color: red;
-          text-shadow: 1px;
-        }
-  
-        input {
-          background-color: var(--borderColor);
-          color: var(--labelColor);
-          height: 1rem;
-          overflow: visible;
-          padding: 0;
-        }
-  
-       
-      }
   
       .weapon-stat {
         color: var(--foreColor);

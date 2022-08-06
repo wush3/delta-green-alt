@@ -56,6 +56,26 @@ export default class DgActor extends Actor {
         _data.attacks.demolitions = this.getSkillValueByName(game.i18n.localize("dgalt.attackskills.demolitions"));
         _data.attacks.artillery = this.getSkillValueByName(game.i18n.localize("dgalt.attackskills.artillery"));
 
+        
+        
+        let strength = _data.statistics.strength.value;
+        let db = "";
+
+        if(strength < 5){            
+            db = "-2";
+          }
+          else if(strength < 9){           
+            db = "-1";
+          }
+          else if(strength > 12 && strength < 17){           
+            db = "+1";
+          }
+          else if(strength > 16){            
+            db = "+2";
+          } 
+
+          _data.statistics.strength.bonus = db;
+
     }
 
     prepareDerivedData() {
@@ -130,6 +150,11 @@ export default class DgActor extends Actor {
 
         return result;
 
+    }
+
+    getDamageBonus()
+    {
+        return this.data.data.statistics.strength.bonus;
     }
 
 

@@ -122,6 +122,7 @@
                 "attackskill": "Attack Roll",
                 "mod": "Mod",
                 "damage": "DMG",
+                "db":"DB",
                 "ap": "AP",
                 "islethal": "Lethal",
                 "lethality": "Lethality",
