@@ -8,7 +8,8 @@
         "contextmenu": {
             "create": "CREATE",
             "edit": "EDIT",
-            "delete": "DELETE"
+            "delete": "DELETE",
+            "reload": "RELOAD"
         },
         "attackskills": {
             "none": "*None*",

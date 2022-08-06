@@ -882,7 +882,7 @@
 .bonds-block {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: min-content min-content;
+  grid-template-rows: min-content 1fr;
   gap: 1px 1px;
   grid-auto-flow: row;
   grid-template-areas: "bonds-label" "bonds-data";
@@ -1203,7 +1203,7 @@
   outline: 1px dashed var(--borderColor);
   display: grid;
   font-size: 1rem;
-  grid-template-columns: 1.5rem minmax(0, auto) 3rem 3rem 5rem 3rem 3rem 3rem 3rem 3rem 1.5rem;
+  grid-template-columns: 1.5rem minmax(0, auto) 2.1rem 3rem 5rem 2.1rem 2.1rem 2.1rem 2.1rem 2.1rem 1.5rem;
   padding-left: 0.2rem;
   padding-right: 0.2rem;
   width: 100%;
