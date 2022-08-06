@@ -137,6 +137,7 @@
             "concealment": 0,
             "lethality": 0,
             "damage": "",
+            "db":false,
             "ap": 0,
             "ammomax": 0,
             "ammocurrent": 0,
