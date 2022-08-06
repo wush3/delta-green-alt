@@ -472,6 +472,7 @@
   height: min-content;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 .dgalt.sheet .container .sheet-body .fillheight,
 .item .container .sheet-body .fillheight {
@@ -498,7 +499,7 @@
   background-color: var(--backColor);
   color: var(--foreColor);
   outline: 1px solid var(--labelColor);
-  height: 100%;
+  height: min-content;
   grid-template-areas: "personal-header personal-block picture-block";
 }
 .personaldata .personal-header {
@@ -865,6 +866,7 @@
   background-color: var(--backColor);
   color: var(--foreColor);
   outline: 1px solid var(--labelColor);
+  height: 100%;
 }
 .psychdata .psych-header {
   grid-area: psych-header;
@@ -1067,7 +1069,7 @@
   outline: 1px dashed var(--borderColor);
   display: grid;
   font-size: 1rem;
-  grid-template-columns: 1rem 1.5rem auto 2rem;
+  grid-template-columns: 1rem 1.5rem minmax(0, auto) 2rem;
   padding-left: 0.2rem;
   padding-right: 0.2rem;
   height: 1.25rem;
@@ -1201,7 +1203,7 @@
   outline: 1px dashed var(--borderColor);
   display: grid;
   font-size: 1rem;
-  grid-template-columns: 1.5rem 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1.5rem minmax(0, auto) 1fr 1fr 1fr 1fr 1fr;
   padding-left: 0.2rem;
   padding-right: 0.2rem;
   height: 1.25rem;
