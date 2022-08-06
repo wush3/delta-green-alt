@@ -36,18 +36,6 @@
                         <input class="form-inputbox-number" type="number" name="data.attackvalue" data-dtype="number"
                             readonly value="{{selectattack item.actor.data.data.attacks data.data.attackskill}}">
 
-                        <!-- {{#if (eq data.data.attackskill "none")}} value="{{item.actor.data.data.attacks.none}}" {{/if}}
-                            {{#if (eq data.data.attackskill "unarmedcombat")}} value="{{item.actor.data.data.attacks.unarmedcombat}}" {{/if}}
-                            {{#if (eq data.data.attackskill "meleeweapons")}} value="{{item.actor.data.data.attacks.meleeweapons}}" {{/if}}
-                            {{#if (eq data.data.attackskill "dextimesfive")}} value="{{item.actor.data.data.attacks.dextimesfive}}"{{/if}}
-                            {{#if (eq data.data.attackskill "athletics")}} value="{{item.actor.data.data.attacks.athletics}}"{{/if}}
-                            {{#if (eq data.data.attackskill "firearms")}} value="{{item.actor.data.data.attacks.firearms}}"{{/if}}
-                            {{#if (eq data.data.attackskill "demolitions")}} value="{{item.actor.data.data.attacks.demolitions}}"{{/if}}
-                            {{#if (eq data.data.attackskill "heavyweapons")}} value="{{item.actor.data.data.attacks.heavyweapons}}"   {{/if}} 
-                            {{#if (eq data.data.attackskill "artillery")}} value="{{item.actor.data.data.attacks.artillery}}"   {{/if}}
-                             type="number" name="data.attackvalue" data-dtype="number" readonly                     
-                        >-->
-
                     </div>
                     <div class="center">
                         <div class="form-label">{{localize 'dgalt.labels.weaponsheet.mod'}}</div>
@@ -65,10 +53,30 @@
                         <a class="item-control item-checkmark" data-field="data.islethal"><i
                                 class="fas {{#if data.data.islethal}}fa-plus-square{{else}}fa-square{{/if}}"></i></a>
                     </div>
-                    {{#if data.data.islethal}}
+
+
+                    <div class="center">
+                        <div class="form-label">{{localize 'dgalt.labels.weaponsheet.damage'}}</div>
+                        <input class="form-inputbox-centered shorttext" type="text" name="data.damage"
+                            value="{{data.data.damage}}" data-dtype="string" />
+                    </div>
+
+                    <div class="center">
+                        <div class="form-label">{{localize
+                            'dgalt.labels.weaponsheet.db'}}</div>
+                        <a class="item-control item-checkmark" data-field="data.db"><i
+                                class="fas {{#if data.data.db}}fa-plus-square{{else}}fa-square{{/if}}"></i></a>
+                    </div>
+
+                    <div class="center contract">
+                        <div class="form-label">{{localize 'dgalt.labels.weaponsheet.ap'}}</div>
+                        <input class="form-inputbox-number" type="number" name="data.ap" value="{{data.data.ap}}"
+                            data-dtype="number" />
+                    </div>
+
                     <div class="center">
                         <div class="form-label">{{localize 'dgalt.labels.weaponsheet.lethality'}}</div>
-                        <input class="form-inputbox-number shorttext" type="number" name="data.lethality"
+                        <input class="form-inputbox-number" type="number" name="data.lethality"
                             value="{{data.data.lethality}}" data-dtype="number" />
                     </div>
                     <div class="center">
@@ -76,18 +84,7 @@
                         <input class="form-inputbox-number" type="number" name="data.killradius"
                             value="{{data.data.killradius}}" data-dtype="number" />
                     </div>
-                    {{else}}
-                    <div class="center">
-                        <div class="form-label">{{localize 'dgalt.labels.weaponsheet.damage'}}</div>
-                        <input class="form-inputbox-centered shorttext" type="text" name="data.damage"
-                            value="{{data.data.damage}}" data-dtype="string" />
-                    </div>
-                    {{/if}}
-                    <div class="center contract">
-                        <div class="form-label">{{localize 'dgalt.labels.weaponsheet.ap'}}</div>
-                        <input class="form-inputbox-number" type="number" name="data.ap" value="{{data.data.ap}}"
-                            data-dtype="number" />
-                    </div>
+
                 </div>
 
                 <div class="form-hor-group">
@@ -166,3 +163,4 @@
             editable=editable}}
         </div>
     </div>
+</form>

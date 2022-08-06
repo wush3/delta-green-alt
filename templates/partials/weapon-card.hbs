@@ -31,33 +31,33 @@
         </div>
     </div>
 
+    
+        <div class="weapon-stat">
+            {{selectattackmod @root.data.data.attacks data.attackskill data.mod}}%
+        </div>
+    
 
-    <div class="weapon-stat">
-        {{selectattackmod @root.data.data.attacks data.attackskill data.mod}}%
-    </div>
+  
+        <div class="weapon-stat">
+            {{#if data.isranged}}
+            {{data.range}}m
+            {{else}}
+            melee
+            {{/if}}
+        </div>
+   
 
-    <div class="weapon-stat">
-        {{#if data.isranged}}
-        {{data.range}}m
-        {{else}}
-        melee
-        {{/if}}
-    </div>
 
-    {{#if data.usesammo}}
-    <div class="flexrow">
-        <input class="form-inputbox-number" type="number" name="ammocurrent" value="{{data.ammocurrent}}" readonly />
-        <a class="item-control weapon-reload" title="RELOAD">
-            
-            <i class="fas fa-sync"></i>
-        </a>
-    </div>
-    {{else}}
-    <div></div>
-    {{/if}}
+   
+        
+    
 
-    {{#if data.islethal}}
-    <div>
+
+
+   
+        <input class="form-inputbox-centered shorttext" type="text" name="damage" value="{{#if data.db}}{{@root.data.data.statistics.strength.db}}{{else}}{{data.damage}}{{/if}}"
+            data-dtype="string" readonly />
+
         <input class="form-inputbox-number shorttext" type="number" name="lethality" value="{{data.lethality}}"
             data-dtype="number" readonly />
 
@@ -65,16 +65,23 @@
 
         <input class="form-inputbox-number" type="number" name="killradius" value="{{data.killradius}}"
             data-dtype="number" readonly />
-    </div>
-    {{else}}
 
-    <input class="form-inputbox-centered shorttext" type="text" name="damage" value="{{data.damage}}"
-        data-dtype="string" readonly />
+        <input class="form-inputbox-number" type="number" name="ap" value="{{data.ap}}" data-dtype="number" readonly />
+   
+        {{#if data.usesammo}}
+        <input class="form-inputbox-number" type="number" name="ammocurrent" value="{{data.ammocurrent}}" readonly />
+        <a class="item-control weapon-reload" title="RELOAD">
 
-    {{/if}}
+            <i class="fas fa-sync"></i>
+        </a>
+        {{else}}
+        <div></div><div></div>
+        {{/if}}
+   
+        <div class="item-controls">
+            <a class="item-control item-edit" title="EDIT"><i class="fas fa-edit"></i></a>
+            <a class="item-control item-delete" title="DELETE"><i class="fas fa-trash"></i></a>
+        </div>
+    
 
-    <div class="item-controls">
-        <a class="item-control item-edit" title="EDIT"><i class="fas fa-edit"></i></a>
-        <a class="item-control item-delete" title="DELETE"><i class="fas fa-trash"></i></a>
-    </div>
 </li>
