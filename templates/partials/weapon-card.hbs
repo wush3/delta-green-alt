@@ -4,7 +4,31 @@
     <div class="item-image" style="background-image: url('{{img}}')"></div>
 
 
-    <div class="weapon-name {{#if @root.data.data.options.editweapons}}inline-edit{{/if}} " data-dtype="String">{{name}}
+    <!--<div class="weapon-name {{#if @root.data.data.options.editweapons}}inline-edit{{/if}} " data-dtype="String">{{name}}
+    </div>-->
+
+    <div class="weapon-name-wrapper">
+
+        <div class="weapon-name" data-dtype="String">{{name}}
+        </div>
+
+        <div class="mod-selector-hidden">
+            <div class="mod-button item-roll" data-rolltype="weapon" data-mod="-40" data-icon="{{img}}"
+                data-label="{{name}}"
+                data-basetarget="{{selectattackmod @root.data.data.attacks data.attackskill data.mod}}">-40</div>
+            <div class="mod-button item-roll" data-rolltype="weapon" data-mod="-20" data-icon="{{img}}"
+                data-label="{{name}}"
+                data-basetarget="{{selectattackmod @root.data.data.attacks data.attackskill data.mod}}">-20</div>
+            <div class="mod-button item-roll" data-rolltype="weapon" data-mod="0" data-icon="{{img}}"
+                data-label="{{name}}"
+                data-basetarget="{{selectattackmod @root.data.data.attacks data.attackskill data.mod}}">0</div>
+            <div class="mod-button item-roll" data-rolltype="weapon" data-mod="20" data-icon="{{img}}"
+                data-label="{{name}}"
+                data-basetarget="{{selectattackmod @root.data.data.attacks data.attackskill data.mod}}">+20</div>
+            <div class="mod-button item-roll" data-rolltype="weapon" data-mod="40" data-icon="{{img}}"
+                data-label="{{name}}"
+                data-basetarget="{{selectattackmod @root.data.data.attacks data.attackskill data.mod}}">+40</div>
+        </div>
     </div>
 
 
@@ -14,24 +38,23 @@
 
     <div class="weapon-stat">
         {{#if data.isranged}}
-        {{data.range}}m 
+        {{data.range}}m
         {{else}}
         melee
         {{/if}}
     </div>
 
-    <div class="mod-selector">
-        <div class="mod-button item-roll" data-rolltype="weapon" data-mod="-40" data-icon="{{img}}" data-label="{{name}}"
-            data-basetarget="{{selectattackmod @root.data.data.attacks data.attackskill data.mod}}">-40</div>
-        <div class="mod-button item-roll" data-rolltype="weapon" data-mod="-20" data-icon="{{img}}" data-label="{{name}}"
-            data-basetarget="{{selectattackmod @root.data.data.attacks data.attackskill data.mod}}">-20</div>
-        <div class="mod-button item-roll" data-rolltype="weapon" data-mod="0" data-icon="{{img}}" data-label="{{name}}"
-            data-basetarget="{{selectattackmod @root.data.data.attacks data.attackskill data.mod}}">0</div>
-        <div class="mod-button item-roll" data-rolltype="weapon" data-mod="20" data-icon="{{img}}" data-label="{{name}}"
-            data-basetarget="{{selectattackmod @root.data.data.attacks data.attackskill data.mod}}">+20</div>
-        <div class="mod-button item-roll" data-rolltype="weapon" data-mod="40" data-icon="{{img}}" data-label="{{name}}"
-            data-basetarget="{{selectattackmod @root.data.data.attacks data.attackskill data.mod}}">+40</div>
+    {{#if data.usesammo}}
+    <div class="flexrow">
+        <input class="form-inputbox-number" type="number" name="ammocurrent" value="{{data.ammocurrent}}" readonly />
+        <a class="item-control weapon-reload" title="RELOAD">
+            
+            <i class="fas fa-sync"></i>
+        </a>
     </div>
+    {{else}}
+    <div></div>
+    {{/if}}
 
     {{#if data.islethal}}
     <div>

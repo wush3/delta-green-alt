@@ -1084,12 +1084,11 @@
   margin: 1px 0 0;
 }
 .skilldata .skill-card .skill-name-wrapper .zero {
-  color: var(--zeroSkill);
-  font-weight: bold;
+  color: var(--borderColor);
+  text-decoration: line-through var(--foreColor) solid 1px;
 }
 .skilldata .skill-card .skill-name-wrapper .belowtwenty {
   color: var(--belowtwentySkill);
-  font-weight: bold;
 }
 .skilldata .skill-card .skill-name-wrapper .twenty {
   color: var(--twentySkill);
@@ -1192,11 +1191,17 @@
   justify-content: start;
   align-content: flex-start;
 }
+.weaponsdata .weapon-name-wrapper:hover .mod-selector-hidden {
+  display: flex;
+}
+.weaponsdata .weapon-name-wrapper:hover .weapon-name {
+  display: none;
+}
 .weaponsdata .weapon-card {
   outline: 1px dashed var(--borderColor);
   display: grid;
   font-size: 1rem;
-  grid-template-columns: 1.5rem 1fr 3rem 3rem 1fr 5rem 1.5rem;
+  grid-template-columns: 1.5rem 1fr 1fr 1fr 1fr 1fr 1fr;
   padding-left: 0.2rem;
   padding-right: 0.2rem;
   height: 1.25rem;

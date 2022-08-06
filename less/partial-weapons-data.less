@@ -62,12 +62,23 @@
       }
   
     }
+
+   
+
+    .weapon-name-wrapper:hover .mod-selector-hidden {
+      display: flex;
+    }
+
+    .weapon-name-wrapper:hover .weapon-name {
+      display: none;
+    }
+
   
     .weapon-card {
       outline: 1px dashed var(--borderColor);
       display: grid;
       font-size: 1rem; //.75rem
-      grid-template-columns: 1.5rem 1fr 3rem 3rem  1fr 5rem 1.5rem;
+      grid-template-columns:  1.5rem 1fr 1fr 1fr 1fr 1fr 1fr;
       //margin-right: .2rem;
       padding-left: .2rem;
       padding-right: .2rem;
