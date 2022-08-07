@@ -42,7 +42,9 @@
                 "skilltest": "SKILL TEST",
                 "stattest": "STAT TEST",
                 "santest": "SAN TEST",
-                "attack": "ATTACK"
+                "attack": "ATTACK",
+                "damage": "DAMAGE",
+                "lethality":"LETHALITY"
             },
             "psychdata": {
                 "bondheader": "BOND",
@@ -74,17 +76,30 @@
                 "scorelabel": "SCORE",
                 "featurelabel": "FEATURE",
                 "strtxt": "[STR]ength",
+                "strshort": "STR",
+                "strlabel":"Strength",
                 "contxt": "[CON]stitution",
+                "conshort":"CON",
+                "conlabel":"Constitution",
                 "dextxt": "[DEX]terity",
+                "dexshort":"DEX",
+                "dexlabel":"Dexterity",
                 "inttxt": "[INT]elligence",
+                "intshort":"INT",
+                "intlabel":"Intelligence",
                 "powtxt": "[POW]er",
+                "powshort":"POW",
+                "powlabel":"Power",
                 "chatxt": "[CHA]risma",
+                "chashort":"CHA",
+                "chalabel":"Charisma",
                 "derivedlabel": "9. DERIVED ATTRIBUTES",
                 "maxlabel": "MAX",
                 "currentlabel": "CURR.",
                 "hplabel": "Hit Points [HP]",
                 "wplabel": "Willpower Points [WP]",
                 "sanlabel": "Sanity Points [SAN]",
+                "sanity":"Sanity",
                 "breaklabel": "Breaking Point [BP]"
             },
             "skilldata": {
@@ -141,7 +156,15 @@
             "weaponsdata": {
                 "header": "WEAPONS",
                 "addnew": "Add new weapon",
-                "inlineedit": "Edit weapons"
+                "inlineedit": "Edit weapons",
+                "weapon":"WEAPON",
+                "skill":"SKILL%",
+                "range":"RANGE",
+                "damage":"DMG",
+                "ap":"AP",
+                "lethality":"LETHAL",
+                "killradius":"KR",
+                "ammo":"AMMO"
             }
         }
     }

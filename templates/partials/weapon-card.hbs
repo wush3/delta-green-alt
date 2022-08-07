@@ -8,11 +8,10 @@
     </div>-->
 
     <div class="weapon-name-wrapper">
-
         <div class="weapon-name" data-dtype="String">{{name}}
         </div>
 
-        <div class="mod-selector-hidden">
+        <div class="mod-selector-hidden outline">
             <div class="mod-button item-roll" data-rolltype="weapon" data-mod="-40" data-icon="{{img}}"
                 data-label="{{name}}"
                 data-basetarget="{{selectattackmod @root.data.data.attacks data.attackskill data.mod}}">-40</div>
@@ -29,59 +28,82 @@
                 data-label="{{name}}"
                 data-basetarget="{{selectattackmod @root.data.data.attacks data.attackskill data.mod}}">+40</div>
         </div>
+
     </div>
 
-    
+    <div class="weapon-stat">
+        {{selectattackmod @root.data.data.attacks data.attackskill data.mod}}%
+    </div>
+
+    <div class="weapon-stat">
+        {{#if data.isranged}}
+        {{data.range}}m
+        {{else}}
+        melee
+        {{/if}}
+    </div>
+
+    <div class="weapon-dmg-wrapper">
         <div class="weapon-stat">
-            {{selectattackmod @root.data.data.attacks data.attackskill data.mod}}%
+            <input class="form-inputbox-centered shorttext" type="text" name="damage"
+                value="{{#if data.db}}{{data.damage}}{{@root.data.data.statistics.strength.bonus}}{{else}}{{data.damage}}{{/if}}"
+                data-dtype="string" readonly />
         </div>
-    
 
-  
+        <div class="mod-selector-hidden center">
+            <div class="mod-button item-roll" data-rolltype="damage" data-mult="1" data-icon="{{img}}"
+                data-label="{{name}}"
+                data-dmgformula="{{#if data.db}}{{data.damage}}{{@root.data.data.statistics.strength.bonus}}{{else}}{{data.damage}}{{/if}}">
+                x1</div>
+            <div class="mod-button item-roll" data-rolltype="damage" data-mult="2" data-icon="{{img}}"
+                data-label="{{name}}"
+                data-dmgformula="{{#if data.db}}{{data.damage}}{{@root.data.data.statistics.strength.bonus}}{{else}}{{data.damage}}{{/if}}">
+                x2</div>
+        </div>
+
+    </div>
+
+    <div class="weapon-stat">
+        <input class="form-inputbox-number" type="number" name="ap" value="{{data.ap}}" data-dtype="number" readonly />
+    </div>
+
+    <div class="weapon-dmg-wrapper">
         <div class="weapon-stat">
-            {{#if data.isranged}}
-            {{data.range}}m
-            {{else}}
-            melee
-            {{/if}}
+            <input class="form-inputbox-centered" type="number" name="lethality" value="{{data.lethality}}"
+                data-dtype="number" readonly />
         </div>
-   
+        <div class="mod-selector-hidden center">
+            <div class="mod-button item-roll" data-rolltype="lethality" data-mult="1" data-icon="{{img}}"
+                data-label="{{name}}" data-lethality="{{data.lethality}}">
+                x1</div>
+            <div class="mod-button item-roll" data-rolltype="lethality" data-mult="2" data-icon="{{img}}"
+                data-label="{{name}}" data-lethality="{{data.lethality}}">
+                x2</div>
+        </div>
+    </div>
 
-
-   
-        
-    
-
-
-
-   
-        <input class="form-inputbox-centered shorttext" type="text" name="damage" value="{{#if data.db}}{{data.damage}}{{@root.data.data.statistics.strength.bonus}}{{else}}{{data.damage}}{{/if}}"
-            data-dtype="string" readonly />
-
-        <input class="form-inputbox-number shorttext" type="number" name="lethality" value="{{data.lethality}}"
-            data-dtype="number" readonly />
-
-
-
+    <div class="weapon-stat">
         <input class="form-inputbox-number" type="number" name="killradius" value="{{data.killradius}}"
             data-dtype="number" readonly />
+    </div>
 
-        <input class="form-inputbox-number" type="number" name="ap" value="{{data.ap}}" data-dtype="number" readonly />
-   
-        {{#if data.usesammo}}
+    {{#if data.usesammo}}
+    <div class="weapon-stat">
         <input class="form-inputbox-number" type="number" name="ammocurrent" value="{{data.ammocurrent}}" readonly />
+
         <a class="item-control weapon-reload" title="{{localize 'dgalt.contextmenu.reload'}}">
 
-            <i class="fas fa-sync"></i>
+            <i class="fas fa-sync weapon-button"></i>
         </a>
-        {{else}}
-        <div></div><div></div>
-        {{/if}}
-   
-        <div class="item-controls">
-            <a class="item-control item-edit" title="{{localize 'dgalt.contextmenu.edit'}}"><i class="fas fa-edit"></i></a>
-            <a class="item-control item-delete" title="{{localize 'dgalt.contextmenu.delete'}}"><i class="fas fa-trash"></i></a>
-        </div>
-    
+    </div>
+    {{else}}
+    <div class="weapon-stat"></div>
+    {{/if}}
+
+    <div class="item-controls">
+        <a class="item-control item-edit" title="{{localize 'dgalt.contextmenu.edit'}}"><i class="fas fa-edit"></i></a>
+        <a class="item-control item-delete" title="{{localize 'dgalt.contextmenu.delete'}}"><i
+                class="fas fa-trash"></i></a>
+    </div>
 
 </li>

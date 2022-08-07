@@ -16,11 +16,20 @@
                     <input class="form-inputbox item-label" name="name" type="text" value="{{name}}"
                         placeholder="{{ localize 'Name' }}" readonly />
                 </div>
+                {{#if ischeck}}
                 <div class="center">
                     <div class="form-label">{{localize 'dgalt.labels.rolls.target'}}</div>
                     <input class="form-inputbox-number-stretch" type="number" name="target" value="{{target}}"
                         data-dtype="number" readonly />
                 </div>
+                {{/if}}
+                {{#if islethality}}
+                <div class="center">
+                    <div class="form-label">{{localize 'dgalt.labels.rolls.target'}}</div>
+                    <input class="form-inputbox-number-stretch" type="number" name="target" value="{{target}}"
+                        data-dtype="number" readonly />
+                </div>
+                {{/if}}
             </div>
 
             <div class="item-data">
@@ -32,13 +41,28 @@
                 <div class="dice-flavor">{{flavor}}</div>
                 {{/if}}
                 <div class="dice-result">
-                    <div class="dice-formula">{{formula}}</div>
+                    <div class="dice-field">{{formula}}</div>
                     {{{tooltip}}}
-                    <h4 class="dice-total">{{total}}</h4>
+                    <div class="dice-field">{{total}}</div>
 
-                    {{#if success}}<h4 class="dice-total green">PASS</h4>{{else}}
-                    <h4 class="dice-total red">FAIL</h4>{{/if}}
-                    {{#if critical}}<h4 class="dice-total">CRITICAL</h4>{{/if}}
+                    {{#if ischeck}}
+                    {{#if success}}<div class="dice-field green">PASS</div>{{else}}
+                    <div class="dice-field red">FAIL</div>{{/if}}
+                    {{#if critical}}<div class="dice-field">CRITICAL</div>{{/if}}
+                    {{/if}}
+
+                    {{#if islethality}}
+                    {{#if success}}<div class="dice-field red">LETHAL</div>{{else}}
+                    <div class="dice-field">DAMAGE</div>{{/if}}
+                    {{/if}}
+
+                    {{#if islethality}}
+                    {{#if showmult}}
+                    <div class="dice-field">{{mult}}*({{tens}}+{{ones}})={{lethdamage}}</div>
+                    {{else}}
+                    <div class="dice-field">{{tens}}+{{ones}}={{lethdamage}}</div>
+                    {{/if}}
+                    {{/if}}
                 </div>
 
 

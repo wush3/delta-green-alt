@@ -1,9 +1,11 @@
 <div class="weaponsdata">
     <div class="weapons-header">
-       
+
         <div class="button-bar-vertical">
-            <a class="item-control item-create" data-type="Weapon" title="{{localize 'dgalt.labels.weaponsdata.addnew'}}"><i class="fas fa-plus"></i></a>            
-            <a class="item-control editweapon-toggle" title="{{localize 'dgalt.labels.weaponsdata.inlineedit'}}"><i class="fas {{#if data.data.options.editweapons}}fa-toggle-on{{else}}fa-toggle-off{{/if}}"></i></a>
+            <a class="item-control item-create" data-type="Weapon"
+                title="{{localize 'dgalt.labels.weaponsdata.addnew'}}"><i class="fas fa-plus"></i></a>
+            <a class="item-control editweapon-toggle" title="{{localize 'dgalt.labels.weaponsdata.inlineedit'}}"><i
+                    class="fas {{#if data.data.options.editweapons}}fa-toggle-on{{else}}fa-toggle-off{{/if}}"></i></a>
         </div>
 
         <div class="vertical-header">
@@ -12,6 +14,17 @@
     </div>
     <div class="weapons-block">
 
+        <div class="weapons-labels">
+            <div class="form-label-centered"></div>
+            <div class="form-label">{{localize 'dgalt.labels.weaponsdata.weapon'}}</div>
+            <div class="form-label-centered">{{localize 'dgalt.labels.weaponsdata.skill'}}</div>
+            <div class="form-label-centered">{{localize 'dgalt.labels.weaponsdata.range'}}</div>
+            <div class="form-label-centered">{{localize 'dgalt.labels.weaponsdata.damage'}}</div>
+            <div class="form-label-centered">{{localize 'dgalt.labels.weaponsdata.ap'}}</div>
+            <div class="form-label-centered">{{localize 'dgalt.labels.weaponsdata.lethality'}}</div>
+            <div class="form-label-centered">{{localize 'dgalt.labels.weaponsdata.killradius'}}</div>
+            <div class="form-label-centered">{{localize 'dgalt.labels.weaponsdata.ammo'}}</div>
+        </div>
 
         <ol class="weapons-list">
             {{#each weapons as |weapon id|}}

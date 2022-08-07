@@ -205,6 +205,14 @@
   height: 100%;
   width: 50px;
 }
+.dgalt.sheet .dice-field,
+.item .dice-field {
+  border: 1px solid var(--color-border-light-tertiary);
+  border-radius: 3px;
+  padding: 1px 3px;
+  margin: 2px;
+  text-align: center;
+}
 .dgalt.sheet .form-hor-group,
 .item .form-hor-group {
   display: flex;
@@ -1193,33 +1201,62 @@
   justify-content: start;
   align-content: flex-start;
 }
+.weaponsdata .center {
+  justify-content: center;
+  outline: 1px dashed var(--borderColor);
+}
+.weaponsdata .outline {
+  outline: 1px dashed var(--borderColor);
+}
 .weaponsdata .weapon-name-wrapper:hover .mod-selector-hidden {
   display: flex;
 }
 .weaponsdata .weapon-name-wrapper:hover .weapon-name {
   display: none;
 }
-.weaponsdata .weapon-card {
+.weaponsdata .weapon-dmg-wrapper:hover .mod-selector-hidden {
+  display: flex;
+}
+.weaponsdata .weapon-dmg-wrapper:hover .weapon-stat {
+  display: none;
+}
+.weaponsdata .weapons-labels {
+  display: grid;
+  grid-template-columns: 1.25rem minmax(0, auto) 3rem 3rem 5rem 2.1rem 3rem 2.1rem 3.4rem 1.5rem;
+  gap: 1px;
+  margin-bottom: 1px;
+}
+.weaponsdata .weapons-labels .form-label {
   outline: 1px dashed var(--borderColor);
+  padding: 0px 4px;
+}
+.weaponsdata .weapons-labels .form-label-centered {
+  outline: 1px dashed var(--borderColor);
+}
+.weaponsdata .weapon-card {
   display: grid;
   font-size: 1rem;
-  grid-template-columns: 1.5rem minmax(0, auto) 2.1rem 3rem 5rem 2.1rem 2.1rem 2.1rem 2.1rem 2.1rem 1.5rem;
-  padding-left: 0.2rem;
-  padding-right: 0.2rem;
+  grid-template-columns: 1.25rem minmax(0, auto) 3rem 3rem 5rem 2.1rem 3rem 2.1rem 3.4rem 1.5rem;
+  gap: 1px;
   width: 100%;
 }
 .weaponsdata .weapon-card .item-image {
   height: 1.25rem;
   width: 1.25rem;
-  padding: 2px;
+  outline: 1px dashed var(--borderColor);
+}
+.weaponsdata .weapon-card .weapon-button {
+  width: 1.25rem;
+  font-size: 0.75rem;
 }
 .weaponsdata .weapon-card .weapon-name {
   color: var(--foreColor);
-  line-height: 1rem;
+  line-height: 1.25rem;
   overflow: hidden;
-  padding: 2px;
+  padding: 0px 2px;
   text-overflow: ellipsis;
   white-space: nowrap;
+  outline: 1px dashed var(--borderColor);
 }
 .weaponsdata .weapon-card .weapon-name:hover {
   color: red;
@@ -1228,24 +1265,24 @@
 .weaponsdata .weapon-card .weapon-name input {
   background-color: var(--borderColor);
   color: var(--labelColor);
-  height: 1rem;
+  height: 1.25rem;
   overflow: visible;
   padding: 0;
 }
-.weaponsdata .weapon-card .weapon-icon {
-  height: 0.75rem;
-  margin: 1px 0 0;
-}
 .weaponsdata .weapon-card .weapon-stat {
   color: var(--foreColor);
-  line-height: 1rem;
-  margin: 2px;
+  line-height: 1.25rem;
+  justify-content: center;
   text-align: center;
+  display: flex;
+  flex-direction: row;
+  gap: 2px;
+  outline: 1px dashed var(--borderColor);
 }
 .weaponsdata .weapon-card .weapon-stat input {
   background-color: rgba(0, 0, 0, 0.1);
   color: var(--foreColor);
-  height: 1rem;
+  height: 1.25rem;
   text-align: center;
 }
 section.window-content {

@@ -291,6 +291,26 @@ export default class DgAgentSheet extends ActorSheet {
             if(skill) sucess = await Dice.skillTest(header, icon, label, "using " + skill.name, basetarget, mod);
             if (skill && !sucess) skill.update({ ["data.failcheck"]: true });
         }
+        if (rolltype == "damage")
+        {
+            const itemId = element.closest(".item").dataset.itemId;
+            const item = this.actor.items.get(itemId);
+            const header = game.i18n.localize("dgalt.labels.rolls.damage");
+            const dmgformula = element.dataset.dmgformula;
+            const mult = element.dataset.mult;
+            Dice.damageRoll(header, icon, label, "", dmgformula, mult);
+
+        }
+        if (rolltype=="lethality")
+        {
+            const itemId = element.closest(".item").dataset.itemId;
+            const item = this.actor.items.get(itemId);
+            const header = game.i18n.localize("dgalt.labels.rolls.lethality");
+            const lethality = element.dataset.lethality;
+            const mult = element.dataset.mult;
+            Dice.lethalityRoll(header, icon, label, "", lethality, mult);
+   
+        }
 
         if (rolltype == "post") {
             Dice.postDescription(icon, label, basetarget, description);
