@@ -1025,43 +1025,7 @@
   height: 1rem;
   text-align: center;
 }
-.skilldata {
-  display: grid;
-  grid-template-columns: min-content 1fr;
-  grid-template-rows: 1fr;
-  gap: 1px 1px;
-  grid-auto-flow: row;
-  grid-template-areas: "skills-header skills-block";
-  background-color: var(--backColor);
-  color: var(--foreColor);
-  outline: 1px solid var(--labelColor);
-  display: flex;
-  flex-direction: row;
-  height: 100%;
-}
-.skilldata .skills-header {
-  grid-area: skills-header;
-  background-color: var(--foreColor);
-  color: var(--backColor);
-  outline: var(--borderColor) solid 1px;
-  padding: 2px;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  justify-content: space-around;
-}
-.skilldata .skills-block {
-  grid-area: skills-block;
-  background-color: var(--backColor);
-  color: var(--foreColor);
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  flex: 1;
-  overflow-x: auto;
-  overflow-y: auto;
-}
-.skilldata .skills-block .skill-list {
+.skill-list {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -1073,7 +1037,7 @@
   justify-content: start;
   align-content: flex-start;
 }
-.skilldata .skill-card {
+.skill-card {
   outline: 1px dashed var(--borderColor);
   display: grid;
   font-size: 1rem;
@@ -1084,41 +1048,41 @@
   max-height: 1.25rem;
   width: 33%;
 }
-.skilldata .skill-card .item-image {
+.skill-card .item-image {
   height: 1.25rem;
   width: 1.25rem;
   padding: 2px;
 }
-.skilldata .skill-card .skill-check {
+.skill-card .skill-check {
   height: 0.75rem;
   margin: 1px 0 0;
 }
-.skilldata .skill-card .skill-name-wrapper .zero {
+.skill-card .skill-name-wrapper .zero {
   color: var(--borderColor);
   text-decoration: line-through var(--foreColor) solid 1px;
 }
-.skilldata .skill-card .skill-name-wrapper .belowtwenty {
+.skill-card .skill-name-wrapper .belowtwenty {
   color: var(--belowtwentySkill);
 }
-.skilldata .skill-card .skill-name-wrapper .twenty {
+.skill-card .skill-name-wrapper .twenty {
   color: var(--twentySkill);
 }
-.skilldata .skill-card .skill-name-wrapper .forty {
+.skill-card .skill-name-wrapper .forty {
   color: var(--fortySkill);
 }
-.skilldata .skill-card .skill-name-wrapper .sixty {
+.skill-card .skill-name-wrapper .sixty {
   color: var(--sixtySkill);
 }
-.skilldata .skill-card .skill-name-wrapper .eighty {
+.skill-card .skill-name-wrapper .eighty {
   color: var(--eightySkill);
 }
-.skilldata .skill-card .skill-name-wrapper:hover .mod-selector-hidden {
+.skill-card .skill-name-wrapper:hover .mod-selector-hidden {
   display: flex;
 }
-.skilldata .skill-card .skill-name-wrapper:hover .skill-name {
+.skill-card .skill-name-wrapper:hover .skill-name {
   display: none;
 }
-.skilldata .skill-card .skill-name-nohide {
+.skill-card .skill-name-nohide {
   color: var(--foreColor);
   line-height: 1rem;
   overflow: hidden;
@@ -1126,7 +1090,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.skilldata .skill-card .skill-name {
+.skill-card .skill-name {
   color: var(--foreColor);
   line-height: 1rem;
   overflow: hidden;
@@ -1134,41 +1098,39 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.skilldata .skill-card .skill-name input {
+.skill-card .skill-name input {
   background-color: var(--borderColor);
   color: var(--labelColor);
   height: 1rem;
   overflow: visible;
   padding: 0;
 }
-.skilldata .skill-card .skill-score {
+.skill-card .skill-score {
   color: var(--foreColor);
   line-height: 1rem;
   margin: 2px;
   text-align: center;
 }
-.skilldata .skill-card .skill-score input {
+.skill-card .skill-score input {
   background-color: rgba(0, 0, 0, 0.1);
   color: var(--foreColor);
   height: 1rem;
   text-align: center;
 }
-.weaponsdata {
+.contentdata {
   display: grid;
   grid-template-columns: min-content 1fr;
   grid-template-rows: 1fr;
   gap: 1px 1px;
   grid-auto-flow: row;
-  grid-template-areas: "weapons-header weapons-block";
+  grid-template-areas: "content-header content-block";
   background-color: var(--backColor);
   color: var(--foreColor);
   outline: 1px solid var(--labelColor);
-  display: flex;
-  flex-direction: row;
   height: 100%;
 }
-.weaponsdata .weapons-header {
-  grid-area: weapons-header;
+.contentdata .content-header {
+  grid-area: content-header;
   background-color: var(--foreColor);
   color: var(--backColor);
   outline: var(--borderColor) solid 1px;
@@ -1178,8 +1140,8 @@
   align-content: center;
   justify-content: space-around;
 }
-.weaponsdata .weapons-block {
-  grid-area: weapons-block;
+.contentdata .content-block {
+  grid-area: content-block;
   background-color: var(--backColor);
   color: var(--foreColor);
   display: flex;
@@ -1189,7 +1151,7 @@
   overflow-x: auto;
   overflow-y: auto;
 }
-.weaponsdata .weapons-block .weapons-list {
+.weapons-list {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -1201,77 +1163,67 @@
   justify-content: start;
   align-content: flex-start;
 }
-.weaponsdata .center {
+.center {
   justify-content: center;
   outline: 1px dashed var(--borderColor);
 }
-.weaponsdata .outline {
+.outline {
   outline: 1px dashed var(--borderColor);
 }
-.weaponsdata .weapon-name-wrapper:hover .mod-selector-hidden {
-  display: flex;
-}
-.weaponsdata .weapon-name-wrapper:hover .weapon-name {
-  display: none;
-}
-.weaponsdata .weapon-dmg-wrapper:hover .mod-selector-hidden {
-  display: flex;
-}
-.weaponsdata .weapon-dmg-wrapper:hover .weapon-stat {
-  display: none;
-}
-.weaponsdata .weapons-labels {
+.weapons-labels {
   display: grid;
   grid-template-columns: 1.25rem minmax(0, auto) 3rem 3rem 5rem 2.1rem 3rem 2.1rem 3.4rem 1.5rem;
   gap: 1px;
   margin-bottom: 1px;
 }
-.weaponsdata .weapons-labels .form-label {
+.weapons-labels .form-label {
   outline: 1px dashed var(--borderColor);
   padding: 0px 4px;
 }
-.weaponsdata .weapons-labels .form-label-centered {
+.weapons-labels .form-label-centered {
   outline: 1px dashed var(--borderColor);
 }
-.weaponsdata .weapon-card {
+.weapon-card {
   display: grid;
   font-size: 1rem;
   grid-template-columns: 1.25rem minmax(0, auto) 3rem 3rem 5rem 2.1rem 3rem 2.1rem 3.4rem 1.5rem;
   gap: 1px;
   width: 100%;
 }
-.weaponsdata .weapon-card .item-image {
+.weapon-card .item-image {
   height: 1.25rem;
   width: 1.25rem;
   outline: 1px dashed var(--borderColor);
 }
-.weaponsdata .weapon-card .weapon-button {
+.weapon-card .weapon-button {
   width: 1.25rem;
   font-size: 0.75rem;
 }
-.weaponsdata .weapon-card .weapon-name {
+.weapon-card .weapon-name {
   color: var(--foreColor);
   line-height: 1.25rem;
+  height: 1.25rem;
   overflow: hidden;
   padding: 0px 2px;
   text-overflow: ellipsis;
   white-space: nowrap;
   outline: 1px dashed var(--borderColor);
 }
-.weaponsdata .weapon-card .weapon-name:hover {
+.weapon-card .weapon-name:hover {
   color: red;
   text-shadow: 1px;
 }
-.weaponsdata .weapon-card .weapon-name input {
+.weapon-card .weapon-name input {
   background-color: var(--borderColor);
   color: var(--labelColor);
   height: 1.25rem;
   overflow: visible;
   padding: 0;
 }
-.weaponsdata .weapon-card .weapon-stat {
+.weapon-card .weapon-stat {
   color: var(--foreColor);
   line-height: 1.25rem;
+  height: 1.25rem;
   justify-content: center;
   text-align: center;
   display: flex;
@@ -1279,11 +1231,23 @@
   gap: 2px;
   outline: 1px dashed var(--borderColor);
 }
-.weaponsdata .weapon-card .weapon-stat input {
+.weapon-card .weapon-stat input {
   background-color: rgba(0, 0, 0, 0.1);
   color: var(--foreColor);
   height: 1.25rem;
   text-align: center;
+}
+.weapon-card .weapon-name-wrapper:hover .mod-selector-hidden {
+  display: flex;
+}
+.weapon-card .weapon-name-wrapper:hover .weapon-name {
+  display: none;
+}
+.weapon-card .weapon-dmg-wrapper:hover .mod-selector-hidden {
+  display: flex;
+}
+.weapon-card .weapon-dmg-wrapper:hover .weapon-stat {
+  display: none;
 }
 section.window-content {
   background: url("../assets/img/transparent.png") !important;

@@ -48,7 +48,7 @@
                 "min": 0,
                 "max": 10                
             },
-            "armor":0,
+            "armorvalue":0,
             "wp": {
                 "value": 0,
                 "min": 0,
@@ -62,7 +62,12 @@
                 "helplessnesslevel":0
                 
             },
-            "skills": {},           
+            "skills": {},       
+            "bonds":{},
+            "mentalitems":{},
+            "weapons":{},
+            "armor":{},
+            "gear":{},    
             "specialtraining": {},
             "attacks":{},
             
@@ -90,7 +95,15 @@
             "Bond",
             "Mental"
         ],
-        "templates": [],
+        "templates": {
+            "gear":{
+                "isgear":true,
+                "description": "",
+                "expense": "",
+                "isrestricted": false,
+                "container": ""
+            }
+        },
         "Skill": {
             "description": "",
             "base": 0,
@@ -110,23 +123,11 @@
             "description": ""
         },
         "Gear": {
-            "isgear":true,
-            "description": "",
-            "container": "",
-            "expense": "",
-            "isrestricted": false,
-            
-            "concealment": 0,
-            
-            "armor": 0,
-            "hitpoints": 0,
-            "speed": "",
-            "vehicletype": ""
+            "templates": ["gear"]
         },
         "Weapon":{
-            "isgear":true,
+            "templates": ["gear"],
             "isequipped":false,
-            "description": "",
             "attackskill":"none",
             "attackvalue":0,
             "mod":0,
@@ -134,7 +135,6 @@
             "isranged": false,
             "usesammo": false,
             "range": 0,
-            "concealment": 0,
             "lethality": 0,
             "damage": "",
             "db":false,
@@ -146,13 +146,16 @@
 
         },
         "Armor":{
-            "isgear":true,
+            "templates": ["gear"],
             "isequipped":false,
-            "description": ""
+            "protection":0
         },
         "Vehicle":{
-            "isgear":true,
-            "description": ""
+            "templates": ["gear"],
+            "armor": 0,
+            "hitpoints": 0,
+            "speed": "",
+            "vehicletype": ""
         },
         "Profession": {
             "name": ""
