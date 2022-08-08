@@ -1249,6 +1249,11 @@
 .weapon-card .weapon-dmg-wrapper:hover .weapon-stat {
   display: none;
 }
+.weaponsandarmor {
+  display: grid;
+  grid-template-columns: 3.5fr 1fr;
+  height: 100%;
+}
 section.window-content {
   background: url("../assets/img/transparent.png") !important;
 }

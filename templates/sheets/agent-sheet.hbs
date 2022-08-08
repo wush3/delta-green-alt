@@ -43,11 +43,16 @@
 
             <div class="tab gear" data-group="primary" data-tab="gear">
                 <div class="tab-top">
-                {{> "systems/delta-green-alt/templates/partials/agent-weapons-data-block.hbs"}}
-                {{> "systems/delta-green-alt/templates/partials/agent-armor-data-block.hbs"}}
-                {{> "systems/delta-green-alt/templates/partials/agent-gear-data-block.hbs"}}
+                    <div class="weaponsandarmor">
+                        {{> "systems/delta-green-alt/templates/partials/agent-weapons-data-block.hbs"}}
+                        {{> "systems/delta-green-alt/templates/partials/agent-armor-data-block.hbs"}}
+                    </div>
+
+
                 </div>
-                <div class="skills-data-area"></div>
+                <div class="skills-data-area">
+                    {{> "systems/delta-green-alt/templates/partials/agent-gear-data-block.hbs"}}
+                </div>
             </div>
 
             <div class="tab bio" data-group="primary" data-tab="bio">
