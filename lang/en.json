@@ -170,6 +170,13 @@
                 "header":"ARMOR",
                 "addnew":"Add new Armor",
                 "protection":"PROT"
+            },
+            "geardata":{
+                "header":"GEAR",
+                "addnew":"Add new Gear",
+                "name":"NAME",
+                "location":"LOCATION",
+                "equiped":"EQUIPED"
             }
         }
     }

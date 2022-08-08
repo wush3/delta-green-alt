@@ -1,2 +1,28 @@
 <div class="geardata">
+
+    <div class="content-header">
+
+        <div class="button-bar-vertical">
+            <a class="item-control item-create" data-type="Gear"
+                title="{{localize 'dgalt.labels.geardata.addnew'}}"><i class="fas fa-plus"></i></a>
+        </div>
+
+        <div class="vertical-header">
+            {{localize 'dgalt.labels.geardata.header'}}
+        </div>
+    </div>
+    <div class="content-block">
+        <div class="gear-labels">
+            <div class="form-label-centered"></div>
+            <div class="form-label">{{localize 'dgalt.labels.geardata.name'}}</div>
+            <div class="form-label-centered">{{localize 'dgalt.labels.geardata.location'}}</div>
+        </div>
+
+        <ol class="gear-list">
+            {{#each gearlist as |gear id|}}
+            {{> "systems/delta-green-alt/templates/partials/gear-card.hbs" gear}}
+            {{/each}}
+        </ol>
+    </div>
+
 </div>

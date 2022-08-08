@@ -19,35 +19,37 @@
                 </div>
                 <div class="center">
                     <div class="form-label">{{localize 'dgalt.labels.skillsheet.value'}}</div>
-                    <input class="form-inputbox-number-stretch" type="number" name="data.value" value="{{data.data.value}}"
-                        data-dtype="number" />
+                    <input class="form-inputbox-number-stretch" type="number" name="data.value"
+                        value="{{data.data.value}}" data-dtype="number" />
                 </div>
 
             </div>
 
             <div class="item-data">
-                <div class="center">
-                    <div class="form-label">{{localize
-                        'dgalt.labels.skillsheet.canimprove'}}</div>
-                    <a class="item-control item-checkmark" title="CHECK" data-field="data.canimprove"><i
-                            class="fas {{#if data.data.canimprove}}fa-plus-square{{else}}fa-square{{/if}}"></i></a>
+
+                <div class="form-hor-group">
+                    <div class="center">
+                        <div class="form-label">{{localize
+                            'dgalt.labels.skillsheet.canimprove'}}</div>
+                        <a class="item-control item-checkmark" title="CHECK" data-field="data.canimprove"><i
+                                class="fas {{#if data.data.canimprove}}fa-plus-square{{else}}fa-square{{/if}}"></i></a>
+
+                    </div>
+                    <div class="center">
+                        <div class="form-label">{{localize
+                            'dgalt.labels.skillsheet.failcheck'}}</div>
+                        <a class="item-control item-checkmark" title="CHECK" data-field="data.failcheck"><i
+                                class="fas {{#if data.data.failcheck}}fa-plus-square{{else}}fa-square{{/if}}"></i></a>
+
+                    </div>
+
+                    <div class="center">
+                        <div class="form-label">{{localize 'dgalt.labels.skillsheet.base'}}</div>
+                        <input class="form-inputbox-number" type="number" name="data.base" value="{{data.data.base}}"
+                            data-dtype="number" />
+                    </div>
 
                 </div>
-                <div class="center">
-                    <div class="form-label">{{localize
-                        'dgalt.labels.skillsheet.failcheck'}}</div>
-                    <a class="item-control item-checkmark" title="CHECK" data-field="data.failcheck"><i
-                            class="fas {{#if data.data.failcheck}}fa-plus-square{{else}}fa-square{{/if}}"></i></a>
-
-                </div>
-
-                <div class="center">
-                    <div class="form-label">{{localize 'dgalt.labels.skillsheet.base'}}</div>
-                    <input class="form-inputbox-number" type="number" name="data.base" value="{{data.data.base}}"
-                        data-dtype="number" />
-                </div>
-                
-
             </div>
 
 

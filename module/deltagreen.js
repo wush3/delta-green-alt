@@ -22,6 +22,7 @@ async function preloadHandlebarsTemplates()
         "systems/delta-green-alt/templates/partials/mental-card.hbs",
         "systems/delta-green-alt/templates/partials/weapon-card.hbs",
         "systems/delta-green-alt/templates/partials/armor-card.hbs",
+        "systems/delta-green-alt/templates/partials/gear-card.hbs",
 
         "systems/delta-green-alt/templates/partials/post-skill.hbs",
         "systems/delta-green-alt/templates/partials/skill-check.hbs",

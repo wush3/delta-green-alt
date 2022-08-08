@@ -1165,7 +1165,6 @@
 }
 .center {
   justify-content: center;
-  outline: 1px dashed var(--borderColor);
 }
 .outline {
   outline: 1px dashed var(--borderColor);
@@ -1308,6 +1307,26 @@
   color: var(--foreColor);
   height: 1.25rem;
   text-align: center;
+}
+.gear-labels {
+  display: grid;
+  grid-template-columns: 1.25rem minmax(0, auto) minmax(0, auto) 1.5rem;
+  gap: 1px;
+  margin-bottom: 1px;
+}
+.gear-labels .form-label {
+  outline: 1px dashed var(--borderColor);
+  padding: 0px 4px;
+}
+.gear-labels .form-label-centered {
+  outline: 1px dashed var(--borderColor);
+}
+.armor-card {
+  display: grid;
+  font-size: 1rem;
+  grid-template-columns: 1.25rem minmax(0, auto) minmax(0, auto) 1.5rem;
+  gap: 1px;
+  width: 100%;
 }
 section.window-content {
   background: url("../assets/img/transparent.png") !important;
