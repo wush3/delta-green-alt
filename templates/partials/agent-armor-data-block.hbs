@@ -16,5 +16,11 @@
             <div class="form-label">{{localize 'dgalt.labels.armordata.header'}}</div>
             <div class="form-label-centered">{{localize 'dgalt.labels.armordata.protection'}}</div>
         </div>
+
+        <ol class="armor-list">
+            {{#each equipedarmor as |armor id|}}
+            {{> "systems/delta-green-alt/templates/partials/armor-card.hbs" armor}}
+            {{/each}}
+        </ol>
     </div>
 </div>

@@ -1190,11 +1190,6 @@
   gap: 1px;
   width: 100%;
 }
-.weapon-card .item-image {
-  height: 1.25rem;
-  width: 1.25rem;
-  outline: 1px dashed var(--borderColor);
-}
 .weapon-card .weapon-button {
   width: 1.25rem;
   font-size: 0.75rem;
@@ -1251,8 +1246,68 @@
 }
 .weaponsandarmor {
   display: grid;
-  grid-template-columns: 3.5fr 1fr;
+  grid-template-columns: 2.5fr 1fr;
   height: 100%;
+}
+.armor-labels {
+  display: grid;
+  grid-template-columns: 1.25rem minmax(0, auto) 2.1rem 1.5rem;
+  gap: 1px;
+  margin-bottom: 1px;
+}
+.armor-labels .form-label {
+  outline: 1px dashed var(--borderColor);
+  padding: 0px 4px;
+}
+.armor-labels .form-label-centered {
+  outline: 1px dashed var(--borderColor);
+}
+.armor-card {
+  display: grid;
+  font-size: 1rem;
+  grid-template-columns: 1.25rem minmax(0, auto) 2.1rem 1.5rem;
+  gap: 1px;
+  width: 100%;
+}
+.gearcard-image {
+  height: 1.25rem;
+  width: 1.25rem;
+  background-size: contain;
+  outline: 1px dashed var(--borderColor);
+}
+.gearcard-name {
+  color: var(--foreColor);
+  line-height: 1.25rem;
+  height: 1.25rem;
+  overflow: hidden;
+  padding: 0px 2px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  outline: 1px dashed var(--borderColor);
+}
+.gearcard-name input {
+  background-color: var(--borderColor);
+  color: var(--labelColor);
+  height: 1.25rem;
+  overflow: visible;
+  padding: 0;
+}
+.gearcard-stat {
+  color: var(--foreColor);
+  line-height: 1.25rem;
+  height: 1.25rem;
+  justify-content: center;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  gap: 2px;
+  outline: 1px dashed var(--borderColor);
+}
+.gearcard-stat input {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: var(--foreColor);
+  height: 1.25rem;
+  text-align: center;
 }
 section.window-content {
   background: url("../assets/img/transparent.png") !important;

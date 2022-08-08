@@ -84,7 +84,7 @@ export default class DgAgentSheet extends ActorSheet {
             return 0;
         });
 
-        data.armor = data.items.filter(function (item) { return item.type == "Armor" });
+        data.equipedarmor = data.items.filter(function (item) { return item.type == "Armor" });
 
         data.weapons.sort(function (a, b) {
             let nameA = a.name.toUpperCase();
