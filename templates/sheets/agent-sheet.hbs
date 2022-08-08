@@ -56,10 +56,9 @@
             </div>
 
             <div class="tab bio" data-group="primary" data-tab="bio">
-                {{#if (playerHasGamemasterPrivileges)}}
-                <textarea></textarea>
+                {{#if (playerHasGamemasterPrivileges)}}                
                 {{/if}}
-                {{editor content=data.data.description target="data.description" button=true owner=owner
+                {{editor content=data.data.notes target="data.notes" button=true owner=owner
             editable=editable}}
             </div>
 

@@ -70,6 +70,7 @@
             "gear":{},    
             "specialtraining": {},
             "attacks":{},
+            "notes":"",
             
             "options":{
                 "colorhighlight":true,
