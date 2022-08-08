@@ -71,6 +71,7 @@
             "specialtraining": {},
             "attacks":{},
             "notes":"",
+            "gmnotes":"",
             
             "options":{
                 "colorhighlight":true,

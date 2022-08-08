@@ -47,19 +47,26 @@
                         {{> "systems/delta-green-alt/templates/partials/agent-weapons-data-block.hbs"}}
                         {{> "systems/delta-green-alt/templates/partials/agent-armor-data-block.hbs"}}
                     </div>
-                     {{> "systems/delta-green-alt/templates/partials/agent-gear-data-block.hbs"}}
+                    {{> "systems/delta-green-alt/templates/partials/agent-gear-data-block.hbs"}}
 
                 </div>
                 <div class="skills-data-area">
-                   
+
                 </div>
             </div>
 
             <div class="tab bio" data-group="primary" data-tab="bio">
-                {{#if (playerHasGamemasterPrivileges)}}                
+
+                <div class="editor-host">
+                    {{editor content=actor.data.data.notes target="data.notes" button=true
+                    owner=owner editable=editable}}
+                </div>
+
+                {{#if (playerHasGamemasterPrivileges)}}
+                {{editor content=actor.data.data.gmnotes target="data.gmnotes" button=true owner=owner
+                editable=editable}}
                 {{/if}}
-                {{editor content=data.data.notes target="data.notes" button=true owner=owner
-            editable=editable}}
+                
             </div>
 
             <div class="tab unnatural" data-group="primary" data-tab="unnatural">
