@@ -52,12 +52,13 @@ Hooks.once("init", async function()
 
         Handlebars.registerHelper("times", function(n, content)
         {
-            let resut="";
+            let result="";
+            n=Number(n);
             for(let i=0;i<n;i++)
             {
-                result+=content.fn(i);
+                result+=content;
             }
-            return resut;
+            return result;
         });
 
         Handlebars.registerHelper("pickcolor", function(content)
@@ -91,7 +92,9 @@ Hooks.once("init", async function()
             
         });
 
-        
+        Handlebars.registerHelper('playerHasGamemasterPrivileges', function(){
+            return game.user.isGM;
+          });       
 
         
     }

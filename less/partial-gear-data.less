@@ -1,6 +1,6 @@
 .gear-labels {
     display: grid;
-    grid-template-columns: 1.25rem minmax(0, auto) minmax(0, auto) 1.5rem;
+    grid-template-columns: 1.25rem 1fr 0.5fr 2rem 1.5rem;
     //padding-left: .2rem;
     //padding-right: .2rem;
     gap: 1px;
@@ -16,10 +16,14 @@
     }
 }
 
-.armor-card {
+.gear-card {
     display: grid;
     font-size: 1rem; //.75rem
-    grid-template-columns: 1.25rem minmax(0, auto) minmax(0, auto) 1.5rem;
+    grid-template-columns: 1.25rem 1fr 0.5fr 2rem 1.5rem;
     gap: 1px;
     width: 100%;
+}
+
+.spacer{
+    width: 1rem;
 }

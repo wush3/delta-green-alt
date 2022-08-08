@@ -1,13 +1,28 @@
-<li class="item weapon-card" data-skill-id="{{_id}}" data-item-id="{{_id}}">
+<li class="item gear-card" data-gear-id="{{_id}}" data-item-id="{{_id}}">
 
-    <div class="gearcard-name" data-dtype="String">{{name}}
+    <div class="gearcard-image" style="background-image: url('{{img}}')"></div>
+
+    <div class="gearcard-stat">
+     {{{times sortDepth "<div class='spacer'></div>"}}}
+    <input class="form-inputbox stretch inline-edit" data-dtype="String" data-field="name" value="{{name}}"/>
     </div>
 
-    <div class="gearcard-name" data-dtype="String">{{location}}
+    <div class="gearcard-stat">
+    <input class="form-inputbox inline-edit" data-dtype="String" data-field="data.container" value="{{data.container}}"/>
+    </div>
+
+    <div class="gearcard-stat">
+    {{#if (eq type "Weapon")}}
+    <a class="item-control item-checkmark" data-field="data.isequiped"><i
+            class="fas fa-tshirt {{#if data.isequiped}}labelcolor{{else}}bordercolor{{/if}}"></i></a>
+            {{/if}}
+    {{#if (eq type "Armor")}}
+    <a class="item-control item-checkmark" data-field="data.isequiped"><i
+            class="fas fa-tshirt {{#if data.isequiped}}labelcolor{{else}}bordercolor{{/if}}"></i></a>
+            {{/if}}
     </div>
 
 
-    
     <div class="item-controls">
         <a class="item-control item-edit" title="{{localize 'dgalt.contextmenu.edit'}}"><i class="fas fa-edit"></i></a>
         <a class="item-control item-delete" title="{{localize 'dgalt.contextmenu.delete'}}"><i

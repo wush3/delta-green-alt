@@ -273,6 +273,18 @@
   font-size: 0.625rem;
   margin: 1px;
 }
+.dgalt.sheet .item-checkmark .labelcolor,
+.item .item-checkmark .labelcolor {
+  color: var(--labelColor);
+}
+.dgalt.sheet .item-checkmark .forecolor,
+.item .item-checkmark .forecolor {
+  color: var(--foreColor);
+}
+.dgalt.sheet .item-checkmark .bordercolor,
+.item .item-checkmark .bordercolor {
+  color: var(--borderColor);
+}
 .dgalt.sheet .item-controls,
 .item .item-controls {
   font-size: 0.625rem;
@@ -1246,7 +1258,7 @@
 .weaponsandarmor {
   display: grid;
   grid-template-columns: 2.5fr 1fr;
-  height: 100%;
+  height: 33%;
 }
 .armor-labels {
   display: grid;
@@ -1289,7 +1301,7 @@
   color: var(--labelColor);
   height: 1.25rem;
   overflow: visible;
-  padding: 0;
+  padding: 0px 2px;
 }
 .gearcard-stat {
   color: var(--foreColor);
@@ -1299,18 +1311,22 @@
   text-align: center;
   display: flex;
   flex-direction: row;
-  gap: 2px;
+  margin: 0px;
   outline: 1px dashed var(--borderColor);
 }
 .gearcard-stat input {
   background-color: rgba(0, 0, 0, 0.1);
   color: var(--foreColor);
   height: 1.25rem;
-  text-align: center;
+  border: 1px solid var(--color-border-light-tertiary);
+  border-radius: 3px;
+  padding: 1px 3px;
+  margin: 1px;
+  width: 100%;
 }
 .gear-labels {
   display: grid;
-  grid-template-columns: 1.25rem minmax(0, auto) minmax(0, auto) 1.5rem;
+  grid-template-columns: 1.25rem 1fr 0.5fr 2rem 1.5rem;
   gap: 1px;
   margin-bottom: 1px;
 }
@@ -1321,12 +1337,15 @@
 .gear-labels .form-label-centered {
   outline: 1px dashed var(--borderColor);
 }
-.armor-card {
+.gear-card {
   display: grid;
   font-size: 1rem;
-  grid-template-columns: 1.25rem minmax(0, auto) minmax(0, auto) 1.5rem;
+  grid-template-columns: 1.25rem 1fr 0.5fr 2rem 1.5rem;
   gap: 1px;
   width: 100%;
+}
+.spacer {
+  width: 1rem;
 }
 section.window-content {
   background: url("../assets/img/transparent.png") !important;

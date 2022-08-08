@@ -70,7 +70,7 @@ export default class DgAgentSheet extends ActorSheet {
             return 0;
         });
 
-        data.weapons = data.items.filter(function (item) { return item.type == "Weapon" });
+        data.weapons = data.items.filter(function (item) { return (item.type == "Weapon" && item.data.isequiped) });
 
         data.weapons.sort(function (a, b) {
             let nameA = a.name.toUpperCase();
@@ -84,9 +84,9 @@ export default class DgAgentSheet extends ActorSheet {
             return 0;
         });
 
-        data.equipedarmor = data.items.filter(function (item) { return item.type == "Armor" });
+        data.equipedarmor = data.items.filter(function (item) { return (item.type == "Armor" && item.data.isequiped) });
 
-        data.weapons.sort(function (a, b) {
+        data.equipedarmor.sort(function (a, b) {
             let nameA = a.name.toUpperCase();
             let nameB = b.name.toUpperCase();
             if (nameA < nameB) {
@@ -99,8 +99,63 @@ export default class DgAgentSheet extends ActorSheet {
         });
 
 
+
+        data.gearlist = data.items.filter(function (item) { return item.data.isgear });
+
+        for (let element of data.gearlist) {
+            
+            element.sortPath = this.getContainerPath(data.gearlist, element, element.sortDepth);
+            element.sortDepth=element.sortPath.split("|").length - 1;
+            //console.log(element.sortPath+" D:"+element.sortDepth)
+        }
+
+
+        data.gearlist.sort(function (a, b) {
+            /*
+            let locationA = a.data.container.toUpperCase();
+            let locationB = b.data.container.toUpperCase();
+            let nameA = a.name.toUpperCase();
+            let nameB = b.name.toUpperCase();*/
+            let combinedA = a.sortPath;
+            let combinedB = b.sortPath;
+
+            if (a.sortPath < b.sortPath) {
+                return -1;
+            }
+            if (a.sortPath > b.sortPath) {
+                return 1;
+            }
+            return 0;
+
+
+
+
+
+
+        });
 
         return data;
+    }
+
+    getContainerPath(list, item) {
+        let name = item.name.toUpperCase();
+        let container = item.data.container.toUpperCase();
+
+        if (container == "" || name == container) return name;
+
+        for (let listitem of list) {
+            let listname = listitem.name.toUpperCase();
+            if (container == listname) {
+                let sortPath = this.getContainerPath(list, listitem);
+                sortPath = sortPath +"|"+ name;
+                return sortPath;
+
+            }
+        }
+        
+        return container +"|"+ name;
+
+
     }
 
 
@@ -301,12 +356,11 @@ export default class DgAgentSheet extends ActorSheet {
 
             const header = game.i18n.localize("dgalt.labels.rolls.attack")
             //item.roll(mod,targetfield);
-            let sucess=false;
-            if(skill) sucess = await Dice.skillTest(header, icon, label, "using " + skill.name, basetarget, mod);
+            let sucess = false;
+            if (skill) sucess = await Dice.skillTest(header, icon, label, "using " + skill.name, basetarget, mod);
             if (skill && !sucess) skill.update({ ["data.failcheck"]: true });
         }
-        if (rolltype == "damage")
-        {
+        if (rolltype == "damage") {
             const itemId = element.closest(".item").dataset.itemId;
             const item = this.actor.items.get(itemId);
             const header = game.i18n.localize("dgalt.labels.rolls.damage");
@@ -315,15 +369,14 @@ export default class DgAgentSheet extends ActorSheet {
             Dice.damageRoll(header, icon, label, "", dmgformula, mult);
 
         }
-        if (rolltype=="lethality")
-        {
+        if (rolltype == "lethality") {
             const itemId = element.closest(".item").dataset.itemId;
             const item = this.actor.items.get(itemId);
             const header = game.i18n.localize("dgalt.labels.rolls.lethality");
             const lethality = element.dataset.lethality;
             const mult = element.dataset.mult;
             Dice.lethalityRoll(header, icon, label, "", lethality, mult);
-   
+
         }
 
         if (rolltype == "post") {
@@ -334,7 +387,7 @@ export default class DgAgentSheet extends ActorSheet {
             //this.actor.roll(mod,targetfield)
 
             const header = game.i18n.localize("dgalt.labels.rolls.stattest");
-            Dice.skillTest(header, icon, label,"", basetarget, mod);
+            Dice.skillTest(header, icon, label, "", basetarget, mod);
         }
     }
 
