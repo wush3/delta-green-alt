@@ -56,15 +56,17 @@
             </div>
 
             <div class="tab bio" data-group="primary" data-tab="bio">
-
-                <div class="editor-host">
+                NOTES TAB
+                <div class="editor-host fillheight">
                     {{editor content=actor.data.data.notes target="data.notes" button=true
                     owner=owner editable=editable}}
                 </div>
 
                 {{#if (playerHasGamemasterPrivileges)}}
+                <div class="editor-host fillheight">
                 {{editor content=actor.data.data.gmnotes target="data.gmnotes" button=true owner=owner
                 editable=editable}}
+                </div>
                 {{/if}}
                 
             </div>
