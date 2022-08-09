@@ -1,4 +1,4 @@
-import {dgalt} from "./config.js";
+import { dgalt } from "./config.js";
 import DgItem from "./dgitem.js";
 import DgActor from "./dgactor.js";
 import DgItemSheet from "./sheets/dgitemsheet.js";
@@ -6,9 +6,8 @@ import DgAgentSheet from "./sheets/dgagentsheet.js";
 
 import * as Dice from "./dice.js";
 
-async function preloadHandlebarsTemplates()
-{
-    const templatePaths=[
+async function preloadHandlebarsTemplates() {
+    const templatePaths = [
         "systems/delta-green-alt/templates/partials/agent-personal-data-block.hbs",
         "systems/delta-green-alt/templates/partials/agent-statistics-data-block.hbs",
         "systems/delta-green-alt/templates/partials/agent-psychological-data.hbs",
@@ -27,75 +26,78 @@ async function preloadHandlebarsTemplates()
         "systems/delta-green-alt/templates/partials/post-skill.hbs",
         "systems/delta-green-alt/templates/partials/skill-check.hbs",
         "systems/delta-green-alt/templates/partials/roll-skill-improve.hbs",
-        
+
     ];
 
     return loadTemplates(templatePaths);
 }
 
-Hooks.once("init", async function()
-    {
-        console.log('delta-green-alt | Alternative Delta Green system initializing....');
+Hooks.once("init", async function () {
+    console.log('delta-green-alt | Alternative Delta Green system initializing....');
 
-        CONFIG.dgalt=dgalt;
+    /**
+    * Set an initiative formula for the system
+    * @type {String}
+    */
+    CONFIG.Combat.initiative = {
+        formula: "@statistics.dexterity.value",
+        decimals: 0
+    };
 
-        CONFIG.Item.documentClass = DgItem;
-        CONFIG.Actor.documentClass = DgActor;
+    CONFIG.dgalt = dgalt;
 
-        Items.unregisterSheet("core", ItemSheet); 
-        Items.registerSheet("delta-green-alt", DgItemSheet);
+    CONFIG.Item.documentClass = DgItem;
+    CONFIG.Actor.documentClass = DgActor;
 
-        Actors.unregisterSheet("core",ActorSheet);
-        Actors.registerSheet("delta-green-alt",DgAgentSheet);
+    Items.unregisterSheet("core", ItemSheet);
+    Items.registerSheet("delta-green-alt", DgItemSheet);
 
-        preloadHandlebarsTemplates();
+    Actors.unregisterSheet("core", ActorSheet);
+    Actors.registerSheet("delta-green-alt", DgAgentSheet);
 
-        Handlebars.registerHelper("times", function(n, content)
-        {
-            let result="";
-            n=Number(n);
-            for(let i=0;i<n;i++)
-            {
-                result+=content;
-            }
-            return result;
-        });
+    preloadHandlebarsTemplates();
 
-        Handlebars.registerHelper("pickcolor", function(content)
-        {
-            let result="eighty";
-            if (content<80) result="sixty";
-            if (content<60) result="forty";
-            if (content<40) result="twenty";
-            if (content<20) result="belowtwenty";
-            if (content<1) result="zero";
-            
-            return result;
-        });
+    Handlebars.registerHelper("times", function (n, content) {
+        let result = "";
+        n = Number(n);
+        for (let i = 0; i < n; i++) {
+            result += content;
+        }
+        return result;
+    });
 
-        Handlebars.registerHelper("add", function(param1, param2)
-        {
-            return Number(param1)+Number(param2);
-            
-        });
+    Handlebars.registerHelper("pickcolor", function (content) {
+        let result = "eighty";
+        if (content < 80) result = "sixty";
+        if (content < 60) result = "forty";
+        if (content < 40) result = "twenty";
+        if (content < 20) result = "belowtwenty";
+        if (content < 1) result = "zero";
 
-        Handlebars.registerHelper("selectattack", function(attacks, key)
-        {
-            if(attacks)
+        return result;
+    });
+
+    Handlebars.registerHelper("add", function (param1, param2) {
+        return Number(param1) + Number(param2);
+
+    });
+
+    Handlebars.registerHelper("selectattack", function (attacks, key) {
+        if (attacks)
             return Number(attacks[key]);
-            
-        });
 
-        Handlebars.registerHelper("selectattackmod", function(attacks, key, mod)
-        {   if(attacks)
-            return Number(attacks[key])+Number(mod);
-            
-        });
+    });
 
-        Handlebars.registerHelper('playerHasGamemasterPrivileges', function(){
-            return game.user.isGM;
-          });       
+    Handlebars.registerHelper("selectattackmod", function (attacks, key, mod) {
+        if (attacks)
+            return Number(attacks[key]) + Number(mod);
 
-        
-    }
+    });
+
+    Handlebars.registerHelper('playerHasGamemasterPrivileges', function () {
+        return game.user.isGM;
+    });
+
+
+}
 );
