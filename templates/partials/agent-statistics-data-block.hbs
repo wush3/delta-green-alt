@@ -248,8 +248,13 @@
         <div class="hp-text">
             <div>{{localize 'dgalt.labels.statdata.hplabel'}}</div>
             <div><i class="fas fa-shield-alt"></i>
-                <input class="form-inputbox-number" name="data.armorvalue" type="number" value="{{actor.data.data.armorvalue}}"
-                    data-dtype="Number" />
+                <input class="form-inputbox-number" name="data.armorvalue" type="number"
+                    value="{{actor.data.data.armorvalue}}" data-dtype="Number" />
+            </div>
+            <div>
+                <i class="fas fa-medkit" title="{{localize 'dgalt.labels.statdata.firstaid'}}"></i>
+                <a class="item-control item-checkmark" title="{{localize 'dgalt.labels.statdata.firstaid'}}" data-isactor="1"
+                data-field="data.firstaidapplied"><i class="fas {{#if actor.data.data.firstaidapplied}}fa-plus-square{{else}}fa-square{{/if}}"></i></a>               
             </div>
         </div>
         <div class="hp-max">
@@ -281,9 +286,8 @@
             {{actor.data.data.sanity.currentbreakingpoint}}
         </div>
         <div class="san-text item-roll" data-rolltype="agent" data-mod="0"
-                    data-icon="systems/delta-green-alt/assets/icons/sanity.svg"
-                    data-label="{{localize 'dgalt.labels.statdata.sanity'}}"
-                    data-basetarget="{{actor.data.data.sanity.value}}">
+            data-icon="systems/delta-green-alt/assets/icons/sanity.svg"
+            data-label="{{localize 'dgalt.labels.statdata.sanity'}}" data-basetarget="{{actor.data.data.sanity.value}}">
             {{localize 'dgalt.labels.statdata.sanlabel'}}
         </div>
         <div class="san-max form-inputbox-centered">{{actor.data.data.sanity.max}}</div>

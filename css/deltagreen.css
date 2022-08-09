@@ -498,6 +498,22 @@
 .item .container .sheet-body .fillheight {
   height: 100%;
 }
+.flexvert {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.editor {
+  height: 100%;
+  margin: 15px;
+  border: 1px solid;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+}
+.mce-content-bod {
+  color: var(--labelColor);
+}
 .codename {
   margin-top: auto;
   text-align: center;

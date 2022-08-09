@@ -9,6 +9,8 @@
         .flexcol {
             height: 100%;
         }
+
+       
     }
 
 
@@ -37,7 +39,7 @@
         text-decoration: line-through var(--foreColor) solid 2px;
     }
 
-    
+
 
 
 
@@ -95,8 +97,7 @@
         //margin: 1px;
     }
 
-    .dice-field
-    {
+    .dice-field {
         border: 1px solid var(--color-border-light-tertiary);
         border-radius: 3px;
         padding: 1px 3px;
@@ -170,16 +171,16 @@
         margin: 1px;
         //margin-top: 3px;
 
-        .labelcolor
-        {
+        .labelcolor {
             color: var(--labelColor);
         }
-        .forecolor{
+
+        .forecolor {
             color: var(--foreColor);
         }
-        .bordercolor
-        {
-            color:var(--borderColor);
+
+        .bordercolor {
+            color: var(--borderColor);
         }
     }
 
@@ -285,19 +286,19 @@
 
         }
 
-        
+
         .mod-selector-hidden {
-            
+
             display: none;
             flex-direction: row;
             font-size: 0.625rem;
             line-height: 1rem;
-            
+
             text-align: center;
-            
-            
-            
-            
+
+
+
+
 
             .mod-button {
                 border: 1px solid var(--foreColor);
@@ -315,16 +316,16 @@
         }
 
         .mod-selector {
-            
+
             display: flex;
             flex-direction: row;
             font-size: 0.625rem;
             line-height: 1rem;
-            
+
             text-align: center;
-            
-            
-            
+
+
+
 
             .mod-button {
                 border: 1px solid var(--foreColor);
@@ -410,7 +411,13 @@
                 color: var(--foreColor);
                 background-color: var(--backColor);
                 margin-bottom: 1rem;
+                
+                
+               
             }
+
+            
+            
 
             .sheet-page {
                 height: 100%;
@@ -438,17 +445,27 @@
         }
 
 
-
-
-
-
-
-
-
     }
+
+   
 }
 
-.editor-host{
+.flexvert{
+    display: flex;
+    flex-direction: column;
     height: 100%;
-    border: 1px solid var(--borderColor);
 }
+
+.editor {
+    height: 100%;
+    margin: 15px;
+    border: 1px solid;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;    
+}
+
+.mce-content-bod{
+    color: var(--labelColor);
+}
+

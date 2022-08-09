@@ -49,6 +49,7 @@
                 "max": 10                
             },
             "armorvalue":0,
+            "firstaidapplied":false,
             "wp": {
                 "value": 0,
                 "min": 0,

@@ -98,14 +98,18 @@ export default class DgAgentSheet extends ActorSheet {
             return 0;
         });
 
+        for (let element of data.equipedarmor) {
+            this.actor.data.data.armorvalue += element.data.protection;
+        }
+
 
 
         data.gearlist = data.items.filter(function (item) { return item.data.isgear });
 
         for (let element of data.gearlist) {
-            
+
             element.sortPath = this.getContainerPath(data.gearlist, element, element.sortDepth);
-            element.sortDepth=element.sortPath.split("|").length - 1;
+            element.sortDepth = element.sortPath.split("|").length - 1;
             //console.log(element.sortPath+" D:"+element.sortDepth)
         }
 
@@ -147,13 +151,13 @@ export default class DgAgentSheet extends ActorSheet {
             let listname = listitem.name.toUpperCase();
             if (container == listname) {
                 let sortPath = this.getContainerPath(list, listitem);
-                sortPath = sortPath +"|"+ name;
+                sortPath = sortPath + "|" + name;
                 return sortPath;
 
             }
         }
-        
-        return container +"|"+ name;
+
+        return container + "|" + name;
 
 
     }
@@ -250,10 +254,16 @@ export default class DgAgentSheet extends ActorSheet {
     async _onCheckboxClick(event) {
         event.preventDefault();
         const element = event.currentTarget;
-        const itemId = element.closest(".item").dataset.itemId;
-        const item = this.actor.items.get(itemId);
-        const field = element.dataset.field;
-        return item.update({ [field]: !getProperty(item.data, field) });
+        if (element.dataset.isactor) {
+            const field=element.dataset.field;
+            this.actor.update( { [field] : !getProperty(this.actor.data, field) } );
+
+        } else {
+            const itemId = element.closest(".item").dataset.itemId;
+            const item = this.actor.items.get(itemId);
+            const field = element.dataset.field;
+            return item.update({ [field]: !getProperty(item.data, field) });
+        }
     }
 
 

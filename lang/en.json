@@ -100,7 +100,8 @@
                 "wplabel": "Willpower Points [WP]",
                 "sanlabel": "Sanity Points [SAN]",
                 "sanity":"Sanity",
-                "breaklabel": "Breaking Point [BP]"
+                "breaklabel": "Breaking Point [BP]",
+                "firstaid":"First Aid applied"
             },
             "skilldata": {
                 "header": "APPLICABLE SKILL SETS",
