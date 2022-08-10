@@ -83,6 +83,26 @@
           "entity":"Item",
           "private":"false"
         }
+        ,
+        {
+          "name":"firearms",
+          "label":"Firearms",
+          "system":"delta-green-alt",
+          "module":"delta-green-alt",
+          "path":"./packs/firearms.db",
+          "entity":"Item",
+          "private":"false"
+        }
+        ,
+        {
+          "name":"armor",
+          "label":"Armor",
+          "system":"delta-green-alt",
+          "module":"delta-green-alt",
+          "path":"./packs/armor.db",
+          "entity":"Item",
+          "private":"false"
+        }
       ],
       "system": [],
       "dependencies": [],      
