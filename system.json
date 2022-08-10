@@ -43,6 +43,46 @@
           "entity":"Item",
           "private":"false"
         }
+        ,
+        {
+          "name":"tear-gas-and-pepper-spray",
+          "label":"Tear Gas and Pepper Spray",
+          "system":"delta-green-alt",
+          "module":"delta-green-alt",
+          "path":"./packs/tear-gas-and-pepper-spray.db",
+          "entity":"Item",
+          "private":"false"
+        }
+        ,
+        {
+          "name":"stun-grenades",
+          "label":"Stun Grenades",
+          "system":"delta-green-alt",
+          "module":"delta-green-alt",
+          "path":"./packs/stun-grenades.db",
+          "entity":"Item",
+          "private":"false"
+        }
+        ,
+        {
+          "name":"hand-to-hand-weapons",
+          "label":"Hand-to-Hand Weapons",
+          "system":"delta-green-alt",
+          "module":"delta-green-alt",
+          "path":"./packs/hand-to-hand-weapons.db",
+          "entity":"Item",
+          "private":"false"
+        }
+        ,
+        {
+          "name":"electroshock-weapons",
+          "label":"Electroshock Weapons",
+          "system":"delta-green-alt",
+          "module":"delta-green-alt",
+          "path":"./packs/electroshock-weapons.db",
+          "entity":"Item",
+          "private":"false"
+        }
       ],
       "system": [],
       "dependencies": [],      
