@@ -98,9 +98,13 @@ export default class DgAgentSheet extends ActorSheet {
             return 0;
         });
 
+        let totalArmor;
         for (let element of data.equipedarmor) {
-            this.actor.data.data.armorvalue += element.data.protection;
+            
+            totalArmor += element.data.protection;
+            
         }
+        this.actor.data.data.armorvalue =totalArmor;
 
 
 
