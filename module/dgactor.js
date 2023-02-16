@@ -11,23 +11,24 @@ export default class DgActor extends Actor {
 
 
 
-        let pow = 0;
-
+        
         for (let [key, statistic] of Object.entries(_data.statistics)) {
 
             let statfield = "data.statistics." + key + ".x5";
             let statx5 = statistic.value * 5;
 
-            //this.update({[statfield]:statx5});
+            
 
             _data.statistics[key].x5 = statx5;
-            if (key == "power") pow = statistic.value;
+            
         }
 
-        let maxhp = Math.ceil((_data.statistics.constitution.value + _data.statistics.strength.value) / 2);
-        //this.update({["data.health.max"]: maxhp});
-        this.data.data.health.max = maxhp;
-        this.data.data.wp.max = pow;
+        let maxhp = Math.ceil((Number(_data.statistics.constitution.value) + Number(_data.statistics.strength.value)) / 2);
+        let pow = Number(_data.statistics.power.value);
+        
+        
+        this.system.health.max = maxhp;
+        this.system.wp.max = pow;
 
         let unnatural = this.data.items.find(function (item) {
             return (item.type == "Skill" && item.name == "Unnatural")
