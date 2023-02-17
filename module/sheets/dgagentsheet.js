@@ -119,11 +119,7 @@ export default class DgAgentSheet extends ActorSheet {
 
 
         data.gearlist.sort(function (a, b) {
-            /*
-            let locationA = a.data.container.toUpperCase();
-            let locationB = b.data.container.toUpperCase();
-            let nameA = a.name.toUpperCase();
-            let nameB = b.name.toUpperCase();*/
+           
             let combinedA = a.sortPath;
             let combinedB = b.sortPath;
 

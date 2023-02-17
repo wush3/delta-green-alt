@@ -18,44 +18,7 @@ export default class DgItemSheet extends ItemSheet {
     getData() {
         const data = super.getData();
         data.config = CONFIG.dgalt;
-/* 
-        if (this.item.actor && this.item.type == "Weapon") {
 
-
-
-            let attackskill = this.item.system.attackskill
-            switch (attackskill) {
-                case "none":
-                    data.system.attackvalue = 0;
-                    break;
-                case "unarmedcombat":
-                    data.system.attackvalue = this.item.actor.getSkillValueByName(game.i18n.localize("dgalt.attackskills.unarmedcombat"));
-                    break;
-                case "meleeweapons":
-                    data.system.attackvalue = this.item.actor.getSkillValueByName(game.i18n.localize("dgalt.attackskills.meleeweapons"));
-                    break;
-                case "athletics":
-                    data.system.attackvalue = this.item.actor.getSkillValueByName(game.i18n.localize("dgalt.attackskills.athletics"));
-                    break;
-                case "firearms":
-                    data.system.attackvalue = this.item.actor.getSkillValueByName(game.i18n.localize("dgalt.attackskills.firearms"));
-                    break;
-                case "heavyweapons":
-                    data.system.attackvalue = this.item.actor.getSkillValueByName(game.i18n.localize("dgalt.attackskills.heavyweapons"));
-                    break;
-                case "demolitions":
-                    data.system.attackvalue = this.item.actor.getSkillValueByName(game.i18n.localize("dgalt.attackskills.demolitions"));
-                    break;
-                case "artillery":
-                    data.system.attackvalue = this.item.actor.getSkillValueByName(game.i18n.localize("dgalt.attackskills.artillery"));
-                    break;
-                default:
-                    data.system.attackvalue = this.item.actor.getStatx5ValueByName("dexterity");
-                    break;
-            }
-           
-
-        }*/
         return data;
 
     }

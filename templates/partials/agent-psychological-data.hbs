@@ -43,26 +43,26 @@
                 <div class="form-text-small">{{localize 'dgalt.labels.psychdata.violence'}}</div>
                 <div class="custom-check">
                     <a class="item-control adaptation-checkmark" data-number="1" data-adapt="violence"><i
-                            class="fas {{#if (gte data.data.sanity.violencelevel 1)}}fa-plus-square{{else}}fa-square{{/if}}"></i></a>
+                            class="fas {{#if (gte @root.actor.system.sanity.violencelevel 1)}}fa-plus-square{{else}}fa-square{{/if}}"></i></a>
                     <a class="item-control adaptation-checkmark" data-number="2" data-adapt="violence"><i
-                            class="fas {{#if (gte data.data.sanity.violencelevel 2)}}fa-plus-square{{else}}fa-square{{/if}}"></i></a>
+                            class="fas {{#if (gte @root.actor.system.sanity.violencelevel 2)}}fa-plus-square{{else}}fa-square{{/if}}"></i></a>
                     <a class="item-control adaptation-checkmark" data-number="3" data-adapt="violence"><i
-                            class="fas {{#if (gte data.data.sanity.violencelevel 3)}}fa-plus-square{{else}}fa-square{{/if}}"></i></a>
+                            class="fas {{#if (gte @root.actor.system.sanity.violencelevel 3)}}fa-plus-square{{else}}fa-square{{/if}}"></i></a>
                 </div>
                
-               <div class="form-label {{#unless (gte data.data.sanity.violencelevel 3)}}invisible{{/unless}}">{{localize 'dgalt.labels.psychdata.adapted'}}</div>
+               <div class="form-label {{#unless (gte @root.actor.system.sanity.violencelevel 3)}}invisible{{/unless}}">{{localize 'dgalt.labels.psychdata.adapted'}}</div>
             
                 <div class="form-text-small">{{localize 'dgalt.labels.psychdata.helplessness'}}</div>
                 <div class="custom-check">
                     <a class="item-control adaptation-checkmark" data-number="1" data-adapt="helplessness"><i
-                            class="fas {{#if (gte data.data.sanity.helplessnesslevel 1)}}fa-plus-square{{else}}fa-square{{/if}}"></i></a>
+                            class="fas {{#if (gte @root.actor.system.sanity.helplessnesslevel 1)}}fa-plus-square{{else}}fa-square{{/if}}"></i></a>
                     <a class="item-control adaptation-checkmark" data-number="2" data-adapt="helplessness"><i
-                            class="fas {{#if (gte data.data.sanity.helplessnesslevel 2)}}fa-plus-square{{else}}fa-square{{/if}}"></i></a>
+                            class="fas {{#if (gte @root.actor.system.sanity.helplessnesslevel 2)}}fa-plus-square{{else}}fa-square{{/if}}"></i></a>
                     <a class="item-control adaptation-checkmark" data-number="3" data-adapt="helplessness"><i
-                            class="fas {{#if (gte data.data.sanity.helplessnesslevel 3)}}fa-plus-square{{else}}fa-square{{/if}}"></i></a>
+                            class="fas {{#if (gte @root.actor.system.sanity.helplessnesslevel 3)}}fa-plus-square{{else}}fa-square{{/if}}"></i></a>
                 </div>
                 
-                <div class="form-label {{#unless (gte data.data.sanity.helplessnesslevel 3)}}invisible{{/unless}}">{{localize 'dgalt.labels.psychdata.adapted'}}</div>
+                <div class="form-label {{#unless (gte @root.actor.system.sanity.helplessnesslevel 3)}}invisible{{/unless}}">{{localize 'dgalt.labels.psychdata.adapted'}}</div>
                
             </div>
 
