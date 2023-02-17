@@ -22,18 +22,18 @@
                 <div class="expand">
                     <div class="form-label">{{localize 'dgalt.labels.bondsheet.relationship'}}</div>
                     <input class="form-inputbox" name="data.relationship" type="text"
-                        value="{{data.data.relationship}}" />
+                        value="{{item.system.relationship}}" />
                 </div>
                 <div>
                     <div class="form-label-centered">{{localize 'dgalt.labels.bondsheet.score'}}</div>
                     <input class="form-inputbox-number" name="data.value" type="number" data-dtype="number"
-                        value="{{data.data.value}}" />
+                        value="{{item.system.value}}" />
                 </div>
             </div>
 
 
             <label class="form-label">{{localize 'dgalt.labels.bondsheet.description'}}</label>
-            {{editor content=data.data.description target="data.description" button=true owner=owner editable=editable}}
+            {{editor content=item.system.description target="system.description" button=true owner=owner editable=editable}}
         </div>
 
 
