@@ -25,7 +25,7 @@
                 <div class="form-hor-group">
                     <div>
                         <div class="form-label">{{localize 'dgalt.labels.weaponsheet.attackskill'}}</div>
-                        <select class="select" name="data.attackskill">
+                        <select class="select" name="system.attackskill">
                             {{selectOptions config.attackskills selected=item.system.attackskill localize=true}}
                         </select>
 
@@ -33,13 +33,13 @@
                     <div class="center">
                         <div class="form-label">%</div>
 
-                        <input class="form-inputbox-number" type="number" name="data.attackvalue" data-dtype="number"
+                        <input class="form-inputbox-number" type="number" name="system.attackvalue" data-dtype="number"
                             readonly value="{{selectattack item.actor.system.attacks item.system.attackskill}}">
 
                     </div>
                     <div class="center">
                         <div class="form-label">{{localize 'dgalt.labels.weaponsheet.mod'}}</div>
-                        <input class="form-inputbox-number" type="number" name="data.mod" value="{{item.system.mod}}"
+                        <input class="form-inputbox-number" type="number" name="system.mod" value="{{item.system.mod}}"
                             data-dtype="number" />
                     </div>
                 </div>
@@ -57,7 +57,7 @@
 
                     <div class="center">
                         <div class="form-label">{{localize 'dgalt.labels.weaponsheet.damage'}}</div>
-                        <input class="form-inputbox-centered shorttext" type="text" name="data.damage"
+                        <input class="form-inputbox-centered shorttext" type="text" name="system.damage"
                             value="{{item.system.damage}}" data-dtype="string" />
                     </div>
 
@@ -70,18 +70,18 @@
 
                     <div class="center contract">
                         <div class="form-label">{{localize 'dgalt.labels.weaponsheet.ap'}}</div>
-                        <input class="form-inputbox-number" type="number" name="data.ap" value="{{item.system.ap}}"
+                        <input class="form-inputbox-number" type="number" name="system.ap" value="{{item.system.ap}}"
                             data-dtype="number" />
                     </div>
 
                     <div class="center">
                         <div class="form-label">{{localize 'dgalt.labels.weaponsheet.lethality'}}</div>
-                        <input class="form-inputbox-number" type="number" name="data.lethality"
+                        <input class="form-inputbox-number" type="number" name="system.lethality"
                             value="{{item.system.lethality}}" data-dtype="number" />
                     </div>
                     <div class="center">
                         <div class="form-label">{{localize 'dgalt.labels.weaponsheet.killradius'}}</div>
-                        <input class="form-inputbox-number" type="number" name="data.killradius"
+                        <input class="form-inputbox-number" type="number" name="system.killradius"
                             value="{{item.system.killradius}}" data-dtype="number" />
                     </div>
 
@@ -97,7 +97,7 @@
                     {{#if item.system.isranged}}
                     <div class="center">
                         <div class="form-label">{{localize 'dgalt.labels.weaponsheet.range'}}</div>
-                        <input class="form-inputbox-number" type="number" name="data.range" value="{{item.system.range}}"
+                        <input class="form-inputbox-number" type="number" name="system.range" value="{{item.system.range}}"
                             data-dtype="number" />
                     </div>
                     {{/if}}
@@ -114,19 +114,19 @@
 
                     <div class="center">
                         <div class="form-label">{{localize 'dgalt.labels.weaponsheet.currammo'}}</div>
-                        <input class="form-inputbox-number" type="number" name="data.ammocurrent"
+                        <input class="form-inputbox-number" type="number" name="system.ammocurrent"
                             value="{{item.system.ammocurrent}}" data-dtype="number" />
                     </div>
                     /
                     <div class="center">
                         <div class="form-label">{{localize 'dgalt.labels.weaponsheet.maxammo'}}</div>
-                        <input class="form-inputbox-number" type="number" name="data.ammomax"
+                        <input class="form-inputbox-number" type="number" name="system.ammomax"
                             value="{{item.system.ammomax}}" data-dtype="number" />
                     </div>
 
                     <div class="center">
                         <div class="form-label">{{localize 'dgalt.labels.weaponsheet.ammoperattack'}}</div>
-                        <input class="form-inputbox-number" type="number" name="data.ammoperattack"
+                        <input class="form-inputbox-number" type="number" name="system.ammoperattack"
                             value="{{item.system.ammoperattack}}" data-dtype="number" />
                     </div>
 
@@ -139,7 +139,7 @@
                     <div>
                         <div class="form-label">{{localize
                             'dgalt.labels.weaponsheet.expense'}}</div>
-                        <select class="select" name="data.expense">
+                        <select class="select" name="system.expense">
                             {{selectOptions config.expense selected=item.system.expense localize=true}}
                         </select>
                     </div>

@@ -19,7 +19,7 @@
                 </div>
                 <div class="center">
                     <div class="form-label">{{localize 'dgalt.labels.armordata.protection'}}</div>
-                    <input class="form-inputbox-number-stretch" type="number" name="data.protection" value="{{item.system.protection}}"
+                    <input class="form-inputbox-number-stretch" type="number" name="system.protection" value="{{item.system.protection}}"
                         data-dtype="number" />
                 </div>
 
@@ -32,7 +32,7 @@
                     <div>
                         <div class="form-label">{{localize
                             'dgalt.labels.weaponsheet.expense'}}</div>
-                        <select class="select" name="data.expense">
+                        <select class="select" name="system.expense">
                             {{selectOptions config.expense selected=item.system.expense localize=true}}
                         </select>
                     </div>

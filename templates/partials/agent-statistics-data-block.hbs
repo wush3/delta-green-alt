@@ -48,11 +48,11 @@
             </div>
         </div>
         <div class="str-score">
-            <input class="form-inputbox-centered" name="data.statistics.strength.value" type="number"
+            <input class="form-inputbox-centered" name="system.statistics.strength.value" type="number"
                 data-dtype="number" value="{{actor.system.statistics.strength.value}}" />
         </div>
         <div class="str-x5 form-inputbox-centered">{{actor.system.statistics.strength.x5}}</div>
-        <div class="str-feature"><input class="form-inputbox" name="data.statistics.strength.feature" type="text"
+        <div class="str-feature"><input class="form-inputbox" name="system.statistics.strength.feature" type="text"
                 value="{{actor.system.statistics.strength.feature}}" /></div>
 
 
@@ -83,10 +83,10 @@
                     data-basetarget="{{actor.system.statistics.constitution.x5}}">+40</div>
             </div>
         </div>
-        <div class="con-score"><input class="form-inputbox-centered" name="data.statistics.constitution.value"
+        <div class="con-score"><input class="form-inputbox-centered" name="system.statistics.constitution.value"
                 type="number" data-dtype="number" value="{{actor.system.statistics.constitution.value}}" /></div>
         <div class="con-x5 form-inputbox-centered">{{actor.system.statistics.constitution.x5}}</div>
-        <div class="con-feature"><input class="form-inputbox" name="data.statistics.constitution.feature" type="text"
+        <div class="con-feature"><input class="form-inputbox" name="system.statistics.constitution.feature" type="text"
                 value="{{actor.system.statistics.constitution.feature}}" /></div>
 
 
@@ -117,11 +117,11 @@
                     data-basetarget="{{actor.system.statistics.dexterity.x5}}">+40</div>
             </div>
         </div>
-        <div class="dex-score"><input class="form-inputbox-centered" name="data.statistics.dexterity.value"
+        <div class="dex-score"><input class="form-inputbox-centered" name="system.statistics.dexterity.value"
                 type="number" data-dtype="number" value="{{actor.system.statistics.dexterity.value}}" />
         </div>
         <div class="dex-x5 form-inputbox-centered">{{actor.system.statistics.dexterity.x5}}</div>
-        <div class="dex-feature"><input class="form-inputbox" name="data.statistics.dexterity.feature" type="text"
+        <div class="dex-feature"><input class="form-inputbox" name="system.statistics.dexterity.feature" type="text"
                 value="{{actor.system.statistics.dexterity.feature}}" /></div>
 
 
@@ -153,10 +153,10 @@
             </div>
         </div>
 
-        <div class="int-score"><input class="form-inputbox-centered" name="data.statistics.intelligence.value"
+        <div class="int-score"><input class="form-inputbox-centered" name="system.statistics.intelligence.value"
                 type="number" data-dtype="number" value="{{actor.system.statistics.intelligence.value}}" /></div>
         <div class="int-x5 form-inputbox-centered">{{actor.system.statistics.intelligence.x5}}</div>
-        <div class="int-feature"><input class="form-inputbox" name="data.statistics.intelligence.feature" type="text"
+        <div class="int-feature"><input class="form-inputbox" name="system.statistics.intelligence.feature" type="text"
                 value="{{actor.system.statistics.intelligence.feature}}" /></div>
 
 
@@ -191,11 +191,11 @@
             </div>
         </div>
 
-        <div class="pow-score"><input class="form-inputbox-centered" name="data.statistics.power.value" type="number"
+        <div class="pow-score"><input class="form-inputbox-centered" name="system.statistics.power.value" type="number"
                 data-dtype="number" value="{{actor.system.statistics.power.value}}" />
         </div>
         <div class="pow-x5 form-inputbox-centered">{{actor.system.statistics.power.x5}}</div>
-        <div class="pow-feature"><input class="form-inputbox" name="data.statistics.power.feature" type="text"
+        <div class="pow-feature"><input class="form-inputbox" name="system.statistics.power.feature" type="text"
                 value="{{actor.system.statistics.power.feature}}" /></div>
 
 
@@ -228,11 +228,11 @@
                     data-basetarget="{{actor.system.statistics.charisma.x5}}">+40</div>
             </div>
         </div>
-        <div class="cha-score"><input class="form-inputbox-centered" name="data.statistics.charisma.value" type="number"
+        <div class="cha-score"><input class="form-inputbox-centered" name="system.statistics.charisma.value" type="number"
                 data-dtype="number" value="{{actor.system.statistics.charisma.value}}" />
         </div>
         <div class="cha-x5 form-inputbox-centered">{{actor.system.statistics.charisma.x5}}</div>
-        <div class="cha-feature"><input class="form-inputbox" name="data.statistics.charisma.feature" type="text"
+        <div class="cha-feature"><input class="form-inputbox" name="system.statistics.charisma.feature" type="text"
                 value="{{actor.system.statistics.charisma.feature}}" /></div>
     </div>
     <div class="derived-block">
@@ -248,7 +248,7 @@
         <div class="hp-text">
             <div>{{localize 'dgalt.labels.statdata.hplabel'}}</div>
             <div><i class="fas fa-shield-alt"></i>
-                <input class="form-inputbox-number" name="data.armorvalue" type="number"
+                <input class="form-inputbox-number" name="system.armorvalue" type="number"
                     value="{{actor.system.armorvalue}}" data-dtype="Number" />
             </div>
             <div>
@@ -258,22 +258,22 @@
             </div>
         </div>
         <div class="hp-max">
-            <input class="form-inputbox-centered" name="data.health.max" type="text"
+            <input class="form-inputbox-centered" name="system.health.max" type="text"
                 value="{{actor.system.health.max}}" disabled />
         </div>
         <div class="hp-current">
-            <input class="form-inputbox-centered" name="data.health.value" type="text"
+            <input class="form-inputbox-centered" name="system.health.value" type="text"
                 value="{{actor.system.health.value}}" />
         </div>
         <div class="wp-text">
             {{localize 'dgalt.labels.statdata.wplabel'}}
         </div>
         <div class="wp-max">
-            <input class="form-inputbox-centered" name="data.wp.max" type="text" value="{{actor.system.wp.max}}"
+            <input class="form-inputbox-centered" name="system.wp.max" type="text" value="{{actor.system.wp.max}}"
                 disabled />
         </div>
         <div class="wp-current">
-            <input class="form-inputbox-centered" name="data.wp.value" type="text"
+            <input class="form-inputbox-centered" name="system.wp.value" type="text"
                 value="{{actor.system.wp.value}}" />
         </div>
         <div class="break-text">
@@ -292,7 +292,7 @@
         </div>
         <div class="san-max form-inputbox-centered">{{actor.system.sanity.max}}</div>
         <div class="san-current">
-            <input class="form-inputbox-centered" name="data.sanity.value" type="text"
+            <input class="form-inputbox-centered" name="system.sanity.value" type="text"
                 value="{{actor.system.sanity.value}}" />
         </div>
     </div>

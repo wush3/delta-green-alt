@@ -9,7 +9,7 @@ export default class DgItem extends Item {
     }
 
     async rollImprovement() {
-        let roll = new Roll('1D4', this.actor.data);
+        let roll = new Roll('1D4');
         await roll.evaluate({ async: true });
         let newvalue = Number(this.system.value) + Number(roll.total);
         let chatData = {
@@ -21,7 +21,7 @@ export default class DgItem extends Item {
             rollMode: game.settings.get("core", "rollMode")
         };
         let cardData = {
-            ...this.data,
+            ...this,
             owner: this.actor.id,
             rollresult: roll,
             newskillvalue: newvalue

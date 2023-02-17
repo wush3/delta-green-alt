@@ -17,7 +17,7 @@
                 {{#if item.system.isdisorder}}
                 <div class="expand">
                     <div class="form-label">{{localize 'dgalt.labels.mentalsheet.alternative'}}</div>
-                    <input class="form-inputbox item-label" name="data.alternative" type="text"
+                    <input class="form-inputbox item-label" name="system.alternative" type="text"
                         value="{{item.system.alternative}}" />
                 </div>
                 {{else}}
@@ -44,7 +44,7 @@
 
                 <div class="expand">
                     <div class="form-label">{{localize 'dgalt.labels.mentalsheet.trigger'}}</div>
-                    <input class="form-inputbox" name="data.trigger" type="text" value="{{item.system.trigger}}" />
+                    <input class="form-inputbox" name="system.trigger" type="text" value="{{item.system.trigger}}" />
                 </div>
                 <div class="center">
                     <div class="form-label">{{localize
