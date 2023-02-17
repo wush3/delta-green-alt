@@ -2,35 +2,27 @@ export default class DgActor extends Actor {
     prepareData() {
         super.prepareData();
 
-        const actorData = this.data;
-        const _data = actorData.data;
-        const _flags = actorData.flags;
-
-        //console.log('actor.js prepareData');
-        //console.log(this);
-
-
-
         
-        for (let [key, statistic] of Object.entries(_data.statistics)) {
+        
+        for (let [key, statistic] of Object.entries(this.system.statistics)) {
 
-            let statfield = "data.statistics." + key + ".x5";
+            let statfield = "statistics." + key + ".x5";
             let statx5 = statistic.value * 5;
 
             
 
-            _data.statistics[key].x5 = statx5;
+            this.system.statistics[key].x5 = statx5;
             
         }
 
-        let maxhp = Math.ceil((Number(_data.statistics.constitution.value) + Number(_data.statistics.strength.value)) / 2);
-        let pow = Number(_data.statistics.power.value);
+        let maxhp = Math.ceil((Number(this.system.statistics.constitution.value) + Number(this.system.statistics.strength.value)) / 2);
+        let pow = Number(this.system.statistics.power.value);
         
         
         this.system.health.max = maxhp;
         this.system.wp.max = pow;
 
-        let unnatural = this.data.items.find(function (item) {
+        let unnatural = this.items.find(function (item) {
             return (item.type == "Skill" && item.name == "Unnatural")
         })
 
@@ -41,25 +33,25 @@ export default class DgActor extends Actor {
             //this.update({["data.sanity.max"]: 99 });
             this.system.sanity.max = 99;
 
-        if (_data.sanity.value > _data.sanity.max) //this.update({["data.sanity.value"]:_data.sanity.max})
+        if (this.system.sanity.value > this.system.sanity.max) //this.update({["data.sanity.value"]:_data.sanity.max})
             this.system.sanity.value = this.system.sanity.max;
 
         //if (_data.sanity.currentbreakingpoint > 99)
         //    this._setBreakPoint();    
 
-        _data.attacks.none = 0;
-        _data.attacks.unarmedcombat = this.getSkillValueByName(game.i18n.localize("dgalt.attackskills.unarmedcombat"));
-        _data.attacks.meleeweapons = this.getSkillValueByName(game.i18n.localize("dgalt.attackskills.meleeweapons"));
-        _data.attacks.dextimesfive = _data.statistics["dexterity"].x5;
-        _data.attacks.athletics = this.getSkillValueByName(game.i18n.localize("dgalt.attackskills.athletics"));
-        _data.attacks.firearms = this.getSkillValueByName(game.i18n.localize("dgalt.attackskills.firearms"));
-        _data.attacks.heavyweapons = this.getSkillValueByName(game.i18n.localize("dgalt.attackskills.heavyweapons"));
-        _data.attacks.demolitions = this.getSkillValueByName(game.i18n.localize("dgalt.attackskills.demolitions"));
-        _data.attacks.artillery = this.getSkillValueByName(game.i18n.localize("dgalt.attackskills.artillery"));
+        this.system.attacks.none = 0;
+        this.system.attacks.unarmedcombat = this.getSkillValueByName(game.i18n.localize("dgalt.attackskills.unarmedcombat"));
+        this.system.attacks.meleeweapons = this.getSkillValueByName(game.i18n.localize("dgalt.attackskills.meleeweapons"));
+        this.system.attacks.dextimesfive = this.system.statistics["dexterity"].x5;
+        this.system.attacks.athletics = this.getSkillValueByName(game.i18n.localize("dgalt.attackskills.athletics"));
+        this.system.attacks.firearms = this.getSkillValueByName(game.i18n.localize("dgalt.attackskills.firearms"));
+        this.system.attacks.heavyweapons = this.getSkillValueByName(game.i18n.localize("dgalt.attackskills.heavyweapons"));
+        this.system.attacks.demolitions = this.getSkillValueByName(game.i18n.localize("dgalt.attackskills.demolitions"));
+        this.system.attacks.artillery = this.getSkillValueByName(game.i18n.localize("dgalt.attackskills.artillery"));
 
         
         
-        let strength = _data.statistics.strength.value;
+        let strength = this.system.statistics.strength.value;
         let db = "";
 
         if(strength < 5){            
@@ -75,7 +67,7 @@ export default class DgActor extends Actor {
             db = "+2";
           } 
 
-          _data.statistics.strength.bonus = db;
+          this.system.statistics.strength.bonus = db;
 
     }
 
@@ -83,17 +75,14 @@ export default class DgActor extends Actor {
 
         super.prepareDerivedData();
 
-        const actorData = this.data;
-        const _data = actorData.data;
-        const _flags = actorData.flags;
-
+       
 
     }
 
     _setBreakPoint() {
         let newbreak = this.system.sanity.value - this.system.statistics.power.value;
 
-        this.update({ ["data.sanity.currentbreakingpoint"]: newbreak })
+        this.update({ ["sanity.currentbreakingpoint"]: newbreak })
         //this.system.sanity.currentbreakingpoint=newbreak;       
     }
 
@@ -121,7 +110,7 @@ export default class DgActor extends Actor {
 
 
     getSkillValueByName(skillname) {
-        let skillitem = this.data.items.find(
+        let skillitem = this.items.find(
             item => {
                 return item.name == skillname
 
@@ -132,7 +121,7 @@ export default class DgActor extends Actor {
     }
 
     getSkillByName(skillname) {
-        let skillitem = this.data.items.find(
+        let skillitem = this.items.find(
             item => {
                 return item.name == skillname
 
@@ -145,7 +134,7 @@ export default class DgActor extends Actor {
     getStatx5ValueByName(statname) {
         let result = -1;
 
-        if (this.data && this.system.statistics[statname].x5)
+        if (this.system.statistics[statname].x5)
 
             result = Number(this.system.statistics[statname].x5);
 

@@ -98,13 +98,13 @@ export default class DgAgentSheet extends ActorSheet {
             return 0;
         });
 
-        let totalArmor;
+        let totalArmor=0;
         for (let element of data.equipedarmor) {
             
             totalArmor += element.data.protection;
             
         }
-        this.actor.system.armorvalue =totalArmor;
+        this.actor.system.armorvalue = totalArmor;
 
 
 
@@ -318,28 +318,28 @@ export default class DgAgentSheet extends ActorSheet {
         if (element.dataset.adapt == "violence") {
             adaptlevel = this.actor.system.sanity.violencelevel;
             if (adaptlevel != number)
-                this.actor.update({ ["data.sanity.violencelevel"]: number });
+                this.actor.update({ ["system.sanity.violencelevel"]: number });
             else
-                this.actor.update({ ["data.sanity.violencelevel"]: number - 1 });
+                this.actor.update({ ["system.sanity.violencelevel"]: number - 1 });
         }
         if (element.dataset.adapt == "helplessness") {
             adaptlevel = this.actor.system.sanity.helplessnesslevel;
             if (adaptlevel != number)
-                this.actor.update({ ["data.sanity.helplessnesslevel"]: number });
+                this.actor.update({ ["system.sanity.helplessnesslevel"]: number });
             else
-                this.actor.update({ ["data.sanity.helplessnesslevel"]: number - 1 });
+                this.actor.update({ ["system.sanity.helplessnesslevel"]: number - 1 });
         }
     }
 
     async _onColorToggleClick(event) {
 
-        this.actor.update({ ["data.options.colorhighlight"]: !this.actor.system.options.colorhighlight });
+        this.actor.update({ ["system.options.colorhighlight"]: !this.actor.system.options.colorhighlight });
 
     }
 
     async _onEditWeaponToggleClick(event) {
 
-        this.actor.update({ ["data.options.editweapons"]: !this.actor.system.options.editweapons });
+        this.actor.update({ ["system.options.editweapons"]: !this.actor.system.options.editweapons });
 
     }
 

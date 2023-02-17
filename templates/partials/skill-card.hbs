@@ -2,29 +2,29 @@
 
     <div>
         <!--class="item-controls">-->
-        {{#if data.canimprove}}<a class="item-control item-checkmark"
-            title="{{localize 'dgalt.labels.skilldata.markimprove'}}" data-field="data.failcheck"><i
-                class="fas {{#if data.failcheck}}fa-plus-square{{else}}fa-square{{/if}}"></i></a>{{/if}}
+        {{#if system.canimprove}}<a class="item-control item-checkmark"
+            title="{{localize 'dgalt.labels.skilldata.markimprove'}}" data-field="system.failcheck"><i
+                class="fas {{#if system.failcheck}}fa-plus-square{{else}}fa-square{{/if}}"></i></a>{{/if}}
     </div>
     <div class="item-image" style="background-image: url('{{img}}')"></div>
     <div class="skill-name-wrapper">
-        {{#if (eq data.value 0)}}
-        <div class="skill-name-nohide {{#if @root.system.options.colorhighlight}}{{pickcolor data.value }}{{/if}}">
+        {{#if (eq system.value 0)}}
+        <div class="skill-name-nohide {{#if @root.actor.system.options.colorhighlight}}{{pickcolor system.value }}{{/if}}">
             {{name}}
         </div>
         {{else}}
-        <div class="skill-name {{#if @root.system.options.colorhighlight}}{{pickcolor data.value }}{{/if}}"
+        <div class="skill-name {{#if @root.actor.system.options.colorhighlight}}{{pickcolor system.value }}{{/if}}"
             data-dtype="String">{{name}}
             <!--&nbsp;({{data.base}})-->
         </div>
         
         <div class="mod-selector-hidden">
-            <div class="mod-button item-roll" data-rolltype="skill" data-icon="{{img}}" data-label="{{name}}" data-mod="-40" data-basetarget="{{data.value}}">-40</div>
-            <div class="mod-button item-roll" data-rolltype="skill" data-icon="{{img}}" data-label="{{name}}" data-mod="-20" data-basetarget="{{data.value}}">-20</div>
-            <div class="mod-button item-roll" data-rolltype="skill" data-icon="{{img}}" data-label="{{name}}" data-mod="0"  data-basetarget="{{data.value}}">0</div>
-            <div class="mod-button item-roll" data-rolltype="skill" data-icon="{{img}}" data-label="{{name}}" data-mod="20" data-basetarget="{{data.value}}">+20</div>
-            <div class="mod-button item-roll" data-rolltype="skill" data-icon="{{img}}" data-label="{{name}}" data-mod="40" data-basetarget="{{data.value}}">+40</div>
-            <div class="mod-button item-roll" data-rolltype="post" data-icon="{{img}}" data-label="{{name}}" data-basetarget="{{data.value}}" data-description="{{{data.description}}}"><i class="fas fa-comment"></i></div>
+            <div class="mod-button item-roll" data-rolltype="skill" data-icon="{{img}}" data-label="{{name}}" data-mod="-40" data-basetarget="{{system.value}}">-40</div>
+            <div class="mod-button item-roll" data-rolltype="skill" data-icon="{{img}}" data-label="{{name}}" data-mod="-20" data-basetarget="{{system.value}}">-20</div>
+            <div class="mod-button item-roll" data-rolltype="skill" data-icon="{{img}}" data-label="{{name}}" data-mod="0"  data-basetarget="{{system.value}}">0</div>
+            <div class="mod-button item-roll" data-rolltype="skill" data-icon="{{img}}" data-label="{{name}}" data-mod="20" data-basetarget="{{system.value}}">+20</div>
+            <div class="mod-button item-roll" data-rolltype="skill" data-icon="{{img}}" data-label="{{name}}" data-mod="40" data-basetarget="{{system.value}}">+40</div>
+            <div class="mod-button item-roll" data-rolltype="post" data-icon="{{img}}" data-label="{{name}}" data-basetarget="{{system.value}}" data-description="{{{system.description}}}"><i class="fas fa-comment"></i></div>
         </div>
         {{/if}}
 

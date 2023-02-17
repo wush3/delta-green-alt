@@ -14,25 +14,25 @@
         <div class="mod-selector-hidden outline">
             <div class="mod-button item-roll" data-rolltype="weapon" data-mod="-40" data-icon="{{img}}"
                 data-label="{{name}}"
-                data-basetarget="{{selectattackmod @root.system.attacks data.attackskill data.mod}}">-40</div>
+                data-basetarget="{{selectattackmod @root.actor.system.attacks data.attackskill data.mod}}">-40</div>
             <div class="mod-button item-roll" data-rolltype="weapon" data-mod="-20" data-icon="{{img}}"
                 data-label="{{name}}"
-                data-basetarget="{{selectattackmod @root.system.attacks data.attackskill data.mod}}">-20</div>
+                data-basetarget="{{selectattackmod @root.actor.system.attacks data.attackskill data.mod}}">-20</div>
             <div class="mod-button item-roll" data-rolltype="weapon" data-mod="0" data-icon="{{img}}"
                 data-label="{{name}}"
-                data-basetarget="{{selectattackmod @root.system.attacks data.attackskill data.mod}}">0</div>
+                data-basetarget="{{selectattackmod @root.actor.system.attacks data.attackskill data.mod}}">0</div>
             <div class="mod-button item-roll" data-rolltype="weapon" data-mod="20" data-icon="{{img}}"
                 data-label="{{name}}"
-                data-basetarget="{{selectattackmod @root.system.attacks data.attackskill data.mod}}">+20</div>
+                data-basetarget="{{selectattackmod @root.actor.system.attacks data.attackskill data.mod}}">+20</div>
             <div class="mod-button item-roll" data-rolltype="weapon" data-mod="40" data-icon="{{img}}"
                 data-label="{{name}}"
-                data-basetarget="{{selectattackmod @root.system.attacks data.attackskill data.mod}}">+40</div>
+                data-basetarget="{{selectattackmod @root.actor.system.attacks data.attackskill data.mod}}">+40</div>
         </div>
 
     </div>
 
     <div class="weapon-stat">
-        {{selectattackmod @root.system.attacks data.attackskill data.mod}}%
+        {{selectattackmod @root.actor.system.attacks data.attackskill data.mod}}%
     </div>
 
     <div class="weapon-stat">

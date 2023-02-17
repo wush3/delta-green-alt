@@ -4,7 +4,7 @@
         <div class="button-bar-vertical">
             <a class="item-control item-create" data-type="Skill" title="{{localize 'dgalt.labels.skilldata.addnew'}}"><i class="fas fa-plus"></i></a>
             <a class="item-control skill-improvement" title="{{localize 'dgalt.labels.skilldata.rollimprove'}}"><i class="fas fa-angle-double-up"></i></a>
-            <a class="item-control color-toggle" title="{{localize 'dgalt.labels.skilldata.colortoggle'}}"><i class="fas {{#if data.data.options.colorhighlight}}fa-toggle-on{{else}}fa-toggle-off{{/if}}"></i></a>
+            <a class="item-control color-toggle" title="{{localize 'dgalt.labels.skilldata.colortoggle'}}"><i class="fas {{#if @root.actor.system.options.colorhighlight}}fa-toggle-on{{else}}fa-toggle-off{{/if}}"></i></a>
         </div>
 
         <div class="vertical-header">
