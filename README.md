@@ -18,8 +18,9 @@ If an Item's name is written into another items location field that items become
 
 
 # Unfinished planned stuff
-An unnatural page for tomes and rituals.
-An npc/creature sheet that resembles stat blocks from the handlers guide
-A vehicle item type
-Fields for the certain hidden stats
+###An unnatural page for tomes and rituals.
+###An npc/creature sheet that resembles stat blocks from the handlers guide
+###A vehicle item type
+###Fields for the certain hidden stats
+###Getting rid of the last few V10 compatibility warnings
 
