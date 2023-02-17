@@ -109,9 +109,10 @@
       "gridDistance": 1.5,
       "gridUnits": "m",
       "primaryTokenAttribute": "health",
-      "secondaryTokenAttribute": "wp"
+      "secondaryTokenAttribute": "wp",
 
-
+      "manifest": "https://github.com/TheLastScrub/delta-green-foundry-vtt-system-unofficial/raw/master/system.json",
+      "download": "https://github.com/TheLastScrub/delta-green-foundry-vtt-system-unofficial/archive/v1.1.0.zip"
   
-
+      https://github.com/wush3/delta-green-alt/archive/refs/tags/v0.0.4.zip
 }
