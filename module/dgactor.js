@@ -27,17 +27,16 @@ export default class DgActor extends Actor {
         })
 
         if (unnatural && unnatural.system.value)
-            //this.update({["data.sanity.max"]: 99 - unnatural.system.value });
+           
             this.system.sanity.max = 99 - unnatural.system.value;
         else
-            //this.update({["data.sanity.max"]: 99 });
+           
             this.system.sanity.max = 99;
 
-        if (this.system.sanity.value > this.system.sanity.max) //this.update({["data.sanity.value"]:_data.sanity.max})
+        if (this.system.sanity.value > this.system.sanity.max) 
             this.system.sanity.value = this.system.sanity.max;
 
-        //if (_data.sanity.currentbreakingpoint > 99)
-        //    this._setBreakPoint();    
+      
 
         this.system.attacks.none = 0;
         this.system.attacks.unarmedcombat = this.getSkillValueByName(game.i18n.localize("dgalt.attackskills.unarmedcombat"));

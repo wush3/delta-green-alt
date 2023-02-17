@@ -61,8 +61,8 @@ export async function postDescription(icon, label, value, description){
         user: game.userId,
         speaker: ChatMessage.getSpeaker(),
         //flavor: "Skill Check",
-        roll: true,
-        rollMode: game.settings.get("core", "rollMode")
+        //roll: false,
+        //rollMode: game.settings.get("core", "rollMode")
     };
 
     let cardData = {
