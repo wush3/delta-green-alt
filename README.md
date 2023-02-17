@@ -2,7 +2,7 @@
 This is my own take on implementing the DELTA GREEN RPG by Arc Dream Publishing in Foundry VTT.
 Main feature differences are:
 ## Hover over modifiers
-Skills, weapon attacks and damage fields have hover over modifier fields to enable fast rolling.
+Skills, weapon attacks and damage fields have hover over modifier fields to enable fast rolling. The sheet itself is resizeable to make it possible to make room for the hover modifier.
 ## Different formatting and ordering of the skill list
 The skill list is ordered alphabeticaly from top to bottom and everything is formatted to rquire minimal scrolling.
 ## Skill List is stored in Compendiums
