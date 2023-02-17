@@ -31,9 +31,9 @@ export default class DgItem extends Item {
 
 
 
-        this.update({ ["data.value"]: newvalue })
+        this.update({ ["system.value"]: newvalue })
 
-        this.update({ ["data.failcheck"]: false });
+        this.update({ ["system.failcheck"]: false });
 
         return ChatMessage.create(chatData)
 

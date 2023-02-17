@@ -26,7 +26,7 @@
                     <div>
                         <div class="form-label">{{localize 'dgalt.labels.weaponsheet.attackskill'}}</div>
                         <select class="select" name="data.attackskill">
-                            {{selectOptions config.attackskills selected=data.data.attackskill localize=true}}
+                            {{selectOptions config.attackskills selected=item.system.attackskill localize=true}}
                         </select>
 
                     </div>
@@ -34,12 +34,12 @@
                         <div class="form-label">%</div>
 
                         <input class="form-inputbox-number" type="number" name="data.attackvalue" data-dtype="number"
-                            readonly value="{{selectattack item.actor.system.attacks data.data.attackskill}}">
+                            readonly value="{{selectattack item.actor.system.attacks item.system.attackskill}}">
 
                     </div>
                     <div class="center">
                         <div class="form-label">{{localize 'dgalt.labels.weaponsheet.mod'}}</div>
-                        <input class="form-inputbox-number" type="number" name="data.mod" value="{{data.data.mod}}"
+                        <input class="form-inputbox-number" type="number" name="data.mod" value="{{item.system.mod}}"
                             data-dtype="number" />
                     </div>
                 </div>
@@ -50,39 +50,39 @@
                     <div class="center">
                         <div class="form-label">{{localize
                             'dgalt.labels.weaponsheet.islethal'}}</div>
-                        <a class="item-control item-checkmark" data-field="data.islethal"><i
-                                class="fas {{#if data.data.islethal}}fa-plus-square{{else}}fa-square{{/if}}"></i></a>
+                        <a class="item-control item-checkmark" data-field="system.islethal"><i
+                                class="fas {{#if item.system.islethal}}fa-plus-square{{else}}fa-square{{/if}}"></i></a>
                     </div>
 
 
                     <div class="center">
                         <div class="form-label">{{localize 'dgalt.labels.weaponsheet.damage'}}</div>
                         <input class="form-inputbox-centered shorttext" type="text" name="data.damage"
-                            value="{{data.data.damage}}" data-dtype="string" />
+                            value="{{item.system.damage}}" data-dtype="string" />
                     </div>
 
                     <div class="center">
                         <div class="form-label">{{localize
                             'dgalt.labels.weaponsheet.db'}}</div>
-                        <a class="item-control item-checkmark" data-field="data.db"><i
-                                class="fas {{#if data.data.db}}fa-plus-square{{else}}fa-square{{/if}}"></i></a>
+                        <a class="item-control item-checkmark" data-field="system.db"><i
+                                class="fas {{#if item.system.db}}fa-plus-square{{else}}fa-square{{/if}}"></i></a>
                     </div>
 
                     <div class="center contract">
                         <div class="form-label">{{localize 'dgalt.labels.weaponsheet.ap'}}</div>
-                        <input class="form-inputbox-number" type="number" name="data.ap" value="{{data.data.ap}}"
+                        <input class="form-inputbox-number" type="number" name="data.ap" value="{{item.system.ap}}"
                             data-dtype="number" />
                     </div>
 
                     <div class="center">
                         <div class="form-label">{{localize 'dgalt.labels.weaponsheet.lethality'}}</div>
                         <input class="form-inputbox-number" type="number" name="data.lethality"
-                            value="{{data.data.lethality}}" data-dtype="number" />
+                            value="{{item.system.lethality}}" data-dtype="number" />
                     </div>
                     <div class="center">
                         <div class="form-label">{{localize 'dgalt.labels.weaponsheet.killradius'}}</div>
                         <input class="form-inputbox-number" type="number" name="data.killradius"
-                            value="{{data.data.killradius}}" data-dtype="number" />
+                            value="{{item.system.killradius}}" data-dtype="number" />
                     </div>
 
                 </div>
@@ -91,13 +91,13 @@
                     <div class="center">
                         <div class="form-label">{{localize
                             'dgalt.labels.weaponsheet.isranged'}}</div>
-                        <a class="item-control item-checkmark" data-field="data.isranged"><i
-                                class="fas {{#if data.data.isranged}}fa-plus-square{{else}}fa-square{{/if}}"></i></a>
+                        <a class="item-control item-checkmark" data-field="system.isranged"><i
+                                class="fas {{#if item.system.isranged}}fa-plus-square{{else}}fa-square{{/if}}"></i></a>
                     </div>
-                    {{#if data.data.isranged}}
+                    {{#if item.system.isranged}}
                     <div class="center">
                         <div class="form-label">{{localize 'dgalt.labels.weaponsheet.range'}}</div>
-                        <input class="form-inputbox-number" type="number" name="data.range" value="{{data.data.range}}"
+                        <input class="form-inputbox-number" type="number" name="data.range" value="{{item.system.range}}"
                             data-dtype="number" />
                     </div>
                     {{/if}}
@@ -107,27 +107,27 @@
                     <div class="center">
                         <div class="form-label">{{localize
                             'dgalt.labels.weaponsheet.usesammo'}}</div>
-                        <a class="item-control item-checkmark" data-field="data.usesammo"><i
-                                class="fas {{#if data.data.usesammo}}fa-plus-square{{else}}fa-square{{/if}}"></i></a>
+                        <a class="item-control item-checkmark" data-field="system.usesammo"><i
+                                class="fas {{#if item.system.usesammo}}fa-plus-square{{else}}fa-square{{/if}}"></i></a>
                     </div>
-                    {{#if data.data.usesammo}}
+                    {{#if item.system.usesammo}}
 
                     <div class="center">
                         <div class="form-label">{{localize 'dgalt.labels.weaponsheet.currammo'}}</div>
                         <input class="form-inputbox-number" type="number" name="data.ammocurrent"
-                            value="{{data.data.ammocurrent}}" data-dtype="number" />
+                            value="{{item.system.ammocurrent}}" data-dtype="number" />
                     </div>
                     /
                     <div class="center">
                         <div class="form-label">{{localize 'dgalt.labels.weaponsheet.maxammo'}}</div>
                         <input class="form-inputbox-number" type="number" name="data.ammomax"
-                            value="{{data.data.ammomax}}" data-dtype="number" />
+                            value="{{item.system.ammomax}}" data-dtype="number" />
                     </div>
 
                     <div class="center">
                         <div class="form-label">{{localize 'dgalt.labels.weaponsheet.ammoperattack'}}</div>
                         <input class="form-inputbox-number" type="number" name="data.ammoperattack"
-                            value="{{data.data.ammoperattack}}" data-dtype="number" />
+                            value="{{item.system.ammoperattack}}" data-dtype="number" />
                     </div>
 
 
@@ -140,14 +140,14 @@
                         <div class="form-label">{{localize
                             'dgalt.labels.weaponsheet.expense'}}</div>
                         <select class="select" name="data.expense">
-                            {{selectOptions config.expense selected=data.data.expense localize=true}}
+                            {{selectOptions config.expense selected=item.system.expense localize=true}}
                         </select>
                     </div>
                 </div>
 
                 <div class="form-hor-group">
-                    <a class="item-control item-checkmark" data-field="data.isrestricted"><i
-                            class="fas {{#if data.data.isrestricted}}fa-plus-square{{else}}fa-square{{/if}}"></i></a>
+                    <a class="item-control item-checkmark" data-field="system.isrestricted"><i
+                            class="fas {{#if item.system.isrestricted}}fa-plus-square{{else}}fa-square{{/if}}"></i></a>
                     <div class="form-label">{{localize
                         'dgalt.labels.weaponsheet.isrestricted'}}</div>
                 </div>
@@ -159,7 +159,7 @@
             </div>
 
             <div class="form-label">{{localize 'dgalt.labels.skillsheet.description'}}</div>
-            {{editor content=data.data.description target="data.description" button=true owner=owner
+            {{editor item.system.description target="system.description" button=true owner=owner
             editable=editable}}
         </div>
     </div>

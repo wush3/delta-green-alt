@@ -23,21 +23,21 @@
                         <div class="form-label">{{localize
                             'dgalt.labels.weaponsheet.expense'}}</div>
                         <select class="select" name="data.expense">
-                            {{selectOptions config.expense selected=data.data.expense localize=true}}
+                            {{selectOptions config.expense selected=item.system.expense localize=true}}
                         </select>
                     </div>
                 </div>
 
                 <div class="form-hor-group">
-                    <a class="item-control item-checkmark" data-field="data.isrestricted"><i
-                            class="fas {{#if data.data.isrestricted}}fa-plus-square{{else}}fa-square{{/if}}"></i></a>
+                    <a class="item-control item-checkmark" data-field="system.isrestricted"><i
+                            class="fas {{#if item.system.isrestricted}}fa-plus-square{{else}}fa-square{{/if}}"></i></a>
                     <div class="form-label">{{localize
                         'dgalt.labels.weaponsheet.isrestricted'}}</div>
                 </div>
             </div>
 
             <div class="form-label">{{localize 'dgalt.labels.skillsheet.description'}}</div>
-            {{editor content=data.data.description target="data.description" button=true owner=owner
+            {{editor item.system.description target="system.description" button=true owner=owner
             editable=editable}}
         </div>
     </div>

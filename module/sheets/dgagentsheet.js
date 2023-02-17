@@ -101,7 +101,7 @@ export default class DgAgentSheet extends ActorSheet {
         let totalArmor=0;
         for (let element of data.equipedarmor) {
             
-            totalArmor += Number(element.data.protection);
+            totalArmor += Number(element.system.protection);
             
         }
         this.actor.system.armorvalue = totalArmor;
@@ -143,7 +143,7 @@ export default class DgAgentSheet extends ActorSheet {
 
     getContainerPath(list, item) {
         let name = item.name.toUpperCase();
-        let container = item.data.container.toUpperCase();
+        let container = item.system.container.toUpperCase();
 
         if (container == "" || name == container) return name;
 
@@ -234,7 +234,7 @@ export default class DgAgentSheet extends ActorSheet {
             data: foundry.utils.deepClone(header.dataset)
         }
 
-        delete itemData.data.type;
+        //delete itemData.data.type;
         return this.actor.createEmbeddedDocuments("Item", [itemData]);
     }
 
@@ -258,13 +258,13 @@ export default class DgAgentSheet extends ActorSheet {
         const element = event.currentTarget;
         if (element.dataset.isactor) {
             const field=element.dataset.field;
-            this.actor.update( { [field] : !getProperty(this.actor.data, field) } );
+            this.actor.update( { [field] : !getProperty(this.actor, field) } );
 
         } else {
             const itemId = element.closest(".item").dataset.itemId;
             const item = this.actor.items.get(itemId);
             const field = element.dataset.field;
-            return item.update({ [field]: !getProperty(item.data, field) });
+            return item.update({ [field]: !getProperty(item, field) });
         }
     }
 
@@ -366,7 +366,7 @@ export default class DgAgentSheet extends ActorSheet {
             const header = game.i18n.localize("dgalt.labels.rolls.skilltest")
             //item.roll(mod,targetfield);
             let sucess = await Dice.skillTest(header, icon, label, "", basetarget, mod);
-            if (!sucess) item.update({ ["data.failcheck"]: true });
+            if (!sucess) item.update({ ["system.failcheck"]: true });
         }
 
         if (rolltype == "weapon") {

@@ -20,7 +20,7 @@
                 <div class="center">
                     <div class="form-label">{{localize 'dgalt.labels.skillsheet.value'}}</div>
                     <input class="form-inputbox-number-stretch" type="number" name="data.value"
-                        value="{{data.data.value}}" data-dtype="number" />
+                        value="{{item.system.value}}" data-dtype="number" />
                 </div>
 
             </div>
@@ -31,21 +31,21 @@
                     <div class="center">
                         <div class="form-label">{{localize
                             'dgalt.labels.skillsheet.canimprove'}}</div>
-                        <a class="item-control item-checkmark" title="CHECK" data-field="data.canimprove"><i
-                                class="fas {{#if data.data.canimprove}}fa-plus-square{{else}}fa-square{{/if}}"></i></a>
+                        <a class="item-control item-checkmark" title="CHECK" data-field="system.canimprove"><i
+                                class="fas {{#if item.system.canimprove}}fa-plus-square{{else}}fa-square{{/if}}"></i></a>
 
                     </div>
                     <div class="center">
                         <div class="form-label">{{localize
                             'dgalt.labels.skillsheet.failcheck'}}</div>
-                        <a class="item-control item-checkmark" title="CHECK" data-field="data.failcheck"><i
-                                class="fas {{#if data.data.failcheck}}fa-plus-square{{else}}fa-square{{/if}}"></i></a>
+                        <a class="item-control item-checkmark" title="CHECK" data-field="system.failcheck"><i
+                                class="fas {{#if item.system.failcheck}}fa-plus-square{{else}}fa-square{{/if}}"></i></a>
 
                     </div>
 
                     <div class="center">
                         <div class="form-label">{{localize 'dgalt.labels.skillsheet.base'}}</div>
-                        <input class="form-inputbox-number" type="number" name="data.base" value="{{data.data.base}}"
+                        <input class="form-inputbox-number" type="number" name="data.base" value="{{item.system.base}}"
                             data-dtype="number" />
                     </div>
 
@@ -55,7 +55,7 @@
 
             <div class="form-label">{{localize 'dgalt.labels.skillsheet.description'}}</div>
 
-            {{editor content=data.data.description target="data.description" button=true owner=owner
+            {{editor item.system.description target="system.description" button=true owner=owner
             editable=editable}}
 
 

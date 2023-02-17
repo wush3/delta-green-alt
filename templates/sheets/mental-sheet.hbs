@@ -3,7 +3,7 @@
     <div class="itemdata">
         <div class="item-header">
             <div class="vertical-header">
-                {{#if data.data.isdisorder}}
+                {{#if item.system.isdisorder}}
                 {{localize 'dgalt.labels.mentalsheet.headerdisorder'}}
                 {{else}}
                 {{localize 'dgalt.labels.mentalsheet.headermotivation'}}
@@ -14,11 +14,11 @@
 
             <div class="item-titlebar">
                 <img class="item-icon" src="{{item.img}}" data-edit="img" title="{{item.name}}" />
-                {{#if data.data.isdisorder}}
+                {{#if item.system.isdisorder}}
                 <div class="expand">
                     <div class="form-label">{{localize 'dgalt.labels.mentalsheet.alternative'}}</div>
                     <input class="form-inputbox item-label" name="data.alternative" type="text"
-                        value="{{data.data.alternative}}" />
+                        value="{{item.system.alternative}}" />
                 </div>
                 {{else}}
                 <div class="expand">
@@ -32,26 +32,26 @@
                         'dgalt.labels.mentalsheet.toggledisorder'}}</div>
                 
                 <a class="item-control item-checkmark" title="{{localize 'dgalt.labels.mentalsheet.toggledisorder'}}"
-                    data-field="data.isdisorder">
-                    <i class="{{#if data.data.isdisorder}}fas fa-plus-square{{else}}fas fa-square{{/if}}"></i>
+                    data-field="system.isdisorder">
+                    <i class="{{#if item.system.isdisorder}}fas fa-plus-square{{else}}fas fa-square{{/if}}"></i>
                 </a>
                 </div>
 
             </div>
             <div class="item-data">
 
-                {{#if data.data.isdisorder}}
+                {{#if item.system.isdisorder}}
 
                 <div class="expand">
                     <div class="form-label">{{localize 'dgalt.labels.mentalsheet.trigger'}}</div>
-                    <input class="form-inputbox" name="data.trigger" type="text" value="{{data.data.trigger}}" />
+                    <input class="form-inputbox" name="data.trigger" type="text" value="{{item.system.trigger}}" />
                 </div>
                 <div class="center">
                     <div class="form-label">{{localize
                         'dgalt.labels.mentalsheet.cured'}}</div>
                     <a class="item-control item-checkmark" title="{{localize 'dgalt.labels.mentalsheet.iscured'}}"
-                        data-field="data.iscured">
-                        <i class="{{#if data.data.iscured}}fas fa-plus-square{{else}}fas fa-square{{/if}}"></i>
+                        data-field="system.iscured">
+                        <i class="{{#if item.system.iscured}}fas fa-plus-square{{else}}fas fa-square{{/if}}"></i>
                     </a>
                 </div>
                 {{/if}}
@@ -60,11 +60,11 @@
 
             <label class="form-label">{{localize 'dgalt.labels.skillsheet.description'}}</label>
 
-            {{#if data.data.isdisorder}}
-            {{editor content=data.data.description target="data.descriptiondisorder" button=true owner=owner
+            {{#if item.system.isdisorder}}
+            {{editor item.system.description target="system.descriptiondisorder" button=true owner=owner
             editable=editable}}
             {{else}}
-            {{editor content=data.data.description target="data.description" button=true owner=owner editable=editable}}
+            {{editor item.system.description target="system.description" button=true owner=owner editable=editable}}
             {{/if}}
 
 
