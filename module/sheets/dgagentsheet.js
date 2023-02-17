@@ -104,7 +104,7 @@ export default class DgAgentSheet extends ActorSheet {
             totalArmor += element.data.protection;
             
         }
-        this.actor.data.data.armorvalue =totalArmor;
+        this.actor.system.armorvalue =totalArmor;
 
 
 
@@ -296,7 +296,7 @@ export default class DgAgentSheet extends ActorSheet {
         this.actor.items.forEach(item => {
 
             if (item.type == "Skill")
-                if (item.data.data.failcheck) {
+                if (item.system.failcheck) {
 
 
                     item.rollImprovement();
@@ -316,14 +316,14 @@ export default class DgAgentSheet extends ActorSheet {
         let adaptlevel = 0;
 
         if (element.dataset.adapt == "violence") {
-            adaptlevel = this.actor.data.data.sanity.violencelevel;
+            adaptlevel = this.actor.system.sanity.violencelevel;
             if (adaptlevel != number)
                 this.actor.update({ ["data.sanity.violencelevel"]: number });
             else
                 this.actor.update({ ["data.sanity.violencelevel"]: number - 1 });
         }
         if (element.dataset.adapt == "helplessness") {
-            adaptlevel = this.actor.data.data.sanity.helplessnesslevel;
+            adaptlevel = this.actor.system.sanity.helplessnesslevel;
             if (adaptlevel != number)
                 this.actor.update({ ["data.sanity.helplessnesslevel"]: number });
             else
@@ -333,13 +333,13 @@ export default class DgAgentSheet extends ActorSheet {
 
     async _onColorToggleClick(event) {
 
-        this.actor.update({ ["data.options.colorhighlight"]: !this.actor.data.data.options.colorhighlight });
+        this.actor.update({ ["data.options.colorhighlight"]: !this.actor.system.options.colorhighlight });
 
     }
 
     async _onEditWeaponToggleClick(event) {
 
-        this.actor.update({ ["data.options.editweapons"]: !this.actor.data.data.options.editweapons });
+        this.actor.update({ ["data.options.editweapons"]: !this.actor.system.options.editweapons });
 
     }
 
@@ -366,7 +366,7 @@ export default class DgAgentSheet extends ActorSheet {
         if (rolltype == "weapon") {
             const itemId = element.closest(".item").dataset.itemId;
             const item = this.actor.items.get(itemId);
-            const skill = this.actor.getSkillByName(game.i18n.localize("dgalt.attackskills." + item.data.data.attackskill));
+            const skill = this.actor.getSkillByName(game.i18n.localize("dgalt.attackskills." + item.system.attackskill));
 
             const header = game.i18n.localize("dgalt.labels.rolls.attack")
             //item.roll(mod,targetfield);

@@ -9,11 +9,11 @@
     <div class="item-image" style="background-image: url('{{img}}')"></div>
     <div class="skill-name-wrapper">
         {{#if (eq data.value 0)}}
-        <div class="skill-name-nohide {{#if @root.data.data.options.colorhighlight}}{{pickcolor data.value }}{{/if}}">
+        <div class="skill-name-nohide {{#if @root.system.options.colorhighlight}}{{pickcolor data.value }}{{/if}}">
             {{name}}
         </div>
         {{else}}
-        <div class="skill-name {{#if @root.data.data.options.colorhighlight}}{{pickcolor data.value }}{{/if}}"
+        <div class="skill-name {{#if @root.system.options.colorhighlight}}{{pickcolor data.value }}{{/if}}"
             data-dtype="String">{{name}}
             <!--&nbsp;({{data.base}})-->
         </div>

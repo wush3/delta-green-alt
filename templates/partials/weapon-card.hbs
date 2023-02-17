@@ -4,7 +4,7 @@
     <div class="gearcard-image" style="background-image: url('{{img}}')"></div>
 
 
-    <!--<div class="weapon-name {{#if @root.data.data.options.editweapons}}inline-edit{{/if}} " data-dtype="String">{{name}}
+    <!--<div class="weapon-name {{#if @root.system.options.editweapons}}inline-edit{{/if}} " data-dtype="String">{{name}}
     </div>-->
 
     <div class="weapon-name-wrapper">
@@ -14,25 +14,25 @@
         <div class="mod-selector-hidden outline">
             <div class="mod-button item-roll" data-rolltype="weapon" data-mod="-40" data-icon="{{img}}"
                 data-label="{{name}}"
-                data-basetarget="{{selectattackmod @root.data.data.attacks data.attackskill data.mod}}">-40</div>
+                data-basetarget="{{selectattackmod @root.system.attacks data.attackskill data.mod}}">-40</div>
             <div class="mod-button item-roll" data-rolltype="weapon" data-mod="-20" data-icon="{{img}}"
                 data-label="{{name}}"
-                data-basetarget="{{selectattackmod @root.data.data.attacks data.attackskill data.mod}}">-20</div>
+                data-basetarget="{{selectattackmod @root.system.attacks data.attackskill data.mod}}">-20</div>
             <div class="mod-button item-roll" data-rolltype="weapon" data-mod="0" data-icon="{{img}}"
                 data-label="{{name}}"
-                data-basetarget="{{selectattackmod @root.data.data.attacks data.attackskill data.mod}}">0</div>
+                data-basetarget="{{selectattackmod @root.system.attacks data.attackskill data.mod}}">0</div>
             <div class="mod-button item-roll" data-rolltype="weapon" data-mod="20" data-icon="{{img}}"
                 data-label="{{name}}"
-                data-basetarget="{{selectattackmod @root.data.data.attacks data.attackskill data.mod}}">+20</div>
+                data-basetarget="{{selectattackmod @root.system.attacks data.attackskill data.mod}}">+20</div>
             <div class="mod-button item-roll" data-rolltype="weapon" data-mod="40" data-icon="{{img}}"
                 data-label="{{name}}"
-                data-basetarget="{{selectattackmod @root.data.data.attacks data.attackskill data.mod}}">+40</div>
+                data-basetarget="{{selectattackmod @root.system.attacks data.attackskill data.mod}}">+40</div>
         </div>
 
     </div>
 
     <div class="weapon-stat">
-        {{selectattackmod @root.data.data.attacks data.attackskill data.mod}}%
+        {{selectattackmod @root.system.attacks data.attackskill data.mod}}%
     </div>
 
     <div class="weapon-stat">
@@ -46,18 +46,18 @@
     <div class="weapon-dmg-wrapper">
         <div class="weapon-stat">
             <input class="form-inputbox-centered shorttext" type="text" name="damage"
-                value="{{#if data.db}}{{data.damage}}{{@root.data.data.statistics.strength.bonus}}{{else}}{{data.damage}}{{/if}}"
+                value="{{#if data.db}}{{data.damage}}{{@root.system.statistics.strength.bonus}}{{else}}{{data.damage}}{{/if}}"
                 data-dtype="string" readonly />
         </div>
 
         <div class="mod-selector-hidden center">
             <div class="mod-button item-roll" data-rolltype="damage" data-mult="1" data-icon="{{img}}"
                 data-label="{{name}}"
-                data-dmgformula="{{#if data.db}}{{data.damage}}{{@root.data.data.statistics.strength.bonus}}{{else}}{{data.damage}}{{/if}}">
+                data-dmgformula="{{#if data.db}}{{data.damage}}{{@root.system.statistics.strength.bonus}}{{else}}{{data.damage}}{{/if}}">
                 x1</div>
             <div class="mod-button item-roll" data-rolltype="damage" data-mult="2" data-icon="{{img}}"
                 data-label="{{name}}"
-                data-dmgformula="{{#if data.db}}{{data.damage}}{{@root.data.data.statistics.strength.bonus}}{{else}}{{data.damage}}{{/if}}">
+                data-dmgformula="{{#if data.db}}{{data.damage}}{{@root.system.statistics.strength.bonus}}{{else}}{{data.damage}}{{/if}}">
                 x2</div>
         </div>
 

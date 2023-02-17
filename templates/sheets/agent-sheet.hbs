@@ -58,14 +58,14 @@
             <div class="tab bio" data-group="primary" data-tab="bio">
                
                <div class="flexvert">
-                    {{editor content=actor.data.data.notes target="data.notes" button=true
+                    {{editor content=actor.system.notes target="data.notes" button=true
                     owner=owner editable=editable}}
                
 
 
                 {{#if (playerHasGamemasterPrivileges)}}
                
-                {{editor content=actor.data.data.gmnotes target="data.gmnotes" button=true owner=owner
+                {{editor content=actor.system.gmnotes target="data.gmnotes" button=true owner=owner
                 editable=editable}}
                 
                 {{/if}}

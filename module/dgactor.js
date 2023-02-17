@@ -34,15 +34,15 @@ export default class DgActor extends Actor {
             return (item.type == "Skill" && item.name == "Unnatural")
         })
 
-        if (unnatural && unnatural.data.data.value)
-            //this.update({["data.sanity.max"]: 99 - unnatural.data.data.value });
-            this.data.data.sanity.max = 99 - unnatural.data.data.value;
+        if (unnatural && unnatural.system.value)
+            //this.update({["data.sanity.max"]: 99 - unnatural.system.value });
+            this.system.sanity.max = 99 - unnatural.system.value;
         else
             //this.update({["data.sanity.max"]: 99 });
-            this.data.data.sanity.max = 99;
+            this.system.sanity.max = 99;
 
         if (_data.sanity.value > _data.sanity.max) //this.update({["data.sanity.value"]:_data.sanity.max})
-            this.data.data.sanity.value = this.data.data.sanity.max;
+            this.system.sanity.value = this.system.sanity.max;
 
         //if (_data.sanity.currentbreakingpoint > 99)
         //    this._setBreakPoint();    
@@ -91,10 +91,10 @@ export default class DgActor extends Actor {
     }
 
     _setBreakPoint() {
-        let newbreak = this.data.data.sanity.value - this.data.data.statistics.power.value;
+        let newbreak = this.system.sanity.value - this.system.statistics.power.value;
 
         this.update({ ["data.sanity.currentbreakingpoint"]: newbreak })
-        //this.data.data.sanity.currentbreakingpoint=newbreak;       
+        //this.system.sanity.currentbreakingpoint=newbreak;       
     }
 
     static async create(data, options = {}) {
@@ -127,7 +127,7 @@ export default class DgActor extends Actor {
 
             });
         if (skillitem)
-            return skillitem.data.data.value;
+            return skillitem.system.value;
         return null;
     }
 
@@ -145,9 +145,9 @@ export default class DgActor extends Actor {
     getStatx5ValueByName(statname) {
         let result = -1;
 
-        if (this.data && this.data.data.statistics[statname].x5)
+        if (this.data && this.system.statistics[statname].x5)
 
-            result = Number(this.data.data.statistics[statname].x5);
+            result = Number(this.system.statistics[statname].x5);
 
         return result;
 
@@ -155,7 +155,7 @@ export default class DgActor extends Actor {
 
     getDamageBonus()
     {
-        return this.data.data.statistics.strength.bonus;
+        return this.system.statistics.strength.bonus;
     }
 
 

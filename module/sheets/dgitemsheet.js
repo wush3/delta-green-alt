@@ -23,34 +23,34 @@ export default class DgItemSheet extends ItemSheet {
 
 
 
-            let attackskill = this.item.data.data.attackskill
+            let attackskill = this.item.system.attackskill
             switch (attackskill) {
                 case "none":
-                    data.data.data.attackvalue = 0;
+                    data.system.attackvalue = 0;
                     break;
                 case "unarmedcombat":
-                    data.data.data.attackvalue = this.item.actor.getSkillValueByName(game.i18n.localize("dgalt.attackskills.unarmedcombat"));
+                    data.system.attackvalue = this.item.actor.getSkillValueByName(game.i18n.localize("dgalt.attackskills.unarmedcombat"));
                     break;
                 case "meleeweapons":
-                    data.data.data.attackvalue = this.item.actor.getSkillValueByName(game.i18n.localize("dgalt.attackskills.meleeweapons"));
+                    data.system.attackvalue = this.item.actor.getSkillValueByName(game.i18n.localize("dgalt.attackskills.meleeweapons"));
                     break;
                 case "athletics":
-                    data.data.data.attackvalue = this.item.actor.getSkillValueByName(game.i18n.localize("dgalt.attackskills.athletics"));
+                    data.system.attackvalue = this.item.actor.getSkillValueByName(game.i18n.localize("dgalt.attackskills.athletics"));
                     break;
                 case "firearms":
-                    data.data.data.attackvalue = this.item.actor.getSkillValueByName(game.i18n.localize("dgalt.attackskills.firearms"));
+                    data.system.attackvalue = this.item.actor.getSkillValueByName(game.i18n.localize("dgalt.attackskills.firearms"));
                     break;
                 case "heavyweapons":
-                    data.data.data.attackvalue = this.item.actor.getSkillValueByName(game.i18n.localize("dgalt.attackskills.heavyweapons"));
+                    data.system.attackvalue = this.item.actor.getSkillValueByName(game.i18n.localize("dgalt.attackskills.heavyweapons"));
                     break;
                 case "demolitions":
-                    data.data.data.attackvalue = this.item.actor.getSkillValueByName(game.i18n.localize("dgalt.attackskills.demolitions"));
+                    data.system.attackvalue = this.item.actor.getSkillValueByName(game.i18n.localize("dgalt.attackskills.demolitions"));
                     break;
                 case "artillery":
-                    data.data.data.attackvalue = this.item.actor.getSkillValueByName(game.i18n.localize("dgalt.attackskills.artillery"));
+                    data.system.attackvalue = this.item.actor.getSkillValueByName(game.i18n.localize("dgalt.attackskills.artillery"));
                     break;
                 default:
-                    data.data.data.attackvalue = this.item.actor.getStatx5ValueByName("dexterity");
+                    data.system.attackvalue = this.item.actor.getStatx5ValueByName("dexterity");
                     break;
             }
            

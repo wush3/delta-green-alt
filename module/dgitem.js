@@ -4,14 +4,14 @@ export default class DgItem extends Item {
         super.prepareDerivedData();
 
        // if (this.actor && this.type == "Weapon")
-       //     this.data.data.attackvalue = this.actor.data.data.atttacks[this.data.data.attackskill];
+       //     this.system.attackvalue = this.actor.system.atttacks[this.system.attackskill];
 
     }
 
     async rollImprovement() {
         let roll = new Roll('1D4', this.actor.data);
         await roll.evaluate({ async: true });
-        let newvalue = Number(this.data.data.value) + Number(roll.total);
+        let newvalue = Number(this.system.value) + Number(roll.total);
         let chatData = {
             user: game.userId,
             speaker: ChatMessage.getSpeaker(),
