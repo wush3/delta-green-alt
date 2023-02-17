@@ -70,7 +70,7 @@ export default class DgAgentSheet extends ActorSheet {
             return 0;
         });
 
-        data.weapons = data.items.filter(function (item) { return (item.type == "Weapon" && item.data.isequiped) });
+        data.weapons = data.items.filter(function (item) { return (item.type == "Weapon" && item.system.isequiped) });
 
         data.weapons.sort(function (a, b) {
             let nameA = a.name.toUpperCase();
@@ -84,7 +84,7 @@ export default class DgAgentSheet extends ActorSheet {
             return 0;
         });
 
-        data.equipedarmor = data.items.filter(function (item) { return (item.type == "Armor" && item.data.isequiped) });
+        data.equipedarmor = data.items.filter(function (item) { return (item.type == "Armor" && item.system.isequiped) });
 
         data.equipedarmor.sort(function (a, b) {
             let nameA = a.name.toUpperCase();
@@ -108,7 +108,7 @@ export default class DgAgentSheet extends ActorSheet {
 
 
 
-        data.gearlist = data.items.filter(function (item) { return item.data.isgear });
+        data.gearlist = data.items.filter(function (item) { return item.system.isgear });
 
         for (let element of data.gearlist) {
 

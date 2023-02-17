@@ -2,9 +2,9 @@
     "name":"delta-green-alt",
     "title":"Delta Green Alternative",
     "author":"wush3",
-    "version":"0.01",
-    "minimumCoreVersion": "0.8.6",
-    "compatibleCoreVersion": "9",
+    "version":"0.03",
+    "minimumCoreVersion": "10",
+    "compatibleCoreVersion": "10",
     "scripts": [],
     "esmodules": [
         "module/deltagreen.js"
@@ -109,8 +109,9 @@
       "gridDistance": 1.5,
       "gridUnits": "m",
       "primaryTokenAttribute": "health",
-      "secondaryTokenAttribute": "wp"
-  
+      "secondaryTokenAttribute": "wp",
+
+
   
 
 }
