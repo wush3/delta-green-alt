@@ -205,6 +205,8 @@ export default class DgAgentSheet extends ActorSheet {
         html.find(".color-toggle").click(this._onColorToggleClick.bind(this));
         html.find(".editweapon-toggle").click(this._onEditWeaponToggleClick.bind(this));
         html.find(".breakpoint-click").click(this._onBreakpointClick.bind(this));
+        html.find(".weapon-reload").click(this._onReloadClick.bind(this));
+        
 
         html.find(".inline-edit").change(this._onInlineChanged.bind(this));
 
@@ -339,6 +341,14 @@ export default class DgAgentSheet extends ActorSheet {
 
     }
 
+    async _onReloadClick(event)
+    {
+        const element = event.currentTarget;
+        const itemId = element.closest(".item").dataset.itemId;
+        const item = this.actor.items.get(itemId);
+        item.update({["system.ammocurrent"]: item.system.ammomax });
+    }
+
     async _onItemRollClick(event) {
         event.preventDefault();
         const element = event.currentTarget;
@@ -367,9 +377,26 @@ export default class DgAgentSheet extends ActorSheet {
             const header = game.i18n.localize("dgalt.labels.rolls.attack")
             //item.roll(mod,targetfield);
             let sucess = false;
+
+            if(item.system.usesammo)
+            {
+                if( item.system.ammocurrent>0)
+                {
+                item.update({["system.ammocurrent"]: item.system.ammocurrent-1 });
+                }
+                else
+                {
+                    //ChatMessage.create("OUT OF AMMO!")
+                    AudioHelper.play({src: "sounds/notify.wav", volume: 0.8, loop: false}, true);
+                    return;
+                }
+            }
+
             if (skill) sucess = await Dice.skillTest(header, icon, label, "using " + skill.name, basetarget, mod);
-            if (skill && !sucess) skill.update({ ["data.failcheck"]: true });
+            if (skill && !sucess) skill.update({ ["system.failcheck"]: true });
         }
+
+
         if (rolltype == "damage") {
             const itemId = element.closest(".item").dataset.itemId;
             const item = this.actor.items.get(itemId);

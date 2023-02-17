@@ -81,8 +81,8 @@ export default class DgActor extends Actor {
     _setBreakPoint() {
         let newbreak = this.system.sanity.value - this.system.statistics.power.value;
 
-        this.update({ ["sanity.currentbreakingpoint"]: newbreak })
-        //this.system.sanity.currentbreakingpoint=newbreak;       
+        this.update({ ["system.sanity.currentbreakingpoint"]: newbreak })
+            
     }
 
     static async create(data, options = {}) {
