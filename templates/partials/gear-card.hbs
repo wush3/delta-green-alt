@@ -8,17 +8,17 @@
     </div>
 
     <div class="gearcard-stat">
-    <input class="form-inputbox inline-edit" data-dtype="String" data-field="data.container" value="{{data.container}}"/>
+    <input class="form-inputbox inline-edit" data-dtype="String" data-field="system.container" value="{{system.container}}"/>
     </div>
 
     <div class="gearcard-stat">
     {{#if (eq type "Weapon")}}
-    <a class="item-control item-checkmark" data-field="data.isequiped"><i
-            class="fas fa-tshirt {{#if data.isequiped}}labelcolor{{else}}bordercolor{{/if}}"></i></a>
+    <a class="item-control item-checkmark" data-field="system.isequiped"><i
+            class="fas fa-tshirt {{#if system.isequiped}}labelcolor{{else}}bordercolor{{/if}}"></i></a>
             {{/if}}
     {{#if (eq type "Armor")}}
-    <a class="item-control item-checkmark" data-field="data.isequiped"><i
-            class="fas fa-tshirt {{#if data.isequiped}}labelcolor{{else}}bordercolor{{/if}}"></i></a>
+    <a class="item-control item-checkmark" data-field="system.isequiped"><i
+            class="fas fa-tshirt {{#if system.isequiped}}labelcolor{{else}}bordercolor{{/if}}"></i></a>
             {{/if}}
     </div>
 

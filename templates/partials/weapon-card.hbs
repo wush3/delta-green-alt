@@ -14,30 +14,30 @@
         <div class="mod-selector-hidden outline">
             <div class="mod-button item-roll" data-rolltype="weapon" data-mod="-40" data-icon="{{img}}"
                 data-label="{{name}}"
-                data-basetarget="{{selectattackmod @root.actor.system.attacks data.attackskill data.mod}}">-40</div>
+                data-basetarget="{{selectattackmod @root.actor.system.attacks system.attackskill system.mod}}">-40</div>
             <div class="mod-button item-roll" data-rolltype="weapon" data-mod="-20" data-icon="{{img}}"
                 data-label="{{name}}"
-                data-basetarget="{{selectattackmod @root.actor.system.attacks data.attackskill data.mod}}">-20</div>
+                data-basetarget="{{selectattackmod @root.actor.system.attacks system.attackskill system.mod}}">-20</div>
             <div class="mod-button item-roll" data-rolltype="weapon" data-mod="0" data-icon="{{img}}"
                 data-label="{{name}}"
-                data-basetarget="{{selectattackmod @root.actor.system.attacks data.attackskill data.mod}}">0</div>
+                data-basetarget="{{selectattackmod @root.actor.system.attacks system.attackskill system.mod}}">0</div>
             <div class="mod-button item-roll" data-rolltype="weapon" data-mod="20" data-icon="{{img}}"
                 data-label="{{name}}"
-                data-basetarget="{{selectattackmod @root.actor.system.attacks data.attackskill data.mod}}">+20</div>
+                data-basetarget="{{selectattackmod @root.actor.system.attacks system.attackskill system.mod}}">+20</div>
             <div class="mod-button item-roll" data-rolltype="weapon" data-mod="40" data-icon="{{img}}"
                 data-label="{{name}}"
-                data-basetarget="{{selectattackmod @root.actor.system.attacks data.attackskill data.mod}}">+40</div>
+                data-basetarget="{{selectattackmod @root.actor.system.attacks system.attackskill system.mod}}">+40</div>
         </div>
 
     </div>
 
     <div class="weapon-stat">
-        {{selectattackmod @root.actor.system.attacks data.attackskill data.mod}}%
+        {{selectattackmod @root.actor.system.attacks system.attackskill system.mod}}%
     </div>
 
     <div class="weapon-stat">
-        {{#if data.isranged}}
-        {{data.range}}m
+        {{#if system.isranged}}
+        {{system.range}}m
         {{else}}
         melee
         {{/if}}
@@ -46,50 +46,50 @@
     <div class="weapon-dmg-wrapper">
         <div class="weapon-stat">
             <input class="form-inputbox-centered shorttext" type="text" name="damage"
-                value="{{#if data.db}}{{data.damage}}{{@root.system.statistics.strength.bonus}}{{else}}{{data.damage}}{{/if}}"
+                value="{{#if system.db}}{{system.damage}}{{@root.system.statistics.strength.bonus}}{{else}}{{system.damage}}{{/if}}"
                 data-dtype="string" readonly />
         </div>
 
         <div class="mod-selector-hidden center">
             <div class="mod-button item-roll" data-rolltype="damage" data-mult="1" data-icon="{{img}}"
                 data-label="{{name}}"
-                data-dmgformula="{{#if data.db}}{{data.damage}}{{@root.system.statistics.strength.bonus}}{{else}}{{data.damage}}{{/if}}">
+                data-dmgformula="{{#if system.db}}{{system.damage}}{{@root.system.statistics.strength.bonus}}{{else}}{{system.damage}}{{/if}}">
                 x1</div>
             <div class="mod-button item-roll" data-rolltype="damage" data-mult="2" data-icon="{{img}}"
                 data-label="{{name}}"
-                data-dmgformula="{{#if data.db}}{{data.damage}}{{@root.system.statistics.strength.bonus}}{{else}}{{data.damage}}{{/if}}">
+                data-dmgformula="{{#if system.db}}{{system.damage}}{{@root.system.statistics.strength.bonus}}{{else}}{{system.damage}}{{/if}}">
                 x2</div>
         </div>
 
     </div>
 
     <div class="weapon-stat">
-        <input class="form-inputbox-number" type="number" name="ap" value="{{data.ap}}" data-dtype="number" readonly />
+        <input class="form-inputbox-number" type="number" name="ap" value="{{system.ap}}" data-dtype="number" readonly />
     </div>
 
     <div class="weapon-dmg-wrapper">
         <div class="weapon-stat">
-            <input class="form-inputbox-centered" type="number" name="lethality" value="{{data.lethality}}"
+            <input class="form-inputbox-centered" type="number" name="lethality" value="{{system.lethality}}"
                 data-dtype="number" readonly />
         </div>
         <div class="mod-selector-hidden center">
             <div class="mod-button item-roll" data-rolltype="lethality" data-mult="1" data-icon="{{img}}"
-                data-label="{{name}}" data-lethality="{{data.lethality}}">
+                data-label="{{name}}" data-lethality="{{system.lethality}}">
                 x1</div>
             <div class="mod-button item-roll" data-rolltype="lethality" data-mult="2" data-icon="{{img}}"
-                data-label="{{name}}" data-lethality="{{data.lethality}}">
+                data-label="{{name}}" data-lethality="{{system.lethality}}">
                 x2</div>
         </div>
     </div>
 
     <div class="weapon-stat">
-        <input class="form-inputbox-number" type="number" name="killradius" value="{{data.killradius}}"
+        <input class="form-inputbox-number" type="number" name="killradius" value="{{system.killradius}}"
             data-dtype="number" readonly />
     </div>
 
-    {{#if data.usesammo}}
+    {{#if system.usesammo}}
     <div class="weapon-stat">
-        <input class="form-inputbox-number" type="number" name="ammocurrent" value="{{data.ammocurrent}}" readonly />
+        <input class="form-inputbox-number" type="number" name="ammocurrent" value="{{system.ammocurrent}}" readonly />
 
         <a class="item-control weapon-reload" title="{{localize 'dgalt.contextmenu.reload'}}">
 

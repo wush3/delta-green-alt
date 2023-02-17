@@ -1,9 +1,9 @@
 <div class="item bond-card" data-bond-id="{{_id}}" data-item-id="{{_id}}">
-    <div class="bond-name {{#if (eq data.value 0)}}strike{{/if}}" >
-        {{name}} - {{data.relationship}}        
+    <div class="bond-name {{#if (eq system.value 0)}}strike{{/if}}" >
+        {{name}} - {{system.relationship}}        
     </div>
     <div class="bond-score">
-        <input class="inline-edit"  type="number" data-dtype="number" value="{{data.value}}" data-field="data.value"/>
+        <input class="inline-edit"  type="number" data-dtype="number" value="{{system.value}}" data-field="system.value"/>
     </div>
     <div class="item-controls">
         <a class="item-control item-edit" title="EDIT"><i class="fas fa-edit"></i></a>

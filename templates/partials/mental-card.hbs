@@ -1,7 +1,7 @@
 <div class="item mental-card" data-mental-id="{{_id}}" data-item-id="{{_id}}">
-    <div class="bond-name {{#if data.iscured }}strike{{/if}}" >
-    {{#if data.isdisorder}}
-        {{data.alternative}}
+    <div class="bond-name {{#if system.iscured }}strike{{/if}}" >
+    {{#if system.isdisorder}}
+        {{system.alternative}}
     {{else}}
         {{name}}
     {{/if}}
