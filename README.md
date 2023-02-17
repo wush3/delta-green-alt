@@ -1,7 +1,7 @@
 # Alternative Delta Green Ruleset
 This is my own take on implementing the DELTA GREEN RPG by Arc Dream Publishing in Foundry VTT.
 
-[Manifest Link:](https://github.com/wush3/delta-green-alt/raw/master/system.json)
+Manifest Link:[https://github.com/wush3/delta-green-alt/raw/master/system.json](https://github.com/wush3/delta-green-alt/raw/master/system.json)
 # Main feature differences are:
 ## Hover over modifiers
 Skills, weapon attacks and damage fields have hover over modifier fields to enable fast rolling. The sheet itself is resizeable to make it possible to make room for the hover modifier.
