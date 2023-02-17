@@ -17,7 +17,7 @@ These need to be created as an item and dragged to the according box. Motivation
 If an Item's name is written into another items location field that items becomes a container. All items in that container are sorted under it and indented to show item relationships. Weapons and Armor can be marked as equipped this makes them appear in the attacks and armor lists. Total armor value is shown on the first page.
 
 
-### Unfinished planned stuff
+# Unfinished planned stuff
 An unnatural page for tomes and rituals.
 An npc/creature sheet that resembles stat blocks from the handlers guide
 A vehicle item type
